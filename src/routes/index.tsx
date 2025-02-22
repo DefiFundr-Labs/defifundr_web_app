@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { RoutePaths } from "./routesPath";
 import Home from "../pages/home";
 import GuestLayout from "../layout";
-
+import BusinessDetailsScreen from "../pages/BusinessDetailsScreen";
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +13,10 @@ export const router = createBrowserRouter([
         path: RoutePaths.ROOT,
         element: <Home />,
       },
-
+      {
+        path: "/business/:id", // This allows for dynamic business IDs
+        element: <BusinessDetailsScreen />,
+      },
     ],
   },
 ]);
