@@ -4,8 +4,10 @@ import { motion } from "framer-motion";
 import { accountTypeOptions } from "../../utils/constant";
 import arrowRight from "../../assets/arrow-right.svg";
 import { AccountOption, AccountType } from "../../types/types";
+import { useNavigate } from "react-router-dom";
 
 export const AccountSelection = () => {
+  const navigate = useNavigate();
   const [selectedAccount, setSelectedAccount] = useState<AccountType | null>(
     "business"
   );
@@ -49,7 +51,7 @@ export const AccountSelection = () => {
   const handleContinue = () => {
     if (selectedAccount) {
       console.log("Selected account type:", selectedAccount);
-      // TODO: navigation to the next page
+      navigate(`${selectedAccount}`);
     }
   };
 

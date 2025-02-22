@@ -65,7 +65,7 @@ export const OnboardingLayout = ({ children }: IOnboardingLayout) => {
             <br />
             Anywhere.
           </p>
-          <p className="md:text-sm lg:text-base text-[rgba(255,255,255,1)] font-normal leading-[25.6px] tracking-normal">
+          <p className="md:text-sm lg:text-base text-white opacity-70 font-normal leading-[25.6px] tracking-normal">
             Experience Fast, Secure Crypto & Fiat Payroll &<br />
             Invoicing with Defifundr
           </p>
