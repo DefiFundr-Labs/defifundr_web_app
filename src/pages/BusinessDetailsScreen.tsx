@@ -99,7 +99,7 @@ const BusinessDetailsScreen = () => {
     <main>
       <div className="min-h-screen bg-slate-50 flex flex-col lg:flex-row">
         {/* Left Side */}
-        <div className="w-full lg:w-1/2 p-4 sm:p-6 lg:p-8">
+        <div className="w-full lg:w-[611px] p-4 sm:p-6 lg:p-8">
           <nav className="flex justify-between items-center px-2 sm:px-4 lg:px-10 py-2 sm:py-4">
             <div>
               <img
@@ -284,7 +284,7 @@ const BusinessDetailsScreen = () => {
         </div>
 
         {/* Right Side*/}
-        <div className="hidden lg:block w-full lg:w-1/2 h-64 sm:show sm:h-96 lg:h-auto bg-slate-900 relative overflow-hidden">
+        <div className="hidden lg:block w-full lg:w-[768px] h-64 sm:show sm:h-96 lg:h-auto bg-slate-900 relative overflow-hidden">
           <div
             className="absolute inset-0 bg-gradient-to-r from-transparent to-black mix-blend-multiply bg-cover bg-no-repeat"
             style={{
