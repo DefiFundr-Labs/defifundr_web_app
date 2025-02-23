@@ -46,20 +46,20 @@ const EmailVerification = () => {
 
   return (
     <div className="flex min-h-screen">
-      <div className="w-full lg:w-2/5 flex flex-col justify-center items-center bg-white p-6">
-        <img src={MailBox} alt="Mailbox" className="h-[150px] mb-4" />
-        <div className="flex flex-col items-start mb-9">
-          <img src={Logo} alt="Logo" className="h-[30px] mb-2" />
+      <div className="w-full lg:w-1/2 xl:w-2/5 flex flex-col justify-center items-center xl:items-start bg-white p-6 md:p-12 xl:px-20 3xl:px-40">
+        <img src={MailBox} alt="Mailbox" className="h-[150px] lg:h-20 mb-4" />
+        <div className="flex flex-col items-start mb-9 w-full">
+          <img src={Logo} alt="Logo" className="h-[30px] mb-2 lg:hidden" />
           <h2 className="text-3xl font-semibold mb-2">Verify your email</h2>
           <p className="text-[#2D333C] mb-2">
-            We've sent a verification code to
+            We've sent a verification code to&nbsp;
             <strong>{email}</strong>. Check your inbox to confirm
           </p>
           <a href="#" className="text-[#2D333C] underline">
             Change email
           </a>
         </div>
-        <div className="mb-9">
+        <div className="mb-9 w-full">
           <div className="flex space-x-4 mb-4">
             <OTPInput length={6} onChange={handleOTPChange} />
           </div>
@@ -83,7 +83,7 @@ const EmailVerification = () => {
         </div>
       </div>
 
-      <div className="w-3/5 hidden md:flex flex-col justify-center items-center text-white p-10 relative">
+      <div className="lg:w-1/2 xl:w-3/5 hidden lg:flex flex-col justify-center items-center text-white px-14 py-16 relative">
         <div className="flex items-start justify-end w-full h-full flex-col">
           <h2 className="text-5xl font-bold">
             Pay Anyone,

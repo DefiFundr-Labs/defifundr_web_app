@@ -62,7 +62,7 @@ const OTPInput = ({ length = 6, onChange }: OTPInputProps) => {
                 inputRefs.current[index] = el;
             }}
             placeholder="-"
-            className="w-12 h-12 text-xl text-center border-1 border-[#C6CCD5] rounded-md focus:border-blue-500 focus:outline-none"
+            className="w-12 h-12 md:w-16 md:h-16 3xl:w-20 3xl:h-20 text-xl text-center border-1 border-[#C6CCD5] rounded-md focus:border-blue-500 focus:outline-none"
           />
           {index === 2 && <span className="text-xl text-[#9CA6B6]">-</span>}
         </React.Fragment>
