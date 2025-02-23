@@ -1,56 +1,59 @@
-import { useEffect, useState } from 'react';
-import OTPInput from './otp-input';
-import Background from '../../assets/background.jpg';
-import MailBox from '../../assets/mailbox.svg';
-import ChveronLeft from '../../assets/chevron-left.svg';
-import Support from '../../assets/support.svg';
-import Logo from '../../assets/logo.svg';
+import { useEffect, useState } from 'react'
+import OTPInput from './otp-input'
+import NoEmailModal from './no-email-modal'
+import Background from '../../assets/background.jpg'
+import MailBox from '../../assets/mailbox.svg'
+import ChveronLeft from '../../assets/chevron-left.svg'
+import Support from '../../assets/support.svg'
+import Logo from '../../assets/logo.svg'
 
 const EmailVerification = () => {
   // Retrieve email from sessionStorage
-  const email = sessionStorage.getItem('registeredEmail') || 'example@gmail.com';
+  const email = sessionStorage.getItem('registeredEmail') || 'example@gmail.com'
 
-  const [otp, setOtp] = useState('');
-  const [isValid, setIsValid] = useState(false);
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState(false);
-  const [countdown, setCountdown] = useState(60);
-  const [canResend, setCanResend] = useState(false);
+  const [otp, setOtp] = useState('')
+  const [isValid, setIsValid] = useState(false)
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState(false)
+  const [countdown, setCountdown] = useState(60)
+  const [canResend, setCanResend] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useEffect(() => {
     if (countdown > 0) {
-      const timer = setInterval(() => setCountdown((prev) => prev - 1), 1000);
-      return () => clearInterval(timer);
+      const timer = setInterval(() => setCountdown((prev) => prev - 1), 1000)
+      return () => clearInterval(timer)
     } else {
-      setCanResend(true);
+      setCanResend(true)
     }
-  }, [countdown]);
+  }, [countdown])
 
   const handleOTPChange = (newOTP: string) => {
     setOtp(newOTP)
-    setIsValid(newOTP.length === 6);
+    setIsValid(newOTP.length === 6)
   }
 
   const handleVerify = () => {
-    if (otp === '123456') { // Simulated correct OTP for demo
-      setSuccess(true);
-      setError('');
+    if (otp === '123456') {
+      // Simulated correct OTP for demo
+      setSuccess(true)
+      setError('')
     } else {
-      setSuccess(false);
-      setError('Invalid OTP. Please try again.');
+      setSuccess(false)
+      setError('Invalid OTP. Please try again.')
     }
-  };
+  }
 
   const handleResend = () => {
-    setCountdown(60);
-    setCanResend(false);
-  };
+    setCountdown(60)
+    setCanResend(false)
+  }
 
   return (
     <div className="flex min-h-screen">
       <div className="w-full lg:w-1/2 xl:w-2/5 flex flex-col justify-between">
         {/* Header */}
-        <div className="flex justify-between px-10 py-6">
+        <div className="flex justify-between px-8 py-6 2xl:px-10">
           <img src={Logo} alt="Logo" className="hidden lg:block h-6" />
           <button className="flex gap-2 lg:px-4 lg:py-2 rounded-md border-none lg:border lg:border-solid lg:border-black/12">
             <img src={ChveronLeft} alt="back" className="w-2" />
@@ -77,30 +80,56 @@ const EmailVerification = () => {
               <OTPInput length={6} onChange={handleOTPChange} />
             </div>
             {error && <p className="text-[#A4031F] text-sm">{error}</p>}
-            {success && <p className="text-[#4AAD52] text-sm">Email verified successfully!</p>}
+            {success && (
+              <p className="text-[#4AAD52] text-sm">
+                Email verified successfully!
+              </p>
+            )}
           </div>
           <button
-            className={`w-full text-white text-sm px-6 py-4 rounded-full mb-8 ${isValid ? 'bg-black' : 'bg-gray-400 cursor-not-allowed'}`}
+            className={`w-full text-white text-sm px-6 py-4 rounded-full mb-8 ${
+              isValid ? 'bg-black' : 'bg-gray-400 cursor-not-allowed'
+            }`}
             onClick={handleVerify}
             disabled={!isValid}
           >
             Verify Email
           </button>
-          <div className="w-full text-center">
+          <div className="w-full flex flex-col justify-center items-center">
             {canResend ? (
-              <button onClick={handleResend} className="text-blue-500 text-sm underline">Resend code</button>
+              <button
+                onClick={handleResend}
+                className="text-blue-500 text-sm underline cursor-pointer"
+              >
+                Resend code
+              </button>
             ) : (
-              <p className="text-gray-400 text-sm">Resend code ({countdown}s)</p>
+              <p className="text-gray-400 text-sm">
+                Resend code ({countdown}s)
+              </p>
             )}
-            <p className="text-gray-600 mt-16">Didn't get email?</p>
+            <button
+              className="text-gray-600 mt-16 cursor-pointer"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Didn't get email?
+            </button>
           </div>
         </div>
 
+        <NoEmailModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
+
         {/* Footer */}
-        <div className="flex justify-between items-center bg-[#F8FAFC] px-10 py-5">
-          <span>&copy; {new Date().getFullYear()}, all rights reserved</span>
-          <ul className="flex items-center gap-3">
+        <div className="hidden justify-between items-center bg-[#F8FAFC] px-10 py-5 lg:flex">
+          <p className="text-sm font-light text-gray-400">
+            &copy; {new Date().getFullYear()}, all rights reserved
+          </p>
+          <ul className="flex items-center gap-2 text-sm font-light">
             <li>Privacy Policy</li>
+            <li className="mb-2">.</li>
             <li>Terms and condition</li>
           </ul>
         </div>
@@ -124,7 +153,7 @@ const EmailVerification = () => {
         ></div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default EmailVerification;
+export default EmailVerification
