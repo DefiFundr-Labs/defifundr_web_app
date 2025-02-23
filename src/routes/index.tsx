@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/business/:id", // This allows for dynamic business IDs
+        path: "/business", 
         element: <BusinessDetailsScreen />,
       },
     ],
