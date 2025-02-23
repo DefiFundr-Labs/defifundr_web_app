@@ -15,7 +15,7 @@ const EmailVerification = () => {
   }
 
   return (
-    <div className="flex h-auto">
+    <div className="flex h-screen">
       <div className="w-2/5 flex flex-col justify-center items-start bg-white p-10">
         <img src={MailBox} alt="Mailbox" className="w-20 h-20 mb-4" />
         <h2 className="text-3xl font-semibold mb-2">Verify your email</h2>
