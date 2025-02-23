@@ -95,6 +95,15 @@ const EmailVerification = () => {
             <p className="text-gray-600 mt-16">Didn't get email?</p>
           </div>
         </div>
+
+        {/* Footer */}
+        <div className="flex justify-between items-center bg-[#F8FAFC] px-10 py-5">
+          <span>&copy; {new Date().getFullYear()}, all rights reserved</span>
+          <ul className="flex items-center gap-3">
+            <li>Privacy Policy</li>
+            <li>Terms and condition</li>
+          </ul>
+        </div>
       </div>
 
       <div className="lg:w-1/2 xl:w-3/5 hidden lg:flex flex-col justify-center items-center text-white px-14 py-16 relative">
