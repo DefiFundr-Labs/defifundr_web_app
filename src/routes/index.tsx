@@ -8,8 +8,6 @@ import AccountCreationPage from "../common/AccountCreationPage";
 import SignIn from "../pages/auth/SignIn";
 import AuthLayout from "../layout/AuthLayout";
 
-
-
 export const router = createBrowserRouter([
   {
     path: RoutePaths.ROOT,
@@ -19,7 +17,6 @@ export const router = createBrowserRouter([
         path: RoutePaths.ROOT,
         element: <Home />,
       },
-      
     ],
   },
   {
@@ -27,15 +24,13 @@ export const router = createBrowserRouter([
     element: <AuthLayout />, // Separate layout for authentication pages
     children: [
       {
-         path: "signin",
-         element: <SignIn />
-       },
-          {
-        path: RoutePaths.ACCOUNT_CREATION,
+        path: "signin",
+        element: <SignIn />,
+      },
+      {
+        path: "create-account",
         element: <AccountCreationPage />,
       },
-
     ],
   },
-  
 ]);
