@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+
 interface FormData {
   firstName: string;
   lastName: string;
@@ -197,9 +198,9 @@ function AccountCreationForm() {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         type="submit"
-        className="w-full py-3 px-4 bg-purple-600 text-white rounded-lg font-medium
-                   hover:bg-purple-700 focus:outline-none focus:ring-2 
-                   focus:ring-purple-500 focus:ring-offset-2 
+        className="w-full py-3 px-4 bg-[#101323] hover:bg-[#181D36] text-white rounded-3xl font-medium
+                   focus:outline-none focus:ring-2 
+                   focus:ring-[#101323] focus:ring-offset-2 
                    transition-all duration-200 transform"
       >
         Continue

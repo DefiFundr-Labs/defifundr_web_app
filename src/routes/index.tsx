@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
         element: <AccountCreationPage />,
       },
       {
-        path: RoutePaths.VERIFY_EMAIL,
+        path: "verify-email",
         element: <EmailVerification />,
       }
 
