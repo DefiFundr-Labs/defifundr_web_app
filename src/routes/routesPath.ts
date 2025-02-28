@@ -1,5 +1,10 @@
 export const RoutePaths = {
-  ROOT: "",
-  AUTH: "/auth",
-  CREATE_PASSWORD: "/create-password",
+  ROOT: "/",
+  ACCOUNT_TYPES: "/account-types",
+
+  VERIFY_EMAIL: "/verify-email",
+
+  ACCOUNT_CREATION: "/create-account",
+
+  SIGNIN: "/signin",
 };

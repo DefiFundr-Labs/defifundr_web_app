@@ -1,7 +1,5 @@
 const Home = () => {
-  return (
-    <div className="text-primary-400">Home</div>
-  )
-}
+  return <div className="text-primary-400">Home</div>;
+};
 
-export default Home
+export default Home;

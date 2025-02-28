@@ -2,8 +2,17 @@ import { createBrowserRouter } from "react-router-dom";
 import { RoutePaths } from "./routesPath";
 import Home from "../pages/home";
 import GuestLayout from "../layout";
-import CreatePassword from "../pages/create-password";
-import AuthLayout from "../layout/authLayout";
+
+import BusinessDetailsScreen from "../pages/BusinessDetailsScreen";
+
+import EmailVerification from "../pages/verify-email";
+
+import { accountTypesRoutes } from "./modules";
+import AccountCreationPage from "../common/AccountCreationPage";
+
+import SignIn from "../pages/auth/SignIn";
+import AuthLayout from "../layout/AuthLayout";
+
 
 export const router = createBrowserRouter([
   {
@@ -11,20 +20,34 @@ export const router = createBrowserRouter([
     element: <GuestLayout />,
     children: [
       {
-        path: RoutePaths.CREATE_PASSWORD,
+        path: RoutePaths.ROOT,
         element: <Home />,
       },
+      {
 
+        path: "/business",
+        element: <BusinessDetailsScreen />,
+      },
+      {
+        path: RoutePaths.VERIFY_EMAIL,
+        element: <EmailVerification />,
+      },
     ],
   },
   {
-    path: RoutePaths.AUTH,
-    element: <AuthLayout />,
+    path: "/auth",
+    element: <AuthLayout />, // Separate layout for authentication pages
     children: [
       {
-        path: RoutePaths.CREATE_PASSWORD,
-        element: <CreatePassword />,
+        path: "signin",
+        element: <SignIn />,
+      },
+      {
+        path: "create-account",
+        element: <AccountCreationPage />,
+
       },
     ],
   },
+  ...accountTypesRoutes,
 ]);

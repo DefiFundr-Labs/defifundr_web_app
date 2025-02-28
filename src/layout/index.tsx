@@ -11,11 +11,11 @@ interface GuestLayoutProps {
 export default function GuestLayout({ children }: GuestLayoutProps) {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
 
       <div className="">{children ? children : <Outlet />}</div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
