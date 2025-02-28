@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { RoutePaths } from "./routesPath";
 import Home from "../pages/home";
 import GuestLayout from "../layout";
+import EmailVerification from "../pages/verify-email";
 
 import AccountCreationPage from "../common/AccountCreationPage";
 
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
         path: "create-account",
         element: <AccountCreationPage />,
       },
+      {
+        path: RoutePaths.VERIFY_EMAIL,
+        element: <EmailVerification />,
+      }
+
     ],
   },
 ]);
