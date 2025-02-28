@@ -5,6 +5,9 @@ import { HeroSection } from "../../common/HeroSection";
 import { AuthFooter } from "../../common/auth/AuthFooter";
 import { AuthHeader } from "../../common/auth/AuthHeader";
 import { Mail, Eye,EyeOff } from "lucide-react";
+import AnimatedBackground from "../../common/AnimatedBackground";
+import { motion } from "framer-motion";
+
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -46,12 +49,17 @@ export default function LoginPage() {
   return (
     <div className="flex h-screen">
       {/* LEFT SIDE */}
-      <div className="flex w-full flex-col lg:w-1/2">
+      <div className="flex w-full  flex-col lg:w-1/2">
         <AuthHeader />
 
         {/* Center the form */}
         <div className="flex flex-1 items-center justify-center p-8">
-          <div className="w-full max-w-md space-y-8">
+          <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-md space-y-8"
+          >
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tight">
                 Sign in to your DeFiFundr account
@@ -124,16 +132,28 @@ export default function LoginPage() {
                 </div>
 
                 {/* Submit Button */}
-                <button
+                <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                   type="submit"
-                  className="w-full bg-[#101323] rounded-3xl bg-slate-900 py-2 text-white transition-colors hover:bg-slate-800"
+                  className="
+                  w-full 
+                  bg-[#101323]
+                  hover:bg-[#181D36]
+                  focus:ring-[#101323] focus:ring-offset-2 
+                  rounded-3xl 
+                  bg-slate-900 
+                  py-2 
+                  text-white 
+                  transition-all 
+                  hover:bg-slate-800 transform"
                 >
                   Continue
-                </button>
+                </motion.button>
               </fieldset>
             </form>
 
-          </div>
+          </motion.div>
         </div>
 
         <AuthFooter />
@@ -142,6 +162,34 @@ export default function LoginPage() {
       {/* RIGHT SIDE */}
       <div className="hidden h-full w-1/2 lg:flex lg:flex-col lg:items-center lg:justify-center">
         <HeroSection />
+        {/* <AnimatedBackground/>
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 p-12">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold mb-4 text-center"
+          >
+            Pay Anyone,
+          </motion.h2>
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-4xl md:text-5xl font-bold mb-8 text-center"
+          >
+            Anywhere.
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg text-center text-gray-200"
+          >
+            Experience Fast, Secure Crypto & Fiat Payroll & Invoicing with
+            DeftFundr
+          </motion.p>
+        </div> */}
       </div>
     </div>
   );

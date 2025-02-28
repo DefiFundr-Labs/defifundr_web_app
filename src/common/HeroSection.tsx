@@ -1,4 +1,4 @@
-
+import { motion } from "framer-motion";
 import bg from '../assets/bg-auth.png';
 
 
@@ -18,8 +18,20 @@ export const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-purple-800/30 to-blue-900/30" />
       
       <div className="absolute bottom-0 left-0 right-0 z-10 p-12 text-white">
-        <h1 className="mb-4 text-5xl font-bold tracking-tight">Pay Anyone, <br></br> Anywhere.</h1>
-        <p className="text-lg text-gray-200">Experience Fast, Secure Crypto &<br></br> Fiat Payroll & Invoicing with DeFiFundr</p>
+        <motion.h1 
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="mb-4 text-5xl font-bold tracking-tight">
+          Pay Anyone, <br></br> Anywhere.
+        </motion.h1>
+        <motion.p 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="text-lg text-gray-200">
+          Experience Fast, Secure Crypto &<br></br> Fiat Payroll & Invoicing with DeFiFundr
+        </motion.p>
       </div>
     </div>
   )
