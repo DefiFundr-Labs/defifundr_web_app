@@ -4,6 +4,7 @@ import Home from "../pages/home";
 import GuestLayout from "../layout";
 import EmailVerification from "../pages/verify-email";
 
+import { accountTypesRoutes } from "./modules";
 import AccountCreationPage from "../common/AccountCreationPage";
 
 import SignIn from "../pages/auth/SignIn";
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.ROOT,
         element: <Home />,
+      },
+      {
+        path: RoutePaths.VERIFY_EMAIL,
+        element: <EmailVerification />,
       },
     ],
   },
@@ -32,11 +37,7 @@ export const router = createBrowserRouter([
         path: "create-account",
         element: <AccountCreationPage />,
       },
-      {
-        path: "verify-email",
-        element: <EmailVerification />,
-      }
-
     ],
   },
+  ...accountTypesRoutes,
 ]);
