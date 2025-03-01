@@ -15,7 +15,8 @@
 
 @layer utilities {
   /* Typography - Simplified and removed unnecessary tracking */
-  .h1 {
+  .h1,
+  .hero {
     @apply text-3xl font-bold sm:text-5xl;
   }
 
@@ -31,27 +32,25 @@
     @apply text-xl font-semibold;
   }
 
-  .hero {
-    @apply text-3xl font-bold sm:text-5xl;
-  }
-
   /* Buttons - Streamlined with consistent width handling */
   .button {
-    @apply inline-flex rounded-full gap-2 font-medium items-center whitespace-nowrap justify-center px-3.5 py-2 sm:px-6 text-sm text-center transition cursor-pointer;
+    @apply inline-flex rounded-full gap-2 font-medium items-center justify-center 
+           px-3.5 py-2 sm:px-6 text-sm text-center transition cursor-pointer
+           w-full sm:w-fit; /* Consolidated width control */
   }
 
   .button--primary {
-    @apply w-full text-white bg-primary-500 border-primary-500 sm:w-fit hover:bg-primary-600 hover:border-primary-600 focus:bg-primary-500 focus:border-primary-500;
+    @apply text-white bg-primary-500 hover:bg-primary-600 focus:bg-primary-500;
   }
 
   .button--secondary {
-    @apply text-white bg-[#181D36] w-full sm:w-fit min-h-9 hover:bg-[hsl(230,38%,20%)] focus:bg-[#181D36];
+    @apply text-white bg-[#181D36] hover:bg-[hsl(230,38%,20%)] focus:bg-[#181D36];
   }
 
   .button--tertiary {
-    @apply bg-white border border-gray-300 hover:bg-gray-50 focus:bg-white disabled:bg-white py-[0.6875rem] min-w-[12.5rem] px-4.5 disabled:border-gray-200;
+    @apply bg-white border border-gray-300 hover:bg-gray-50 focus:bg-white 
+           disabled:bg-white disabled:border-gray-200;
   }
-
   /* Form elements */
   .input {
     @apply px-3.5 py-2.5 rounded-lg bg-white focus:border outline-none focus:border-primary-200;
@@ -63,7 +62,7 @@
   }
 
   .tag-primary {
-    @apply border-purple-100 bg-primary-100 text-primary-600;
+    @apply border-primary-100 bg-primary-100 text-primary-600;
   }
 
   .tag-secondary {
