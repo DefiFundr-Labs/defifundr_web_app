@@ -10,9 +10,8 @@ function AccountCreationPage() {
     <div className="min-h-screen w-full flex flex-col md:flex-row bg-white">
       {/* Left side - Registration Form Section */}
       <div className="w-full md:w-1/2 bg-white ">
-        <AuthHeader/>
+        <AuthHeader />
         <div className="flex flex-1 items-center p-12 justify-center">
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -30,13 +29,13 @@ function AccountCreationPage() {
             <AccountCreationForm />
           </motion.div>
         </div>
-        <AuthFooter/>
+        <AuthFooter />
       </div>
 
       {/* Right side - Animated Background Section (hidden on mobile) */}
       <div className="hidden md:flex w-1/2 relative overflow-hidden">
         {/* Background gradient */}
-        <HeroSection/>   
+        <HeroSection />
       </div>
     </div>
   );

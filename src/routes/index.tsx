@@ -13,7 +13,6 @@ import AccountCreationPage from "../common/AccountCreationPage";
 import SignIn from "../pages/auth/SignIn";
 import AuthLayout from "../layout/AuthLayout";
 
-
 export const router = createBrowserRouter([
   {
     path: RoutePaths.ROOT,
@@ -24,10 +23,10 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-
-        path: "/business", 
+        path: "/business",
         element: <BusinessDetailsScreen />,
-
+      },
+      {
         path: RoutePaths.VERIFY_EMAIL,
         element: <EmailVerification />,
       },
@@ -44,7 +43,6 @@ export const router = createBrowserRouter([
       {
         path: "create-account",
         element: <AccountCreationPage />,
-
       },
     ],
   },
