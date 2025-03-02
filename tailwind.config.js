@@ -104,6 +104,9 @@ export default {
         900: "#772917",
         950: "#5F1D14",
       },
+      green: {
+        500: "#008000",
+      },
     },
 
     // changed the line height
