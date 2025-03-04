@@ -157,7 +157,7 @@ export default {
       spacing: {
         // change 863 to whatever half of the max content width you want for wide screens is
         contained: "calc(50vw - 863px)",
-        fullheight: "calc(var(--vh, 1vh) * 100)", // --vh var set on html tag by setDocHeight() in app.js
+        fullheight: "calc(var(--vh, 1vh) * 100)", /// --vh var set on html tag by setDocHeight() in app.js
         gutter: "5vw",
         13: "3.125rem",
         15: "3.75rem",
