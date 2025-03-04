@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import layout from "../assets/Background.svg";
@@ -35,7 +35,7 @@ export const OnboardingLayout = ({ children }: IOnboardingLayout) => {
 
         {/* Main Content */}
         <div className="flex-1 pt-[48px] pb-6 lg:pb-[37px] px-4 md:px-6 lg:px-20 overflow-y-auto">
-          {children}
+          {children || <Outlet />}
         </div>
 
         {/* Footer */}

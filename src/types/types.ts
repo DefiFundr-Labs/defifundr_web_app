@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 export interface IOnboardingLayout {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export type AccountType = "business" | "freelancer" | "employee";
