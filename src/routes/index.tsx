@@ -11,9 +11,8 @@ import { accountTypesRoutes } from "./modules";
 import AccountCreationPage from "../common/AccountCreationPage";
 
 import SignIn from "../pages/auth/SignIn";
-import AuthLayout from "../layout/AuthLayout";
 import CreatePassword from "../pages/auth/Create-password";
-import { OnboardingLayout } from "../layout/onboardingLayout";
+import AuthLayout from "../layout/AuthLayout";
 
 export const router = createBrowserRouter([
   {
@@ -25,7 +24,6 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-
         path: "/business",
         element: <BusinessDetailsScreen />,
       },
@@ -46,7 +44,6 @@ export const router = createBrowserRouter([
       {
         path: "create-account",
         element: <AccountCreationPage />,
-
       },
       {
         path: "create-password",

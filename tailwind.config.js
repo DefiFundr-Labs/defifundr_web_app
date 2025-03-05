@@ -111,17 +111,17 @@ export default {
 
     // changed the line height
     fontSize: {
-      xs: ["0.75rem", { lineHeight: "1.05rem" }],
-      sm: ["0.875rem", { lineHeight: "1.225rem" }],
-      base: ["1rem", { lineHeight: "1.4rem" }],
-      lg: ["1.125rem", { lineHeight: "1.575rem" }],
+      xs: ["0.75rem", { lineHeight: "1rem" }],
+      sm: ["0.875rem", { lineHeight: "1.25rem" }],
+      base: ["1rem", { lineHeight: "1.5rem" }],
+      lg: ["1.125rem", { lineHeight: "1.6rem" }],
       xl: ["1.25rem", { lineHeight: "1.75rem" }],
-      "2xl": ["1.5rem", { lineHeight: "1.8rem" }],
+      "2xl": ["1.5rem", { lineHeight: "2rem" }],
       "3xl": ["1.875rem", { lineHeight: "2.25rem" }],
-      "4xl": ["2.25rem", { lineHeight: "2.7rem" }],
-      "5xl": ["3rem", { lineHeight: "3.6rem" }],
+      "4xl": ["2.25rem", { lineHeight: "2.75rem" }],
+      "5xl": ["3rem", { lineHeight: "3.5rem" }],
       "6xl": ["3.75rem", { lineHeight: "4.5rem" }],
-      "7xl": ["4.5rem", { lineHeight: "1" }],
+      "7xl": ["4.5rem", { lineHeight: "1.1" }],
     },
 
     // amend these values to suit the chosen font
@@ -146,10 +146,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        openrunde: ["Hanken Grotesk", "serif"], // Ensure fallback font
-
+        hanken: ["Hanken Grotesk", "sans-serif"],
       },
-      
+
       zIndex: {
         "-1": "-1",
         100: 100,
@@ -158,7 +157,7 @@ export default {
       spacing: {
         // change 863 to whatever half of the max content width you want for wide screens is
         contained: "calc(50vw - 863px)",
-        fullheight: "calc(var(--vh, 1vh) * 100)", // --vh var set on html tag by setDocHeight() in app.js
+        fullheight: "calc(var(--vh, 1vh) * 100)", /// --vh var set on html tag by setDocHeight() in app.js
         gutter: "5vw",
         13: "3.125rem",
         15: "3.75rem",
