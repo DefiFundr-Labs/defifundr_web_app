@@ -1,41 +1,43 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RoutePaths } from "./routesPath";
 import Home from "../pages/home";
 import GuestLayout from "../layout";
-
-import BusinessDetailsScreen from "../pages/BusinessDetailsScreen";
-
 import EmailVerification from "../pages/verify-email";
 
 import { accountTypesRoutes } from "./modules";
 import AccountCreationPage from "../common/AccountCreationPage";
 
 import SignIn from "../pages/auth/SignIn";
-import CreatePassword from "../pages/auth/Create-password";
 import AuthLayout from "../layout/AuthLayout";
 
 export const router = createBrowserRouter([
   {
     path: RoutePaths.ROOT,
+    element: <Navigate to="/auth/signin" replace />, // Redirect root to sign in
+  },
+  {
+    path: "/home", // Move home to its own path
     element: <GuestLayout />,
     children: [
       {
-        path: RoutePaths.ROOT,
+        path: "",
         element: <Home />,
       },
+    ],
+  },
+  {
+    path: RoutePaths.VERIFY_EMAIL,
+    element: <GuestLayout />,
+    children: [
       {
-        path: "/business",
-        element: <BusinessDetailsScreen />,
-      },
-      {
-        path: RoutePaths.VERIFY_EMAIL,
+        path: "",
         element: <EmailVerification />,
       },
     ],
   },
   {
     path: "/auth",
-    element: <AuthLayout />,
+    element: <AuthLayout />, // Separate layout for authentication pages
     children: [
       {
         path: "signin",
@@ -44,10 +46,6 @@ export const router = createBrowserRouter([
       {
         path: "create-account",
         element: <AccountCreationPage />,
-      },
-      {
-        path: "create-password",
-        element: <CreatePassword />,
       },
     ],
   },

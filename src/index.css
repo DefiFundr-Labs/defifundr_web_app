@@ -6,70 +6,72 @@
   @apply mx-auto px-gutter !max-w-none 4xl:px-contained;
 }
 
-/* Removed redundant body definition and used the hanken font class */
+body {
+  font-family: "Hanken Grotesk", serif !important;
+}
 @layer base {
   body {
-    @apply text-black font-hanken;
+    @apply text-black font-openrunde;
   }
 }
-
 @layer utilities {
-  /* Typography - Simplified and removed unnecessary tracking */
-  .h1,
-  .hero {
+  .h1 {
     @apply text-3xl font-bold sm:text-5xl;
   }
 
   .h2 {
     @apply text-2xl font-black sm:text-3xl md:text-5xl;
   }
-
   .h3 {
-    @apply text-xl sm:text-3xl font-semibold;
+    @apply text-xl sm:text-3xl font-semibold tracking-[-2%];
   }
-
   .h4 {
-    @apply text-xl font-semibold;
+    @apply text-xl sm:text-xl font-semibold tracking-[-2%];
   }
 
-  /* Buttons - Streamlined with consistent width handling */
+  .hero {
+    @apply text-3xl font-bold sm:text-5xl;
+  }
   .button {
-    @apply inline-flex rounded-full gap-2 font-medium items-center justify-center 
-           px-3.5 py-2 sm:px-6 text-sm text-center transition cursor-pointer
-           w-full sm:w-fit; /* Consolidated width control */
+    @apply inline-flex w-full sm:w-fit rounded-full gap-2 font-medium items-center whitespace-nowrap justify-center px-3.5 py-2 sm:px-6 text-sm tracking-[-2%] xs:text-sm text-center transition cursor-pointer;
   }
 
   .button--primary {
-    @apply text-white bg-primary-500 hover:bg-primary-600 focus:bg-primary-500;
+    @apply w-full text-white bg-primary-600 border-primary-600 sm:w-fit hover:bg-primary-600 hover:border-primary-600 focus:bg-primary-600 focus:border-primary-600;
   }
 
   .button--secondary {
-    @apply text-white bg-[#181D36] hover:bg-[hsl(230,38%,20%)] focus:bg-[#181D36];
+    @apply text-white bg-[#181D36] w-full sm:w-fit min-h-9 hover:bg-[hsl(230,38%,20%)] focus:bg-[#181D36];
   }
 
   .button--tertiary {
-    @apply bg-white border border-gray-300 hover:bg-gray-50 focus:bg-white 
-           disabled:bg-white disabled:border-gray-200;
+    @apply bg-white border border-gray-300 hover:bg-gray-600 focus:bg-white disabled:bg-white py-[0.6875rem] min-w-[12.5rem] px-4.5 disabled:border-gray-200;
   }
-  /* Form elements */
+
+  .button--tertiary-gray {
+    @apply text-gray-600 bg-gray-100 hover:border-gray-200 focus:bg-gray-100;
+  }
+
+  .button--tertiary-white {
+    @apply text-sm text-primary-600 !tracking-[-2%] hover:text-primary-600 hover:bg-primary-600 rounded-full focus:text-primary-600 disabled:text-gray-300;
+  }
+
   .input {
-    @apply px-3.5 py-2.5 rounded-lg bg-white focus:border outline-none focus:border-primary-200;
+    @apply px-3.5 py-2.5 rounded-lg bg-white  focus:border outline-none focus:border-primary-200;
   }
-
-  /* Tags - Simplified variants */
   .tag {
-    @apply flex w-fit rounded-full py-2 px-3.5 gap-2 border font-medium text-sm;
+    @apply flex w-fit rounded-full  py-2 px-3.5  gap-2 border font-medium text-sm;
   }
-
   .tag-primary {
-    @apply border-primary-100 bg-primary-100 text-primary-600;
+    @apply border-purple-100 bg-primary-100 text-primary-600;
   }
-
   .tag-secondary {
     @apply text-purple-600 bg-purple-100 border-purple-300;
   }
-
   .tag-tertiary {
-    @apply text-purple-500 bg-purple-50 border-purple-50;
+    @apply text-purple-600 bg-purple-600 border-purple-600;
+  }
+  .tag-tertiary-white {
+    @apply text-purple-600 bg-white border-white;
   }
 }
