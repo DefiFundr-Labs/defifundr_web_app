@@ -1,20 +1,17 @@
-import logo from "../../assets/Logho.png";
-import { ChevronLeft } from "lucide-react";
+import { Logo } from "../../assets/svgs/svg";
 
 export const AuthHeader = () => {
-    return (
-      <div className="flex items-center justify-between p-4">
-        {/* <div className="text-xl">⚡</div> */}
-        <div className="text-xl">
-          <img src={logo} width={15} height={15} alt="logo" />
-        </div>
-
-        <button className="hidden lg:inline-flex  md:inline-flex items-center gap-1 rounded-md border border-gray-200 bg-gray-50/50 px-3 py-2 text-sm text-gray-600 transition-colors hover:bg-gray-100">
-        <ChevronLeft/>
-        Back
-      </button>
+  return (
+    <div className="flex items-center justify-between ">
+      {/* <div className="text-xl">⚡</div> */}
+      <div className="text-xl text-black">
+        <Logo />
       </div>
-    )
-  }
-  
-  
+      {/* 
+      <button className="items-center hidden gap-1 px-3 py-2 text-sm text-gray-600 transition-colors border border-gray-200 rounded-md lg:inline-flex md:inline-flex bg-gray-50/50 hover:bg-gray-100">
+        <ChevronLeft />
+        Back
+      </button> */}
+    </div>
+  );
+};

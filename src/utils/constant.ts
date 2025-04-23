@@ -1,6 +1,6 @@
-import businessIcon from "../assets/business.svg";
-import freelancerIcon from "../assets/freelancer.svg";
-import employeeIcon from "../assets/employee.svg";
+import businessIcon from "../assets/svgs/business.svg";
+import freelancerIcon from "../assets/svgs/freelancer.svg";
+import employeeIcon from "../assets/svgs/employee.svg";
 import { AccountOption } from "../types/types";
 
 export const accountTypeOptions: AccountOption[] = [

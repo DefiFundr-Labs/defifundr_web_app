@@ -1,9 +1,9 @@
 import { useNavigate, Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import layout from "../assets/Background.svg";
-import logo from "../assets/logo.svg";
-import arrowLeft from "../assets/arrow-left.svg";
+import layout from "../assets/svgs/Background.svg";
+import logo from "../assets/svgs/logo.svg";
+import arrowLeft from "../assets/svgs/arrow-left.svg";
 import { IOnboardingLayout } from "../types/types";
 
 export const OnboardingLayout = ({ children }: IOnboardingLayout) => {
@@ -14,7 +14,7 @@ export const OnboardingLayout = ({ children }: IOnboardingLayout) => {
       {/* Left Panel */}
       <div className="w-full md:w-[49%] lg:w-[42.43%] flex flex-col">
         {/* Header */}
-        <div className="hidden lg:flex items-center justify-between w-full px-10 py-5">
+        <div className="items-center justify-between hidden w-full px-10 py-5 lg:flex">
           <motion.button
             type="button"
             onClick={() => navigate("/")}
@@ -57,7 +57,7 @@ export const OnboardingLayout = ({ children }: IOnboardingLayout) => {
         <img
           src={layout}
           alt="DefiFundr Platform"
-          className="w-full h-full object-cover border border-red-500"
+          className="object-cover w-full h-full border border-red-500"
         />
         <div className="absolute bottom-15 left-[55px] text-white">
           <p className="md:text-4xl lg:text-[48px] leading-[67.2px] -tracking-[2%] font-bold mb-2">

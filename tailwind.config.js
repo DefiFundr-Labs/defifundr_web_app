@@ -26,6 +26,7 @@ export default {
       "4xl": "2rem",
       "5xl": "2.5rem",
       "6xl": "3rem",
+      "7xl": "3.5rem",
     },
 
     // amend these values to suit the chosen font
@@ -55,7 +56,9 @@ export default {
         white: colors.white, // tenant's white colour
         black: "#000000", // tenant's darkest grey
         gray: colors.gray,
-
+        grey: {
+          common: "#F5F6F7",
+        },
         primary: {
           100: "#2100A4",
           200: "#2A02CA",
