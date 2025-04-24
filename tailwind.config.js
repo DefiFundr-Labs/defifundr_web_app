@@ -55,16 +55,23 @@ export default {
         current: "currentColor", // and this…
         white: colors.white, // tenant's white colour
         black: "#000000", // tenant's darkest grey
-        gray: colors.gray,
-        grey: {
-          common: "#F5F6F7",
+        warning: "#C64242", // tenant's warning colour
+        gray: {
+          50: "#FFFFFF",
+          100: "#F5F6F7",
+          150: "#DCE0E5",
+          200: "#BDC5D1",
+          300: "#7F8C9F",
+          400: "#414F62",
+          500: "#17171C",
+          600: "#0E0E11",
         },
         primary: {
-          100: "#2100A4",
-          200: "#2A02CA",
-          400: "#7C62E4",
-          600: "#C1B5F2",
-          800: "#F1EEFC",
+          100: "#2A188B",
+          200: "#5A42DE",
+          300: "#8674E7",
+          400: "#C2BAF3",
+          500: "#E8E5FA",
         },
         secondary: "#A42600",
       },

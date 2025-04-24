@@ -10,5 +10,5 @@ export interface AccountOption {
   id: AccountType;
   title: string;
   description: string;
-  icon: string;
+  // icon: string;
 }

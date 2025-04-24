@@ -37,29 +37,17 @@ body {
   }
 
   .button--primary {
-    @apply w-full text-white bg-primary-600 border-primary-600 sm:w-fit hover:bg-primary-600 hover:border-primary-600 focus:bg-primary-600 focus:border-primary-600;
+    @apply w-full text-white bg-gray-600 border-gray-600 sm:w-fit hover:bg-gray-600/10 hover:border-gray-600/10 focus:bg-gray-600 focus:border-gray-600;
   }
 
   .button--secondary {
-    @apply text-white bg-[#181D36] w-full sm:w-fit min-h-9 hover:bg-[hsl(230,38%,20%)] focus:bg-[#181D36];
+    @apply w-full text-white bg-primary-200 sm:w-fit min-h-9 hover:bg-primary-200/10 focus:bg-primary-200;
   }
-
-  /* .button--tertiary {
-    @apply bg-white border border-gray-300 hover:bg-gray-600 focus:bg-white disabled:bg-white py-[0.6875rem] min-w-[12.5rem] px-4.5 disabled:border-gray-200;
-  }
-
-  .button--tertiary-gray {
-    @apply text-gray-600 bg-gray-100 hover:border-gray-200 focus:bg-gray-100;
-  }
-
-  .button--tertiary-white {
-    @apply text-sm text-primary-600 !tracking-[-2%] hover:text-primary-600 hover:bg-primary-600 rounded-full focus:text-primary-600 disabled:text-gray-300;
-  } */
 
   .input {
-    @apply px-3.5 py-2.5 rounded-lg bg-white  focus:border outline-none focus:border-primary-200;
+    @apply px-3.5 py-2.5 rounded-lg bg-gray-100  focus:border outline-none focus:border-primary-200;
   }
-  .tag {
+  /* .tag {
     @apply flex w-fit rounded-full  py-2 px-3.5  gap-2 border font-medium text-sm;
   }
   .tag-primary {
@@ -73,5 +61,5 @@ body {
   }
   .tag-tertiary-white {
     @apply text-purple-600 bg-white border-white;
-  }
+  } */
 }

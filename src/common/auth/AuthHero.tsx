@@ -4,7 +4,7 @@ import { AuthHeader } from "./AuthHeader";
 
 export const AuthHero = () => {
   return (
-    <div className="relative hidden w-full h-full bg-grey-common bg- md:block lg:block">
+    <div className="relative hidden w-full h-full bg-gray-100 bg- md:block lg:block">
       <div className="absolute z-10 px-5 py-3 bg-white rounded-lg top-7 drop-shadow-md left-7 ">
         <AuthHeader />
       </div>

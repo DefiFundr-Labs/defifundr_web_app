@@ -1,6 +1,6 @@
 export const AuthFooter = () => {
   return (
-    <div className="hidden w-full p-5 text-sm text-gray-600  lg:block md:block">
+    <div className="hidden w-full p-5 text-sm text-gray-600 lg:block md:block">
       <div className="flex justify-between">
         <span className="text-[#757575]">© 2025, All rights reserved</span>
 
