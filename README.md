@@ -21,18 +21,21 @@ Before you begin, ensure you have met the following requirements:
 ## Branch and Commit Conventions
 
 ### Branch Naming Convention
-Always create branches from the `develop` branch with the following conventions:
+
+
+Always create branches from the `main` branch with the following conventions:
+
 
 - For new features:
   ```sh
-  git checkout develop
+  git checkout main
   git checkout -b feature/descriptive_feature_name
   ```
   Example: `git checkout -b feature/create_hero_section`
 
 - For bug fixes:
   ```sh
-  git checkout develop
+  git checkout main
   git checkout -b fix/descriptive_fix_name
   ```
   Example: `git checkout -b fix/login_error_handling`
@@ -53,8 +56,10 @@ Use descriptive commit messages with the following format:
   Example: `git commit -m "fix: resolve login authentication error"`
 
 ### Pull Request Guidelines
-- Always compare your pull request against the `staging` branch, NOT `main`
-- Ensure your branch is up to date with the `develop` branch before creating a pull request
+
+- Always compare your pull request against the `main` branch.
+- Ensure your branch is up to date with the `main` branch before creating a pull request
+
 
 ## ESLint Configuration
 1. Install ESLint and TypeScript ESLint:
