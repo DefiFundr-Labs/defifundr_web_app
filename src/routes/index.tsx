@@ -3,6 +3,8 @@ import { RoutePaths } from "./routesPath";
 
 import SignIn from "../pages/auth/SignIn";
 import AuthLayout from "../layout/auth";
+import Guide from "../pages/guide";
+import GuestLayout from "../layout/guest";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +19,20 @@ export const router = createBrowserRouter([
       {
         path: "signin",
         element: <SignIn />,
+      },
+      {
+        path: "guide",
+        element: <Guide />,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <GuestLayout />, // Separate layout for authentication pages
+    children: [
+      {
+        path: "guide",
+        element: <Guide />,
       },
     ],
   },
