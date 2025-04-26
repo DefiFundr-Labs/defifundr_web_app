@@ -3,7 +3,7 @@ const colors = require("tailwindcss/colors");
 
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class", // Enable class-based dark mode
+
   theme: {
     borderWidth: {
       DEFAULT: "1px",
@@ -79,7 +79,7 @@ export default {
         DEFAULT: "1.5",
       },
       fontFamily: {
-        hk: ["Hanken Grotesk", "serif"], // Ensure fallback font
+        openrunde: ["Hanken Grotesk", "serif"], // Ensure fallback font
       },
 
       zIndex: {

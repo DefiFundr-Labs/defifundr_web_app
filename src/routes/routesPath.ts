@@ -7,5 +7,4 @@ export const RoutePaths = {
   ACCOUNT_CREATION: "/create-account",
 
   SIGNIN: "/signin",
-  GUIDE: "/guide",
 };
