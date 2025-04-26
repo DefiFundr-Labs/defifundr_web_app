@@ -4,7 +4,7 @@ export const AuthHeader = () => {
   return (
     <div className="flex items-center justify-between ">
       {/* <div className="text-xl">⚡</div> */}
-      <div className="text-xl">
+      <div className="text-xl text-black">
         <Logo />
       </div>
       {/* 

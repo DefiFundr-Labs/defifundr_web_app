@@ -8,16 +8,16 @@ import { LogoCollapsed } from "../../assets/svgs/svg";
 
 export default function AuthLayout() {
   return (
-    <div className="flex flex-col w-full min-h-screen bg-white dark:bg-gray-600 md:flex-row">
+    <div className="flex flex-col w-full min-h-screen bg-white md:flex-row">
       {/* Right side - Hero Section (hidden on mobile) */}
       <div className="relative hidden w-1/2 overflow-hidden md:flex">
         <AuthHero />
       </div>
       {/* Left side - Content Section */}
-      <div className="flex flex-col w-full md:w-1/2">
+      <div className="flex flex-col w-full bg-white md:w-1/2">
         <div className="p-6">
-          <div className="flex items-center justify-center w-12 h-12 bg-black rounded-lg dark:bg-primary-200 drop-shadow-md lg:hidden md:hidden">
-            <div className="">
+          <div className="flex items-center justify-center w-12 h-12 bg-black rounded-lg drop-shadow-md lg:hidden md:hidden">
+            <div className="text-white ">
               <LogoCollapsed />
             </div>
           </div>
