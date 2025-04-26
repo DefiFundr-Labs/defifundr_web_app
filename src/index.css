@@ -11,123 +11,7 @@ body {
 }
 @layer base {
   body {
-    @apply text-black transition-colors duration-200 bg-white font-hk;
-  }
-  .dark body {
-    @apply text-gray-100 bg-gray-600;
-  }
-  /* OTP Input Styling */
-  .otp-input {
-    @apply w-12 h-12 text-2xl font-medium text-center border rounded-lg shadow-sm sm:w-14 sm:h-14 focus:outline-none;
-
-    /* Default state - gray background style */
-    @apply text-black bg-gray-100 border-gray-150;
-
-    /* Filled state - keep gray background */
-    &.filled {
-      @apply text-black;
-    }
-
-    /* Focus state */
-    &:focus {
-      @apply border-primary-200 ring-1 ring-primary-200;
-    }
-
-    /* Dark mode styling */
-    .dark & {
-      @apply text-white bg-gray-500 border-gray-400;
-
-      &.filled {
-        @apply text-white;
-      }
-
-      &:focus {
-        @apply border-primary-300 ring-1 ring-primary-300;
-      }
-    }
-  }
-
-  /* Alternative red border style */
-  .otp-input-red {
-    @apply w-12 h-12 text-2xl font-medium text-center border-2 rounded-lg shadow-sm sm:w-14 sm:h-14 focus:outline-none;
-
-    /* Red border style */
-    @apply text-black bg-white border-warning;
-
-    /* Filled state */
-    &.filled {
-      @apply text-black;
-    }
-
-    /* Focus state */
-    &:focus {
-      @apply border-warning ring-1 ring-warning;
-    }
-
-    /* Dark mode styling */
-    .dark & {
-      @apply text-white bg-gray-600 border-warning;
-
-      &.filled {
-        @apply text-white;
-      }
-
-      &:focus {
-        @apply border-warning ring-1 ring-warning;
-      }
-    }
-  }
-
-  /* OTP with star symbols */
-  .otp-star {
-    @apply flex items-center justify-center;
-    font-size: 24px;
-  }
-
-  /* OTP timer/resend container */
-  .otp-resend-container {
-    @apply flex items-center justify-start border rounded-full w-fit p-2 px-3.5;
-    @apply border-gray-150;
-
-    /* Dark mode */
-    .dark & {
-      @apply border-gray-400;
-    }
-  }
-
-  /* Timer text */
-  .otp-timer {
-    @apply mr-2 text-sm font-medium text-gray-300;
-
-    /* Dark mode */
-    .dark & {
-      @apply text-gray-200;
-    }
-  }
-
-  /* Resend button */
-  .otp-resend-button {
-    @apply flex items-center justify-center px-3 py-1 text-sm font-medium rounded-full h-7;
-
-    /* Disabled state */
-    &:disabled {
-      @apply text-gray-300 bg-gray-100 cursor-not-allowed;
-
-      /* Dark mode disabled */
-      .dark & {
-        @apply text-gray-300 bg-gray-500;
-      }
-    }
-
-    /* Enabled state */
-    &:not(:disabled) {
-      @apply cursor-pointer text-primary-200 bg-primary-500;
-
-      /* Dark mode enabled */
-      .dark & {
-        @apply text-primary-200 bg-primary-400;
-      }
-    }
+    @apply text-black font-openrunde;
   }
 }
 @layer utilities {
@@ -153,192 +37,29 @@ body {
   }
 
   .button--primary {
-    @apply w-full text-white bg-gray-600 border-gray-600 sm:w-fit hover:bg-gray-600/90 hover:border-gray-600/90 focus:bg-gray-600 focus:border-gray-600;
-
-    /* Dark mode button styles */
-    .dark & {
-      @apply bg-primary-200 border-primary-200 hover:bg-primary-200/90 hover:border-primary-200/90 focus:bg-primary-200 focus:border-primary-200;
-    }
+    @apply w-full text-white bg-gray-600 border-gray-600 sm:w-fit hover:bg-gray-600/10 hover:border-gray-600/10 focus:bg-gray-600 focus:border-gray-600;
   }
 
   .button--secondary {
-    @apply w-full text-white bg-primary-200 sm:w-fit min-h-9 hover:bg-primary-200/90 focus:bg-primary-200;
-
-    /* Dark mode secondary button styles */
-    .dark & {
-      @apply bg-primary-300 hover:bg-primary-300/90 focus:bg-primary-300;
-    }
+    @apply w-full text-white bg-primary-200 sm:w-fit min-h-9 hover:bg-primary-200/10 focus:bg-primary-200;
   }
 
   .input {
-    @apply px-3.5 py-2.5 rounded-lg bg-gray-100 focus:border outline-none focus:border-primary-200;
-
-    /* Dark mode input styles */
-    .dark & {
-      @apply text-white bg-gray-500 focus:border-primary-300;
-    }
+    @apply px-3.5 py-2.5 rounded-lg bg-gray-100  focus:border outline-none focus:border-primary-200;
   }
-
-  /* Form Controls */
-  label {
-    @apply block mb-1 text-xs 2xs:text-sm;
+  /* .tag {
+    @apply flex w-fit rounded-full  py-2 px-3.5  gap-2 border font-medium text-sm;
   }
-
-  input[type="number"].appearance-none::-webkit-inner-spin-button,
-  input[type="number"].appearance-none::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+  .tag-primary {
+    @apply border-purple-100 bg-primary-100 text-primary-600;
   }
-
-  input[type="number"].appearance-none {
-    -moz-appearance: textfield;
+  .tag-secondary {
+    @apply text-purple-600 bg-purple-100 border-purple-300;
   }
-
-  .form-control {
-    input,
-    textarea {
-      @apply font-semibold text-[15px] px-3.5 bg-transparent rounded-lg border border-gray-200 focus:border-gray-500 outline-0 focus:ring-0;
-
-      /* Dark mode form input styles */
-      .dark & {
-        @apply text-white border-gray-400 focus:border-primary-300;
-      }
-    }
-
-    textarea {
-      @apply w-full text-[15px] py-2.5 placeholder:font-medium placeholder:text-sm placeholder:text-gray-300;
-
-      /* Dark mode textarea placeholder */
-      .dark & {
-        @apply placeholder:text-gray-300;
-      }
-    }
-
-    input:not([type="checkbox"]) {
-      @apply w-full h-11 2xs:h-13 placeholder:font-medium placeholder:text-sm placeholder:text-gray-300;
-
-      /* Dark mode input placeholder */
-      .dark & {
-        @apply placeholder:text-gray-300;
-      }
-
-      &.input-condensed {
-        @apply px-3 h-9 sm:text-[15px];
-      }
-
-      &:disabled {
-        @apply bg-gray-100 cursor-not-allowed;
-
-        /* Dark mode disabled input */
-        .dark & {
-          @apply bg-gray-500;
-        }
-      }
-    }
-
-    /* Custom Select Styling */
-    select,
-    .select {
-      @apply w-full text-[15px] bg-transparent border rounded-lg h-11 2xs:h-13 border-gray-200 focus:border-gray-500 focus:outline-0 focus:ring-0 appearance-none pl-3.5 pr-10 cursor-pointer relative;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%235A42DE' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 8px center;
-      background-size: 16px;
-
-      /* Dark mode select styles */
-      .dark & {
-        @apply text-white border-gray-400 focus:border-primary-300;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C2BAF3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-      }
-
-      /* Select hover state */
-      &:hover {
-        @apply border-gray-400;
-
-        .dark & {
-          @apply border-primary-400;
-        }
-      }
-
-      /* Focus state */
-      &:focus {
-        @apply border-primary-200;
-
-        .dark & {
-          @apply border-primary-300;
-        }
-      }
-
-      /* Disabled state */
-      &:disabled {
-        @apply bg-gray-100 cursor-not-allowed opacity-70;
-
-        .dark & {
-          @apply bg-gray-500;
-        }
-      }
-
-      /* Custom select options styling */
-      option {
-        @apply py-1 text-gray-600 bg-white;
-
-        .dark & {
-          @apply text-white bg-gray-500;
-        }
-      }
-    }
-
-    /* Custom select wrapper for more advanced styling if needed */
-    .select-wrapper {
-      @apply relative;
-
-      &::after {
-        @apply hidden; /* Hide default arrow in favor of our custom SVG */
-      }
-    }
-
-    &--checkbox {
-      @apply flex flex-wrap items-start gap-2;
-
-      input[type="checkbox"] {
-        @apply w-5 h-5 rounded cursor-pointer accent-primary-200 checked:bg-primary-200 focus:ring-primary-200 focus:ring-offset-white;
-
-        /* Dark mode checkbox */
-        .dark & {
-          @apply bg-gray-500 border-gray-400 text-primary-200 focus:ring-offset-gray-600;
-        }
-      }
-
-      input[type="radio"] {
-        @apply w-5 h-5 rounded-full cursor-pointer accent-primary-200 checked:bg-primary-200 focus:ring-primary-200 focus:ring-offset-white;
-
-        /* Dark mode radio */
-        .dark & {
-          @apply bg-gray-500 border-gray-400 text-primary-200 focus:ring-offset-gray-600;
-        }
-      }
-
-      label {
-        flex-basis: calc(100% - 30px);
-        @apply cursor-pointer;
-      }
-    }
-
-    &--invalid {
-      label {
-        @apply text-warning;
-      }
-
-      input,
-      textarea,
-      select,
-      .select {
-        @apply border-warning;
-      }
-
-      .error-message {
-        @apply mt-2 text-xs font-medium sm:text-sm text-warning;
-      }
-    }
+  .tag-tertiary {
+    @apply text-purple-600 bg-purple-600 border-purple-600;
   }
+  .tag-tertiary-white {
+    @apply text-purple-600 bg-white border-white;
+  } */
 }
