@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ConnectWallet } from "./ConnectWallet";
 
 import { EyeOff, EyeOn } from "../../assets/svg/svg";
+import { RoutePaths } from "../../routes/routesPath";
+import { Link } from "react-router-dom";
 
 export const SigninForm = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -75,12 +77,12 @@ export const SigninForm = () => {
           <p className="text-sm font-medium text-gray-400 dark:text-gray-200">
             New to DefiFundr?
             <span className="pl-2">
-              <a
-                href=""
+              <Link
+                to={RoutePaths.CREATE_ACCOUNT}
                 className="transition duration-300 ease-in-out text-primary-200 dark:text-primary-400"
               >
                 Create account
-              </a>
+              </Link>
             </span>
           </p>
         </div>

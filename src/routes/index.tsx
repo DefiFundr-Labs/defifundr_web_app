@@ -9,6 +9,7 @@ import { ResetPasswordOtp } from "../pages/auth/ResetpasswordOtp";
 import { ResetPassword } from "../pages/auth/ResetPassword";
 import { ForgotPassword } from "../pages/auth/forgotPassword";
 import { VerifyEmail } from "../pages/auth/verifyEmail";
+import CreateAccount from "../pages/auth/createAccount";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: "verify-email",
         element: <VerifyEmail />,
+      },
+      {
+        path: RoutePaths.CREATE_ACCOUNT,
+        element: <CreateAccount />,
       },
     ],
   },

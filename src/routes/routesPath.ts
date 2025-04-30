@@ -4,7 +4,8 @@ export const RoutePaths = {
 
   VERIFY_EMAIL: "/verify-email",
 
-  ACCOUNT_CREATION: "/create-account",
+  // ACCOUNT_CREATION: "/create-account",
+  CREATE_ACCOUNT: "/auth/create-account",
 
   SIGNIN: "/signin",
   RESET_PASSWORD: "/reset-password",
