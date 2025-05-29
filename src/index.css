@@ -52,7 +52,7 @@ body {
     @apply w-12 h-12 text-2xl font-medium text-center border-2 rounded-lg shadow-sm sm:w-14 sm:h-14 focus:outline-none;
 
     /* Red border style */
-    @apply text-black bg-white border-warning;
+    @apply text-black bg-white border-error-500;
 
     /* Filled state */
     &.filled {
@@ -61,19 +61,19 @@ body {
 
     /* Focus state */
     &:focus {
-      @apply border-warning ring-1 ring-warning;
+      @apply border-error-500 ring-1 ring-error-500;
     }
 
     /* Dark mode styling */
     .dark & {
-      @apply text-white bg-gray-600 border-warning;
+      @apply text-white bg-gray-600 border-error-500;
 
       &.filled {
         @apply text-white;
       }
 
       &:focus {
-        @apply border-warning ring-1 ring-warning;
+        @apply border-error-500 ring-1 ring-error-500;
       }
     }
   }
@@ -328,19 +328,23 @@ body {
 
     &--invalid {
       label {
-        @apply text-warning;
+        @apply text-error-500;
       }
 
       input,
       textarea,
       select,
       .select {
-        @apply border-warning;
+        @apply border-error-500;
       }
 
       .error-message {
-        @apply mt-2 text-xs font-medium sm:text-sm text-warning;
+        @apply mt-2 text-xs font-medium sm:text-sm text-error-500;
       }
     }
+  }
+
+  .rectangle {
+    @apply absolute bg-primary-200 shadow-rectangle border-[3.25195px] border-white/50 rotate-[-27.72deg] w-[317.61px] h-[755.35px] -z-1;
   }
 }

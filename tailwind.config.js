@@ -55,18 +55,20 @@ export default {
         current: "currentColor", // and this…
         white: colors.white, // tenant's white colour
         black: "#000000", // tenant's darkest grey
-        warning: "#C64242", // tenant's warning colour
+        // warning: "#C64242", // tenant's warning colour
         gray: {
           50: "#FFFFFF",
           100: "#F5F6F7",
           150: "#DCE0E5",
           200: "#BDC5D1",
+          250: "#2E2E38",
           300: "#7F8C9F",
           400: "#414F62",
           500: "#17171C",
           600: "#0E0E11",
         },
         primary: {
+          50: "#1B1737",
           100: "#2A188B",
           200: "#5A42DE",
           300: "#8674E7",
@@ -74,6 +76,29 @@ export default {
           500: "#E8E5FA",
         },
         secondary: "#A42600",
+        success: {
+          500: "#26902B",
+          400: "#173719",
+          300: "#EDFEEC",
+        },
+
+        error: {
+          500: "#C64242",
+          400: "#FEECEC",
+          300: "#371717",
+        },
+
+        warning: {
+          500: "#E79A23",
+          400: "#372A17",
+          300: "#FEF7EB",
+        },
+
+        info: {
+          500: "#EBF2FF",
+          400: "#172337",
+          300: "#387DF4",
+        },
       },
       lineHeight: {
         DEFAULT: "1.5",
@@ -101,6 +126,13 @@ export default {
         75: "18.75rem",
         114: "28.5rem",
         125: "31.25rem",
+      },
+      boxShadow: {
+        rectangle: "-32.5195px 32.5195px 54.1992px rgba(0, 0, 0, 0.25)",
+      },
+      backgroundImage: {
+        gradientRectangle:
+          "linear-gradient(247.18deg,rgba(17, 2, 101, 0.4) 0%,rgba(3, 33, 81, 0) 99.4%)",
       },
     },
   },

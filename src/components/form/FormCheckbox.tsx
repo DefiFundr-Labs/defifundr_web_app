@@ -25,7 +25,7 @@ const FormCheckbox = ({
           id={id}
           className={
             "border-2 rounded appearance-none size-5 peer checked:border-0 checked:bg-primary-200 " +
-            (hasError ? "border-warning" : "border-gray-150")
+            (hasError ? "border-error-500" : "border-gray-150")
           }
           {...register(id)}
         />

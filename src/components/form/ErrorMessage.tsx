@@ -10,7 +10,7 @@ const ErrorMessage = ({
   return (
     <p
       className={
-        "absolute -bottom-5 break-words text-xs font-medium text-warning transition-opacity duration-200 " +
+        "absolute -bottom-5 break-words text-xs font-medium text-error-500 transition-opacity duration-200 " +
         (isVisible ? "opacity-100" : "opacity-0")
       }
     >

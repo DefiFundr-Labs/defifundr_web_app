@@ -144,7 +144,7 @@ function OtpInput({ control, error }: OtpInputProps) {
                 `otp-input  peer dark:!bg-gray-500  ${
                   mask[index] == true ? "filled text-transparent  " : ""
                 } !placeholder:font-bold !placeholder:text-5xl ` +
-                (hasError ? "!border-warning " : "!border-none ")
+                (hasError ? "!border-error-500 " : "!border-none ")
               }
             />
             <div

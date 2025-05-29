@@ -1,5 +1,8 @@
+import TeamContracts from "./teamContracts";
+
 const home = () => {
-  return <div>home</div>;
+  return <TeamContracts />;
+  // <div>home</div>;
 };
 
 export default home;

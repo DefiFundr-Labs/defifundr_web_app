@@ -24,7 +24,7 @@ const FormInput = <T extends FieldValues>({
         type={type}
         placeholder={placeholder}
         aria-invalid={error ? "true" : "false"}
-        className={(hasError ? "!border-warning " : "") + className}
+        className={(hasError ? "!border-error-500 " : "") + className}
         required={required}
         {...register(id)}
       />
