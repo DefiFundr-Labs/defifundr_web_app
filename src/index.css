@@ -249,7 +249,7 @@ body {
 
       /* Dark mode select styles */
       .dark & {
-        @apply text-gray-300 border-gray-400 bg-gray-500 focus:border-primary-300;
+        @apply text-gray-300 bg-gray-500 border-gray-400 focus:border-primary-300;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23C2BAF3' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
       }
 
@@ -282,7 +282,7 @@ body {
 
       /* Custom select options styling */
       option {
-        @apply py-1 text-black bg-white text-sm;
+        @apply py-1 text-sm text-black bg-white;
 
         .dark & {
           @apply text-white bg-gray-300;

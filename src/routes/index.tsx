@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { RoutePaths } from "./routesPath";
 import AuthLayout from "../layout/auth";
+import DashboardLayout from "../layout/dashboard";
 import SignIn from "../pages/auth/signin";
 import Guide from "../pages/guide";
 import GuestLayout from "../layout/guest";
@@ -11,10 +12,11 @@ import { ResetPassword } from "../pages/auth/ResetPassword";
 import { VerifyEmail } from "../pages/auth/verifyEmail";
 import { ResetPasswordOtp } from "../pages/auth/ResetpasswordOtp";
 import { CreatePassword } from "../pages/auth/CreatePassword";
-
 import { CreateBusinessDetail } from "../pages/auth/createBusinessDetails";
-
 import SelectAccountType from "../pages/auth/selectAccountType";
+
+// Dashboard page components (you'll need to create these)
+import Dashboard from "../pages/dashboard/home";
 
 export const router = createBrowserRouter([
   {
@@ -30,12 +32,10 @@ export const router = createBrowserRouter([
         path: RoutePaths.SIGNIN,
         element: <SignIn />,
       },
-
       {
         path: RoutePaths.CREATE_PASSWORD,
         element: <CreatePassword />,
       },
-
       {
         path: RoutePaths.FORGOT_PASSWORD,
         element: <ForgotPassword />,
@@ -66,9 +66,21 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
+  {
+    path: "/dashboard",
+    element: <DashboardLayout />, // Dashboard layout for protected pages
+    children: [
+      {
+        index: true, // This makes /dashboard render the Dashboard component
+        element: <Dashboard />,
+      },
+    ],
+  },
+
   {
     path: "/",
-    element: <GuestLayout />, // Separate layout for authentication pages
+    element: <GuestLayout />, // Separate layout for guest pages
     children: [
       {
         path: "guide",
