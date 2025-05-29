@@ -14,4 +14,12 @@ export const RoutePaths = {
   CREATE_PASSWORD: "/auth/create-password",
   SELECT_ACCOUNT_TYPE: "/auth/onboarding/select-account-type",
   GUIDE: "/guide",
+
+  // Dashboard and main navigation routes
+  DASHBOARD: "/dashboard",
+  TEAM_CONTRACTS: "/team-contracts",
+  PAYROLL: "/payroll",
+  INVOICES: "/invoices",
+  BUSINESS: "/business",
+  SETTINGS: "/settings",
 };
