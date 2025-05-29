@@ -36,17 +36,17 @@ export default function Header({ toggleSidebar, isOpen }: HeaderProps) {
           aria-label="Toggle Sidebar"
         >
           <span
-            className={`block h-0.5 w-6 bg-black transition-all duration-300 ease-in-out ${
+            className={`block h-0.5 w-6 dark:bg-white bg-black transition-all duration-300 ease-in-out ${
               isOpen ? "rotate-45 translate-y-[3px]" : "mb-1"
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-black transition-all duration-300 ease-in-out ${
+            className={`block h-0.5 w-6 dark:bg-white bg-black transition-all duration-300 ease-in-out ${
               isOpen ? "opacity-0" : "mb-1"
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-black transition-all duration-300 ease-in-out ${
+            className={`block h-0.5 w-6 dark:bg-white bg-black transition-all duration-300 ease-in-out ${
               isOpen ? "-rotate-45 -translate-y-[3px]" : ""
             }`}
           />

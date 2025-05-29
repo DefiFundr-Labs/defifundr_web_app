@@ -80,8 +80,8 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
               className="flex flex-col items-center lg:hidden"
               aria-label="Toggle Sidebar"
             >
-              <span className="block rotate-45 translate-y-0.5 h-0.5 w-5 bg-black transition-all duration-300 ease-in-out" />
-              <span className="block -rotate-45 -translate-y-0.5 h-0.5 w-5 bg-black transition-all duration-300 ease-in-out" />
+              <span className="block rotate-45 translate-y-0.5 h-0.5 w-5 dark:bg-white bg-black transition-all duration-300 ease-in-out" />
+              <span className="block -rotate-45 -translate-y-0.5 h-0.5 w-5 dark:bg-white bg-black transition-all duration-300 ease-in-out" />
             </div>
           </button>
         </div>
