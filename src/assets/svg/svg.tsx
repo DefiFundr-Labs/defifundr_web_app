@@ -2843,19 +2843,19 @@ export const BellIcon = () => (
   >
     <path
       d="M8 4.29297V6.51297"
-      stroke="#414F62"
+      stroke="currentColor"
       strokeMiterlimit={10}
       strokeLinecap="round"
     />
     <path
       d="M8.01327 1.33301C5.55993 1.33301 3.57327 3.31967 3.57327 5.77301V7.17301C3.57327 7.62634 3.3866 8.30634 3.15327 8.69301L2.3066 10.1063C1.7866 10.9797 2.1466 11.953 3.1066 12.273C6.29326 13.333 9.73993 13.333 12.9266 12.273C13.8266 11.973 14.2133 10.9197 13.7266 10.1063L12.8799 8.69301C12.6466 8.30634 12.4599 7.61967 12.4599 7.17301V5.77301C12.4533 3.33301 10.4533 1.33301 8.01327 1.33301Z"
-      stroke="#414F62"
+      stroke="currentColor"
       strokeMiterlimit={10}
       strokeLinecap="round"
     />
     <path
       d="M10.2199 12.5469C10.2199 13.7669 9.21991 14.7669 7.99991 14.7669C7.39324 14.7669 6.83324 14.5135 6.43324 14.1135C6.03324 13.7135 5.77991 13.1535 5.77991 12.5469"
-      stroke="#414F62"
+      stroke="currentColor"
       strokeMiterlimit={10}
     />
   </svg>
@@ -3605,6 +3605,37 @@ export const DollarCircle = () => (
       d="M19.9987 37.1663C29.2034 37.1663 36.6654 29.7044 36.6654 20.4997C36.6654 11.2949 29.2034 3.83301 19.9987 3.83301C10.794 3.83301 3.33203 11.2949 3.33203 20.4997C3.33203 29.7044 10.794 37.1663 19.9987 37.1663Z"
       stroke="currentColor"
       strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const UnlinkIcon = () => (
+  <svg
+    width={24}
+    height={24}
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.99 17.5H16.5C19.52 17.5 22 15.03 22 12C22 8.98 19.53 6.5 16.5 6.5H14.99"
+      stroke="#C64242"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9 6.5H7.5C4.47 6.5 2 8.97 2 12C2 15.02 4.47 17.5 7.5 17.5H9"
+      stroke="#C64242"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8 12H16"
+      stroke="#C64242"
+      strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
     />

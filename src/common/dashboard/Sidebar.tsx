@@ -1,22 +1,26 @@
-import { Link, useMatch, useNavigate, useResolvedPath } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import type { FC } from "react";
 import { sidebarRoutes } from "./SidebarItems";
 import { SidebarLinkProps, SidebarProps } from "../../types/common";
 import { Logo } from "../../assets/svg/svg";
 import { RoutePaths } from "../../routes/routesPath";
+import ConnectWallet from "./ConnectWallet";
 
 const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
+  const location = useLocation();
+
   const SidebarLink: FC<SidebarLinkProps> = ({
     to,
     icon,
     name,
     toggleSidebar,
   }) => {
-    const resolvedPath = useResolvedPath(to);
-    const isActive = useMatch({
-      path: `${resolvedPath.pathname}/*`,
-      end: true,
-    });
+    // For exact matching, compare the pathname directly
+    // For dashboard root, only match when pathname is exactly "/dashboard"
+    const isActive =
+      to === RoutePaths.DASHBOARD
+        ? location.pathname === RoutePaths.DASHBOARD
+        : location.pathname === to;
 
     return (
       <li className="w-full">
@@ -89,7 +93,7 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         {/* Scrollable content area */}
         <div className="flex flex-col justify-between flex-1 min-h-0 gap-8 mt-8 pb-7">
           {/* This div will be scrollable */}
-          <div className="flex-1 overflow-y-auto scrollbar-hide px-[14px]">
+          <div className="flex-1 px-4 overflow-y-auto scrollbar-hide">
             {/* Main Menu header */}
             <div className="px-4 pt-4 pb-2">
               <p className="text-xs font-medium text-gray-300">MENU</p>
@@ -107,16 +111,20 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
               ))}
             </ul>
           </div>
-
-          {/* Footer section - fixed at bottom */}
-          <div className="w-full px-[14px]">
-            <button
-              onClick={handleLogout}
-              className="hover:cursor-pointer text-dark font-medium text-xs h-[38px] py-2.5 hover:text-primary transition ease-in duration-200 px-3 flex items-center gap-3 mb-11"
-            >
-              {/* <LogOutIcon /> */}
-              Logout
-            </button>
+          <div className="flex flex-col mt-auto">
+            <div className="w-full px-4">
+              <ConnectWallet />
+            </div>
+            {/* Footer section - fixed at bottom */}
+            <div className="w-full px-4">
+              <button
+                onClick={handleLogout}
+                className="hover:cursor-pointer text-dark font-medium text-xs h-[38px] py-2.5 hover:text-primary transition ease-in duration-200 px-3 flex items-center gap-3 mb-11"
+              >
+                {/* <LogOutIcon /> */}
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       </div>

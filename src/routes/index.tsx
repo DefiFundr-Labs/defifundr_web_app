@@ -15,8 +15,9 @@ import { CreatePassword } from "../pages/auth/CreatePassword";
 import { CreateBusinessDetail } from "../pages/auth/createBusinessDetails";
 import SelectAccountType from "../pages/auth/selectAccountType";
 
-// Dashboard page components (you'll need to create these)
+// Dashboard page components
 import Dashboard from "../pages/dashboard/home";
+import TeamContracts from "../pages/dashboard/teamContracts";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +75,10 @@ export const router = createBrowserRouter([
       {
         index: true, // This makes /dashboard render the Dashboard component
         element: <Dashboard />,
+      },
+      {
+        path: "team-contracts", // This creates /dashboard/team-contracts
+        element: <TeamContracts />,
       },
     ],
   },

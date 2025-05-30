@@ -2,6 +2,7 @@ import { BellIcon, FoxIcon } from "../../assets/svg/svg";
 import { useForm } from "react-hook-form";
 import { SearchIcon } from "../../assets/svg/svg";
 import FormInputWithIcon from "../../components/form/FormInputWithIcon";
+import ConnectWalletHeader from "./ConnectWalletHeader";
 
 interface HeaderProps {
   toggleSidebar: () => void;
@@ -29,7 +30,7 @@ export default function Header({ toggleSidebar, isOpen }: HeaderProps) {
 
   return (
     <>
-      <div className="flex items-center gap-4 lg:hidden absolute top-6 right-6 z-10 rounded-xl border border-gray-200 dark:border-[#2E2E38] p-3">
+      <div className="flex items-center gap-4 lg:hidden absolute top-6 right-6 z-50 rounded-xl border border-gray-200 dark:border-[#2E2E38] p-3">
         <button
           className="flex flex-col items-center justify-center w-6 h-6"
           onClick={toggleSidebar}
@@ -52,7 +53,7 @@ export default function Header({ toggleSidebar, isOpen }: HeaderProps) {
           />
         </button>
       </div>
-      <div className="sticky top-0 md:block hidden z-10 w-full px-6 py-4 border-b border-gray-150 dark:border-[#2E2E38] lg:py-2 min-h-18">
+      <div className="sticky top-0 lg:block hidden z-10 w-full px-6 py-4 border-b border-gray-150 dark:border-[#2E2E38] lg:py-2 min-h-18">
         <div className="flex items-center justify-between h-full">
           <div className="relative flex-1 hidden mx-4 max-w-2xs md:block">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -73,15 +74,15 @@ export default function Header({ toggleSidebar, isOpen }: HeaderProps) {
             {/* Search bar */}
 
             {/* Notifications */}
-            <button className="relative p-2">
-              <BellIcon />
-              <span className="absolute w-2 h-2 rounded-full bg-primary-300 top-1 right-1"></span>
+            <button className="relative flex items-center justify-center w-10 h-10 p-2 border border-gray-200 rounded-full">
+              <div className="relative">
+                <BellIcon />
+                <span className="absolute right-0 w-2 h-2 rounded-full -top-0.5 bg-primary-300"></span>
+              </div>
             </button>
 
             {/* User profile */}
-            <div className="w-8 h-8 rounded-full bg-[#F2F4F7] flex items-center justify-center">
-              <FoxIcon />
-            </div>
+            <ConnectWalletHeader />
           </div>
         </div>
       </div>

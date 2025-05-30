@@ -17,9 +17,9 @@ export const RoutePaths = {
 
   // Dashboard and main navigation routes
   DASHBOARD: "/dashboard",
-  TEAM_CONTRACTS: "/team-contracts",
-  PAYROLL: "/payroll",
-  INVOICES: "/invoices",
-  BUSINESS: "/business",
-  SETTINGS: "/settings",
+  TEAM_CONTRACTS: "/dashboard/team-contracts",
+  PAYROLL: "/dashboard/payroll",
+  INVOICES: "/dashboard/invoices",
+  BUSINESS: "/dashboard/business",
+  SETTINGS: "/dashboard/settings",
 };
