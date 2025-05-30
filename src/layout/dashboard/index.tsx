@@ -17,7 +17,7 @@ export default function DashboardLayout() {
       <div className="flex-1 flex flex-col lg:ml-[230px] w-full">
         <Header isOpen={isOpen} toggleSidebar={toggleSidebar} />
 
-        <div className="flex-1 w-full px-5 pt-2 pb-5 overflow-auto">
+        <div className="relative flex-1 w-full pt-2 pb-5 overflow-auto">
           <Outlet />
         </div>
       </div>

@@ -28,7 +28,7 @@ const TeamContracts = () => {
             exit="exit"
             variants={variants}
             transition={{ duration: 0.3 }}
-            className="flex-1 flex flex-col space-y-4"
+            className="flex flex-col flex-1 space-y-4"
           >
             <Contracts />
           </motion.div>
@@ -42,7 +42,7 @@ const TeamContracts = () => {
             exit="exit"
             variants={variants}
             transition={{ duration: 0.3 }}
-            className="flex-1 flex flex-col space-y-4"
+            className="flex flex-col flex-1 space-y-4"
           >
             <Employees />
           </motion.div>
@@ -53,14 +53,14 @@ const TeamContracts = () => {
   };
 
   return (
-    <div className="flex-1 flex flex-col ">
+    <div className="flex flex-col flex-1 ">
       {/* // <div className=" flex flex-col h-[inherit] relative"> */}
-      <section className="sticky top-0 z-20 pt-6 border-gray-150 dark:border-gray-250 border-b px-4 bg-white dark:bg-transparent">
-        <div className="mb-3 flex items-center  justify-between text-white">
+      <section className="sticky top-0 px-4 pt-6 bg-white border-b z-5 border-gray-150 dark:border-gray-250 dark:bg-transparent">
+        <div className="flex items-center justify-between mb-3 text-white">
           <span>
-            <p className="text-gray-300 font-medium text-xs mb-1">Overview</p>
+            <p className="mb-1 text-xs font-medium text-gray-300">Overview</p>
 
-            <h1 className="font-bold text-4xl text-gray-600 dark:text-white">
+            <h1 className="text-4xl font-bold text-gray-600 dark:text-white">
               Team Contracts
             </h1>
           </span>
@@ -83,7 +83,7 @@ const TeamContracts = () => {
         />
       </section>
       <AnimatePresence mode="wait">
-        <div className="p-4 space-y-4  h-full flex-1 w-full flex flex-col">
+        <div className="flex flex-col flex-1 w-full h-full p-4 space-y-4">
           {((selectedTab === detailsTab[0] && contractsData.length === 0) ||
             selectedTab === detailsTab[1]) && (
             <motion.div
@@ -93,18 +93,18 @@ const TeamContracts = () => {
               exit="exit"
               variants={variants}
               transition={{ duration: 0.3 }}
-              className="p-6 lg:p-8 relative rounded-lg bg-primary-200 backdrop-blur-xs overflow-hidden "
+              className="relative p-6 overflow-hidden rounded-lg lg:p-8 bg-primary-200 backdrop-blur-xs "
             >
               <div>
-                <p className="text-2xl lg:text-3xl font-bold mb-2 text-white">
+                <p className="mb-2 text-2xl font-bold text-white lg:text-3xl">
                   Create your first contract{" "}
                 </p>
-                <p className="font-medium text-sm text-primary-500 mb-7">
+                <p className="text-sm font-medium text-primary-500 mb-7">
                   You're one step away! Set up your first contract and start
                   managing payroll.
                 </p>
 
-                <button className="h-10 rounded-full flex  items-center px-4 text-primary-200 bg-white font-medium text-sm">
+                <button className="flex items-center h-10 px-4 text-sm font-medium bg-white rounded-full text-primary-200">
                   New contract
                 </button>
               </div>
@@ -117,11 +117,11 @@ const TeamContracts = () => {
                 <div className="rectangle left-[39%] xl:left-[33%] top-[71.21px]"></div>
                 <div className="rectangle left-[43%] top-[-14.19px]"></div>
               </div>
-              <div className="inset-0 -z-1 absolute inset-0  bg-gradient-rectangle"></div>
+              <div className="absolute inset-0 -z-1 bg-gradient-rectangle"></div>
             </motion.div>
           )}
 
-          <section className=" flex flex-col flex-1 overflow-hidden">
+          <section className="flex flex-col flex-1 overflow-hidden ">
             {renderContent()}
           </section>
         </div>
