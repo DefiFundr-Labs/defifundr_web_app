@@ -17,6 +17,8 @@ import SelectAccountType from "../pages/auth/selectAccountType";
 
 // Dashboard page components
 import Dashboard from "../pages/dashboard/home";
+import Contract from "../pages/dashboard/contract";
+import CreateCompliance from "../pages/dashboard/contract/CreateCompliance";
 import TeamContracts from "../pages/dashboard/teamContracts";
 
 export const router = createBrowserRouter([
@@ -77,8 +79,12 @@ export const router = createBrowserRouter([
         element: <Dashboard />,
       },
       {
-        path: "team-contracts", // This creates /dashboard/team-contracts
-        element: <TeamContracts />,
+        path: "contract",
+        element: <Contract />,
+      },
+      {
+        path: "create-compliance",
+        element: <CreateCompliance />,
       },
     ],
   },

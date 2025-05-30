@@ -3178,6 +3178,275 @@ export const SearchIcon = () => (
     />
   </svg>
 );
+export const ArrowDownIcon = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.6004 7.45898L11.1671 12.8923C10.5254 13.534 9.47539 13.534 8.83372 12.8923L3.40039 7.45898"
+      stroke="#7F8C9F"
+      strokeWidth="1.25"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const NotebookIcon = () => (
+  <svg
+    width={28}
+    height={28}
+    viewBox="0 0 28 28"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M9.33203 2.33301V5.83301"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M18.668 2.33301V5.83301"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8.16797 15.167H17.5013"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8.16797 19.833H14.0013"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M24.5 14.583V11.258C24.5 5.77467 22.5517 4.29301 18.6667 4.08301H9.33333C5.44833 4.30467 3.5 5.77467 3.5 11.258V18.468C3.5 23.2747 4.66667 25.678 10.5 25.678H14"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M22.4116 18.3638L18.2815 22.4939C18.1182 22.6572 17.9665 22.9605 17.9315 23.1822L17.7099 24.7572C17.6282 25.3288 18.0249 25.7255 18.5966 25.6438L20.1715 25.4222C20.3932 25.3872 20.7082 25.2355 20.8599 25.0722L24.9899 20.9422C25.7015 20.2305 26.0399 19.4022 24.9899 18.3522C23.9515 17.3138 23.1232 17.6522 22.4116 18.3638Z"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M21.8164 18.959C22.1664 20.219 23.1464 21.199 24.4064 21.549"
+      stroke="currentColor"
+      strokeWidth="1.75"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const BriefcaseIcon = () => (
+  <svg
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.33387 14.6667H10.6672C13.3472 14.6667 13.8272 13.5933 13.9672 12.2867L14.4672 6.95333C14.6472 5.32667 14.1805 4 11.3339 4H4.6672C1.82054 4 1.35387 5.32667 1.53387 6.95333L2.03387 12.2867C2.17387 13.5933 2.65387 14.6667 5.33387 14.6667Z"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.33203 3.99967V3.46634C5.33203 2.28634 5.33203 1.33301 7.46536 1.33301H8.53203C10.6654 1.33301 10.6654 2.28634 10.6654 3.46634V3.99967"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.33464 8.66667V9.33333C9.33464 9.34 9.33464 9.34 9.33464 9.34667C9.33464 10.0733 9.32797 10.6667 8.0013 10.6667C6.6813 10.6667 6.66797 10.08 6.66797 9.35333V8.66667C6.66797 8 6.66797 8 7.33464 8H8.66797C9.33464 8 9.33464 8 9.33464 8.66667Z"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14.432 7.33301C12.892 8.45301 11.132 9.11967 9.33203 9.34634"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M1.74609 7.5127C3.24609 8.53936 4.93943 9.15936 6.66609 9.35269"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const CalendarIcon = () => (
+  <svg
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.3335 1.33301V3.33301"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.6665 1.33301V3.33301"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2.3335 6.05957H13.6668"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14 5.66634V11.333C14 13.333 13 14.6663 10.6667 14.6663H5.33333C3 14.6663 2 13.333 2 11.333V5.66634C2 3.66634 3 2.33301 5.33333 2.33301H10.6667C13 2.33301 14 3.66634 14 5.66634Z"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.99715 9.13314H8.00314"
+      stroke="#7F8C9F"
+      strokeWidth="1.33333"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.52938 9.13314H5.53537"
+      stroke="#7F8C9F"
+      strokeWidth="1.33333"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.52938 11.1331H5.53537"
+      stroke="#7F8C9F"
+      strokeWidth="1.33333"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const ClockIcon = () => (
+  <svg
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.6668 7.99967C14.6668 11.6797 11.6802 14.6663 8.00016 14.6663C4.32016 14.6663 1.3335 11.6797 1.3335 7.99967C1.3335 4.31967 4.32016 1.33301 8.00016 1.33301C11.6802 1.33301 14.6668 4.31967 14.6668 7.99967Z"
+      stroke="#7F8C9F"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.4734 10.1202L8.40675 8.88684C8.04675 8.6735 7.75342 8.16017 7.75342 7.74017V5.00684"
+      stroke="#7F8C9F"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const SmallNotePadIcon = () => (
+  <svg
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.33301 1.33301V3.33301"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.667 1.33301V3.33301"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.66699 8.66699H10.0003"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.66699 11.333H8.00033"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14 8.33301V6.43301C14 3.29967 12.8867 2.45301 10.6667 2.33301H5.33333C3.11333 2.45967 2 3.29967 2 6.43301V10.553C2 13.2997 2.66667 14.673 6 14.673H8"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.8075 10.4933L10.4475 12.8534C10.3542 12.9467 10.2675 13.12 10.2475 13.2467L10.1208 14.1467C10.0742 14.4733 10.3008 14.7 10.6275 14.6533L11.5275 14.5267C11.6542 14.5067 11.8342 14.42 11.9208 14.3267L14.2808 11.9667C14.6875 11.56 14.8808 11.0867 14.2808 10.4867C13.6875 9.89334 13.2142 10.0867 12.8075 10.4933Z"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.4678 10.833C12.6678 11.553 13.2278 12.113 13.9478 12.313"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
 export const EmptyStateIcon = () => (
   <svg
