@@ -33,7 +33,7 @@ const FormPasswordInput = <T extends FieldValues>({
           {...register(id)}
           aria-invalid={error ? "true" : "false"}
           required={required}
-          className={(hasError ? "!border-warning " : "") + className}
+          className={(hasError ? "!border-error-500 " : "") + className}
         />
         <div>
           <button

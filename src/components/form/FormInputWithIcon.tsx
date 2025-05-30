@@ -30,7 +30,7 @@ const FormInputWithIcon = <T extends FieldValues>({
   const { message, hasError } = useFormError(error, touched);
 
   const inputClasses = `
-    ${hasError ? "!border-warning " : ""}
+    ${hasError ? "!border-error-500 " : ""}
     ${leftIcon ? "pl-10 " : ""}
     ${rightIcon ? "pr-10 " : ""}
     ${className}

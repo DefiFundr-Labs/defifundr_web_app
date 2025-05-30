@@ -23,7 +23,7 @@ const FormSelectInput = <T extends FieldValues>({
         className={
           "invalid:!text-red-200 " +
           className +
-          (hasError ? " !border-warning " : "")
+          (hasError ? " !border-error-500 " : "")
         }
         {...register(id)}
       >
