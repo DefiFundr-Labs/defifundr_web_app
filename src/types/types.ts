@@ -58,3 +58,12 @@ export interface FormPrivacyProps<T extends FieldValues> {
   error?: FieldError;
   touched?: boolean;
 }
+export interface DashBoardTitleHeaderProps {
+  title: string;
+  isBackButton?: boolean;
+  isTabs?: boolean;
+  tabs?: string[];
+  selectedTab?: string;
+  setSelectedTab?: (tab: string) => void;
+  isAddButton?: boolean;
+}
