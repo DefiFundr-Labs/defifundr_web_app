@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { CalendarIcon, EditNoteIcon } from "../../../assets/svg/svg";
 
 interface ContractCardProps {
@@ -24,19 +25,27 @@ const ContractCard = ({ amount, period, status, title }: ContractCardProps) => {
   };
 
   let statusColor = getColor();
+  const navigate = useNavigate();
+  const handleOnCardClick = () => {
+    // Handle card click logic here, e.g., navigate to contract details
+    navigate("/dashboard/team-contract");
+  };
 
   return (
-    <div className="bg-white dark:bg-gray-600 rounded-lg p-4 space-y-4">
+    <div
+      onClick={handleOnCardClick}
+      className="p-4 space-y-4 bg-white rounded-lg cursor-pointer dark:bg-gray-600"
+    >
       <div className="flex items-center justify-between">
         <div className="rounded-lg p-2.5 bg-primary-500 dark:bg-primary-50 text-primary-200 dark:text-primary-400">
           <EditNoteIcon />
         </div>
-        <p className="text-sm text-gray-600 dark:text-gray-150 font-semibold">
+        <p className="text-sm font-semibold text-gray-600 dark:text-gray-150">
           USD {amount.toLocaleString()}
         </p>
       </div>
 
-      <p className="text-gray-600 font-semibold mb-2 dark:text-gray-150">
+      <p className="mb-2 font-semibold text-gray-600 dark:text-gray-150">
         {title}
       </p>
 
@@ -45,15 +54,15 @@ const ContractCard = ({ amount, period, status, title }: ContractCardProps) => {
           <CalendarIcon />
         </span>
 
-        <p className="text-gray-300 dark:text-gray-300 font-medium text-xs">
+        <p className="text-xs font-medium text-gray-300 dark:text-gray-300">
           {period}
         </p>
       </div>
 
       <hr className="my-4 text-gray-150 dark:text-gray-250" />
 
-      <div className="flex justify-between items-center">
-        <p className="text-gray-600 dark:text-gray-150 text-sm font-semibold">
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-semibold text-gray-600 dark:text-gray-150">
           Fixed rate
         </p>
 

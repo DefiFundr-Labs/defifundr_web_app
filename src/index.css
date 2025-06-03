@@ -164,9 +164,17 @@ body {
   .button--secondary {
     @apply w-full text-white bg-primary-200 sm:w-fit min-h-9 hover:bg-primary-200/90 focus:bg-primary-200;
 
-    /* Dark mode secondary button styles */
+    /* Dark mode outline button styles */
     .dark & {
       @apply bg-primary-300 hover:bg-primary-300/90 focus:bg-primary-300;
+    }
+  }
+  .button--outline {
+    @apply w-full text-gray-600 bg-transparent border border-gray-600 sm:w-fit min-h-9 hover:bg-gray-200/12 focus:bg-gray-200/20;
+
+    /* Dark mode outline button styles */
+    .dark & {
+      @apply text-gray-100 bg-transparent border border-gray-100 hover:bg-gray-200/12 focus:bg-gray-200/20;
     }
   }
 
