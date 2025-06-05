@@ -1,9 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Contracts from "../../components/dashboard/contracts/Contracts";
-import Employees from "../../components/dashboard/contracts/Employees";
+import Employees from "../../components/dashboard/employees/Employees";
+import { Plus } from "lucide-react";
+import Tabs from "../../components/dashboard/Tabs";
 import { contractsData } from "../../utils/constant";
 import TitleHeader from "../../common/dashboard/TitleHeader";
+import { employees } from "../../data/EmployeeData";
 
 const detailsTab = ["Contracts", "Employees"];
 
@@ -67,6 +70,7 @@ const TeamContracts = () => {
           <button
             className={
               "hidden lg:flex items-center rounded-full bg-primary-200 h-10 gap-1 px-4 transform-all ease-linear  " +
+              "hidden lg:flex items-center rounded-full bg-primary-200 h-10 gap-1 px-4 transform-all ease-linear " +
               (selectedTab === detailsTab[0] ? "opacity-100" : "opacity-0")
             }
           >
@@ -93,7 +97,7 @@ const TeamContracts = () => {
       <AnimatePresence mode="wait">
         <div className="flex flex-col flex-1 w-full h-full p-4 space-y-4">
           {((selectedTab === detailsTab[0] && contractsData.length === 0) ||
-            selectedTab === detailsTab[1]) && (
+            selectedTab === detailsTab[1]) && employees.length === 0 && (
             <motion.div
               key="employees"
               initial="initial"
