@@ -106,3 +106,4 @@ export const contractsData = [
     status: "Completed",
   },
 ];
+ 

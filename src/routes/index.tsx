@@ -18,9 +18,10 @@ import SelectAccountType from "../pages/auth/selectAccountType";
 // Dashboard page components
 import Dashboard from "../pages/dashboard/home";
 import Contract from "../pages/dashboard/contract";
-import CreateCompliance from "../pages/dashboard/contract/createCompliance";
+// import CreateCompliance from "../pages/dashboard/contract/createCompliance";
 import TeamContracts from "../pages/dashboard/teamContracts";
-import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
+import EmployeeDetails from "../pages/dashboard/employeeDetails";
+// import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
 export const router = createBrowserRouter([
   {
@@ -73,10 +74,10 @@ export const router = createBrowserRouter([
 
   {
     path: "/dashboard",
-    element: <DashboardLayout />, // Dashboard layout for protected pages
+    element: <DashboardLayout />,
     children: [
       {
-        index: true, // This makes /dashboard render the Dashboard component
+        index: true, 
         element: <Dashboard />,
       },
       {
@@ -88,13 +89,17 @@ export const router = createBrowserRouter([
         element: <Contract />,
       },
       {
-        path: "create-compliance",
-        element: <CreateCompliance />,
-      },
-      {
-        path: "contract/review-and-sign",
-        element: <ReviewSign />,
-      },
+        path: "employee-details",
+        element: <EmployeeDetails/>
+      }
+      // {
+      //   path: "create-compliance",
+      //   element: <CreateCompliance />,
+      // },
+      // {
+      //   path: "contract/review-and-sign",
+      //   element: <ReviewSign />,
+      // },
     ],
   },
 
