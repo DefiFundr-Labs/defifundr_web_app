@@ -1,9 +1,8 @@
 import EmptyState from "../EmptyState";
-import { employees }from "../../../data/EmployeeData"
+import { employees } from "../../../data/employeeData";
 import EmployeesTeamContract from "../../../pages/dashboard/employeesTeamContract";
 
 const Employees = () => {
-  
   const renderContent = () => {
     if (employees.length === 0) {
       return (
@@ -13,15 +12,13 @@ const Employees = () => {
         />
       );
     } else {
-      return(<EmployeesTeamContract/>)
+      return <EmployeesTeamContract />;
     }
-  }
+  };
   return (
     <>
       <div className="rounded-lg bg-white dark:bg-gray-600 flex-1 flex-col flex justify-center items-center">
-        {
-          renderContent()
-        }
+        {renderContent()}
       </div>
     </>
   );

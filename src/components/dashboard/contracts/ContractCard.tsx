@@ -12,7 +12,7 @@ const ContractCard = ({ amount, period, status, title }: ContractCardProps) => {
   const getColor = () => {
     switch (status) {
       case "Active":
-        return "bg-success-300 text-success-500 dark:bg-success-300 dark:text-success-500";
+        return "bg-success-300 text-success-500 dark:bg-success-400 dark:text-success-500";
       case "Completed":
         return "bg-info-500 text-info-300 dark:bg-info-400";
       case "In Review":
