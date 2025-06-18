@@ -41,13 +41,13 @@ function TitleHeader({
             {isAddButton && (
               <button
                 className={
-                  "hidden lg:flex items-center rounded-full cursor-pointer bg-primary-200 h-10 gap-1 px-4 transform-all ease-linear  " +
+                  "hidden lg:flex items-center text-white rounded-full cursor-pointer bg-primary-200 h-10 gap-1 px-4 transform-all ease-linear  " +
                   (selectedTab === tabs[0]
                     ? "opacity-100 visible"
                     : "opacity-0 hidden")
                 }
               >
-                <Plus size={16} className="text-white dark:text-gray-600" />
+                <Plus size={16} />
                 New contract
               </button>
             )}
