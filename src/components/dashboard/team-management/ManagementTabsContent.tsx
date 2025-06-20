@@ -25,7 +25,7 @@ const ManagementTabsContent = ({ data }: ManagementTabContentProps) => {
                 key={index}
                 name={emp.name}
                 job={emp.job}
-                contracts={emp.contracts}
+                employmentType="Freelancer"
                 active={emp.active}
               />
             </Link>

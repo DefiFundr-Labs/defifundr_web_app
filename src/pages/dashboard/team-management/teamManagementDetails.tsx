@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import {
   BackArrow,
-  Profile,
   Mail,
   Phone,
   Location,
 } from "../../../assets/svg/svg";
+import Profile from "../../../assets/images/ProfilePic.png";
 import ContractCard from "../../../components/dashboard/employees/ContractsCard";
+import { RoutePaths } from "../../../routes/routesPath";
 
 function TeamManagementDetails() {
   const dummyContracts = [
@@ -42,7 +43,7 @@ function TeamManagementDetails() {
   return (
     <div className="bg-gray-100 dark:bg-gray-500 min-h-full">
       <div className="bg-white dark:bg-gray-600 dark:border-gray-700 mt-2 p-4 border-b border-gray-150">
-        <Link to={"/dashboard/team-contracts"}>
+        <Link to={`${RoutePaths.TEAM_MANAGEMENT}`}>
           <button className="flex items-center  gap-1 text-xs font-medium text-gray-300 cursor-pointer">
             <BackArrow /> Back
           </button>
@@ -57,7 +58,11 @@ function TeamManagementDetails() {
         </p>
         <div className="flex flex-wrap gap-4 mt-4">
           <div className="size-14 bg-primary-500 flex items-center justify-center rounded-md overflow-hidden dark:bg-gray-800">
-            <Profile />
+            <img
+            src={Profile}
+            alt="Profile"
+            className="w-full h-full object-cover"
+          />
           </div>
           <div>
             <p className="text-xl font-semibold text-gray-600 dark:text-gray-150">

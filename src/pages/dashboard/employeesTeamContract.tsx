@@ -36,8 +36,8 @@ function EmployeesTeamContract() {
               key={index}
               name={emp.name}
               job={emp.job}
-              contracts={emp.contracts}
               active={emp.active}
+              employmentType="Freelancer"
             />
           </Link>
         ))}

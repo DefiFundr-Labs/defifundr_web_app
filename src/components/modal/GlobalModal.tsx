@@ -101,7 +101,7 @@ const GlobalModal: React.FC = () => {
     <Dialog
       open={isOpen}
       as="div"
-      className="relative z-50 focus:outline-none"
+      className="relative z-[99] focus:outline-none"
       onClose={handleClose}
     >
       {/* Backdrop */}
