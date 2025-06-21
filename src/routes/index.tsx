@@ -23,6 +23,7 @@ import TeamContracts from "../pages/dashboard/teamContracts";
 import EmployeeDetails from "../pages/dashboard/employeeDetails";
 import TeamManagement from "../pages/dashboard/team-management/teamManagement";
 import TeamManagementDetails from "../pages/dashboard/team-management/teamManagementDetails";
+import Invoices from "../pages/dashboard/invoices";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
 export const router = createBrowserRouter([
@@ -99,8 +100,12 @@ export const router = createBrowserRouter([
         element: <TeamManagement />,
       },
       {
-        path: `${RoutePaths.TEAM_MANAGEMENT}/:id`,
+        path: `${RoutePaths.TEAM_MANAGEMENT_EMPLOYEE}/:id`,
         element: <TeamManagementDetails />,
+      },
+      {
+        path: RoutePaths.INVOICES,
+        element: <Invoices />,
       },
       // {
       //   path: "create-compliance",

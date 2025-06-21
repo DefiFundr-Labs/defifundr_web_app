@@ -35,13 +35,13 @@ const TeamManagement = () => {
     setSearch("");
   };
 
-  const activeEmployees = dummyEmployees.filter(emp => emp.active).length;
+  const activeEmployees = dummyEmployees.filter((emp) => emp.active).length;
   const activePercentage = (activeEmployees / dummyEmployees.length) * 100;
-  
-  const { showCustomModal,  } = useModal();
-     const showModal = () => {
-           showCustomModal(<FilterEmployeeModal />, "lg");
-       };
+
+  const { showCustomModal } = useModal();
+  const showModal = () => {
+    showCustomModal(<FilterEmployeeModal />, "lg");
+  };
   return (
     <div className="flex flex-col flex-1 bg-gray-100 dark:bg-gray-500">
       <TitleHeader
@@ -68,26 +68,31 @@ const TeamManagement = () => {
               className="flex flex-col flex-1 space-y-4"
             >
               {dummyEmployees.length > 0 && (
-                <div className="w-full bg-white dark:bg-gray-600 rounded p-4">
+                <div className="w-full p-4 bg-white rounded dark:bg-gray-600">
                   <div className="flex items-center gap-4">
-                    <div className="size-14 dark:bg-gray-800 bg-primary-500 flex items-center justify-center rounded-md overflow-hidden">
+                    <div className="flex items-center justify-center overflow-hidden rounded-md size-14 dark:bg-gray-800 bg-primary-500">
                       <Profile />
                     </div>
                     <div className="leading-tight">
-                      <p className="text-sm text-gray-300 font-medium">Total number</p>
-                      <p className="text-2xl md:text-4xl text-gray-500 dark:text-gray-150 font-bold">
+                      <p className="text-sm font-medium text-gray-300">
+                        Total number
+                      </p>
+                      <p className="text-2xl font-bold text-gray-500 md:text-4xl dark:text-gray-150">
                         {dummyEmployees.length} employees
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-4 flex flex-col gap-2">
-                    <p className="text-sm text-right text-gray-300 font-medium md:order-1 order-2">
-                      Active: <span className="text-gray-700">{activeEmployees} employees</span>
+                  <div className="flex flex-col gap-2 mt-4">
+                    <p className="order-2 text-sm font-medium text-right text-gray-300 md:order-1">
+                      Active:{" "}
+                      <span className="text-gray-700">
+                        {activeEmployees} employees
+                      </span>
                     </p>
-                    <div className="w-full h-2 bg-primary-500 dark:bg-primary-50 rounded-full relative overflow-hidden md:order-2 order-1">
+                    <div className="relative order-1 w-full h-2 overflow-hidden rounded-full bg-primary-500 dark:bg-primary-50 md:order-2">
                       <div
-                        className="absolute h-full bg-primary-200 rounded-full"
+                        className="absolute h-full rounded-full bg-primary-200"
                         style={{ width: `${activePercentage}%` }}
                       ></div>
                     </div>
@@ -95,22 +100,25 @@ const TeamManagement = () => {
                 </div>
               )}
 
-              <div className="flex flex-wrap gap-2 justify-between items-center">
+              <div className="flex flex-wrap items-center justify-between gap-2">
                 <p className="font-semibold text-gray-600 dark:text-gray-150">
                   {selectedTab}
                 </p>
-                <div className="flex items-center gap-1 w-full max-w-85">
-                  <div className="py-2 px-4 flex justify-between bg-white rounded-2xl w-full h-9 dark:bg-gray-600">
+                <div className="flex items-center w-full gap-1 max-w-85">
+                  <div className="flex justify-between w-full px-4 py-2 bg-white rounded-2xl h-9 dark:bg-gray-600">
                     <input
                       type="search"
-                      className="outline-none w-full text-gray-400 dark:text-gray-300 text-xs"
+                      className="w-full text-xs text-gray-400 outline-none dark:text-gray-300"
                       placeholder="Search by name..."
                       value={search}
                       onChange={(e) => setSearch(e.target.value)}
                     />
                     <SearchIcon />
                   </div>
-                  <button onClick={showModal} className="cursor-pointer w-9 h-9 border border-gray-150 bg-white rounded flex items-center justify-center dark:bg-gray-600 dark:border-gray-600">
+                  <button
+                    onClick={showModal}
+                    className="flex items-center justify-center bg-white border rounded cursor-pointer w-9 h-9 border-gray-150 dark:bg-gray-600 dark:border-gray-600"
+                  >
                     <FilterIcon />
                   </button>
                 </div>

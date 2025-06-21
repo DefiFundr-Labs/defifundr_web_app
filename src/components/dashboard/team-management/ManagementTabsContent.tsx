@@ -11,16 +11,16 @@ const ManagementTabsContent = ({ data }: ManagementTabContentProps) => {
   return (
     <>
       {isContractData ? (
-        <div className="rounded-lg bg-white dark:bg-gray-600 flex-1 flex-col flex justify-center items-center">
+        <div className="flex flex-col items-center justify-center flex-1 bg-white rounded-lg dark:bg-gray-600">
           <EmptyState
             title="No employees yet"
             description="Employees you have contracts with will be displayed here"
           />
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 w-full">
+        <div className="grid w-full grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
           {data.map((emp, index) => (
-            <Link to={`${RoutePaths.TEAM_MANAGEMENT}/${emp.id}`}>
+            <Link to={`${RoutePaths.TEAM_MANAGEMENT_EMPLOYEE}/${emp.id}`}>
               <EmployeeCard
                 key={index}
                 name={emp.name}

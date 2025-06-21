@@ -112,9 +112,9 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             </ul>
           </div>
           <div className="flex flex-col mt-auto">
-            <div className="w-full px-4">
+            {/* <div className="w-full px-4">
               <ConnectWallet />
-            </div>
+            </div> */}
             {/* Footer section - fixed at bottom */}
             <div className="w-full px-4">
               <button
