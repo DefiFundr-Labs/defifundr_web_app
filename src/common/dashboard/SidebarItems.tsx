@@ -20,7 +20,7 @@ export const sidebarRoutes = [
     path: RoutePaths.TEAM_CONTRACTS,
   },
   {
-    name: "Team management",
+    name: "Team Management",
     icon: <ContractIcon />,
     path: RoutePaths.TEAM_MANAGEMENT,
   },

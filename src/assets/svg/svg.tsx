@@ -22,6 +22,63 @@ export const Logo = () => {
     </svg>
   );
 };
+export const FilterIcon = () => {
+  return(
+    <svg
+  width={16}
+  height={16}
+  viewBox="0 0 16 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M2 4.66602H14"
+    stroke="#414F62"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+  />
+  <path d="M4 8H12" stroke="#414F62" strokeWidth="1.5" strokeLinecap="round" />
+  <path
+    d="M6.66675 11.334H9.33341"
+    stroke="#414F62"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+  />
+</svg>
+
+  )
+}
+export const EmploymentType = () => {
+  return(
+    <svg
+  width={16}
+  height={16}
+  viewBox="0 0 16 16"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M12.0929 14.4125C11.5062 14.5858 10.8129 14.6659 9.99958 14.6659H5.99958C5.18625 14.6659 4.49292 14.5858 3.90625 14.4125C4.05292 12.6792 5.83292 11.3125 7.99958 11.3125C10.1662 11.3125 11.9462 12.6792 12.0929 14.4125Z"
+    stroke="#7F8C9F"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+  <path
+    d="M10.0007 1.33398H6.00065C2.66732 1.33398 1.33398 2.66732 1.33398 6.00065V10.0007C1.33398 12.5207 2.09398 13.9006 3.90732 14.414C4.05398 12.6806 5.83398 11.314 8.00065 11.314C10.1673 11.314 11.9473 12.6806 12.094 14.414C13.9073 13.9006 14.6673 12.5207 14.6673 10.0007V6.00065C14.6673 2.66732 13.334 1.33398 10.0007 1.33398ZM8.00065 9.44731C6.68065 9.44731 5.61398 8.374 5.61398 7.054C5.61398 5.734 6.68065 4.66732 8.00065 4.66732C9.32065 4.66732 10.3873 5.734 10.3873 7.054C10.3873 8.374 9.32065 9.44731 8.00065 9.44731Z"
+    stroke="#7F8C9F"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+  <path
+    d="M10.3886 7.05269C10.3886 8.37269 9.3219 9.446 8.0019 9.446C6.6819 9.446 5.61523 8.37269 5.61523 7.05269C5.61523 5.73269 6.6819 4.66602 8.0019 4.66602C9.3219 4.66602 10.3886 5.73269 10.3886 7.05269Z"
+    stroke="#7F8C9F"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>
+
+  )
+}
 export const BackArrow = () => (
   <svg
   width={16}

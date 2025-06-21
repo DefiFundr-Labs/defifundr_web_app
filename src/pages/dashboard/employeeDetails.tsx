@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { BackArrow, Profile, Mail, Phone, Location } from "../../assets/svg/svg"
 import ContractCard from "../../components/dashboard/employees/ContractsCard"
+import { RoutePaths } from "../../routes/routesPath";
 
 
 function employeeDetails() {
@@ -38,7 +39,7 @@ function employeeDetails() {
   return (
     <div className="bg-gray-100 dark:bg-gray-500 min-h-full">
       <div className="bg-white dark:bg-gray-600 dark:border-gray-700 mt-2 p-4 border-b border-gray-150">
-        <Link to={"/dashboard/team-contracts"}>
+        <Link to={`${RoutePaths.TEAM_MANAGEMENT}`}>
           <button className="flex items-center  gap-1 text-xs font-medium text-gray-300 cursor-pointer">
             <BackArrow /> Back
           </button>
