@@ -67,15 +67,3 @@ export interface DashBoardTitleHeaderProps {
   setSelectedTab?: (tab: string) => void;
   isAddButton?: boolean;
 }
-
-type Data = {
-  id: number;
-  name: string;
-  job: string;
-  contracts: number;
-  active: boolean;
-};
-
-export interface ManagementTabContentProps {
-  data: Data[];
-}

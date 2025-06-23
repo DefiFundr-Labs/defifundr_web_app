@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
-import {
-  BackArrow,
-  Mail,
-  Phone,
-  Location,
-} from "../../../assets/svg/svg";
+import { BackArrow, Mail, Phone, Location } from "../../../assets/svg/svg";
 import Profile from "../../../assets/images/ProfilePic.png";
 import ContractCard from "../../../components/dashboard/employees/ContractsCard";
 import { RoutePaths } from "../../../routes/routesPath";
 
-function TeamManagementDetails() {
+function EmployeeManagementDetails() {
   const dummyContracts = [
     {
       id: 1,
@@ -59,10 +54,10 @@ function TeamManagementDetails() {
         <div className="flex flex-wrap gap-4 mt-4">
           <div className="size-14 bg-primary-500 flex items-center justify-center rounded-md overflow-hidden dark:bg-gray-800">
             <img
-            src={Profile}
-            alt="Profile"
-            className="w-full h-full object-cover"
-          />
+              src={Profile}
+              alt="Profile"
+              className="w-full h-full object-cover"
+            />
           </div>
           <div>
             <p className="text-xl font-semibold text-gray-600 dark:text-gray-150">
@@ -102,4 +97,4 @@ function TeamManagementDetails() {
   );
 }
 
-export default TeamManagementDetails;
+export default EmployeeManagementDetails;

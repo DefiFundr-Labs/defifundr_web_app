@@ -22,7 +22,7 @@ import Contract from "../pages/dashboard/contract";
 import TeamContracts from "../pages/dashboard/teamContracts";
 import EmployeeDetails from "../pages/dashboard/employeeDetails";
 import TeamManagement from "../pages/dashboard/team-management/teamManagement";
-import TeamManagementDetails from "../pages/dashboard/team-management/teamManagementDetails";
+import EmployeeManagementDetails from "../pages/dashboard/team-management/employeeManagementDetails";
 import Invoices from "../pages/dashboard/invoices";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
@@ -101,7 +101,7 @@ export const router = createBrowserRouter([
       },
       {
         path: `${RoutePaths.TEAM_MANAGEMENT_EMPLOYEE}/:id`,
-        element: <TeamManagementDetails />,
+        element: <EmployeeManagementDetails />,
       },
       {
         path: RoutePaths.INVOICES,
