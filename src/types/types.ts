@@ -67,3 +67,19 @@ export interface DashBoardTitleHeaderProps {
   setSelectedTab?: (tab: string) => void;
   isAddButton?: boolean;
 }
+type TimeSheet = {
+  id: number;
+  employeeName: string;
+  role: string;
+  profileImage: string;
+  rate: string;
+  totalHours: string;
+  totalAmount: string;
+  paidIn: string;
+  status: string;
+  submitted: string;
+};
+export interface TimeTrackingTabContentProps {
+  search: string;
+  timeSheetRecords: TimeSheet[];
+}
