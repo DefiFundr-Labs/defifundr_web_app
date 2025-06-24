@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { TimeTrackingTabContentProps } from "../../../../types/types";
 import EmptyState from "../../EmptyState";
-import Table from "../../../table/Table";
+// import Table from "../../../table/Table";
 function TimeTrackingTabContent({
   timeSheetRecords,
-  search,
 }: TimeTrackingTabContentProps) {
+  const [search, setSearch] = useState("");
   const [filteredData, setFilteredData] = useState(timeSheetRecords);
   console.log(timeSheetRecords.length);
 
