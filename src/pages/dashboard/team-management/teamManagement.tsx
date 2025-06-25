@@ -2,6 +2,8 @@ import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import TitleHeader from "../../../common/dashboard/TitleHeader";
 import EmployeesManagement from "../../../components/dashboard/team-management/EmployeesManagement";
+import TimeTrackingTabContent from "../../../components/dashboard/team-management/timeTracking/TimeTrackingTabContent";
+import { timeSheetRecords } from "../../../data/timeSheetRecords";
 
 const tabs = ["Employees", "Time tracking", "Milestone", "Time off", "Expense"];
 
@@ -12,6 +14,8 @@ const TeamManagement = () => {
     switch (selectedTab) {
       case tabs[0]:
         return <EmployeesManagement />;
+      case tabs[1]:
+        return <TimeTrackingTabContent timeSheetRecords={timeSheetRecords} />;
       default:
         return null;
     }

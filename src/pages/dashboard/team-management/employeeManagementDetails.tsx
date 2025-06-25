@@ -36,27 +36,27 @@ function EmployeeManagementDetails() {
   ] as const;
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-500 min-h-full">
-      <div className="bg-white dark:bg-gray-600 dark:border-gray-700 mt-2 p-4 border-b border-gray-150">
+    <div className="min-h-full bg-gray-100 dark:bg-gray-500">
+      <div className="p-4 mt-2 bg-white border-b dark:bg-gray-600 dark:border-gray-700 border-gray-150">
         <Link to={`${RoutePaths.TEAM_MANAGEMENT}`}>
-          <button className="flex items-center  gap-1 text-xs font-medium text-gray-300 cursor-pointer">
+          <button className="flex items-center gap-1 text-xs font-medium text-gray-300 cursor-pointer">
             <BackArrow /> Back
           </button>
         </Link>
-        <p className="text-gray-600 font-bold text-2xl sm:text-4xl dark:text-gray-150">
+        <p className="text-2xl font-bold text-gray-600 sm:text-4xl dark:text-gray-150">
           James Akinbiola
         </p>
       </div>
-      <div className="p-6 mx-2 sm:mx-4 max-w-max bg-white rounded-lg dark:bg-gray-600 mt-2 sm:mt-4">
+      <div className="p-6 mx-2 mt-2 bg-white rounded-lg sm:mx-4 max-w-max dark:bg-gray-600 sm:mt-4">
         <p className="text-sm font-medium text-gray-400 dark:text-gray-200">
           Personal Information
         </p>
         <div className="flex flex-wrap gap-4 mt-4">
-          <div className="size-14 bg-primary-500 flex items-center justify-center rounded-md overflow-hidden dark:bg-gray-800">
+          <div className="flex items-center justify-center overflow-hidden rounded-md size-14 bg-primary-500 dark:bg-gray-800">
             <img
               src={Profile}
               alt="Profile"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
           <div>
@@ -64,8 +64,8 @@ function EmployeeManagementDetails() {
               James Akinbiola
             </p>
             <div className="text-sm font-medium text-gray-600 dark:text-gray-150">
-              <div className="flex flex-wrap gap-y-2 items-center">
-                <p className="mr-6 flex items-center gap-1">
+              <div className="flex flex-wrap items-center gap-y-2">
+                <p className="flex items-center gap-1 mr-6">
                   <Mail />
                   mailjames@gmail.com
                 </p>
