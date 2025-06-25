@@ -22,9 +22,29 @@ export const Logo = () => {
     </svg>
   );
 };
+<<<<<<< HEAD
+export const Line = () => {
+  return (
+    <svg
+      width={1}
+      height={17}
+      viewBox="0 0 1 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect width={1} height={17} fill="#DCE0E5" />
+    </svg>
+
+  )
+}
 export const FilterIcon = () => {
   return (
     <svg
+=======
+export const FilterIcon = () => {
+  return (
+    <svg
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
       width={16}
       height={16}
       viewBox="0 0 16 16"
@@ -37,12 +57,16 @@ export const FilterIcon = () => {
         strokeWidth="1.5"
         strokeLinecap="round"
       />
+<<<<<<< HEAD
+      <path d="M4 8H12" stroke="#414F62" strokeWidth="1.5" strokeLinecap="round" />
+=======
       <path
         d="M4 8H12"
         stroke="#414F62"
         strokeWidth="1.5"
         strokeLinecap="round"
       />
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
       <path
         d="M6.66675 11.334H9.33341"
         stroke="#414F62"
@@ -50,8 +74,14 @@ export const FilterIcon = () => {
         strokeLinecap="round"
       />
     </svg>
+<<<<<<< HEAD
+
+  )
+}
+=======
   );
 };
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
 export const EmploymentType = () => {
   return (
     <svg
@@ -80,8 +110,14 @@ export const EmploymentType = () => {
         strokeLinejoin="round"
       />
     </svg>
+<<<<<<< HEAD
+
+  )
+}
+=======
   );
 };
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
 export const BackArrow = () => (
   <svg
     width={16}
@@ -117,19 +153,31 @@ export const Profile = () => {
     >
       <path
         d="M10.1334 9.85846C10.05 9.85013 9.95005 9.85013 9.85838 9.85846C7.87505 9.7918 6.30005 8.1668 6.30005 6.1668C6.30005 4.12513 7.95005 2.4668 10 2.4668C12.0417 2.4668 13.7001 4.12513 13.7001 6.1668C13.6917 8.1668 12.1167 9.7918 10.1334 9.85846Z"
+<<<<<<< HEAD
+        stroke="#5A42DE"
+=======
         stroke="currentColor"
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
         strokeWidth="1.25"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       <path
         d="M5.96685 12.9328C3.95018 14.2828 3.95018 16.4828 5.96685 17.8245C8.25851 19.3578 12.0168 19.3578 14.3085 17.8245C16.3252 16.4745 16.3252 14.2745 14.3085 12.9328C12.0252 11.4078 8.26685 11.4078 5.96685 12.9328Z"
+<<<<<<< HEAD
+        stroke="#5A42DE"
+=======
         stroke="currentColor"
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
         strokeWidth="1.25"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
   );
 };
 export const Invoice = () => {
@@ -259,6 +307,10 @@ export const Calendar = () => {
         strokeLinejoin="round"
       />
     </svg>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
   );
 };
 export const Mail = () => {
@@ -285,6 +337,10 @@ export const Mail = () => {
         strokeLinejoin="round"
       />
     </svg>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
   );
 };
 export const Phone = () => {
@@ -302,6 +358,10 @@ export const Phone = () => {
         strokeMiterlimit={10}
       />
     </svg>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 4c7b7eb004887f45cf9a1244d14756fa7204e476
   );
 };
 export const Location = () => {
