@@ -1,6 +1,15 @@
 import React from "react";
 import EmptyState from "../dashboard/EmptyState";
-import { TableColumn } from "./TableHeader";
+import { Line } from "../../assets/svg/svg";
+
+export interface TableColumn {
+  key: string;
+  header: string;
+  width?: string;
+  align?: "left" | "center" | "right";
+  showOnMobile?: boolean;
+  mobileOrder?: number;
+}
 
 interface TableContentProps<T = any> {
   data: T[];
@@ -43,18 +52,9 @@ const TableContent = <T extends Record<string, any>>({
   const defaultRenderCell = (item: T, column: TableColumn) => {
     const value = item[column.key];
 
-    if (value === null || value === undefined) {
-      return "-";
-    }
-
-    if (typeof value === "boolean") {
-      return value ? "Yes" : "No";
-    }
-
-    if (typeof value === "number") {
-      return value.toLocaleString();
-    }
-
+    if (value === null || value === undefined) return "-";
+    if (typeof value === "boolean") return value ? "Yes" : "No";
+    if (typeof value === "number") return value.toLocaleString();
     return String(value);
   };
 
@@ -63,16 +63,11 @@ const TableContent = <T extends Record<string, any>>({
       <div className="bg-white rounded-b-lg dark:bg-gray-600">
         <div className="flex flex-col items-center justify-center py-16">
           <EmptyState
-            title={
-              search
-                ? emptyTitle || "No results found"
-                : emptyTitle || "No data yet"
-            }
+            title={search ? emptyTitle || "No results found" : emptyTitle || "No data yet"}
             description={
               search
                 ? `No items match "${search}". Try adjusting your search.`
-                : emptyDescription ||
-                  "Data will be displayed here when available"
+                : emptyDescription || "Data will be displayed here when available"
             }
           />
         </div>
@@ -81,9 +76,9 @@ const TableContent = <T extends Record<string, any>>({
   }
 
   return (
-    <div className="bg-white rounded-b-lg dark:bg-gray-600">
+    <div className="bg-white rounded-b-lg dark:bg-gray-500">
       {/* Desktop table view */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         {data.map((item, index) => {
           const itemId = getItemId(item);
           const isSelected = selectedItems.includes(itemId);
@@ -91,18 +86,16 @@ const TableContent = <T extends Record<string, any>>({
           return (
             <div
               key={itemId}
-              className={`flex items-center px-4 py-4 text-sm hover:bg-gray-50 dark:hover:bg-gray-700 ${
-                index !== data.length - 1
-                  ? "border-b border-gray-150 dark:border-gray-500"
-                  : ""
+              className={`flex items-center px-4 py-6 font-semibold hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                index !== data.length - 1 ? "border-b border-gray-150 dark:border-gray-500" : ""
               } ${onRowClick ? "cursor-pointer" : ""}`}
               onClick={() => onRowClick?.(item)}
             >
               {showCheckbox && (
-                <div className="w-6 mr-4">
+                <div className="w-6 mr-4 flex items-center justify-center">
                   <input
                     type="checkbox"
-                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    className="w-6 h-6"
                     checked={isSelected}
                     onChange={(e) => {
                       e.stopPropagation();
@@ -114,21 +107,15 @@ const TableContent = <T extends Record<string, any>>({
               <div
                 className="grid items-center flex-1 gap-4"
                 style={{
-                  gridTemplateColumns: columns
-                    .map((col) => col.width || "1fr")
-                    .join(" "),
+                  gridTemplateColumns: columns.map((col) => col.width || "1fr").join(" "),
                 }}
               >
                 {columns.map((column) => (
                   <div
                     key={column.key}
-                    className={`${getAlignmentClass(
-                      column.align
-                    )} text-gray-900 dark:text-white`}
+                    className={`${getAlignmentClass(column.align)} text-gray-500 dark:text-white whitespace-nowrap`}
                   >
-                    {renderCell
-                      ? renderCell(item, column)
-                      : defaultRenderCell(item, column)}
+                    {renderCell ? renderCell(item, column) : defaultRenderCell(item, column)}
                   </div>
                 ))}
               </div>
@@ -138,60 +125,39 @@ const TableContent = <T extends Record<string, any>>({
       </div>
 
       {/* Mobile card view */}
-      <div className="md:hidden">
+      <div className="bg-gray-100 lg:hidden">
         {data.map((item, index) => {
           const itemId = getItemId(item);
-          const isSelected = selectedItems.includes(itemId);
+
+          const mobileColumns = columns
+            .filter((col) => col.showOnMobile !== false)
+            .sort((a, b) => (a.mobileOrder ?? 0) - (b.mobileOrder ?? 0));
+
+          const cellContents = mobileColumns.map((column) =>
+            renderCell ? renderCell(item, column) : defaultRenderCell(item, column)
+          );
 
           return (
             <div
               key={itemId}
               className={`p-4 ${
-                index !== data.length - 1
-                  ? "border-b border-gray-150 dark:border-gray-500"
-                  : ""
-              } ${
-                onRowClick ? "cursor-pointer" : ""
-              } hover:bg-gray-50 dark:hover:bg-gray-700`}
+                index !== data.length - 1 ? "rounded bg-white mb-2" : "rounded bg-white"
+              } ${onRowClick ? "cursor-pointer" : ""} hover:bg-gray-50 dark:hover:bg-gray-700`}
               onClick={() => onRowClick?.(item)}
             >
-              {showCheckbox && (
-                <div className="flex items-center mb-3">
-                  <input
-                    type="checkbox"
-                    className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                    checked={isSelected}
-                    onChange={(e) => {
-                      e.stopPropagation();
-                      onSelectItem?.(itemId, e.target.checked);
-                    }}
-                  />
-                  <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
-                    Select
-                  </span>
+              <div className="flex justify-between items-center">
+                <div>
+                  <p className="text-gray-500">{cellContents[0]}</p>
+                  <div className="flex gap-2 items-center">
+                    <p className="text-xs font-medium text-gray-300 leading-none">{cellContents[1]}</p>
+                    <Line />
+                    <p>{cellContents[2]}</p>
+                  </div>
                 </div>
-              )}
-              <div className="space-y-2">
-                {columns.map((column) => {
-                  const cellContent = renderCell
-                    ? renderCell(item, column)
-                    : defaultRenderCell(item, column);
-                  if (!cellContent || cellContent === "-") return null;
-
-                  return (
-                    <div
-                      key={column.key}
-                      className="flex items-center justify-between"
-                    >
-                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                        {column.header}
-                      </span>
-                      <div className="text-sm text-gray-900 dark:text-white">
-                        {cellContent}
-                      </div>
-                    </div>
-                  );
-                })}
+                <div className="flex flex-col gap-2">
+                  <p className="text-xs">{cellContents[3]}</p>
+                  <p className="text-xs text-gray-400">{cellContents[4]}</p>
+                </div>
               </div>
             </div>
           );
