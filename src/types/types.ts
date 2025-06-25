@@ -80,6 +80,33 @@ type TimeSheet = {
   submitted: string;
 };
 export interface TimeTrackingTabContentProps {
-  search: string;
   timeSheetRecords: TimeSheet[];
+}
+export interface TimeSheetRecord {
+  id: number;
+  employeeName: string;
+  profileImage: string;
+  role: string;
+  rate: string;
+  totalHours: string;
+  totalMinutes: string;
+  totalAmount: string;
+  paidIn: string;
+  status: string;
+  submitted: string;
+  description: string;
+  attachment: string;
+  submittedOn: string;
+  dateRange: string;
+  rejectionReason: string;
+  contract: {
+    client: string;
+    paymentType: string;
+    contractLink: string;
+  };
+  contractor: {
+    name: string;
+    position: string;
+    detailLink: string;
+  };
 }
