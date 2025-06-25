@@ -5,7 +5,6 @@ import TimeSheetDetailsCard from "../../../components/dashboard/team-management/
 import PartiesInvolvedComponent from "../../../components/dashboard/team-management/PartiesInvolved";
 import { timeSheetRecords } from "../../../data/timeSheetRecords";
 import { TimeSheetRecord } from "../../../types/types";
-import { set } from "react-hook-form";
 
 type ContractorType = {
   name: string;

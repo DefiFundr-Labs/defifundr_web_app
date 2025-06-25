@@ -1,5 +1,3 @@
-import { CancelIcon } from "../../assets/svg/svg";
-
 function RejectTimeSheetModal() {
   return (
     <div className="w-screen h-svh sm:h-fit sm:w-full">

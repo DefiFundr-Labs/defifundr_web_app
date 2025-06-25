@@ -3,8 +3,7 @@ import useModal from "../../../hooks/useModal";
 import { useNavigate } from "react-router-dom";
 import CtaButton from "./CtaButton";
 import RejectTimeSheetModal from "../../modal/RejectTimesheetModal";
-import { s } from "framer-motion/client";
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 interface CtaHeaderProps {
   title: string;
   showCtaButton?: boolean;
@@ -15,7 +14,7 @@ function CtaHeader({
   title,
   showCtaButton,
   onApprove,
-  onReject,
+  onReject,   /* the reject functionality for the modal  */
 }: CtaHeaderProps) {
   const navigate = useNavigate();
   const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
