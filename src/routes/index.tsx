@@ -25,6 +25,8 @@ import TeamManagement from "../pages/dashboard/team-management/teamManagement";
 import EmployeeManagementDetails from "../pages/dashboard/team-management/employeeManagementDetails";
 import Invoices from "../pages/dashboard/invoices";
 import TimeTrackingDetails from "../pages/dashboard/team-management/timeTrackingDetails";
+import MilestoneDetails from "../pages/dashboard/team-management/milestoneDetails";
+import Milestone from "../pages/dashboard/team-management/milestone";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
 export const router = createBrowserRouter([
@@ -107,6 +109,14 @@ export const router = createBrowserRouter([
       {
         path: `${RoutePaths.TEAM_MANAGEMENT_TIME_TRACKING}/:id`,
         element: <TimeTrackingDetails />,
+      },
+      {
+        path: RoutePaths.TEAM_MANAGEMENT_MILESTONE,
+        element: <Milestone />,
+      },
+      {
+        path: `${RoutePaths.TEAM_MANAGEMENT_MILESTONE}/:id`,
+        element: <MilestoneDetails />,
       },
       {
         path: RoutePaths.INVOICES,

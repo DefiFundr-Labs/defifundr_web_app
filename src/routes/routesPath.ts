@@ -21,6 +21,7 @@ export const RoutePaths = {
   TEAM_MANAGEMENT: "/dashboard/team-management",
   TEAM_MANAGEMENT_EMPLOYEE: "/dashboard/team-management/employee",
   TEAM_MANAGEMENT_TIME_TRACKING: "/dashboard/team-management/time-tracking",
+  TEAM_MANAGEMENT_MILESTONE: "/dashboard/team-management/milestone",
   CONTRACT_DETAIL: "/team-contracts/:contractId",
   PAYROLL: "/dashboard/payroll",
   INVOICES: "/dashboard/invoices",

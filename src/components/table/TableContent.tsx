@@ -22,7 +22,7 @@ interface TableContentProps<T = any> {
   renderCell?: (item: T, column: TableColumn) => React.ReactNode;
   emptyTitle?: string;
   emptyDescription?: string;
-  getItemId?: (item: T) => string;
+  getItemId?: (item: T) => string ;
 }
 
 const TableContent = <T extends Record<string, any>>({
