@@ -3,10 +3,8 @@ import React from "react";
 export interface TableColumn {
   key: string;
   header: string;
-  width?: string;
   align?: "left" | "center" | "right";
-  showOnMobile?: boolean;
-  mobileOrder?: number;
+  width?: string;
 }
 
 interface TableHeaderProps {
@@ -34,13 +32,13 @@ const TableHeader: React.FC<TableHeaderProps> = ({
   };
 
   return (
-    <div className="hidden bg-gray-100  dark:bg-gray-600 lg:block">
-      <div className="flex items-center p-4 font-medium text-gray-400 dark:text-gray-300">
+    <div className="hidden bg-white border-b dark:bg-gray-600 border-gray-150 dark:border-gray-500 md:block">
+      <div className="flex items-center px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-300">
         {showCheckbox && (
-          <div className="w-6 mr-4 flex items-center justify-center">
+          <div className="w-6 mr-4">
             <input
               type="checkbox"
-              className="w-6 h-6 "
+              className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
               checked={allSelected}
               onChange={(e) => onSelectAll?.(e.target.checked)}
             />

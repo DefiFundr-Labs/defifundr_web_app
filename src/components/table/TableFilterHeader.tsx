@@ -28,15 +28,15 @@ const TableFilterHeader: React.FC<TableFilterHeaderProps> = ({
   return (
     <div className="flex flex-wrap items-center justify-between gap-2">
       {showTabLabel && (
-        <p className="font-semibold text-gray-500 dark:text-gray-150">
+        <p className="font-semibold text-gray-600 dark:text-gray-150">
           {selectedTab}
         </p>
       )}
       <div className="flex items-center w-full gap-1 max-w-85">
-        <div className="flex justify-between w-full px-4 py-2 bg-white border rounded-lg border-gray-150 dark:border-gray-250 h-9 dark:bg-gray-500">
+        <div className="flex justify-between w-full px-4 py-2 bg-white border rounded-lg border-gray-150 h-9 dark:bg-gray-600">
           <input
             type="search"
-            className="w-full text-xs text-gray-300 outline-none dark:text-gray-300"
+            className="w-full text-xs text-gray-400 outline-none dark:text-gray-300"
             placeholder={searchPlaceholder}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
@@ -46,7 +46,7 @@ const TableFilterHeader: React.FC<TableFilterHeaderProps> = ({
         {showFilterButton && (
           <button
             onClick={showModal}
-            className="flex items-center justify-center bg-white border rounded-lg cursor-pointer w-9 h-9 border-gray-150 dark:bg-gray-500 dark:border-gray-250"
+            className="flex items-center justify-center bg-white border rounded-lg cursor-pointer w-9 h-9 border-gray-150 dark:bg-gray-600 dark:border-gray-600"
           >
             <FilterIcon />
           </button>

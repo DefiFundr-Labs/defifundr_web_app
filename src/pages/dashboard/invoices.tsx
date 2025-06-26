@@ -15,10 +15,11 @@ interface Invoice {
   name?: string;
   number?: string;
   company?: string;
-  [key: string]: any;
+  [key: string]: any; // Add index signature for dynamic property access
 }
 
 const Invoices: React.FC = () => {
+  // Sample data - replace with your actual data fetching
   const [invoices] = useState<Invoice[]>([
     {
       id: "1",
@@ -61,6 +62,7 @@ const Invoices: React.FC = () => {
   const [search, setSearch] = useState<string>("");
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
+  // Filter invoices based on search query
   const filteredInvoices = invoices.filter(
     (invoice) =>
       invoice.name?.toLowerCase().includes(search.toLowerCase()) ||
@@ -71,57 +73,74 @@ const Invoices: React.FC = () => {
   );
 
   const showModal = () => {
+    // Add your filter modal logic here
     console.log("Show filter modal");
   };
 
+  // Define table columns
   const invoiceColumns: TableColumn[] = [
-    { key: "invoiceNo", header: "Invoice No.", showOnMobile: true, mobileOrder: 0 },
-    { key: "title", header: "Title", showOnMobile: false },
-    { key: "amount", header: "Amount", align: "right", showOnMobile: true, mobileOrder: 1 },
-    { key: "paidIn", header: "Paid in", align: "center", showOnMobile: true, mobileOrder: 2 },
-    { key: "status", header: "Status", align: "center", showOnMobile: true, mobileOrder: 3 },
-    { key: "issueDate", header: "Issue date", align: "right", showOnMobile: true, mobileOrder: 4 },
+    { key: "invoiceNo", header: "Invoice No." },
+    { key: "title", header: "Title" },
+    { key: "amount", header: "Amount", align: "right" },
+    { key: "paidIn", header: "Paid in", align: "center" },
+    { key: "status", header: "Status", align: "center" },
+    { key: "issueDate", header: "Issue date", align: "right" },
   ];
 
+  // Custom cell renderer for invoice-specific formatting
   const renderInvoiceCell = (item: Invoice, column: TableColumn) => {
     switch (column.key) {
       case "amount":
         return `$${item.amount.toLocaleString()}.00`;
       case "paidIn":
         return (
-          <div className="flex items-center justify-center w-full">
-            <div className="flex items-center text-sm font-medium lg:bg-gray-100 lg:border dark:bg-gray-600 dark:border-gray-250 border-gray-150 lg:py-1 lg:px-3 w-fit rounded-full">
-              <div className="w-4 h-4 mr-1 bg-success-200 rounded-full"></div>
-              <span className="text-gray-600 dark:text-gray-150">{item.paidIn}</span>
-            </div>
+          <div className="flex items-center justify-center">
+            <div className="w-2 h-2 mr-2 bg-green-500 rounded-full"></div>
+            <span className="text-gray-600 dark:text-gray-300">
+              {item.paidIn}
+            </span>
           </div>
         );
       case "status":
         const getStatusBadge = (status: Invoice["status"]) => {
-          const baseClasses = "px-3 py-1 rounded-full text-sm font-medium border";
+          const baseClasses = "px-3 py-1 rounded-full text-xs font-medium";
+
           switch (status) {
             case "Pending":
-              return `${baseClasses} bg-warning-300 text-warning-500 border-warning-500 dark:bg-warning-400`;
+              return `${baseClasses} bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300`;
             case "Overdue":
-              return `${baseClasses} bg-error-400 text-error-500 border-error-500 dark:bg-error-300`;
+              return `${baseClasses} bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300`;
             case "Paid":
-              return `${baseClasses} bg-success-300 text-success-500 border-success-500 dark:bg-success-400`;
+              return `${baseClasses} bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300`;
             default:
               return baseClasses;
           }
         };
-        return <span className={getStatusBadge(item.status)}>{item.status}</span>;
+        return (
+          <span className={getStatusBadge(item.status)}>{item.status}</span>
+        );
       case "invoiceNo":
-        return <span className="font-medium">{item.invoiceNo}</span>;
+        return (
+          <span className="font-medium text-gray-900 dark:text-white">
+            {item.invoiceNo}
+          </span>
+        );
       case "title":
-        return <span>{item.title}</span>;
+        return (
+          <span className="text-gray-600 dark:text-gray-300">{item.title}</span>
+        );
       case "issueDate":
-        return <span>{item.issueDate}</span>;
+        return (
+          <span className="text-gray-600 dark:text-gray-300">
+            {item.issueDate}
+          </span>
+        );
       default:
         return (item as any)[column.key] || "-";
     }
   };
 
+  // Handle item selection
   const handleSelectItem = (id: string, checked: boolean) => {
     if (checked) {
       setSelectedItems([...selectedItems, id]);
@@ -130,17 +149,23 @@ const Invoices: React.FC = () => {
     }
   };
 
+  // Handle select all
   const handleSelectAll = (checked: boolean) => {
-    setSelectedItems(checked ? filteredInvoices.map((invoice) => invoice.id) : []);
+    setSelectedItems(
+      checked ? filteredInvoices.map((invoice) => invoice.id) : []
+    );
   };
 
+  // Handle row click (optional)
   const handleRowClick = (invoice: Invoice) => {
     console.log("Invoice clicked:", invoice);
+    // Add navigation or modal logic here
   };
 
   return (
     <div className="flex flex-col flex-1 bg-gray-100 dark:bg-gray-500">
       <TitleHeader title="Invoices" isBackButton={false} />
+
       <AnimatePresence mode="wait">
         <div className="flex flex-col flex-1 w-full h-full px-4 py-4 space-y-4">
           <Table
