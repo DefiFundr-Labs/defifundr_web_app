@@ -88,8 +88,6 @@ export interface TimeSheetRecord {
   profileImage: string;
   role: string;
   rate: string;
-  totalHours: string;
-  totalMinutes: string;
   totalAmount: string;
   paidIn: string;
   status: string;
@@ -110,3 +108,29 @@ export interface TimeSheetRecord {
     detailLink: string;
   };
 }
+export interface MilestoneRecord {
+  id: number;
+  profileImage: string;
+  role: string;
+  amount: string;
+  paidIn: string;
+  status: string;
+  submitted: string;
+  description: string;
+  attachment: string;
+  submittedOn: string;
+  milestoneRange: string;
+  rejectionReason: string;
+  prototype?: string;
+  contract: {
+    client: string;
+    paymentType: string;
+    contractLink: string;
+  };
+  contractor: {
+    name: string;
+    position: string;
+    detailLink: string;
+  };
+}
+
