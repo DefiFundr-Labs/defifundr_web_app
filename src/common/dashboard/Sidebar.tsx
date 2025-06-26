@@ -4,7 +4,6 @@ import { sidebarRoutes } from "./SidebarItems";
 import { SidebarLinkProps, SidebarProps } from "../../types/common";
 import { Logo } from "../../assets/svg/svg";
 import { RoutePaths } from "../../routes/routesPath";
-import ConnectWallet from "./ConnectWallet";
 
 const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const location = useLocation();
@@ -15,12 +14,17 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
     name,
     toggleSidebar,
   }) => {
-    // For exact matching, compare the pathname directly
-    // For dashboard root, only match when pathname is exactly "/dashboard"
-    const isActive =
-      to === RoutePaths.DASHBOARD
-        ? location.pathname === RoutePaths.DASHBOARD
-        : location.pathname === to;
+    // Enhanced active logic for nested routes
+    const isActive = (() => {
+      // For dashboard root, only match when pathname is exactly "/dashboard"
+      if (to === RoutePaths.DASHBOARD) {
+        return location.pathname === RoutePaths.DASHBOARD;
+      }
+
+      // For other routes, check if current path starts with the route path
+      // This will make the sidebar item active for nested routes
+      return location.pathname.startsWith(to);
+    })();
 
     return (
       <li className="w-full">

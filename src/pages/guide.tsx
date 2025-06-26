@@ -14,10 +14,11 @@ const Guide = () => {
   const {
     showInfoModal,
     showSuccessModal,
-    showErrorModal,
-    showWarningModal,
+
     showConfirmModal,
-    showCustomModal,
+    showModalWithButtons,
+    showContentOnlyModal,
+    showEnhancedModal,
   } = useModal();
 
   const handleDelete = () => {
@@ -26,47 +27,149 @@ const Guide = () => {
     // Show success message after delete
     showSuccessModal("Deleted", "Item has been successfully deleted.");
   };
+  // Example 1: Modal with no buttons (just content and close X)
+  const handleNoButtonsModal = () => {
+    const content = (
+      <div className="py-8 text-center">
+        <div className="mb-4 text-6xl">🎉</div>
+        <h3 className="mb-2 text-xl font-bold">Congratulations!</h3>
+        <p className="text-gray-600 dark:text-gray-400">
+          Your action was completed successfully.
+        </p>
+      </div>
+    );
 
-  const handleCustomModal = () => {
-    const CustomContent = (
-      <div className="flex flex-col items-center space-y-6 text-center">
-        {/* Close button at top right */}
+    showContentOnlyModal(content, {
+      size: "md",
+      showCloseButton: true,
+    });
+  };
 
-        {/* Emoji container with purple background */}
-        <div className="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-primary-200">
-          <span className="text-4xl">🤔</span>
+  // Example 2: Modal with custom buttons
+  const handleCustomButtonsModal = () => {
+    const buttons = [
+      {
+        text: "Save Draft",
+        variant: "secondary" as const,
+        onClick: () => console.log("Draft saved"),
+      },
+      {
+        text: "Publish Now",
+        variant: "primary" as const,
+        onClick: () => console.log("Published"),
+      },
+      {
+        text: "Schedule",
+        variant: "success" as const,
+        onClick: () => console.log("Scheduled"),
+      },
+    ];
+
+    showModalWithButtons(
+      "Publish Article",
+      "How would you like to handle this article?",
+      buttons,
+      { size: "lg" }
+    );
+  };
+
+  // Example 3: Modal without close button (force user action)
+  const handleForceActionModal = () => {
+    const buttons = [
+      {
+        text: "Accept",
+        variant: "primary" as const,
+        onClick: () => console.log("Accepted"),
+      },
+      {
+        text: "Decline",
+        variant: "danger" as const,
+        onClick: () => console.log("Declined"),
+      },
+    ];
+
+    showModalWithButtons(
+      "Terms & Conditions",
+      "You must accept our terms and conditions to continue.",
+      buttons,
+      {
+        size: "md",
+        showCloseButton: false, // Force user to choose
+      }
+    );
+  };
+
+  // Example 4: Enhanced modal with full control
+  const handleEnhancedModal = () => {
+    const content = (
+      <div className="space-y-6">
+        <div className="flex items-center justify-center w-20 h-20 p-4 mx-auto rounded-full bg-primary-200">
+          <span className="text-4xl">📧</span>
         </div>
 
-        {/* Title */}
-        <h2 className="text-2xl font-bold">Custom?</h2>
+        <div className="text-center">
+          <h3 className="mb-2 text-xl font-bold">Check your email</h3>
+          <p className="mb-4 text-gray-600 dark:text-gray-400">
+            We've sent a verification link to your email address.
+          </p>
+        </div>
 
-        {/* Bullet points list */}
-        <ul className="space-y-2 text-left">
+        <ul className="space-y-2 text-sm text-left">
           <li className="flex items-start">
             <span className="mr-2">•</span>
-            <span>
-              Check your spam or junk folder - Sometimes, emails get filtered.
-            </span>
+            <span>Check your spam or junk folder</span>
           </li>
           <li className="flex items-start">
             <span className="mr-2">•</span>
-            <span>Wait a few minutes - it may take a moment to arrive.</span>
+            <span>Wait a few minutes for delivery</span>
           </li>
           <li className="flex items-start">
             <span className="mr-2">•</span>
-            <span>Resend the email - Tap the button to send it again.</span>
-          </li>
-          <li className="flex items-start">
-            <span className="mr-2">•</span>
-            <span>
-              Check if your email is correct - Sometimes, we make mistakes.
-            </span>
+            <span>Make sure your email address is correct</span>
           </li>
         </ul>
       </div>
     );
 
-    showCustomModal(CustomContent, "md");
+    showEnhancedModal(content, {
+      title: "Email Verification",
+      size: "md",
+      showButtons: true,
+      buttons: [
+        {
+          text: "Resend Email",
+          variant: "secondary",
+          onClick: () => console.log("Resending email..."),
+        },
+        {
+          text: "Change Email",
+          variant: "primary",
+          onClick: () => console.log("Opening email change form..."),
+        },
+      ],
+      showCloseButton: true,
+    });
+  };
+  const handleLoadingModal = () => {
+    const content = (
+      <div className="py-8 text-center">
+        <div className="w-12 h-12 mx-auto mb-4 border-b-2 rounded-full animate-spin border-primary-200"></div>
+        <h3 className="mb-2 text-lg font-medium">Processing...</h3>
+        <p className="text-gray-600 dark:text-gray-400">
+          Please wait while we process your request.
+        </p>
+      </div>
+    );
+
+    showContentOnlyModal(content, {
+      size: "sm",
+      showCloseButton: false, // Can't close while loading
+    });
+
+    // Simulate closing after 3 seconds
+    setTimeout(() => {
+      showSuccessModal("Complete!", "Your request has been processed.");
+    }, 3000);
   };
   return (
     <div className="container py-8">
@@ -248,45 +351,15 @@ const Guide = () => {
         <div className="flex items-center justify-between mb-8">
           <h1 className="h2">Modal Examples</h1>
         </div>
-
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {/* Original modal examples */}
           <button
             className="button button--primary"
             onClick={() =>
               showInfoModal("Information", "This is an informational message.")
             }
           >
-            Show Info Modal
-          </button>
-
-          <button
-            className="button button--primary"
-            onClick={() =>
-              showSuccessModal("Success", "Operation completed successfully!")
-            }
-          >
-            Show Success Modal
-          </button>
-
-          <button
-            className="button button--primary"
-            onClick={() =>
-              showErrorModal(
-                "Error",
-                "An error occurred while processing your request."
-              )
-            }
-          >
-            Show Error Modal
-          </button>
-
-          <button
-            className="button button--primary"
-            onClick={() =>
-              showWarningModal("Warning", "This action cannot be undone.")
-            }
-          >
-            Show Warning Modal
+            Basic Info Modal
           </button>
 
           <button
@@ -301,14 +374,43 @@ const Guide = () => {
               )
             }
           >
-            Show Confirm Modal
+            Confirm Modal
+          </button>
+
+          {/* New dynamic modal examples */}
+          <button
+            className="button button--primary"
+            onClick={handleNoButtonsModal}
+          >
+            No Buttons Modal
           </button>
 
           <button
             className="button button--primary"
-            onClick={handleCustomModal}
+            onClick={handleCustomButtonsModal}
           >
-            Show Custom Modal
+            Custom Buttons Modal
+          </button>
+
+          <button
+            className="button button--primary"
+            onClick={handleForceActionModal}
+          >
+            Force Action Modal
+          </button>
+
+          <button
+            className="button button--primary"
+            onClick={handleEnhancedModal}
+          >
+            Enhanced Modal
+          </button>
+
+          <button
+            className="button button--primary"
+            onClick={handleLoadingModal}
+          >
+            Loading Modal
           </button>
         </div>
       </div>

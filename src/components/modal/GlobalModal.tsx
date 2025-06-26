@@ -4,6 +4,14 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeModal, resetModal } from "../../redux/slice/modalSlice";
 import { RootState } from "../../redux/store";
 
+interface ModalButton {
+  text: string;
+  onClick?: () => void;
+  variant?: "primary" | "secondary" | "danger" | "success";
+  disabled?: boolean;
+  className?: string;
+}
+
 const GlobalModal: React.FC = () => {
   const dispatch = useDispatch();
   const { isOpen, modalProps } = useSelector((state: RootState) => state.modal);
@@ -12,12 +20,14 @@ const GlobalModal: React.FC = () => {
     title,
     content,
     confirmText,
-    // cancelText,
     onConfirm,
     onCancel,
     type,
     customComponent,
     size = "md",
+    showButtons = true,
+    buttons = [],
+    showCloseButton = true,
   } = modalProps;
 
   const handleClose = () => {
@@ -52,6 +62,8 @@ const GlobalModal: React.FC = () => {
         return "max-w-lg";
       case "xl":
         return "max-w-xl";
+      case "2xl":
+        return "max-w-2xl";
       case "full":
         return "max-w-full mx-4";
       default:
@@ -75,26 +87,65 @@ const GlobalModal: React.FC = () => {
     }
   };
 
-  const getButtonClass = (buttonType: "confirm" | "cancel") => {
+  const getButtonClass = (
+    variant: string = "primary",
+    customClassName?: string
+  ) => {
     const baseClass = "button !w-full";
 
-    if (buttonType === "confirm") {
-      switch (type) {
-        case "success":
-          return `${baseClass} py-3 rounded-full bg-primary-200 text-white hover:bg-primary-100 transition-colors duration-200`;
-        case "warning":
-          return `${baseClass} button--primary`;
-        case "error":
-          return `${baseClass} button--primary`;
-        case "confirm":
-          return `${baseClass} button--primary`;
-        case "info":
-        default:
-          return `${baseClass} button--primary`;
-      }
-    } else {
-      return `${baseClass} button--primary`;
+    if (customClassName) {
+      return `${baseClass} ${customClassName}`;
     }
+
+    switch (variant) {
+      case "primary":
+        return `${baseClass} py-3 rounded-full bg-primary-200 text-white hover:bg-primary-100 transition-colors duration-200`;
+      case "secondary":
+        return `${baseClass} py-3 rounded-full border border-gray-300 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors duration-200`;
+      case "danger":
+        return `${baseClass} py-3 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors duration-200`;
+      case "success":
+        return `${baseClass} py-3 rounded-full bg-green-600 text-white hover:bg-green-700 transition-colors duration-200`;
+      default:
+        return `${baseClass} button--primary`;
+    }
+  };
+
+  // Determine which buttons to render
+  const renderButtons = () => {
+    // If custom buttons are provided, use them
+    if (buttons && buttons.length > 0) {
+      return buttons.map((button: ModalButton, index: number) => (
+        <button
+          key={index}
+          className={getButtonClass(button.variant, button.className)}
+          onClick={() => {
+            if (button.onClick) {
+              button.onClick();
+            }
+            dispatch(closeModal());
+            setTimeout(() => {
+              dispatch(resetModal());
+            }, 300);
+          }}
+          disabled={button.disabled}
+        >
+          {button.text}
+        </button>
+      ));
+    }
+
+    // Fallback to traditional confirm button if showButtons is true
+    if (showButtons) {
+      return (
+        <button className={getButtonClass("primary")} onClick={handleConfirm}>
+          {confirmText || "Confirm"}
+        </button>
+      );
+    }
+
+    // No buttons
+    return null;
   };
 
   return (
@@ -102,7 +153,7 @@ const GlobalModal: React.FC = () => {
       open={isOpen}
       as="div"
       className="relative z-[99] focus:outline-none"
-      onClose={handleClose}
+      onClose={showCloseButton ? handleClose : () => {}}
     >
       {/* Backdrop */}
       <div
@@ -117,20 +168,23 @@ const GlobalModal: React.FC = () => {
             transition
             className={`w-full ${getSizeClass()} flex-col flex rounded-xl ${getTypeClasses()} relative p-8 duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0 shadow-xl`}
           >
-            <button onClick={handleClose} className="self-start">
-              <svg
-                width="32"
-                height="32"
-                viewBox="0 0 32 32"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M23.4532 6.66675L15.9998 14.1201L8.5465 6.66675L6.6665 8.54675L14.1198 16.0001L6.6665 23.4534L8.5465 25.3334L15.9998 17.8801L23.4532 25.3334L25.3332 23.4534L17.8798 16.0001L25.3332 8.54675L23.4532 6.66675Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </button>
+            {/* Close button - only show if showCloseButton is true */}
+            {showCloseButton && (
+              <button onClick={handleClose} className="self-start">
+                <svg
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M23.4532 6.66675L15.9998 14.1201L8.5465 6.66675L6.6665 8.54675L14.1198 16.0001L6.6665 23.4534L8.5465 25.3334L15.9998 17.8801L23.4532 25.3334L25.3332 23.4534L17.8798 16.0001L25.3332 8.54675L23.4532 6.66675Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            )}
 
             {title && (
               <DialogTitle
@@ -158,23 +212,12 @@ const GlobalModal: React.FC = () => {
               )
             )}
 
-            {/* Action buttons */}
-            <div className="flex justify-end mt-6 space-x-3 h-14">
-              {/* {(type === "confirm" || cancelText) && (
-                <button
-                  className={getButtonClass("cancel")}
-                  onClick={handleClose}
-                >
-                  {cancelText || "Cancel"}
-                </button>
-              )} */}
-              <button
-                className={getButtonClass("confirm")}
-                onClick={handleConfirm}
-              >
-                {confirmText || "Confirm"}
-              </button>
-            </div>
+            {/* Action buttons - only render if there are buttons to show */}
+            {(showButtons || (buttons && buttons.length > 0)) && (
+              <div className="flex justify-end mt-6 space-x-3 h-14">
+                {renderButtons()}
+              </div>
+            )}
           </DialogPanel>
         </div>
       </div>

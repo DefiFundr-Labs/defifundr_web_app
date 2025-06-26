@@ -1,5 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
+interface ModalButton {
+  text: string;
+  onClick?: () => void;
+  variant?: "primary" | "secondary" | "danger" | "success";
+  disabled?: boolean;
+  className?: string;
+}
+
 export interface ModalProps {
   title?: string;
   content?: React.ReactNode | string;
@@ -7,11 +15,15 @@ export interface ModalProps {
   cancelText?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
-  type?: "info" | "success" | "warning" | "error" | "confirm" | "custom";
+  type?: "success" | "warning" | "error" | "confirm" | "info" | "custom";
   customComponent?: React.ReactNode;
-  size?: "sm" | "md" | "lg" | "xl" | "full";
-}
+  size?: "sm" | "md" | "lg" | "xl" | "2xl" | "full";
 
+  // New properties for dynamic modals
+  showButtons?: boolean;
+  buttons?: ModalButton[];
+  showCloseButton?: boolean;
+}
 interface ModalState {
   isOpen: boolean;
   modalProps: ModalProps;
