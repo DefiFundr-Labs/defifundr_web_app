@@ -4316,3 +4316,110 @@ export const LinkIcon = () => (
     />
   </svg>
 );
+export const FlagIcon = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M4.2915 1.66602V18.3327"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.2915 3.33398H13.6248C15.8748 3.33398 16.3748 4.58398 14.7915 6.16732L13.7915 7.16732C13.1248 7.83398 13.1248 8.91732 13.7915 9.50065L14.7915 10.5007C16.3748 12.084 15.7915 13.334 13.6248 13.334H4.2915"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+export const CalendarIcon2 = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6.6665 1.66602V4.16602"
+      stroke="#5A42DE"
+      strokeWidth="1.25"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M13.3335 1.66602V4.16602"
+      stroke="#5A42DE"
+      strokeWidth="1.25"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2.9165 7.57422H17.0832"
+      stroke="#5A42DE"
+      strokeWidth="1.25"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M17.5 7.08268V14.166C17.5 16.666 16.25 18.3327 13.3333 18.3327H6.66667C3.75 18.3327 2.5 16.666 2.5 14.166V7.08268C2.5 4.58268 3.75 2.91602 6.66667 2.91602H13.3333C16.25 2.91602 17.5 4.58268 17.5 7.08268Z"
+      stroke="#5A42DE"
+      strokeWidth="1.25"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.99607 11.4167H10.0036"
+      stroke="#5A42DE"
+      strokeWidth="1.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.91209 11.4167H6.91957"
+      stroke="#5A42DE"
+      strokeWidth="1.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.91209 13.9167H6.91957"
+      stroke="#5A42DE"
+      strokeWidth="1.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ExpenseIcon = () => (
+  <svg
+    width={16}
+    height={18}
+    viewBox="0 0 16 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M3.60673 15.416C4.29006 14.6827 5.33174 14.741 5.93174 15.541L6.7734 16.666C7.4484 17.5577 8.54007 17.5577 9.21507 16.666L10.0567 15.541C10.6567 14.741 11.6984 14.6827 12.3817 15.416C13.8651 16.9993 15.0734 16.4743 15.0734 14.2577V4.86602C15.0734 1.50768 14.2901 0.666016 11.1401 0.666016H4.84007C1.69007 0.666016 0.906738 1.50768 0.906738 4.86602V14.2493C0.915072 16.4743 2.13173 16.991 3.60673 15.416Z"
+      stroke="#5A42DE"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);

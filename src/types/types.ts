@@ -20,6 +20,7 @@ export interface AccountOption {
   description: string;
   // icon: string;
 }
+
 export interface AuthFormHeaderProps {
   title: string;
   description: string;
@@ -36,6 +37,7 @@ export interface FormInputProps<T extends FieldValues> {
   className?: string;
   touched?: boolean;
 }
+
 export interface FormSelectInputProps<T extends FieldValues> {
   id: Path<T>;
   label: string;
@@ -58,6 +60,7 @@ export interface FormPrivacyProps<T extends FieldValues> {
   error?: FieldError;
   touched?: boolean;
 }
+
 export interface DashBoardTitleHeaderProps {
   title: string;
   isBackButton?: boolean;
@@ -67,46 +70,48 @@ export interface DashBoardTitleHeaderProps {
   setSelectedTab?: (tab: string) => void;
   isAddButton?: boolean;
 }
-type TimeSheet = {
-  id: number;
-  employeeName: string;
-  role: string;
-  profileImage: string;
-  rate: string;
-  totalHours: string;
-  totalAmount: string;
-  paidIn: string;
-  status: string;
-  submitted: string;
-};
-export interface TimeTrackingTabContentProps {
-  timeSheetRecords: TimeSheet[];
-}
+
+// Updated TimeSheetRecord interface to match your data structure
 export interface TimeSheetRecord {
   id: number;
   employeeName: string;
   profileImage: string;
   role: string;
-  rate: string;
-  totalHours: string;
-  totalMinutes: string;
-  totalAmount: string;
-  paidIn: string;
-  status: string;
+  rate?: string; // Optional - only for time tracking
+  totalHours?: string; // Optional - not present in time off requests
+  totalMinutes?: string; // Optional
+  totalAmount?: string; // Optional - only for time tracking
+  paidIn?: string; // Optional
+  status: "Pending" | "Approved" | "Rejected";
   submitted: string;
   description: string;
   attachment: string;
   submittedOn: string;
   dateRange: string;
   rejectionReason: string;
+
+  // Extended properties for time off and other types
+  leaveType?: string; // e.g., Sick Leave, Vacation, etc.
+  paid?: boolean; // For Time Off: Paid or unpaid leave
+
   contract: {
     client: string;
     paymentType: string;
     contractLink: string;
   };
+
   contractor: {
     name: string;
     position: string;
     detailLink: string;
   };
+}
+
+export interface TimeTrackingTabContentProps {
+  timeSheetRecords: TimeSheetRecord[];
+}
+
+export interface RecordDetails {
+  records: TimeSheetRecord;
+  type: string; // "timeSheet" | "timeOff" | "expense" | "milestone"
 }

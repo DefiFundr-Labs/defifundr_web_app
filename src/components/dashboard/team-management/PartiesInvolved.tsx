@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import { LinkIcon, NotebookIcon, Profile } from "../../../assets/svg/svg";
 import { FC } from "react";
 import CtaButton from "./CtaButton";
+import useModal from "../../../hooks/useModal";
+import RejectTimeSheetModal from "../../modal/RejectTimeSheetModal";
+import { useScreenWidth } from "../../../utils/useScreenWidth";
 
 // Types
 interface Contractor {
@@ -20,7 +23,7 @@ interface PartiesInvolvedProps {
   contractor: Contractor;
   contract: Contract;
   onApprove?: () => void;
-  onReject?: () => void;
+  onReject?: (reason: string) => void;
   showCtaButton?: boolean;
 }
 
@@ -29,11 +32,23 @@ const PartiesInvolved: FC<PartiesInvolvedProps> = ({
   contractor,
   contract,
   onApprove,
-  onReject,
   showCtaButton,
+  onReject,
 }) => {
   const { name, position, detailLink } = contractor;
   const { client, paymentType, contractLink } = contract;
+  const screenSize = useScreenWidth();
+  const { showCustomModal } = useModal();
+  const handleShowModal = () => {
+    showCustomModal(
+      <RejectTimeSheetModal
+        handleReject={(reason) => {
+          onReject?.(reason);
+        }}
+      />,
+      screenSize < 640 ? "full" : "md"
+    );
+  };
 
   return (
     <div className="space-y-8">
@@ -88,7 +103,7 @@ const PartiesInvolved: FC<PartiesInvolvedProps> = ({
       </div>
       {showCtaButton && (
         <div className="fixed left-0 w-full sm:block bottom-2 sm:static lg:hidden ">
-          <CtaButton onApprove={onApprove} onReject={onReject} />
+          <CtaButton onApprove={onApprove} onReject={handleShowModal} />
         </div>
       )}
     </div>
