@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import CtaHeader from "../../../components/dashboard/team-management/CtaHeader";
 import TimeSheetDetailsCard from "../../../components/dashboard/team-management/timeTracking/TimeSheetDetailsCard";
 import PartiesInvolvedComponent from "../../../components/dashboard/team-management/PartiesInvolved";
-import { timeSheetRecords } from "../../../data/timeSheetRecords";
 import { TimeSheetRecord } from "../../../types/types";
+import { timeOffRequests } from "../../../data/timeOff";
 
 type ContractorType = {
   name: string;
@@ -18,7 +18,7 @@ type ContractType = {
   contractLink: string;
 };
 
-function TimeTrackingDetails() {
+function TimeOff() {
   const { id } = useParams();
 
   const [timeSheetDetail, setTimeSheetDetail] =
@@ -28,7 +28,7 @@ function TimeTrackingDetails() {
   const [showCtaButton, setShowCtaButton] = useState<boolean>(false);
   const handleOnApprove = () => {
     // Logic to handle approval of the timesheet
-    console.log("Timesheet approved");
+    console.log("Time sheet approved");
     // You can add further actions like updating the status in the backend
     setTimeSheetDetail((prev) => {
       if (prev) {
@@ -62,7 +62,7 @@ function TimeTrackingDetails() {
   useEffect(() => {
     if (id) {
       const fetchTimeSheetDetails = () => {
-        const timeSheet = timeSheetRecords.find(
+        const timeSheet = timeOffRequests.find(
           (record) => record.id === Number(id)
         );
         setTimeSheetDetail(timeSheet || null);
@@ -82,17 +82,14 @@ function TimeTrackingDetails() {
   return (
     <div>
       <CtaHeader
-        title="Timesheet details"
+        title="Time off details"
         showCtaButton={showCtaButton}
         onApprove={handleOnApprove}
         onReject={handleOnReject}
       />
       <div className="p-4 space-y-4 dark:bg-gray-600">
         {timeSheetDetail ? (
-          <TimeSheetDetailsCard
-            records={timeSheetDetail}
-            type="time tracking"
-          />
+          <TimeSheetDetailsCard records={timeSheetDetail} type="time off" />
         ) : (
           <div className="flex items-center justify-center w-full h-full bg-white rounded-lg dark:bg-gray-500">
             <p className="text-gray-600 dark:text-gray-200">
@@ -115,4 +112,4 @@ function TimeTrackingDetails() {
   );
 }
 
-export default TimeTrackingDetails;
+export default TimeOff;

@@ -2,39 +2,36 @@ import { ArrowLeft } from "lucide-react";
 import useModal from "../../../hooks/useModal";
 import { useNavigate } from "react-router-dom";
 import CtaButton from "./CtaButton";
-import RejectTimeSheetModal from "../../modal/RejectTimesheetModal";
-import {  useEffect, useState } from "react";
+import RejectTimeSheetModal from "../../modal/RejectTimeSheetModal";
+import { SetStateAction, useEffect, useState } from "react";
+import { useScreenWidth } from "../../../utils/useScreenWidth";
 interface CtaHeaderProps {
   title: string;
   showCtaButton?: boolean;
   onApprove?: () => void;
-  onReject?: () => void;
+  onReject?: (reason: string) => void;
 }
 function CtaHeader({
   title,
   showCtaButton,
   onApprove,
-  onReject,   /* the reject functionality for the modal  */
+  onReject /* the reject functionality for the modal  */,
 }: CtaHeaderProps) {
   const navigate = useNavigate();
-  const [screenWidth, setScreenWidth] = useState<number>(window.innerWidth);
+  const screenSize = useScreenWidth();
   const handleBackButton = () => {
     navigate(-1);
   };
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [window.innerWidth]);
+
   const { showCustomModal } = useModal();
   const handleShowModal = () => {
     showCustomModal(
-      <RejectTimeSheetModal />,
-      screenWidth < 640 ? "full" : "md"
+      <RejectTimeSheetModal
+        handleReject={(reason) => {
+          onReject?.(reason);
+        }}
+      />,
+      screenSize < 640 ? "full" : "md"
     );
   };
   return (

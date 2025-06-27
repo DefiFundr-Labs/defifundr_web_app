@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import CtaHeader from "../../../components/dashboard/team-management/CtaHeader";
 import TimeSheetDetailsCard from "../../../components/dashboard/team-management/timeTracking/TimeSheetDetailsCard";
 import PartiesInvolvedComponent from "../../../components/dashboard/team-management/PartiesInvolved";
-import { timeSheetRecords } from "../../../data/timeSheetRecords";
 import { TimeSheetRecord } from "../../../types/types";
+import { expenseRecords } from "../../../data/expenseRecords";
 
 type ContractorType = {
   name: string;
@@ -18,7 +18,7 @@ type ContractType = {
   contractLink: string;
 };
 
-function TimeTrackingDetails() {
+function Expense() {
   const { id } = useParams();
 
   const [timeSheetDetail, setTimeSheetDetail] =
@@ -27,8 +27,8 @@ function TimeTrackingDetails() {
   const [contract, setContract] = useState<ContractType | null>(null);
   const [showCtaButton, setShowCtaButton] = useState<boolean>(false);
   const handleOnApprove = () => {
-    // Logic to handle approval of the timesheet
-    console.log("Timesheet approved");
+    // Logic to handle approval of the time sheet
+    console.log("Time sheet approved");
     // You can add further actions like updating the status in the backend
     setTimeSheetDetail((prev) => {
       if (prev) {
@@ -44,8 +44,8 @@ function TimeTrackingDetails() {
   const handleOnReject = (reason: string) => {
     console.log(reason);
 
-    // Logic to handle rejection of the timesheet
-    console.log("Timesheet rejected");
+    // Logic to handle rejection of the time sheet
+    console.log("Time sheet rejected");
     // You can add further actions like updating the status in the backend
     setTimeSheetDetail((prev) => {
       if (prev) {
@@ -62,7 +62,7 @@ function TimeTrackingDetails() {
   useEffect(() => {
     if (id) {
       const fetchTimeSheetDetails = () => {
-        const timeSheet = timeSheetRecords.find(
+        const timeSheet = expenseRecords.find(
           (record) => record.id === Number(id)
         );
         setTimeSheetDetail(timeSheet || null);
@@ -82,17 +82,14 @@ function TimeTrackingDetails() {
   return (
     <div>
       <CtaHeader
-        title="Timesheet details"
+        title="Expense details"
         showCtaButton={showCtaButton}
         onApprove={handleOnApprove}
         onReject={handleOnReject}
       />
       <div className="p-4 space-y-4 dark:bg-gray-600">
         {timeSheetDetail ? (
-          <TimeSheetDetailsCard
-            records={timeSheetDetail}
-            type="time tracking"
-          />
+          <TimeSheetDetailsCard records={timeSheetDetail} type="expense" />
         ) : (
           <div className="flex items-center justify-center w-full h-full bg-white rounded-lg dark:bg-gray-500">
             <p className="text-gray-600 dark:text-gray-200">
@@ -115,4 +112,4 @@ function TimeTrackingDetails() {
   );
 }
 
-export default TimeTrackingDetails;
+export default Expense;

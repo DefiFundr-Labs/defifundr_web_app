@@ -25,6 +25,10 @@ import TeamManagement from "../pages/dashboard/team-management/teamManagement";
 import EmployeeManagementDetails from "../pages/dashboard/team-management/employeeManagementDetails";
 import Invoices from "../pages/dashboard/invoices";
 import TimeTrackingDetails from "../pages/dashboard/team-management/timeTrackingDetails";
+import Expense from "../pages/dashboard/team-management/expense";
+import TimeOffDetails from "../pages/dashboard/team-management/timeOffDetails";
+import MileStoneDetails from "../pages/dashboard/team-management/mileStonesDetails";
+import MileStone from "../pages/dashboard/team-management/mileStonesDetails";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
 export const router = createBrowserRouter([
@@ -107,6 +111,18 @@ export const router = createBrowserRouter([
       {
         path: `${RoutePaths.TEAM_MANAGEMENT_TIME_TRACKING}/:id`,
         element: <TimeTrackingDetails />,
+      },
+      {
+        path: `${RoutePaths.TEAM_MANAGEMENT_MILESTONE}/:id`,
+        element: <MileStone />,
+      },
+      {
+        path: `${RoutePaths.TEAM_MANAGEMENT_TIME_OFF}/:id`,
+        element: <TimeOffDetails />,
+      },
+      {
+        path: `${RoutePaths.TEAM_MANAGEMENT_EXPENSE}/:id`,
+        element: <Expense />,
       },
       {
         path: RoutePaths.INVOICES,

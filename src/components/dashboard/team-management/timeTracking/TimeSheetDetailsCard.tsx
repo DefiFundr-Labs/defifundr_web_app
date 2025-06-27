@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { ClockIcon } from "../../../../assets/svg/svg";
-import { TimeSheetRecord } from "../../../../types/types";
+import {
+  CalendarIcon2,
+  ClockIcon,
+  ExpenseIcon,
+  FlagIcon,
+} from "../../../../assets/svg/svg";
+import { RecordDetails } from "../../../../types/types";
 
-function TimeSheetDetailsCard({
-  timeSheetDetail,
-}: {
-  timeSheetDetail: TimeSheetRecord;
-}) {
+function TimeSheetDetailsCard({ records, type }: RecordDetails) {
   const [statusStyle, setStatusStyle] = useState<string>("");
 
   const getStatusColor = (status: string) => {
@@ -23,12 +24,10 @@ function TimeSheetDetailsCard({
   };
 
   useEffect(() => {
-    if (timeSheetDetail.status) {
-      console.log("timeSheetDetail.status", timeSheetDetail.status);
-
-      setStatusStyle(getStatusColor(timeSheetDetail.status));
+    if (records.status) {
+      setStatusStyle(getStatusColor(records.status));
     }
-  }, [timeSheetDetail.status]);
+  }, [records.status]);
 
   return (
     <div className="max-w-4xl p-4 space-y-4 rounded-lg sm:p-6 dark:bg-gray-500">
@@ -36,15 +35,38 @@ function TimeSheetDetailsCard({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="items-center justify-between p-3.5 rounded-lg flex bg-primary-500 dark:bg-primary-600 w-fit text-primary-200 dark:text-primary-400">
-              <ClockIcon />
+              {type.toLowerCase() === "time tracking" ? (
+                <ClockIcon />
+              ) : type.toLowerCase() === "time off" ? (
+                <CalendarIcon2 />
+              ) : type.toLowerCase() === "expense" ? (
+                <ExpenseIcon />
+              ) : (
+                <FlagIcon />
+              )}
             </div>
             <div>
               <p className="text-base font-medium sm:text-xl dark:text-gray-150">
-                {timeSheetDetail.totalHours},{" "}
-                {timeSheetDetail.totalMinutes ?? "0 minutes"}
+                {type.toLowerCase() === "time tracking"
+                  ? `${records.totalHours ?? "0 hours"}, ${
+                      records.totalMinutes ?? "0 minutes"
+                    }`
+                  : type.toLowerCase() === "time off"
+                  ? records.dateRange
+                  : type.toLowerCase() === "expense"
+                  ? records.employeeName
+                  : records.employeeName}
               </p>
               <p className="text-xs font-medium dark:text-gray-200">
-                {timeSheetDetail.dateRange}
+                {type.toLowerCase() === "time tracking"
+                  ? records.dateRange
+                  : type.toLowerCase() === "time off"
+                  ? records.paid
+                    ? "Paid time off"
+                    : ""
+                  : type.toLowerCase() === "expense"
+                  ? records.employeeName
+                  : "2 of 4 milestones"}
               </p>
             </div>
           </div>
@@ -54,7 +76,7 @@ function TimeSheetDetailsCard({
               <p
                 className={`border text-sm font-medium py-1 px-2 rounded-full ${statusStyle}`}
               >
-                {timeSheetDetail.status}
+                {records.status}
               </p>
             </div>
           </div>
@@ -65,18 +87,42 @@ function TimeSheetDetailsCard({
       <div className="flex flex-col w-full">
         <div className="flex items-center justify-between px-2 py-1 bg-gray-100 dark:bg-gray-600">
           <p className="text-xs font-medium text-gray-400 dark:text-gray-200">
-            Rate
+            {type.toLowerCase() === "time tracking"
+              ? "Rate"
+              : type.toLowerCase() === "time off"
+              ? "Reason"
+              : type.toLowerCase() === "expense"
+              ? "Amount"
+              : "Amount"}
           </p>
           <p className="text-xs font-medium text-gray-400 dark:text-gray-200">
-            Total amount
+            {type.toLowerCase() === "time tracking"
+              ? "Total amount"
+              : type.toLowerCase() === "time off"
+              ? "Total time off"
+              : type.toLowerCase() === "expense"
+              ? "Expense date"
+              : "Estimated due date"}
           </p>
         </div>
         <div className="flex items-center justify-between p-2">
           <p className="text-sm font-medium text-gray-500 dark:text-gray-150">
-            {timeSheetDetail.rate}
+            {type.toLowerCase() === "time tracking"
+              ? records.rate
+              : type.toLowerCase() === "time off"
+              ? records.leaveType
+              : type.toLowerCase() === "expense"
+              ? records.totalAmount + "USDT"
+              : `${records.totalAmount} USDT`}
           </p>
           <p className="text-sm font-medium text-gray-500 dark:text-gray-150">
-            {timeSheetDetail.totalAmount}
+            {type.toLowerCase() === "time tracking"
+              ? `${records.totalAmount}  ${records.paidIn}`
+              : type.toLowerCase() === "time off"
+              ? records.dateRange
+              : type.toLowerCase() === "expense"
+              ? records.submittedOn
+              : records.submittedOn}
           </p>
         </div>
       </div>
@@ -90,7 +136,7 @@ function TimeSheetDetailsCard({
         </div>
         <div className="flex items-center justify-between p-2">
           <p className="text-sm font-medium text-gray-500 dark:text-gray-150">
-            {timeSheetDetail.description}
+            {records.description}
           </p>
         </div>
       </div>
@@ -107,16 +153,15 @@ function TimeSheetDetailsCard({
         </div>
         <div className="flex items-center justify-between p-2">
           <p className="text-sm font-medium text-primary-200 dark:text-primary-400">
-            {timeSheetDetail.attachment}
+            {records.attachment}
           </p>
           <p className="text-sm font-medium text-gray-500 dark:text-gray-150">
-            {timeSheetDetail.submittedOn}
+            {records.submittedOn}
           </p>
         </div>
       </div>
 
-      {/* Rejection Reason */}
-      {timeSheetDetail.status.toLowerCase() === "rejected" && (
+      {records.status.toLowerCase() === "rejected" && (
         <div className="flex flex-col w-full">
           <div className="flex items-center justify-between px-2 py-1 bg-gray-100 dark:bg-gray-600">
             <p className="text-xs font-medium text-gray-400 dark:text-gray-200">
@@ -125,7 +170,7 @@ function TimeSheetDetailsCard({
           </div>
           <div className="flex items-center justify-between p-2">
             <p className="text-sm font-medium text-gray-500 dark:text-gray-150">
-              {timeSheetDetail.rejectionReason}
+              {records.rejectionReason}
             </p>
           </div>
         </div>
