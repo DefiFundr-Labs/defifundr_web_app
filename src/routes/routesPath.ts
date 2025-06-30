@@ -29,4 +29,5 @@ export const RoutePaths = {
   INVOICES: "/dashboard/invoices",
   BUSINESS: "/dashboard/business",
   SETTINGS: "/dashboard/settings",
+  NOT_FOUND: "*",
 };
