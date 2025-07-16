@@ -3,6 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import TitleHeader from "../../common/dashboard/TitleHeader";
 import Table from "../../components/table/Table";
 import { TableColumn } from "../../components/table/TableHeader";
+import ContractsMetrics from "../../components/dashboard/contracts/ContractsMetrics";
+import { invoiceMetricsData } from "../../utils/constant";
+import { Link } from "react-router-dom";
+import { RoutePaths } from "../../routes/routesPath";
 
 interface Invoice {
   id: string;
@@ -121,9 +125,12 @@ const Invoices: React.FC = () => {
         );
       case "invoiceNo":
         return (
-          <span className="font-medium text-gray-900 dark:text-white">
+          <Link
+            to={`${RoutePaths.INVOICES}/${item.invoiceNo.replace("#", "")}`}
+            className="font-medium text-gray-900 dark:text-white"
+          >
             {item.invoiceNo}
-          </span>
+          </Link>
         );
       case "title":
         return (
@@ -162,12 +169,28 @@ const Invoices: React.FC = () => {
     // Add navigation or modal logic here
   };
 
+  const isContractData = invoiceMetricsData.length === 0;
+
   return (
     <div className="flex flex-col flex-1 bg-gray-100 dark:bg-gray-500">
       <TitleHeader title="Invoices" isBackButton={false} />
 
       <AnimatePresence mode="wait">
         <div className="flex flex-col flex-1 w-full h-full px-4 py-4 space-y-4">
+          {!isContractData && (
+            <div className="flex gap-2 w-full overflow-auto lg:overflow-hidden scroll-hidden lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-4">
+              {invoiceMetricsData.map((metric) => (
+                <ContractsMetrics
+                  icon={metric.icon}
+                  subValue={metric.subValue}
+                  title={metric.title}
+                  value={metric.value}
+                  key={metric.title}
+                />
+              ))}
+            </div>
+          )}
+
           <Table
             data={filteredInvoices}
             columns={invoiceColumns}

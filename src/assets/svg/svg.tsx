@@ -4423,3 +4423,224 @@ export const ExpenseIcon = () => (
     />
   </svg>
 );
+
+export const DocumentIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none">
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2.5"
+      d="M36.666 16.665V25c0 8.333-3.333 11.666-11.666 11.666H15C6.666 36.665 3.333 33.332 3.333 25V15C3.333 6.665 6.666 3.332 15 3.332h8.333"
+    ></path>
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2.5"
+      d="M36.666 16.665H30c-5 0-6.667-1.666-6.667-6.666V3.332zm-24.999 5.003h10m-10 6.664h6.667"
+    ></path>
+  </svg>
+);
+
+export const UsdtIcon = ({ size }: { size?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size ? size : "16"}
+    height={size ? size : "16"}
+    fill="none"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill="#00A478"
+      d="M15.957 8A7.958 7.958 0 1 1 .04 8a7.958 7.958 0 0 1 15.916 0"
+    ></path>
+    <path
+      fill="#fff"
+      d="M7.182 7.859V6.466H5.294v-1.22h5.276v1.238H8.682v1.375z"
+    ></path>
+    <path
+      fill="#fff"
+      d="M7.889 7.176c1.888 0 3.405.379 3.405.843s-1.518.841-3.405.841C6 8.86 4.483 8.482 4.482 8.02c0-.465 1.518-.843 3.407-.843m0 .137c-1.977 0-3 .516-3.124.705.123.171 1.147.43 3.124.43 1.994 0 3-.259 3.123-.43-.124-.172-1.148-.704-3.123-.705"
+    ></path>
+    <path
+      fill="#fff"
+      d="M8.683 8.29v-.963a11 11 0 0 0-.777-.034c-.247 0-.476 0-.706.017v.963c.212 0 .459.017.706.017.265.017.53.017.777 0M7.889 8.855c-.248 0-.477 0-.706-.018v2.561h1.482V8.82c-.247.018-.512.035-.776.035"
+    ></path>
+  </svg>
+);
+
+export const EthIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="none"
+    viewBox="0 0 16 16"
+  >
+    <g clipPath="url(#clip0_8215_141726)">
+      <path fill="#627EEA" d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16"></path>
+      <path
+        fill="#fff"
+        fillOpacity="0.602"
+        d="M8.249 2v4.435l3.749 1.675z"
+      ></path>
+      <path fill="#fff" d="M8.249 2 4.5 8.11l3.749-1.675z"></path>
+      <path
+        fill="#fff"
+        fillOpacity="0.602"
+        d="M8.249 10.985v3.013L12 8.808z"
+      ></path>
+      <path fill="#fff" d="M8.249 13.998v-3.014L4.5 8.81z"></path>
+      <path
+        fill="#fff"
+        fillOpacity="0.2"
+        d="m8.249 10.288 3.749-2.177-3.749-1.674z"
+      ></path>
+      <path
+        fill="#fff"
+        fillOpacity="0.602"
+        d="m4.5 8.111 3.749 2.177v-3.85z"
+      ></path>
+    </g>
+    <defs>
+      <clipPath id="clip0_8215_141726">
+        <path fill="#fff" d="M0 0h16v16H0z"></path>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const Export = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="17"
+    fill="none"
+    viewBox="0 0 16 17"
+  >
+    <path
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M10.96 6.434c2.4.206 3.38 1.44 3.38 4.14v.086c0 2.98-1.193 4.174-4.173 4.174h-4.34c-2.98 0-4.174-1.194-4.174-4.174v-.086c0-2.68.967-3.914 3.327-4.134M8 10.5V2.915M10.233 4.401 8 2.168 5.767 4.401"
+    ></path>
+  </svg>
+);
+export const SolidArrowDownIcon = () => (
+  <svg
+    width="16"
+    height="16"
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7.16125 12.0862L5.84792 10.7729L3.70792 8.63292C3.26125 8.17958 3.58125 7.40625 4.22125 7.40625H8.37459L12.1146 7.40625C12.7546 7.40625 13.0746 8.17958 12.6213 8.63292L9.16792 12.0862C8.62125 12.6396 7.71459 12.6396 7.16125 12.0862Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+export const PaymentProcessingIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    fill="none"
+    viewBox="0 0 100 100"
+  >
+    <path
+      fill="url(#paint0_linear_8216_143755)"
+      d="M0 50C0 22.386 22.386 0 50 0s50 22.386 50 50-22.386 50-50 50S0 77.614 0 50"
+    ></path>
+    <path
+      stroke="#fff"
+      strokeOpacity="0.72"
+      strokeWidth="8"
+      d="M50 4c25.405 0 46 20.595 46 46S75.405 96 50 96 4 75.405 4 50 24.595 4 50 4Z"
+    ></path>
+    <g
+      clipPath="url(#paint1_angular_8216_143755_clip_path)"
+      data-figma-skip-parse="true"
+    >
+      <foreignObject
+        width="2166.67"
+        height="2166.67"
+        x="-1083.33"
+        y="-1083.33"
+        transform="matrix(0 -.02 -.02 0 50 50)"
+      >
+        <div
+          style={{
+            background:
+              "conic-gradient(from 90deg,#fff 0deg,rgba(255,255,255,0) 360deg)",
+            height: "100%",
+            width: "100%",
+          }}
+        ></div>
+      </foreignObject>
+    </g>
+    <path
+      d="M70 50c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20m-32.8 0c0-7.07 5.73-12.8 12.8-12.8S62.8 42.93 62.8 50 57.07 62.8 50 62.8 37.2 57.07 37.2 50"
+      data-figma-gradient-fill='{"type":"GRADIENT_ANGULAR","stops":[{"color":{"r":1.0,"g":1.0,"b":1.0,"a":1.0},"position":0.0},{"color":{"r":1.0,"g":1.0,"b":1.0,"a":0.0},"position":1.0}],"stopsVar":[],"transform":{"m00":2.4492935992912173e-15,"m01":-40.0,"m02":70.0,"m10":-40.0,"m11":-2.4492935992912173e-15,"m12":70.0},"opacity":1.0,"blendMode":"NORMAL","visible":true}'
+    ></path>
+    <defs>
+      <linearGradient
+        id="paint0_linear_8216_143755"
+        x1="50"
+        x2="50"
+        y1="0"
+        y2="100"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#5A42DE"></stop>
+        <stop offset="1" stopColor="#3216CE"></stop>
+      </linearGradient>
+      <clipPath id="paint1_angular_8216_143755_clip_path">
+        <path d="M70 50c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20m-32.8 0c0-7.07 5.73-12.8 12.8-12.8S62.8 42.93 62.8 50 57.07 62.8 50 62.8 37.2 57.07 37.2 50"></path>
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PaymentSuccessfulIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="100"
+    height="100"
+    fill="none"
+    viewBox="0 0 100 100"
+  >
+    <path
+      fill="url(#paint0_linear_8216_143850)"
+      d="M0 50C0 22.386 22.386 0 50 0s50 22.386 50 50-22.386 50-50 50S0 77.614 0 50"
+    ></path>
+    <path
+      stroke="#fff"
+      strokeOpacity="0.72"
+      strokeWidth="8"
+      d="M50 4c25.405 0 46 20.595 46 46S75.405 96 50 96 4 75.405 4 50 24.595 4 50 4Z"
+    ></path>
+    <path
+      stroke="#fff"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="8"
+      d="M30.994 49.94 43.055 62l25.95-24"
+    ></path>
+    <defs>
+      <linearGradient
+        id="paint0_linear_8216_143850"
+        x1="50"
+        x2="50"
+        y1="0"
+        y2="100"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stopColor="#5A42DE"></stop>
+        <stop offset="1" stopColor="#3216CE"></stop>
+      </linearGradient>
+    </defs>
+  </svg>
+);

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { JSX, ReactNode } from "react";
 import {
   FieldError,
   FieldValues,
@@ -114,4 +114,17 @@ export interface TimeTrackingTabContentProps {
 export interface RecordDetails {
   records: TimeSheetRecord;
   type: string; // "timeSheet" | "timeOff" | "expense" | "milestone"
+}
+
+export type InvoiceStatus = "Pending" | "Paid" | "Approved" | "Rejected";
+
+export type InvoiceTableCell = {
+  status?: InvoiceStatus;
+  text?: string;
+  icon?: JSX.Element;
+  iconLabel?: string;
+};
+export interface InvoiceDetailTableProps {
+  headers: string[];
+  body: [InvoiceTableCell, InvoiceTableCell];
 }

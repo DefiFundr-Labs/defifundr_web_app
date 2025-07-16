@@ -30,6 +30,7 @@ import TimeOffDetails from "../pages/dashboard/team-management/timeOffDetails";
 import MileStoneDetails from "../pages/dashboard/team-management/mileStonesDetails";
 import MileStone from "../pages/dashboard/team-management/mileStonesDetails";
 import NotFound from "../pages/notFound/notFound";
+import InvoiceDetails from "../pages/dashboard/invoiceDetails";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
 export const router = createBrowserRouter([
@@ -128,6 +129,10 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.INVOICES,
         element: <Invoices />,
+      },
+      {
+        path: `${RoutePaths.INVOICES}/:id`,
+        element: <InvoiceDetails />,
       },
       // {
       //   path: "create-compliance",

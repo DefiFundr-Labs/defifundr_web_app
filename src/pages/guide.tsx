@@ -147,7 +147,7 @@ const Guide = () => {
           onClick: () => console.log("Opening email change form..."),
         },
       ],
-      showCloseButton: true,
+      showCloseButton: false,
     });
   };
   const handleLoadingModal = () => {
