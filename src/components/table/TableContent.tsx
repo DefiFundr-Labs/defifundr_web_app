@@ -11,6 +11,7 @@ interface TableContentProps<T = any> {
   onSelectItem?: (id: string, checked: boolean) => void;
   onRowClick?: (item: T) => void;
   renderCell?: (item: T, column: TableColumn) => React.ReactNode;
+  renderMobileCell: (item: T) => React.ReactNode;
   emptyTitle?: string;
   emptyDescription?: string;
   getItemId?: (item: T) => string;
@@ -28,6 +29,7 @@ const TableContent = <T extends Record<string, any>>({
   emptyTitle,
   emptyDescription,
   getItemId = (item) => item.id || item._id || String(Math.random()),
+  renderMobileCell,
 }: TableContentProps<T>) => {
   const getAlignmentClass = (align?: string) => {
     switch (align) {
@@ -91,7 +93,7 @@ const TableContent = <T extends Record<string, any>>({
           return (
             <div
               key={itemId}
-              className={`flex items-center px-4 py-4 text-sm hover:bg-gray-50 dark:hover:bg-gray-700 ${
+              className={`flex items-center px-4 py-4 text-sm hover:bg-gray-50   dark:hover:bg-gray-700 ${
                 index !== data.length - 1
                   ? "border-b border-gray-150 dark:border-gray-500"
                   : ""
@@ -141,12 +143,12 @@ const TableContent = <T extends Record<string, any>>({
       <div className="md:hidden">
         {data.map((item, index) => {
           const itemId = getItemId(item);
-          const isSelected = selectedItems.includes(itemId);
+          // const isSelected = selectedItems.includes(itemId);
 
           return (
             <div
               key={itemId}
-              className={`p-4 ${
+              className={`py-4 px-2 ${
                 index !== data.length - 1
                   ? "border-b border-gray-150 dark:border-gray-500"
                   : ""
@@ -155,7 +157,7 @@ const TableContent = <T extends Record<string, any>>({
               } hover:bg-gray-50 dark:hover:bg-gray-700`}
               onClick={() => onRowClick?.(item)}
             >
-              {showCheckbox && (
+              {/* {showCheckbox && (
                 <div className="flex items-center mb-3">
                   <input
                     type="checkbox"
@@ -170,29 +172,30 @@ const TableContent = <T extends Record<string, any>>({
                     Select
                   </span>
                 </div>
-              )}
-              <div className="space-y-2">
-                {columns.map((column) => {
-                  const cellContent = renderCell
-                    ? renderCell(item, column)
-                    : defaultRenderCell(item, column);
-                  if (!cellContent || cellContent === "-") return null;
+              )} */}
+              {renderMobileCell(item)}
+              {/* <div className="space-y-2">
+                  {columns.map((column) => {
+                    const cellContent = renderCell
+                      ? renderCell(item, column)
+                      : defaultRenderCell(item, column);
+                    if (!cellContent || cellContent === "-") return null;
 
-                  return (
-                    <div
-                      key={column.key}
-                      className="flex items-center justify-between"
-                    >
-                      <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
-                        {column.header}
-                      </span>
-                      <div className="text-sm text-gray-900 dark:text-white">
-                        {cellContent}
+                    return (
+                      <div
+                        key={column.key}
+                        className="flex items-center justify-between"
+                      >
+                        <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                          {column.header}
+                        </span>
+                        <div className="text-sm text-gray-900 dark:text-white">
+                          {cellContent}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })}
-              </div>
+                    );
+                  })}
+                </div> */}
             </div>
           );
         })}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ThemeToggle } from "../common/ThemeToggler";
 import OTPInput from "../components/OtpInput";
 import useModal from "../hooks/useModal";
@@ -170,7 +170,7 @@ const Guide = () => {
 
     return (
       <span
-        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusClasses(
+        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium w-fit ${getStatusClasses(
           status
         )}`}
       >
@@ -260,6 +260,70 @@ const Guide = () => {
         return item[column.key];
     }
   };
+
+  const renderInvoiceMobileCell = (item: any) => (
+    <div className="flex justify-between gap-4">
+      <div className="space-y-2 flex-1 min-w-0">
+        <p className="truncate font-semibold text-gray-500">{item.invoiceNo}</p>
+        <span className="flex items-center gap-2 ">
+          <p className="text-xs font-medium text-gray-300">{item.amount}</p>
+
+          <div className="w-px self-stretch bg-gray-150" />
+
+          <CurrencyBadge currency={item.paidIn} />
+        </span>
+      </div>
+      <div className="space-y-2 shrink-0  flex flex-col items-end justify-between">
+        <StatusBadge status={item.status} />
+
+        <p className="text-xs font-medium text-gray-400">25th Oct 2025</p>
+      </div>
+    </div>
+  );
+
+  const renderMileStoneMobileCell = (item: any) => (
+    <div className="flex justify-between gap-4">
+      <div className="space-y-2 flex-1 min-w-0">
+        <p className="truncate font-semibold text-gray-500">
+          {item.milestoneName}
+        </p>
+        <span className="flex items-center gap-2 ">
+          <p className="text-xs font-medium text-gray-300">{item.amount}</p>
+
+          <div className="w-px self-stretch bg-gray-150" />
+
+          <CurrencyBadge currency={item.paidIn} />
+        </span>
+      </div>
+      <div className="space-y-2 shrink-0  flex flex-col items-end justify-between">
+        <StatusBadge status={item.status} />
+
+        <p className="text-xs font-medium text-gray-400">25th Oct 2025</p>
+      </div>
+    </div>
+  );
+
+  const renderExpenseMobileCell = (item: any) => (
+    <div className="flex justify-between gap-4">
+      <div className="space-y-2 flex-1 min-w-0">
+        <p className="truncate font-semibold text-gray-500">
+          {item.expenseName}
+        </p>
+        <span className="flex items-center gap-2 ">
+          <p className="text-xs font-medium text-gray-300">{item.amount}</p>
+
+          <div className="w-px self-stretch bg-gray-150" />
+
+          <CurrencyBadge currency={item.paidIn} />
+        </span>
+      </div>
+      <div className="space-y-2 shrink-0  flex flex-col items-end justify-between">
+        <StatusBadge status={item.status} />
+
+        <p className="text-xs font-medium text-gray-400">25th Oct 2025</p>
+      </div>
+    </div>
+  );
 
   const renderExpenseCell = (item: any, column: TableColumn) => {
     switch (column.key) {
@@ -489,6 +553,7 @@ const Guide = () => {
             onSelectAll={handleMilestoneSelectAll}
             renderCell={renderMilestoneCell}
             onRowClick={(item) => console.log("Clicked milestone:", item)}
+            renderMobileCell={renderMileStoneMobileCell}
           />
         </div>
 
@@ -508,6 +573,7 @@ const Guide = () => {
             onSelectAll={handleInvoiceSelectAll}
             renderCell={renderInvoiceCell}
             onRowClick={(item) => console.log("Clicked invoice:", item)}
+            renderMobileCell={renderInvoiceMobileCell}
           />
         </div>
 
@@ -527,6 +593,7 @@ const Guide = () => {
             onSelectAll={handleExpenseSelectAll}
             renderCell={renderExpenseCell}
             onRowClick={(item) => console.log("Clicked expense:", item)}
+            renderMobileCell={renderExpenseMobileCell}
           />
         </div>
       </div>

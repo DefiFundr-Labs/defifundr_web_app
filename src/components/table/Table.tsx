@@ -23,7 +23,8 @@ interface TableProps<T = any> {
 
   // Interaction
   onRowClick?: (item: T) => void;
-  renderCell?: (item: T, column: TableColumn) => React.ReactNode;
+  renderCell: (item: T, column: TableColumn) => React.ReactNode;
+  renderMobileCell: (item: T) => React.ReactNode;
 
   // Empty state customization
   emptyTitle?: string;
@@ -50,6 +51,7 @@ const Table = <T extends Record<string, any>>({
   onSelectAll,
   onRowClick,
   renderCell,
+  renderMobileCell,
   emptyTitle,
   emptyDescription,
   getItemId,
@@ -60,7 +62,7 @@ const Table = <T extends Record<string, any>>({
 
   return (
     <div>
-      <div className="p-4">
+      <div className="pb-4">
         {showFilterHeader && (
           <div className="">
             <TableFilterHeader
@@ -75,7 +77,7 @@ const Table = <T extends Record<string, any>>({
           </div>
         )}
       </div>
-      <div className="overflow-x-auto bg-white rounded-lg shadow-sm custom-scrollbar dark:bg-gray-600">
+      <div className="md:overflow-x-auto bg-white p-4 rounded-lg shadow-sm custom-scrollbar dark:bg-gray-600">
         <TableHeader
           columns={columns}
           showCheckbox={showCheckbox}
@@ -94,6 +96,7 @@ const Table = <T extends Record<string, any>>({
           emptyTitle={emptyTitle}
           emptyDescription={emptyDescription}
           getItemId={getItemId}
+          renderMobileCell={renderMobileCell}
         />
       </div>
     </div>
