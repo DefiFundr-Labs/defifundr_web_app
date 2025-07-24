@@ -1,9 +1,139 @@
+import React, { useState } from "react";
 import { ThemeToggle } from "../common/ThemeToggler";
-
 import OTPInput from "../components/OtpInput";
 import useModal from "../hooks/useModal";
+import { TableColumn } from "../components/table/TableHeader";
+import Table from "../components/table/Table";
+
+// Mock data for different table types
+const milestoneData = [
+  {
+    id: "1",
+    employee: {
+      name: "James Akinbola",
+      role: "Front-end developer",
+      avatar: "/api/placeholder/32/32",
+    },
+    milestoneNo: "2 of 4",
+    milestoneName: "Complete onboarding flow with prototype",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Pending",
+    submitted: "25th Oct 2025 | 2:00pm",
+  },
+  {
+    id: "2",
+    employee: {
+      name: "James Akinbola",
+      role: "Front-end developer",
+      avatar: "/api/placeholder/32/32",
+    },
+    milestoneNo: "2 of 4",
+    milestoneName: "Complete onboarding flow with prototype",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Rejected",
+    submitted: "25th Oct 2025 | 2:00pm",
+  },
+  {
+    id: "3",
+    employee: {
+      name: "James Akinbola",
+      role: "Front-end developer",
+      avatar: "/api/placeholder/32/32",
+    },
+    milestoneNo: "2 of 4",
+    milestoneName: "Complete onboarding flow with prototype",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Approved",
+    submitted: "25th Oct 2025 | 2:00pm",
+  },
+];
+
+const invoiceData = [
+  {
+    id: "1",
+    invoiceNo: "#INV-2025-010",
+    title: "For Mar 31st - Apr 6th 2025",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Pending",
+    issueDate: "25th Oct 2025",
+  },
+  {
+    id: "2",
+    invoiceNo: "#INV-2025-010",
+    title: "For Mar 31st - Apr 6th 2025",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Overdue",
+    issueDate: "25th Oct 2025",
+  },
+  {
+    id: "3",
+    invoiceNo: "#INV-2025-010",
+    title: "For Mar 31st - Apr 6th 2025",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Paid",
+    issueDate: "25th Oct 2025",
+  },
+];
+
+const expenseData = [
+  {
+    id: "1",
+    employee: {
+      name: "James Akinbola",
+      role: "Front-end developer",
+      avatar: "/api/placeholder/32/32",
+    },
+    expenseName: "Electricity and data",
+    expenseDate: "20th Oct 2025",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Pending",
+    submitted: "25th Oct 2025 | 2:00pm",
+  },
+  {
+    id: "2",
+    employee: {
+      name: "James Akinbola",
+      role: "Front-end developer",
+      avatar: "/api/placeholder/32/32",
+    },
+    expenseName: "Electricity and data",
+    expenseDate: "20th Oct 2025",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Rejected",
+    submitted: "25th Oct 2025 | 2:00pm",
+  },
+  {
+    id: "3",
+    employee: {
+      name: "James Akinbola",
+      role: "Front-end developer",
+      avatar: "/api/placeholder/32/32",
+    },
+    expenseName: "Electricity and data",
+    expenseDate: "20th Oct 2025",
+    amount: "$1,200.00",
+    paidIn: "USDT",
+    status: "Approved",
+    submitted: "25th Oct 2025 | 2:00pm",
+  },
+];
 
 const Guide = () => {
+  const [milestoneSearch, setMilestoneSearch] = useState("");
+  const [invoiceSearch, setInvoiceSearch] = useState("");
+  const [expenseSearch, setExpenseSearch] = useState("");
+  const [selectedMilestones, setSelectedMilestones] = useState<string[]>([]);
+  const [selectedInvoices, setSelectedInvoices] = useState<string[]>([]);
+  const [selectedExpenses, setSelectedExpenses] = useState<string[]>([]);
+
   const handleOTPComplete = (code: string) => {
     console.log("OTP completed:", code);
     showSuccessModal(
@@ -11,23 +141,176 @@ const Guide = () => {
       `Your OTP (${code}) has been verified successfully.`
     );
   };
+
   const {
     showInfoModal,
     showSuccessModal,
-
     showConfirmModal,
     showModalWithButtons,
     showContentOnlyModal,
     showEnhancedModal,
   } = useModal();
 
+  // Status badge component
+  const StatusBadge = ({ status }: { status: string }) => {
+    const getStatusClasses = (status: string) => {
+      switch (status.toLowerCase()) {
+        case "pending":
+          return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300";
+        case "approved":
+        case "paid":
+          return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300";
+        case "rejected":
+        case "overdue":
+          return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300";
+        default:
+          return "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300";
+      }
+    };
+
+    return (
+      <span
+        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusClasses(
+          status
+        )}`}
+      >
+        {status}
+      </span>
+    );
+  };
+
+  // Currency badge component
+  const CurrencyBadge = ({ currency }: { currency: string }) => (
+    <span className="inline-flex items-center px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">
+      <span className="w-2 h-2 mr-1 bg-green-500 rounded-full"></span>
+      {currency}
+    </span>
+  );
+
+  // Employee cell component
+  const EmployeeCell = ({ employee }: { employee: any }) => (
+    <div className="flex items-center">
+      <img
+        className="w-8 h-8 rounded-full"
+        src={employee.avatar}
+        alt={employee.name}
+      />
+      <div className="ml-3">
+        <div className="text-sm font-medium text-gray-900 dark:text-white">
+          {employee.name}
+        </div>
+        <div className="text-sm text-gray-500 dark:text-gray-400">
+          {employee.role}
+        </div>
+      </div>
+    </div>
+  );
+
+  // Table configurations
+  const milestoneColumns: TableColumn[] = [
+    { key: "employee", header: "Employee", width: "200px" },
+    { key: "milestoneNo", header: "Milestone no.", width: "120px" },
+    { key: "milestoneName", header: "Milestone name", width: "250px" },
+    { key: "amount", header: "Amount", width: "120px", align: "right" },
+    { key: "paidIn", header: "Paid in", width: "100px" },
+    { key: "status", header: "Status", width: "100px" },
+    { key: "submitted", header: "Submitted", width: "180px" },
+  ];
+
+  const invoiceColumns: TableColumn[] = [
+    { key: "invoiceNo", header: "Invoice No.", width: "150px" },
+    { key: "title", header: "Title", width: "300px" },
+    { key: "amount", header: "Amount", width: "120px", align: "right" },
+    { key: "paidIn", header: "Paid in", width: "100px" },
+    { key: "status", header: "Status", width: "100px" },
+    { key: "issueDate", header: "Issue date", width: "150px" },
+  ];
+
+  const expenseColumns: TableColumn[] = [
+    { key: "employee", header: "Employee", width: "200px" },
+    { key: "expenseName", header: "Expense name", width: "200px" },
+    { key: "expenseDate", header: "Expense date", width: "150px" },
+    { key: "amount", header: "Amount", width: "120px", align: "right" },
+    { key: "paidIn", header: "Paid in", width: "100px" },
+    { key: "status", header: "Status", width: "100px" },
+    { key: "submitted", header: "Submitted", width: "180px" },
+  ];
+
+  // Custom cell renderers
+  const renderMilestoneCell = (item: any, column: TableColumn) => {
+    switch (column.key) {
+      case "employee":
+        return <EmployeeCell employee={item.employee} />;
+      case "paidIn":
+        return <CurrencyBadge currency={item.paidIn} />;
+      case "status":
+        return <StatusBadge status={item.status} />;
+      default:
+        return item[column.key];
+    }
+  };
+
+  const renderInvoiceCell = (item: any, column: TableColumn) => {
+    switch (column.key) {
+      case "paidIn":
+        return <CurrencyBadge currency={item.paidIn} />;
+      case "status":
+        return <StatusBadge status={item.status} />;
+      default:
+        return item[column.key];
+    }
+  };
+
+  const renderExpenseCell = (item: any, column: TableColumn) => {
+    switch (column.key) {
+      case "employee":
+        return <EmployeeCell employee={item.employee} />;
+      case "paidIn":
+        return <CurrencyBadge currency={item.paidIn} />;
+      case "status":
+        return <StatusBadge status={item.status} />;
+      default:
+        return item[column.key];
+    }
+  };
+
+  // Selection handlers
+  const handleMilestoneSelect = (id: string, checked: boolean) => {
+    setSelectedMilestones((prev) =>
+      checked ? [...prev, id] : prev.filter((item) => item !== id)
+    );
+  };
+
+  const handleInvoiceSelect = (id: string, checked: boolean) => {
+    setSelectedInvoices((prev) =>
+      checked ? [...prev, id] : prev.filter((item) => item !== id)
+    );
+  };
+
+  const handleExpenseSelect = (id: string, checked: boolean) => {
+    setSelectedExpenses((prev) =>
+      checked ? [...prev, id] : prev.filter((item) => item !== id)
+    );
+  };
+
+  const handleMilestoneSelectAll = (checked: boolean) => {
+    setSelectedMilestones(checked ? milestoneData.map((item) => item.id) : []);
+  };
+
+  const handleInvoiceSelectAll = (checked: boolean) => {
+    setSelectedInvoices(checked ? invoiceData.map((item) => item.id) : []);
+  };
+
+  const handleExpenseSelectAll = (checked: boolean) => {
+    setSelectedExpenses(checked ? expenseData.map((item) => item.id) : []);
+  };
+
   const handleDelete = () => {
-    // Simulate delete action
     console.log("Delete action confirmed");
-    // Show success message after delete
     showSuccessModal("Deleted", "Item has been successfully deleted.");
   };
-  // Example 1: Modal with no buttons (just content and close X)
+
+  // Modal examples (keeping existing code)
   const handleNoButtonsModal = () => {
     const content = (
       <div className="py-8 text-center">
@@ -45,7 +328,6 @@ const Guide = () => {
     });
   };
 
-  // Example 2: Modal with custom buttons
   const handleCustomButtonsModal = () => {
     const buttons = [
       {
@@ -73,7 +355,6 @@ const Guide = () => {
     );
   };
 
-  // Example 3: Modal without close button (force user action)
   const handleForceActionModal = () => {
     const buttons = [
       {
@@ -94,12 +375,11 @@ const Guide = () => {
       buttons,
       {
         size: "md",
-        showCloseButton: false, // Force user to choose
+        showCloseButton: false,
       }
     );
   };
 
-  // Example 4: Enhanced modal with full control
   const handleEnhancedModal = () => {
     const content = (
       <div className="space-y-6">
@@ -150,6 +430,7 @@ const Guide = () => {
       showCloseButton: false,
     });
   };
+
   const handleLoadingModal = () => {
     const content = (
       <div className="py-8 text-center">
@@ -163,14 +444,14 @@ const Guide = () => {
 
     showContentOnlyModal(content, {
       size: "sm",
-      showCloseButton: false, // Can't close while loading
+      showCloseButton: false,
     });
 
-    // Simulate closing after 3 seconds
     setTimeout(() => {
       showSuccessModal("Complete!", "Your request has been processed.");
     }, 3000);
   };
+
   return (
     <div className="container py-8">
       <div className="flex items-center justify-between mb-8">
@@ -188,24 +469,83 @@ const Guide = () => {
         </div>
       </div>
 
+      {/* Table Examples Section */}
+      <div className="mb-12 space-y-8">
+        <h2 className="mb-6 h3">Table Examples</h2>
+
+        {/* Milestone Requests Table */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Milestone Requests Table</h3>
+          <Table
+            data={milestoneData}
+            columns={milestoneColumns}
+            search={milestoneSearch}
+            setSearch={setMilestoneSearch}
+            showModal={() => console.log("Show milestone filter modal")}
+            selectedTab="Milestone requests"
+            searchPlaceholder="Search by milestone..."
+            selectedItems={selectedMilestones}
+            onSelectItem={handleMilestoneSelect}
+            onSelectAll={handleMilestoneSelectAll}
+            renderCell={renderMilestoneCell}
+            onRowClick={(item) => console.log("Clicked milestone:", item)}
+          />
+        </div>
+
+        {/* Invoice History Table */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Invoice History Table</h3>
+          <Table
+            data={invoiceData}
+            columns={invoiceColumns}
+            search={invoiceSearch}
+            setSearch={setInvoiceSearch}
+            showModal={() => console.log("Show invoice filter modal")}
+            selectedTab="Invoice history"
+            searchPlaceholder="Search by title..."
+            selectedItems={selectedInvoices}
+            onSelectItem={handleInvoiceSelect}
+            onSelectAll={handleInvoiceSelectAll}
+            renderCell={renderInvoiceCell}
+            onRowClick={(item) => console.log("Clicked invoice:", item)}
+          />
+        </div>
+
+        {/* Expense Requests Table */}
+        <div className="space-y-4">
+          <h3 className="text-lg font-semibold">Expense Requests Table</h3>
+          <Table
+            data={expenseData}
+            columns={expenseColumns}
+            search={expenseSearch}
+            setSearch={setExpenseSearch}
+            showModal={() => console.log("Show expense filter modal")}
+            selectedTab="Expense requests"
+            searchPlaceholder="Search by employee..."
+            selectedItems={selectedExpenses}
+            onSelectItem={handleExpenseSelect}
+            onSelectAll={handleExpenseSelectAll}
+            renderCell={renderExpenseCell}
+            onRowClick={(item) => console.log("Clicked expense:", item)}
+          />
+        </div>
+      </div>
+
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Left column - Text & Number inputs */}
         <div className="space-y-6">
           <h2 className="mb-4 h3">Text Inputs</h2>
 
-          {/* Regular text input */}
           <div className="form-control">
             <label htmlFor="name">Regular Text Input</label>
             <input type="text" id="name" placeholder="Enter your name" />
           </div>
 
-          {/* Email input */}
           <div className="form-control">
             <label htmlFor="email">Email Input</label>
             <input type="email" id="email" placeholder="you@example.com" />
           </div>
 
-          {/* Password input */}
           <div className="form-control">
             <label htmlFor="password">Password Input</label>
             <input
@@ -215,7 +555,6 @@ const Guide = () => {
             />
           </div>
 
-          {/* Number input - with appearance-none to remove spinners */}
           <div className="form-control">
             <label htmlFor="amount">Number Input (No Spinners)</label>
             <input
@@ -226,7 +565,6 @@ const Guide = () => {
             />
           </div>
 
-          {/* Textarea */}
           <div className="form-control">
             <label htmlFor="message">Textarea</label>
             <textarea
@@ -241,7 +579,6 @@ const Guide = () => {
         <div className="space-y-6">
           <h2 className="mb-4 h3">Selection Controls</h2>
 
-          {/* Basic Select dropdown */}
           <div className="form-control">
             <label htmlFor="category">Default Select Dropdown</label>
             <select id="category">
@@ -252,7 +589,6 @@ const Guide = () => {
             </select>
           </div>
 
-          {/* Disabled Select */}
           <div className="form-control">
             <label htmlFor="disabledSelect">Disabled Select</label>
             <select id="disabledSelect" disabled>
@@ -261,7 +597,6 @@ const Guide = () => {
             </select>
           </div>
 
-          {/* Select with error */}
           <div className="form-control form-control--invalid">
             <label htmlFor="errorSelect">Select with Error</label>
             <select id="errorSelect">
@@ -272,7 +607,6 @@ const Guide = () => {
             <div className="error-message">This field is required</div>
           </div>
 
-          {/* Checkbox */}
           <div className="mt-8">
             <h3 className="mb-3 h4">Checkboxes</h3>
             <div className="space-y-3">
@@ -299,7 +633,6 @@ const Guide = () => {
             </div>
           </div>
 
-          {/* Radio Buttons */}
           <div className="mt-6">
             <h3 className="mb-3 h4">Radio Buttons</h3>
             <div className="space-y-3">
@@ -347,12 +680,13 @@ const Guide = () => {
           </button>
         </div>
       </div>
+
+      {/* Modal Examples */}
       <div className="container py-8">
         <div className="flex items-center justify-between mb-8">
           <h1 className="h2">Modal Examples</h1>
         </div>
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {/* Original modal examples */}
           <button
             className="button button--primary"
             onClick={() =>
@@ -377,7 +711,6 @@ const Guide = () => {
             Confirm Modal
           </button>
 
-          {/* New dynamic modal examples */}
           <button
             className="button button--primary"
             onClick={handleNoButtonsModal}

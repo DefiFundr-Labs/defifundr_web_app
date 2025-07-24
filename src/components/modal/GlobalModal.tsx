@@ -169,22 +169,22 @@ const GlobalModal: React.FC = () => {
             className={`w-full ${getSizeClass()} flex-col flex rounded-xl ${getTypeClasses()} relative p-8 duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0 shadow-xl`}
           >
             {/* Close button - only show if showCloseButton is true */}
-            {showCloseButton && (
-              <button onClick={handleClose} className="self-start">
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M23.4532 6.66675L15.9998 14.1201L8.5465 6.66675L6.6665 8.54675L14.1198 16.0001L6.6665 23.4534L8.5465 25.3334L15.9998 17.8801L23.4532 25.3334L25.3332 23.4534L17.8798 16.0001L25.3332 8.54675L23.4532 6.66675Z"
-                    fill="currentColor"
-                  />
-                </svg>
-              </button>
-            )}
+            {/* {showCloseButton && (
+                <button onClick={handleClose} className="self-start">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M23.4532 6.66675L15.9998 14.1201L8.5465 6.66675L6.6665 8.54675L14.1198 16.0001L6.6665 23.4534L8.5465 25.3334L15.9998 17.8801L23.4532 25.3334L25.3332 23.4534L17.8798 16.0001L25.3332 8.54675L23.4532 6.66675Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </button>
+              )} */}
 
             {title && (
               <DialogTitle
