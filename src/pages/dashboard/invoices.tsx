@@ -5,8 +5,9 @@ import Table from "../../components/table/Table";
 import { TableColumn } from "../../components/table/TableHeader";
 import ContractsMetrics from "../../components/dashboard/contracts/ContractsMetrics";
 import { invoiceMetricsData } from "../../utils/constant";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { RoutePaths } from "../../routes/routesPath";
+import { UsdtIcon } from "../../assets/svg/svg";
 
 interface Invoice {
   id: string;
@@ -66,6 +67,8 @@ const Invoices: React.FC = () => {
   const [search, setSearch] = useState<string>("");
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
 
+  const navigate = useNavigate();
+
   // Filter invoices based on search query
   const filteredInvoices = invoices.filter(
     (invoice) =>
@@ -91,6 +94,19 @@ const Invoices: React.FC = () => {
     { key: "issueDate", header: "Issue date", align: "right" },
   ];
 
+  const getStatusBadge = (status: Invoice["status"]) => {
+    switch (status) {
+      case "Pending":
+        return ` border-warning-500 bg-warning-300 text-warning-500 dark:bg-yellow-900 dark:text-yellow-300`;
+      case "Overdue":
+        return `border-warning-500 bg-error-400 text-error-500 dark:bg-red-900 dark:text-red-300`;
+      case "Paid":
+        return `border-success-500 bg-success-300 text-success-500 dark:bg-green-900 dark:text-green-300`;
+      default:
+        return;
+    }
+  };
+
   // Custom cell renderer for invoice-specific formatting
   const renderInvoiceCell = (item: Invoice, column: TableColumn) => {
     switch (column.key) {
@@ -98,39 +114,29 @@ const Invoices: React.FC = () => {
         return `$${item.amount.toLocaleString()}.00`;
       case "paidIn":
         return (
-          <div className="flex items-center justify-center">
-            <div className="w-2 h-2 mr-2 bg-green-500 rounded-full"></div>
+          <div className="flex items-center font-medium gap-1 py-1.5 px-3 border border-gray-150 bg-gray-100 rounded-full w-fit mx-auto">
+            {/* <div className="w-2 h-2 mr-2 bg-green-500 rounded-full"></div> */}
+            <UsdtIcon />
             <span className="text-gray-600 dark:text-gray-300">
               {item.paidIn}
             </span>
           </div>
         );
       case "status":
-        const getStatusBadge = (status: Invoice["status"]) => {
-          const baseClasses = "px-3 py-1 rounded-full text-xs font-medium";
-
-          switch (status) {
-            case "Pending":
-              return `${baseClasses} bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300`;
-            case "Overdue":
-              return `${baseClasses} bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-300`;
-            case "Paid":
-              return `${baseClasses} bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300`;
-            default:
-              return baseClasses;
-          }
-        };
         return (
-          <span className={getStatusBadge(item.status)}>{item.status}</span>
+          <span
+            className={`px-2 py-1 rounded-full text-sm font-semibold border ${getStatusBadge(
+              item.status
+            )}`}
+          >
+            {item.status}
+          </span>
         );
       case "invoiceNo":
         return (
-          <Link
-            to={`${RoutePaths.INVOICES}/${item.invoiceNo.replace("#", "")}`}
-            className="font-medium text-gray-900 dark:text-white"
-          >
+          <p className="font-medium text-gray-900 dark:text-white">
             {item.invoiceNo}
-          </Link>
+          </p>
         );
       case "title":
         return (
@@ -146,6 +152,38 @@ const Invoices: React.FC = () => {
         return (item as any)[column.key] || "-";
     }
   };
+
+  const renderMobileCell = (item: Invoice) => (
+    <div className="flex gap-4 justify-between">
+      <div className="space-y-2 flex-1 min-w-0">
+        <p className="truncate font-semibold text-gray-500">{item.invoiceNo}</p>
+        <span className="flex items-center gap-2 ">
+          <p className="text-xs font-medium text-gray-300">{item.amount}</p>
+
+          <div className="w-px self-stretch bg-gray-150" />
+
+          <div className="flex items-center font-medium gap-1 ">
+            <UsdtIcon />
+
+            <span className="text-gray-600 text-sm font-medium dark:text-gray-300">
+              {item.paidIn}
+            </span>
+          </div>
+        </span>
+      </div>
+
+      <div className="space-y-2 shrink-0  flex flex-col items-end justify-between">
+        <span
+          className={`px-2 py-1 rounded-full text-xs font-semibold border ${getStatusBadge(
+            item.status
+          )}`}
+        >
+          {item.status}
+        </span>
+        <p className="text-xs font-medium text-gray-400">25th Oct 2025</p>
+      </div>
+    </div>
+  );
 
   // Handle item selection
   const handleSelectItem = (id: string, checked: boolean) => {
@@ -165,20 +203,18 @@ const Invoices: React.FC = () => {
 
   // Handle row click (optional)
   const handleRowClick = (invoice: Invoice) => {
-    console.log("Invoice clicked:", invoice);
     // Add navigation or modal logic here
+    navigate(`${RoutePaths.INVOICES}/${invoice.invoiceNo.replace("#", "")}`);
   };
 
-  const isContractData = invoiceMetricsData.length === 0;
-
   return (
-    <div className="flex flex-col flex-1 bg-gray-100 dark:bg-gray-500">
+    <div className="flex flex-col flex-1 bg-gray-100 dark:bg-gray-500 w-full min-h-full">
       <TitleHeader title="Invoices" isBackButton={false} />
 
       <AnimatePresence mode="wait">
-        <div className="flex flex-col flex-1 w-full h-full px-4 py-4 space-y-4">
-          {!isContractData && (
-            <div className="flex gap-2 w-full overflow-auto lg:overflow-hidden scroll-hidden lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-4">
+        <div className="flex flex-col flex-1 w-full h-full px-4 py-4 ">
+          {invoices.length > 0 && (
+            <div className="flex gap-2 w-full overflow-auto lg:overflow-hidden scroll-hidden lg:grid lg:grid-cols-2 xl:grid-cols-4 lg:gap-4 mb-4">
               {invoiceMetricsData.map((metric) => (
                 <ContractsMetrics
                   icon={metric.icon}
@@ -210,6 +246,7 @@ const Invoices: React.FC = () => {
                 ? `No invoices match "${search}". Try adjusting your search.`
                 : "Invoices sent to you will be displayed here"
             }
+            renderMobileCell={renderMobileCell}
           />
         </div>
       </AnimatePresence>
