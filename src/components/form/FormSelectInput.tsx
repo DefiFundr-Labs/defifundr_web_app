@@ -12,6 +12,7 @@ const FormSelectInput = <T extends FieldValues>({
   touched,
   options,
   placeholder,
+  validationRules,
 }: FormSelectInputProps<T>) => {
   const { message, hasError } = useFormError(error, touched);
 
@@ -25,7 +26,7 @@ const FormSelectInput = <T extends FieldValues>({
           className +
           (hasError ? " !border-error-500 " : "")
         }
-        {...register(id)}
+        {...register(id, validationRules)}
       >
         {placeholder && (
           <option value="" className="">

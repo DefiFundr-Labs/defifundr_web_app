@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
@@ -290,7 +291,7 @@ body {
 
       /* Custom select options styling */
       option {
-        @apply py-1 text-sm text-black bg-white;
+        @apply py-1 text-sm text-black bg-white appearance-none;
 
         .dark & {
           @apply text-white bg-gray-300;

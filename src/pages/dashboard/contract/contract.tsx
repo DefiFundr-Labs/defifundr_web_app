@@ -1,11 +1,9 @@
 import { useState } from "react";
-import TitleHeader from "../../common/dashboard/TitleHeader";
-import Tabs from "../../common/dashboard/Tabs";
-import { Accordion } from "../../common/dashboard/Accordion";
+import TitleHeader from "../../../common/dashboard/TitleHeader";
+import { Accordion } from "../../../common/dashboard/Accordion";
 import { motion, AnimatePresence } from "framer-motion";
-import ContractDetailCard from "../../components/dashboard/contracts/ContractDetailCard";
-import { ThemeToggle } from "../../common/ThemeToggler";
-import ContractHistoryList from "../../components/dashboard/contracts/ContractHistoryList";
+import ContractDetailCard from "../../../components/dashboard/contracts/ContractDetailCard";
+import ContractHistoryList from "../../../components/dashboard/contracts/ContractHistoryList";
 function Contract() {
   const [title, setTitle] = useState("Insyder Website & Webapp Design");
   const [activeTab, setActiveTab] = useState("Details");

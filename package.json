@@ -15,6 +15,7 @@
     "@reduxjs/toolkit": "^2.7.0",
     "@tailwindcss/vite": "^4.0.7",
     "countries-list": "^3.1.1",
+    "date-fns": "^4.1.0",
     "framer-motion": "^12.4.7",
     "lucide-react": "^0.475.0",
     "qrcode.react": "^4.2.0",

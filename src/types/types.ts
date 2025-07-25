@@ -5,6 +5,7 @@ import {
   Path,
   UseFormRegister,
   Control,
+  RegisterOptions,
 } from "react-hook-form";
 import { OtpSchemaType } from "../utils/schema";
 
@@ -18,7 +19,6 @@ export interface AccountOption {
   id: AccountType;
   title: string;
   description: string;
-  // icon: string;
 }
 
 export interface AuthFormHeaderProps {
@@ -36,6 +36,9 @@ export interface FormInputProps<T extends FieldValues> {
   required?: boolean;
   className?: string;
   touched?: boolean;
+  validationRules?: RegisterOptions<T, Path<T>>;
+  labelClass?: string;
+  readOnly?: boolean;
 }
 
 export interface FormSelectInputProps<T extends FieldValues> {
@@ -47,6 +50,7 @@ export interface FormSelectInputProps<T extends FieldValues> {
   options: string[];
   touched?: boolean;
   placeholder?: string;
+  validationRules?: RegisterOptions<T, Path<T>>;
 }
 
 export interface OtpInputProps {
@@ -82,6 +86,7 @@ export interface TimeSheetRecord {
   address?: string; // Optional
   network?: string; // Optional - only for time tracking
   frequency?: string; // Optional - only for time tracking
+
   rate?: string; // Optional - only for time tracking
   totalHours?: string; // Optional - not present in time off requests
   totalMinutes?: string; // Optional
@@ -96,10 +101,8 @@ export interface TimeSheetRecord {
   startDate: string; // Optional - for time tracking
   endDate: string; // Optional - for time tracking
   rejectionReason: string;
-
-  // Extended properties for time off and other types
-  leaveType?: string; // e.g., Sick Leave, Vacation, etc.
-  paid?: boolean; // For Time Off: Paid or unpaid leave
+  leaveType?: string;
+  paid?: boolean;
 
   contract: {
     client: string;
@@ -121,7 +124,172 @@ export interface TimeTrackingTabContentProps {
 
 export interface RecordDetails {
   records: TimeSheetRecord;
-  type: string; // "timeSheet" | "timeOff" | "expense" | "milestone"
+  type: string;
+}
+
+// Enhanced milestone and contract types
+export type MilestoneDetails = {
+  id: number;
+  title: string;
+  amount: string;
+  description?: string;
+  dueDate?: string;
+  deliverables?: string;
+  createdAt: string;
+  updatedAt?: string;
+};
+
+export type EmployeeDetails = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phoneNumber: string;
+  country: string;
+  address: string;
+  city: string;
+  postalCode: string;
+};
+export type ComplianceDetails = {
+  agreement: File | null;
+  additionalAgreement?: string;
+  agreementType: string;
+};
+export type ContractDetails = {
+  startDate: string;
+  endDate?: string;
+  noticePeriod: number;
+  paymentDetails: PaymentDetails;
+  invoiceDetails: InvoiceDetails;
+  firstInvoice: FirstInvoice;
+  taxDetails?: TaxDetails;
+  milestoneDetails: MilestoneDetails[];
+  requireDeposit?: boolean;
+  rateUnit?: string;
+  totalMilestoneAmount?: string;
+  completedMilestones?: number;
+};
+
+export type PaymentDetails = {
+  network: string;
+  asset: string;
+  amount: string;
+};
+
+export type InvoiceDetails = {
+  invoiceFrequency: string;
+  issueInvoiceOn: string;
+  paymentDue: string;
+};
+
+export type FirstInvoice = {
+  type: "full" | "custom";
+  date?: string;
+  amount?: string;
+};
+
+export type TaxDetails = {
+  taxType: string;
+  accountNumber: string;
+  taxRate: string;
+};
+
+export interface CreateContractFormProps {
+  contractType: "fixed rate" | "pay as you go" | "milestone";
+  projectType: "freelancer" | "contractor";
+  projectTitle: string;
+  jobRole: string;
+  scope: string;
+  employeeDetails: EmployeeDetails[];
+  contractDetails: ContractDetails;
+  complianceDetails: ComplianceDetails[];
+  formStep: number;
+  isFormValid: boolean;
+  lastUpdated: string;
+}
+
+export type JobScopeProps = {
+  jobRole: string;
+  scope: string;
+};
+
+// Modal related types for milestone management
+export interface ModalButtonProps {
+  text: string;
+  onClick?: () => void;
+  variant?: "primary" | "secondary" | "danger" | "success";
+  disabled?: boolean;
+  className?: string;
+}
+
+export interface MilestoneModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onSubmit: (milestone: Partial<MilestoneDetails>) => void;
+  editingMilestone?: MilestoneDetails | null;
+}
+
+// Form validation types
+export interface ValidationError {
+  field: string;
+  message: string;
+}
+
+export interface FormValidationState {
+  isValid: boolean;
+  errors: ValidationError[];
+  touchedFields: string[];
+}
+
+// Contract form step types
+export type ContractFormStep = 1 | 2 | 3 | 4 | 5 | 6;
+
+export interface StepValidation {
+  step: ContractFormStep;
+  isValid: boolean;
+  requiredFields: string[];
+  completedFields: string[];
+}
+
+// Enhanced form state management
+export interface FormStateManager {
+  currentStep: ContractFormStep;
+  maxCompletedStep: ContractFormStep;
+  stepValidations: Record<ContractFormStep, StepValidation>;
+  isDirty: boolean;
+  lastSaved: string;
+}
+
+// Milestone status tracking
+export interface MilestoneProgress {
+  total: number;
+  completed: number;
+  inProgress: number;
+  pending: number;
+  cancelled: number;
+  totalAmount: number;
+  completedAmount: number;
+  progressPercentage: number;
+}
+
+// Contract summary for review step
+export interface ContractSummary {
+  basicInfo: {
+    contractType: string;
+    projectTitle: string;
+    jobRole: string;
+    startDate: string;
+    endDate?: string;
+  };
+  paymentInfo: {
+    network: string;
+    asset: string;
+    totalAmount: string;
+    paymentStructure: string;
+  };
+  employeeInfo: EmployeeDetails;
+  milestoneInfo?: MilestoneProgress;
+  complianceInfo: ComplianceDetails;
+  estimatedCompletion?: string;
 }
 
 // TODO: status

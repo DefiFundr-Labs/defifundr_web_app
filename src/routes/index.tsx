@@ -17,7 +17,7 @@ import SelectAccountType from "../pages/auth/selectAccountType";
 
 // Dashboard page components
 import Dashboard from "../pages/dashboard/home";
-import Contract from "../pages/dashboard/contract";
+import Contract from "../pages/dashboard/contract/contract";
 // import CreateCompliance from "../pages/dashboard/contract/createCompliance";
 import TeamContracts from "../pages/dashboard/teamContracts";
 import EmployeeDetails from "../pages/dashboard/employeeDetails";
@@ -29,6 +29,9 @@ import Expense from "../pages/dashboard/team-management/expense";
 import TimeOffDetails from "../pages/dashboard/team-management/timeOffDetails";
 import MileStone from "../pages/dashboard/team-management/mileStonesDetails";
 import NotFound from "../pages/notFound/notFound";
+import { CreateContract } from "../pages/dashboard/contract/createContract";
+import InvoiceDetails from "../pages/dashboard/invoiceDetails";
+
 import Payroll from "../pages/dashboard/payroll/payroll";
 import EmployeePayoutDetails from "../components/dashboard/payroll/EmployeePayoutDetails";
 import Settings from "../pages/dashboard/settings/settings";
@@ -114,6 +117,10 @@ export const router = createBrowserRouter([
         element: <Contract />,
       },
       {
+        path: RoutePaths.CREATE_CONTRACT,
+        element: <CreateContract />,
+      },
+      {
         path: "employee-details",
         element: <EmployeeDetails />,
       },
@@ -152,6 +159,7 @@ export const router = createBrowserRouter([
       {
         path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
         element: <EmployeePayoutDetails />,
+
       },
       {
         path: RoutePaths.SETTINGS,
@@ -219,6 +227,7 @@ export const router = createBrowserRouter([
             element: <VerifyTwoFAEmail />,
           },
         ],
+
 
       },
       {
