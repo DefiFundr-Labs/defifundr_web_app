@@ -219,7 +219,12 @@ export const router = createBrowserRouter([
             element: <VerifyTwoFAEmail />,
           },
         ],
+
       },
+      {
+        path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
+        element: <EmployeePayoutDetails />,
+      }
       // {
       //   path: "create-compliance",
       //   element: <CreateCompliance />,

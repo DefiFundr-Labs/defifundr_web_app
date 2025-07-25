@@ -6,6 +6,7 @@ import { TimeSheetRecord } from "../../../types/types";
 import EmployeeCard from "./EmployeeCard";
 import PaymentDetailsCard from "./PaymentDetailsCard";
 import FixedRate from "./payoutHistory/FixedRate";
+import FixedRate from "./payoutHistory/fixedRate";
 
 function EmployeePayoutDetails() {
   const { id } = useParams();
@@ -32,6 +33,9 @@ function EmployeePayoutDetails() {
         <PaymentDetailsCard />
       </div>
       <FixedRate />
+        <PaymentDetailsCard/>
+      </div>
+        <FixedRate/>
     </div>
   );
 }
