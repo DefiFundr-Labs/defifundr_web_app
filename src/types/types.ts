@@ -292,6 +292,7 @@ export interface ContractSummary {
   estimatedCompletion?: string;
 }
 
+// TODO: status
 export type InvoiceStatus = "Pending" | "Paid" | "Approved" | "Rejected";
 
 export type InvoiceTableCell = {
@@ -303,4 +304,69 @@ export type InvoiceTableCell = {
 export interface InvoiceDetailTableProps {
   headers: string[];
   body: [InvoiceTableCell, InvoiceTableCell];
+}
+
+export type Option = {
+  label: string;
+  value: string;
+  disabled?: boolean;
+  icon?: ReactNode;
+};
+
+export interface CustomSelectProps {
+  options: Option[];
+  value?: Option | null;
+  onChange: (selected: Option | null) => void;
+  placeholder?: string;
+  isMulti?: boolean;
+  isSearchable?: boolean;
+  isClearable?: boolean;
+  isDisabled?: boolean;
+  className?: string;
+  id?: string;
+  maxMenuHeight?: number;
+  noOptionsMessage?: string;
+}
+
+export type CompanyInfo = {
+  companyName: string;
+  registeredName: string;
+  registrationNumber: string;
+  countryCode: string;
+  size: string;
+  vatRate: string;
+  websiteURL: string;
+};
+
+export interface Address {
+  addressLine: string;
+  alternateAddress: string;
+  city: string;
+  region: string;
+  country: Option;
+  postalCode: string;
+}
+
+export interface AddressData {
+  billingAddress: Address;
+  registeredAddress: Address;
+}
+
+export interface UserPermissionsData {
+  id: number;
+  name: string;
+  email: string;
+  permissions: string[];
+}
+
+export interface ProfileData {
+  name: string;
+  email: string;
+}
+
+export interface TemplateData {
+  id: string;
+  jobTitle: string;
+  description: string;
+  timeOff: number;
 }
