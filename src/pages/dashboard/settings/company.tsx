@@ -89,7 +89,7 @@ const Company = () => {
             Touchpoint 360
           </h2>
 
-          <div className="flex flex-wrap gap-4 justify-center max-xs:justify-between lg:gap-6 w-full ">
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start max-xs:justify-between lg:gap-6 w-full ">
             {data.map((itm, index) => (
               <>
                 <div
@@ -99,7 +99,7 @@ const Company = () => {
                   <span className=" shrink-0 size-8 lg:size-10 rounded-full bg-primary-500 dark:bg-primary-50 text-primary-200 dark:text-primary-400 flex justify-center items-center">
                     {itm.icon}
                   </span>
-                  <div className="text-center">
+                  <div className="text-center lg:text-left">
                     <p className="text-xs font-medium text-gray-300 dark:text-gray-300">
                       {itm.title}
                     </p>
