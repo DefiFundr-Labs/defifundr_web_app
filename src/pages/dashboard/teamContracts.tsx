@@ -2,8 +2,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import Contracts from "../../components/dashboard/contracts/Contracts";
 import Employees from "../../components/dashboard/employees/Employees";
-import { Plus } from "lucide-react";
-import Tabs from "../../components/dashboard/Tabs";
 import { contractsData } from "../../utils/constant";
 import TitleHeader from "../../common/dashboard/TitleHeader";
 import { employees } from "../../data/employeeData";

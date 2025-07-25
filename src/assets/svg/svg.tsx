@@ -22,6 +22,92 @@ export const Logo = () => {
     </svg>
   );
 };
+export const ForwardArrow = () => {
+  return (
+    <svg
+      width={20}
+      height={20}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.0251 4.94141L17.0835 9.99974L12.0251 15.0581"
+        stroke="white"
+        strokeWidth="1.25"
+        strokeMiterlimit={10}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.91663 10H16.9416"
+        stroke="white"
+        strokeWidth="1.25"
+        strokeMiterlimit={10}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
+  )
+}
+export const Check = () => {
+  return (
+    <svg
+      width={20}
+      height={20}
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 10C0 4.47715 4.47715 0 10 0C15.5228 0 20 4.47715 20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10Z"
+        fill="white"
+      />
+      <path
+        d="M6.66669 9.99984L9.47919 13.3332L14.1667 6.6665"
+        stroke="#5A42DE"
+        strokeWidth="1.66667"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
+  )
+}
+export const Warning = () => {
+  return (
+    <svg
+      className="w-3 h-3 sm:w-6 sm:h-6"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z"
+        stroke="#E79A23"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M12 8V13"
+        stroke="#E79A23"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.9946 16H12.0036"
+        stroke="#E79A23"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
+  )
+}
 export const FilterIcon = () => {
   return (
     <svg

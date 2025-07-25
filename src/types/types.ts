@@ -77,6 +77,11 @@ export interface TimeSheetRecord {
   employeeName: string;
   profileImage: string;
   role: string;
+  email?: string; // Optional
+  phone?: string; // Optional
+  address?: string; // Optional
+  network?: string; // Optional - only for time tracking
+  frequency?: string; // Optional - only for time tracking
   rate?: string; // Optional - only for time tracking
   totalHours?: string; // Optional - not present in time off requests
   totalMinutes?: string; // Optional
@@ -88,6 +93,8 @@ export interface TimeSheetRecord {
   attachment: string;
   submittedOn: string;
   dateRange: string;
+  startDate: string; // Optional - for time tracking
+  endDate: string; // Optional - for time tracking
   rejectionReason: string;
 
   // Extended properties for time off and other types
@@ -97,6 +104,7 @@ export interface TimeSheetRecord {
   contract: {
     client: string;
     paymentType: string;
+    contractType: string; // e.g., "Fixed rate", "Pay as you go", "Milestone"
     contractLink: string;
   };
 
