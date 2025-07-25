@@ -86,11 +86,12 @@ export interface TimeSheetRecord {
   address?: string; // Optional
   network?: string; // Optional - only for time tracking
   frequency?: string; // Optional - only for time tracking
-  rate?: string;
-  totalHours?: string;
-  totalMinutes?: string;
-  totalAmount?: string;
-  paidIn?: string;
+
+  rate?: string; // Optional - only for time tracking
+  totalHours?: string; // Optional - not present in time off requests
+  totalMinutes?: string; // Optional
+  totalAmount?: string; // Optional - only for time tracking
+  paidIn?: string; // Optional
   status: "Pending" | "Approved" | "Rejected";
   submitted: string;
   description: string;

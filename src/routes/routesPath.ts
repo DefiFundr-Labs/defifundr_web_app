@@ -34,6 +34,7 @@ export const RoutePaths = {
   PAYROLL: "/dashboard/payroll",
 
   // invoices
+
   PAYROLL_EMPLOYEE_DETAILS: "/dashboard/payroll/employee-details",
   INVOICES: "/dashboard/invoices",
   BUSINESS: "/dashboard/business",

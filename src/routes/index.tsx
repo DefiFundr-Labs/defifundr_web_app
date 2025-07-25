@@ -31,6 +31,7 @@ import MileStone from "../pages/dashboard/team-management/mileStonesDetails";
 import NotFound from "../pages/notFound/notFound";
 import { CreateContract } from "../pages/dashboard/contract/createContract";
 import InvoiceDetails from "../pages/dashboard/invoiceDetails";
+
 import Payroll from "../pages/dashboard/payroll/payroll";
 import EmployeePayoutDetails from "../components/dashboard/payroll/EmployeePayoutDetails";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
@@ -143,7 +144,12 @@ export const router = createBrowserRouter([
       {
         path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
         element: <EmployeePayoutDetails />,
+
       },
+      {
+        path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
+        element: <EmployeePayoutDetails />,
+      }
       // {
       //   path: "create-compliance",
       //   element: <CreateCompliance />,
