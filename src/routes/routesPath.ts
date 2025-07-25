@@ -30,5 +30,21 @@ export const RoutePaths = {
   INVOICES: "/dashboard/invoices",
   BUSINESS: "/dashboard/business",
   SETTINGS: "/dashboard/settings",
+  COMPANY_INFORMATION_SETTINGS: "/dashboard/settings/company-information",
+  BILLING_ADDRESS_SETTINGS: "/dashboard/settings/billing-address",
+  REGISTERED_ADDRESS_SETTINGS: "/dashboard/settings/registered-address",
+  PERMISSIONS_SETTINGS: "/dashboard/settings/permissions",
+  TEMPLATE_SETTINGS: "/dashboard/settings/template",
+  EDIT_TEMPLATE_SETTINGS: "/dashboard/settings/template/edit",
+  PROFILE_SETTINGS: "/dashboard/profile-settings",
+  EDIT_PROFILE_SETTINGS: "/dashboard/profile-settings/edit",
+  TWO_FA_SETTINGS: "/dashboard/profile-settings/two-factor-authenticator-setup",
+  SCAN_TWO_FA_QR_CODE_SETTINGS:
+    "/dashboard/profile-settings/two-factor-authenticator-setup/scan-qr-code",
+  VERIFY_TWO_FA_SETTINGS:
+    "/dashboard/profile-settings/two-factor-authenticator-setup/verify-otp",
+  VERIFY_TWO_FA_EMAIL_SETTINGS:
+    "/dashboard/profile-settings/two-factor-authenticator-setup/verify-email",
+
   NOT_FOUND: "*",
 };

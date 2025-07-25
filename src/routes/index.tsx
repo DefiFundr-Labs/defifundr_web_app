@@ -31,6 +31,21 @@ import MileStone from "../pages/dashboard/team-management/mileStonesDetails";
 import NotFound from "../pages/notFound/notFound";
 import Payroll from "../pages/dashboard/payroll/payroll";
 import EmployeePayoutDetails from "../components/dashboard/payroll/EmployeePayoutDetails";
+import Settings from "../pages/dashboard/settings/settings";
+import ManageCompanyInformation from "../pages/dashboard/settings/company/manageCompanyInformation";
+import ManageBillingAddress from "../pages/dashboard/settings/company/manageBillingAddress";
+import ManageRegisteredAddress from "../pages/dashboard/settings/company/manageRegisteredAddress";
+import ManagePermissions from "../pages/dashboard/settings/permissions/managePermissions";
+import AddTemplate from "../pages/dashboard/settings/template/addTemplate";
+import ProfileSettings from "../pages/dashboard/profile-settings/profileSettings";
+import EditProfile from "../pages/dashboard/profile-settings/profile/editProfile";
+import TwoFASetup from "../pages/dashboard/profile-settings/profile/twoFASetup";
+import ScanQRCode from "../pages/dashboard/profile-settings/profile/scanQRCode";
+import VerifyTwoFACode from "../pages/dashboard/profile-settings/profile/verifyTwoFACode";
+import VerifyTwoFAEmail from "../pages/dashboard/profile-settings/profile/verifyTwoFAEmail";
+import TemplateDetails from "../pages/dashboard/settings/template/templateDetails";
+import EditTemplate from "../pages/dashboard/settings/template/editTemplate";
+
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
 export const router = createBrowserRouter([
@@ -133,6 +148,78 @@ export const router = createBrowserRouter([
       {
         path: RoutePaths.PAYROLL,
         element: <Payroll />,
+      },
+      {
+        path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
+        element: <EmployeePayoutDetails />,
+      },
+      {
+        path: RoutePaths.SETTINGS,
+        children: [
+          {
+            index: true,
+            element: <Settings />,
+          },
+          {
+            path: `${RoutePaths.COMPANY_INFORMATION_SETTINGS}/:id?`,
+            element: <ManageCompanyInformation />,
+          },
+          {
+            path: `${RoutePaths.BILLING_ADDRESS_SETTINGS}/:id?`,
+            element: <ManageBillingAddress />,
+          },
+          {
+            path: `${RoutePaths.REGISTERED_ADDRESS_SETTINGS}/:id?`,
+            element: <ManageRegisteredAddress />,
+          },
+          {
+            path: `${RoutePaths.PERMISSIONS_SETTINGS}/:id?`,
+            element: <ManagePermissions />,
+          },
+
+          {
+            path: RoutePaths.TEMPLATE_SETTINGS,
+            element: <AddTemplate />,
+          },
+          {
+            path: `${RoutePaths.EDIT_TEMPLATE_SETTINGS}/:id`,
+            element: <EditTemplate />,
+          },
+          {
+            path: `${RoutePaths.TEMPLATE_SETTINGS}/:id`,
+            element: <TemplateDetails />,
+          },
+        ],
+      },
+      {
+        path: RoutePaths.PROFILE_SETTINGS,
+        children: [
+          {
+            index: true,
+            element: <ProfileSettings />,
+          },
+          {
+            path: RoutePaths.EDIT_PROFILE_SETTINGS,
+            element: <EditProfile />,
+          },
+          {
+            path: RoutePaths.TWO_FA_SETTINGS,
+            element: <TwoFASetup />,
+          },
+          {
+            path: RoutePaths.SCAN_TWO_FA_QR_CODE_SETTINGS,
+            element: <ScanQRCode />,
+          },
+          {
+            path: RoutePaths.VERIFY_TWO_FA_SETTINGS,
+            element: <VerifyTwoFACode />,
+          },
+          {
+            path: RoutePaths.VERIFY_TWO_FA_EMAIL_SETTINGS,
+            element: <VerifyTwoFAEmail />,
+          },
+        ],
+
       },
       {
         path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,

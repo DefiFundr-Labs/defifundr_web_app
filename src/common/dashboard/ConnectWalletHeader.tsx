@@ -1,7 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
-import { FoxIcon, UnlinkIcon } from "../../assets/svg/svg";
+import {
+  FoxIcon,
+  ProfilePreferencesIcon,
+  UnlinkIcon,
+} from "../../assets/svg/svg";
+import { Link } from "react-router-dom";
+import { RoutePaths } from "../../routes/routesPath";
 
 // Mock wallet icons - replace with actual imports
 const StarkNetIcon = () => (
@@ -105,15 +111,17 @@ const ConnectWalletHeader = () => {
             </p>
 
             {/* Starknet Option */}
-            <button
-              onClick={() => handleConnectWallet("Starknet")}
+            <Link
+              to={RoutePaths.PROFILE_SETTINGS}
+              // onClick={() => handleConnectWallet("Starknet")}
+              onClick={() => setIsOpen(false)}
               className="flex items-center w-full gap-3 px-2 py-2 mb-2 text-left transition-colors rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
             >
-              <StarkNetIcon />
+              <ProfilePreferencesIcon />
               <span className="text-sm text-gray-900 dark:text-gray-100">
-                Starknet
+                Profile & preferences
               </span>
-            </button>
+            </Link>
 
             {/* Phantom Option */}
             <button

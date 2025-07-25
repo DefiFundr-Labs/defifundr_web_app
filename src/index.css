@@ -355,6 +355,36 @@ body {
   .rectangle {
     @apply absolute bg-primary-200 shadow-rectangle border-[3.25195px] border-white/50 rotate-[-27.72deg] w-[317.61px] h-[755.35px] -z-1;
   }
+
+  .reactEasyCrop_CropArea.reactEasyCrop_CropAreaRound {
+    box-shadow: 0 0 0 9999em #ffffff99 !important;
+  }
+
+  .quill-editor {
+    @apply !px-3.5 !py-5;
+  }
+
+  .ql-container.ql-snow {
+    @apply !border-0;
+  }
+  .ql-editor.ql-blank,
+  .ql-editor {
+    @apply !p-0;
+  }
+
+  .custom-editor {
+    .ql-snow.ql-toolbar button,
+    .ql-snow .ql-toolbar button {
+      @apply !size-7 rounded-full !bg-gray-100 dark:!bg-gray-600 !flex items-center justify-center hover:!text-primary-200;
+    }
+
+    .ql-snow.ql-toolbar button.ql-active {
+      @apply !text-primary-200 dark:!text-primary-400 !bg-primary-400 dark:!bg-primary-200;
+    }
+    .ql-container.ql-snow {
+      @apply !h-80 !rounded-lg bg-gray-100 dark:bg-gray-600 !px-3.5 !py-5;
+    }
+  }
 }
 
 .custom-scrollbar {
