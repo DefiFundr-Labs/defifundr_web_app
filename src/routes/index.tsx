@@ -27,11 +27,12 @@ import Invoices from "../pages/dashboard/invoices";
 import TimeTrackingDetails from "../pages/dashboard/team-management/timeTrackingDetails";
 import Expense from "../pages/dashboard/team-management/expense";
 import TimeOffDetails from "../pages/dashboard/team-management/timeOffDetails";
-import MileStoneDetails from "../pages/dashboard/team-management/mileStonesDetails";
 import MileStone from "../pages/dashboard/team-management/mileStonesDetails";
 import NotFound from "../pages/notFound/notFound";
 import { CreateContract } from "../pages/dashboard/contract/createContract";
 import InvoiceDetails from "../pages/dashboard/invoiceDetails";
+import Payroll from "../pages/dashboard/payroll/payroll";
+import EmployeePayoutDetails from "../components/dashboard/payroll/EmployeePayoutDetails";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
 export const router = createBrowserRouter([
@@ -136,8 +137,12 @@ export const router = createBrowserRouter([
         element: <Invoices />,
       },
       {
-        path: `${RoutePaths.INVOICES}/:id`,
-        element: <InvoiceDetails />,
+        path: RoutePaths.PAYROLL,
+        element: <Payroll />,
+      },
+      {
+        path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
+        element: <EmployeePayoutDetails />,
       },
       // {
       //   path: "create-compliance",
