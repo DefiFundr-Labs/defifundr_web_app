@@ -6,7 +6,15 @@ import {
   NotebookIcon,
   Profile,
 } from "../assets/svg/svg";
-import { AccountOption } from "../types/types";
+import {
+  AccountOption,
+  Address,
+  AddressData,
+  CompanyInfo,
+  ProfileData,
+  TemplateData,
+  UserPermissionsData,
+} from "../types/types";
 
 export const accountTypeOptions: AccountOption[] = [
   {
@@ -277,3 +285,185 @@ export const invoiceBreakDownData = [
     value: "$2.20",
   },
 ];
+
+// COMPANY INFORMATION SETTINGS
+let companyInformationData = {
+  companyName: "Touchpoint 360",
+  registeredName: "Touchpoint 360",
+  registrationNumber: "",
+  countryCode: "NG",
+  size: "",
+  vatRate: "",
+  websiteURL: "https://www.touchpoint360.com",
+};
+
+export function getCompanyInformation(): CompanyInfo {
+  try {
+    const stored = localStorage.getItem("companyInformation");
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    console.warn("Failed to parse stored company information:", e);
+  }
+  return companyInformationData;
+}
+
+export function updateCompanyInformation(
+  data: Partial<CompanyInfo>
+): CompanyInfo {
+  companyInformationData = { ...companyInformationData, ...data };
+
+  try {
+    localStorage.setItem(
+      "companyInformation",
+      JSON.stringify(companyInformationData)
+    );
+  } catch (e) {
+    console.warn("Failed to save company information to localStorage:", e);
+  }
+  return companyInformationData;
+}
+
+// BILLING ADDRESS SETTINGS
+let addressData = {
+  billingAddress: {
+    addressLine: "",
+    alternateAddress: "",
+    city: "",
+    region: "",
+    country: "",
+    postalCode: "",
+  },
+  registeredAddress: {
+    addressLine: "",
+    alternateAddress: "",
+    city: "",
+    region: "",
+    country: "",
+    postalCode: "",
+  },
+};
+
+export function getAddressData() {
+  try {
+    const stored = localStorage.getItem("addressData");
+    if (stored) {
+      const parsedData: AddressData = JSON.parse(stored);
+      return parsedData;
+    } else return null;
+  } catch (e) {
+    return null;
+  }
+}
+
+export function updateAddressData(
+  section: keyof AddressData,
+  data: Partial<Address>
+) {
+  addressData = {
+    ...addressData,
+    [section]: {
+      ...addressData[section],
+      ...data,
+    },
+  };
+  try {
+    localStorage.setItem("addressData", JSON.stringify(addressData));
+  } catch (e) {
+    console.warn("Failed to save addressData to localStorage", e);
+  }
+}
+
+// PERMISSION SETTINGS
+let permissionsData = [
+  {
+    id: 1,
+    name: "James Akinbiola",
+    email: "mailjames@gmail.com",
+    permissions: ["Administrator"],
+  },
+];
+
+export function getAllUserPermission(): UserPermissionsData[] {
+  try {
+    const stored = localStorage.getItem("permission");
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    console.warn("Failed to parse stored user information:", e);
+  }
+  return permissionsData;
+}
+
+export function updateUserPermission(data: Partial<UserPermissionsData>) {
+  try {
+    const stored = localStorage.getItem("permission");
+    let existing = stored ? JSON.parse(stored) : permissionsData;
+    existing.push(data);
+
+    localStorage.setItem("permission", JSON.stringify(existing));
+  } catch (e) {
+    console.warn("Failed to save user information to localStorage:", e);
+  }
+}
+
+// EDIT PROFILE SETTINGS
+let editProfile = {
+  name: "Peter",
+  email: "dapoye8379@deusa7.com",
+};
+
+export function getProfile(): ProfileData {
+  try {
+    const stored = localStorage.getItem("profile");
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    console.warn("Failed to parse stored profile information:", e);
+  }
+  return editProfile;
+}
+
+export function updateProfile(data: Partial<ProfileData>) {
+  const editProfileData = { ...editProfile, ...data };
+
+  try {
+    localStorage.setItem("profile", JSON.stringify(editProfileData));
+  } catch (e) {
+    console.warn("Failed to save profile information to localStorage:", e);
+  }
+}
+
+const TEMPLATE_KEY = "template";
+
+export function getTemplates(): TemplateData[] | null {
+  try {
+    const stored = localStorage.getItem(TEMPLATE_KEY);
+    if (stored) {
+      return JSON.parse(stored);
+    }
+  } catch (e) {
+    console.warn("Failed to parse stored template information:", e);
+  }
+  return null;
+}
+
+export function saveTemplate(template: TemplateData) {
+  try {
+    const stored = localStorage.getItem(TEMPLATE_KEY);
+    const templates: TemplateData[] = stored ? JSON.parse(stored) : [];
+
+    const exists = templates.some((t) => t.id === template.id);
+
+    const newList = exists
+      ? templates.map((t) => (t.id === template.id ? template : t))
+      : [...templates, template];
+
+    localStorage.setItem(TEMPLATE_KEY, JSON.stringify(newList));
+  } catch (e) {
+    console.warn("Failed to save template:", e);
+  }
+}

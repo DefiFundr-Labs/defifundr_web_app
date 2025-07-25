@@ -4246,10 +4246,10 @@ export const UnlinkIcon = () => (
     />
   </svg>
 );
-export const CancelIcon = () => (
+export const CancelIcon = ({ size }: { size?: number }) => (
   <svg
-    width={16}
-    height={17}
+    width={size ? size : 16}
+    height={size ? size : 17}
     viewBox="0 0 16 17"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -4642,5 +4642,1860 @@ export const PaymentSuccessfulIcon = () => (
         <stop offset="1" stopColor="#3216CE"></stop>
       </linearGradient>
     </defs>
+  </svg>
+);
+
+export const ActiveMembersIcon = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="size-4 lg:size-5"
+  >
+    <path
+      d="M15 5.96797C14.95 5.95964 14.8917 5.95964 14.8417 5.96797C13.6917 5.92631 12.775 4.98464 12.775 3.81797C12.775 2.6263 13.7334 1.66797 14.925 1.66797C16.1167 1.66797 17.075 2.63464 17.075 3.81797C17.0667 4.98464 16.15 5.92631 15 5.96797Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14.1417 12.0348C15.2834 12.2264 16.5417 12.0264 17.425 11.4348C18.6 10.6514 18.6 9.3681 17.425 8.58477C16.5334 7.9931 15.2584 7.7931 14.1167 7.9931"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.97503 5.96797C5.02503 5.95964 5.08336 5.95964 5.13336 5.96797C6.28336 5.92631 7.20002 4.98464 7.20002 3.81797C7.20002 2.6263 6.24169 1.66797 5.05003 1.66797C3.85836 1.66797 2.90002 2.63464 2.90002 3.81797C2.90836 4.98464 3.82503 5.92631 4.97503 5.96797Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.83334 12.0348C4.69168 12.2264 3.43335 12.0264 2.55001 11.4348C1.37501 10.6514 1.37501 9.3681 2.55001 8.58477C3.44168 7.9931 4.71668 7.7931 5.85834 7.9931"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.99996 12.1906C9.94996 12.1823 9.89163 12.1823 9.84163 12.1906C8.69163 12.149 7.77496 11.2073 7.77496 10.0406C7.77496 8.84896 8.7333 7.89062 9.92496 7.89062C11.1166 7.89062 12.075 8.85729 12.075 10.0406C12.0666 11.2073 11.15 12.1573 9.99996 12.1906Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.57498 14.8148C6.39998 15.5982 6.39998 16.8815 7.57498 17.6648C8.90831 18.5565 11.0916 18.5565 12.425 17.6648C13.6 16.8815 13.6 15.5982 12.425 14.8148C11.1 13.9315 8.90831 13.9315 7.57498 14.8148Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const CountriesIcon = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="size-4 lg:size-5"
+  >
+    <path
+      d="M10 18.3346C14.6024 18.3346 18.3334 14.6037 18.3334 10.0013C18.3334 5.39893 14.6024 1.66797 10 1.66797C5.39765 1.66797 1.66669 5.39893 1.66669 10.0013C1.66669 14.6037 5.39765 18.3346 10 18.3346Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.66667 2.5H7.5C5.875 7.36667 5.875 12.6333 7.5 17.5H6.66667"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.5 2.5C14.125 7.36667 14.125 12.6333 12.5 17.5"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2.5 13.3333V12.5C7.36667 14.125 12.6333 14.125 17.5 12.5V13.3333"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M2.5 7.5C7.36667 5.875 12.6333 5.875 17.5 7.5"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const AdministratorsIcon = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="size-4 lg:size-5"
+  >
+    <path
+      d="M10.1333 9.05964C10.05 9.0513 9.94999 9.0513 9.85832 9.05964C7.87499 8.99297 6.29999 7.36797 6.29999 5.36797C6.29999 3.3263 7.94999 1.66797 9.99999 1.66797C12.0417 1.66797 13.7 3.3263 13.7 5.36797C13.6917 7.36797 12.1167 8.99297 10.1333 9.05964Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.9666 12.132C3.94993 13.482 3.94993 15.682 5.9666 17.0237C8.25827 18.557 12.0166 18.557 14.3083 17.0237C16.3249 15.6737 16.3249 13.4737 14.3083 12.132C12.0249 10.607 8.2666 10.607 5.9666 12.132Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const EditIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="16"
+    height="16"
+    fill="none"
+    viewBox="0 0 16 16"
+  >
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="m10.811 2.546 2.64 2.64a.833.833 0 0 1 0 1.179L6.825 12.99a.83.83 0 0 1-.382.217l-3.55.912a.833.833 0 0 1-1.015-1.015l.911-3.55a.83.83 0 0 1 .218-.383l6.626-6.626a.833.833 0 0 1 1.178 0m-.59.825L3.747 9.847l-.83 3.234 3.234-.83 6.476-6.476z"
+      clipRule="evenodd"
+    ></path>
+    <path
+      fill="currentColor"
+      fillRule="evenodd"
+      d="M10.458 5.539c.13.13.13.341 0 .471l-4 4a.333.333 0 1 1-.47-.471l3.999-4c.13-.13.341-.13.471 0M4.654 10.875c.13-.13.34-.13.471 0l1.333 1.333a.333.333 0 0 1-.471.472l-1.333-1.334a.333.333 0 0 1 0-.471M11.647.978a.5.5 0 0 1 .707 0l2.667 2.667a.5.5 0 1 1-.708.707l-2.666-2.666a.5.5 0 0 1 0-.708"
+      clipRule="evenodd"
+    ></path>
+  </svg>
+);
+
+export const UploadImageIcon = () => (
+  <svg
+    width="17"
+    height="16"
+    viewBox="0 0 17 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M6.50008 6.66667C7.23646 6.66667 7.83341 6.06971 7.83341 5.33333C7.83341 4.59695 7.23646 4 6.50008 4C5.7637 4 5.16675 4.59695 5.16675 5.33333C5.16675 6.06971 5.7637 6.66667 6.50008 6.66667Z"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.16658 1.33203H6.49992C3.16659 1.33203 1.83325 2.66536 1.83325 5.9987V9.9987C1.83325 13.332 3.16659 14.6654 6.49992 14.6654H10.4999C13.8333 14.6654 15.1666 13.332 15.1666 9.9987V6.66536"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path d="M11 3.33203H14.6667" stroke="currentColor" strokeLinecap="round" />
+    <path
+      d="M12.8333 5.16667V1.5"
+      stroke="currentColor"
+      strokeLinecap="round"
+    />
+    <path
+      d="M2.28003 12.635L5.5667 10.4283C6.09336 10.075 6.85336 10.115 7.3267 10.5217L7.5467 10.715C8.0667 11.1617 8.9067 11.1617 9.4267 10.715L12.2 8.335C12.72 7.88833 13.56 7.88833 14.08 8.335L15.1667 9.26833"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const TrashIcon = ({ size }: { size?: number }) => (
+  <svg
+    width={size ? size : 16}
+    height={size ? size : 16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14 3.98568C11.78 3.76568 9.54667 3.65234 7.32 3.65234C6 3.65234 4.68 3.71901 3.36 3.85234L2 3.98568"
+      stroke="#C64242"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.66699 3.31203L5.81366 2.4387C5.92033 1.80536 6.00033 1.33203 7.12699 1.33203H8.87366C10.0003 1.33203 10.087 1.83203 10.187 2.44536L10.3337 3.31203"
+      stroke="#C64242"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M12.5669 6.09375L12.1336 12.8071C12.0603 13.8537 12.0003 14.6671 10.1403 14.6671H5.86026C4.00026 14.6671 3.94026 13.8537 3.86693 12.8071L3.43359 6.09375"
+      stroke="#C64242"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.88672 11H9.10672"
+      stroke="#C64242"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.33301 8.33203H9.66634"
+      stroke="#C64242"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const InfoIcon = ({ size }: { size?: number }) => (
+  <svg
+    width={size ? size : 16}
+    height={size ? size : 16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M8.00065 14.6654C11.6673 14.6654 14.6673 11.6654 14.6673 7.9987C14.6673 4.33203 11.6673 1.33203 8.00065 1.33203C4.33398 1.33203 1.33398 4.33203 1.33398 7.9987C1.33398 11.6654 4.33398 14.6654 8.00065 14.6654Z"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8 5.33203V8.66536"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.99609 10.668H8.00208"
+      stroke="currentColor"
+      strokeWidth="1.33333"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const PermissionIcon = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M1.83203 11.6836C2.60703 15.4836 5.96537 18.3336 9.9987 18.3336C14.0154 18.3336 17.3654 15.4919 18.157 11.7086"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M18.1737 8.38463C17.4237 4.5513 14.0487 1.66797 9.9987 1.66797C5.9737 1.66797 2.61536 4.52631 1.83203 8.31798"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10 11.25C10.6904 11.25 11.25 10.6904 11.25 10C11.25 9.30964 10.6904 8.75 10 8.75C9.30964 8.75 8.75 9.30964 8.75 10C8.75 10.6904 9.30964 11.25 10 11.25Z"
+      stroke="currentColor"
+      strokeWidth="1.25"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const PixelatedArt1 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_8223_151234)">
+      <rect width={40} height={40} rx={8} fill="#F00F0F" />
+      <g
+        style={{
+          mixBlendMode: "darken",
+        }}
+      >
+        <path fill="#7770C3" d="M0 0H4V4H0z" />
+        <path fill="#F6686D" d="M4 0H8V4H4z" />
+        <path fill="#B96C97" d="M8 0H12V4H8z" />
+        <path fill="#936EB0" d="M12 0H16V4H12z" />
+        <path fill="#AB6DA0" d="M16 0H20V4H16z" />
+        <path fill="#5373DB" d="M20 0H24V4H20z" />
+        <path fill="#E76977" d="M24 0H28V4H24z" />
+        <path fill="#F26870" d="M28 0H32V4H28z" />
+        <path fill="#D76A82" d="M32 0H36V4H32z" />
+        <path fill="#B26C9B" d="M36 0H40V4H36z" />
+        <path fill="#A36DA6" d="M0 4H4V8H0z" />
+        <path fill="#E96976" d="M4 4H8V8H4z" />
+        <path fill="#8270BC" d="M8 4H12V8H8z" />
+        <path fill="#5173DD" d="M12 4H16V8H12z" />
+        <path fill="#7970C2" d="M16 4H20V8H16z" />
+        <path fill="#7770C3" d="M20 4H24V8H20z" />
+        <path fill="#BF6B92" d="M24 4H28V8H24z" />
+        <path fill="#C46B8F" d="M28 4H32V8H28z" />
+        <path fill="#B06C9D" d="M32 4H36V8H32z" />
+        <path fill="#BD6C94" d="M36 4H40V8H36z" />
+        <path fill="#AB6DA0" d="M0 8H4V12H0z" />
+        <path fill="#9E6EA9" d="M4 8H8V12H4z" />
+        <path fill="#3D74EA" d="M8 8H12V12H8z" />
+        <path fill="#D56A83" d="M12 8H16V12H12z" />
+        <path fill="#DE697D" d="M16 8H20V12H16z" />
+        <path fill="#3D74EA" d="M20 8H24V12H20z" />
+        <path fill="#F4686E" d="M24 8H28V12H24z" />
+        <path fill="#5872D8" d="M28 8H32V12H28z" />
+        <path fill="#A56DA4" d="M32 8H36V12H32z" />
+        <path fill="#6372D1" d="M36 8H40V12H36z" />
+        <path fill="#7D70BF" d="M0 12H4V16H0z" />
+        <path fill="#3075F3" d="M4 12H8V16H4z" />
+        <path fill="#4F73DE" d="M8 12H12V16H8z" />
+        <path fill="#B46C9A" d="M12 12H16V16H12z" />
+        <path fill="#F6686D" d="M16 12H20V16H16z" />
+        <path fill="#F26870" d="M20 12H24V16H20z" />
+        <path fill="#EB6874" d="M24 12H28V16H24z" />
+        <path fill="#3575F0" d="M28 12H32V16H28z" />
+        <path fill="#5A72D7" d="M32 12H36V16H32z" />
+        <path fill="#B66C98" d="M36 12H40V16H36z" />
+        <path fill="#CA6B8B" d="M0 16H4V20H0z" />
+        <path fill="#E76977" d="M4 16H8V20H4z" />
+        <path fill="#5673DA" d="M8 16H12V20H8z" />
+        <path fill="#7970C2" d="M12 16H16V20H12z" />
+        <path fill="#3075F3" d="M16 16H20V20H16z" />
+        <path fill="#7B70C0" d="M20 16H24V20H20z" />
+        <path fill="#3275F2" d="M24 16H28V20H24z" />
+        <path fill="#7D70BF" d="M28 16H32V20H28z" />
+        <path fill="#E76977" d="M32 16H36V20H32z" />
+        <path fill="#A76DA3" d="M36 16H40V20H36z" />
+        <path fill="#A56DA4" d="M0 20H4V24H0z" />
+        <path fill="#AE6D9E" d="M4 20H8V24H4z" />
+        <path fill="#AE6D9E" d="M8 20H12V24H8z" />
+        <path fill="#3B74EC" d="M12 20H16V24H12z" />
+        <path fill="#B26C9B" d="M16 20H20V24H16z" />
+        <path fill="#8F6FB3" d="M20 20H24V24H20z" />
+        <path fill="#6971CC" d="M24 20H28V24H24z" />
+        <path fill="#A56DA4" d="M28 20H32V24H28z" />
+        <path fill="#9C6EAA" d="M32 20H36V24H32z" />
+        <path fill="#CF6A88" d="M36 20H40V24H36z" />
+        <path fill="#2A76F8" d="M0 24H4V28H0z" />
+        <path fill="#3275F2" d="M4 24H8V28H4z" />
+        <path fill="#D76A82" d="M8 24H12V28H8z" />
+        <path fill="#3D74EA" d="M12 24H16V28H12z" />
+        <path fill="#A56DA4" d="M16 24H20V28H16z" />
+        <path fill="#D36A85" d="M20 24H24V28H20z" />
+        <path fill="#3275F2" d="M24 24H28V28H24z" />
+        <path fill="#FF6767" d="M28 24H32V28H28z" />
+        <path fill="#5173DD" d="M32 24H36V28H32z" />
+        <path fill="#4674E4" d="M36 24H40V28H36z" />
+        <path fill="#E96976" d="M0 28H4V32H0z" />
+        <path fill="#D16A86" d="M4 28H8V32H4z" />
+        <path fill="#4873E3" d="M8 28H12V32H8z" />
+        <path fill="#4D73E0" d="M12 28H16V32H12z" />
+        <path fill="#BF6B92" d="M16 28H20V32H16z" />
+        <path fill="#866FB9" d="M20 28H24V32H20z" />
+        <path fill="#D56A83" d="M24 28H28V32H24z" />
+        <path fill="#DA6A80" d="M28 28H32V32H28z" />
+        <path fill="#E0697C" d="M32 28H36V32H32z" />
+        <path fill="#EB6874" d="M36 28H40V32H36z" />
+        <path fill="#DE697D" d="M0 32H4V36H0z" />
+        <path fill="#4674E4" d="M4 32H8V36H4z" />
+        <path fill="#2776F9" d="M8 32H12V36H8z" />
+        <path fill="#8270BC" d="M12 32H16V36H12z" />
+        <path fill="#6771CE" d="M16 32H20V36H16z" />
+        <path fill="#2776F9" d="M20 32H24V36H20z" />
+        <path fill="#5E72D4" d="M24 32H28V36H24z" />
+        <path fill="#F6686D" d="M28 32H32V36H28z" />
+        <path fill="#5872D8" d="M32 32H36V36H32z" />
+        <path fill="#F06871" d="M36 32H40V36H36z" />
+        <path fill="#8270BC" d="M0 36H4V40H0z" />
+        <path fill="#5872D8" d="M4 36H8V40H4z" />
+        <path fill="#D36A85" d="M8 36H12V40H8z" />
+        <path fill="#6572CF" d="M12 36H16V40H12z" />
+        <path fill="#4B73E1" d="M16 36H20V40H16z" />
+        <path fill="#846FBA" d="M20 36H24V40H20z" />
+        <path fill="#A36DA6" d="M24 36H28V40H24z" />
+        <path fill="#B46C9A" d="M28 36H32V40H28z" />
+        <path fill="#3B74EC" d="M32 36H36V40H32z" />
+        <path fill="#846FBA" d="M36 36H40V40H36z" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_8223_151234">
+        <rect width={40} height={40} rx={8} fill="#fff" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PixelatedArt2 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_9209_25353)">
+      <rect width={40} height={40} rx={8} fill="#9185F7" />
+      <g style={{ mixBlendMode: "darken" }}>
+        <rect width={4} height={4} fill="#7770C3" />
+        <rect x={4} width={4} height={4} fill="#F6686D" />
+        <rect x={8} width={4} height={4} fill="#B96C97" />
+        <rect x={12} width={4} height={4} fill="#936EB0" />
+        <rect x={16} width={4} height={4} fill="#AB6DA0" />
+        <rect x={20} width={4} height={4} fill="#5373DB" />
+        <rect x={24} width={4} height={4} fill="#E76977" />
+        <rect x={28} width={4} height={4} fill="#F26870" />
+        <rect x={32} width={4} height={4} fill="#D76A82" />
+        <rect x={36} width={4} height={4} fill="#B26C9B" />
+        <rect y={4} width={4} height={4} fill="#A36DA6" />
+        <rect x={4} y={4} width={4} height={4} fill="#E96976" />
+        <rect x={8} y={4} width={4} height={4} fill="#8270BC" />
+        <rect x={12} y={4} width={4} height={4} fill="#5173DD" />
+        <rect x={16} y={4} width={4} height={4} fill="#7970C2" />
+        <rect x={20} y={4} width={4} height={4} fill="#7770C3" />
+        <rect x={24} y={4} width={4} height={4} fill="#BF6B92" />
+        <rect x={28} y={4} width={4} height={4} fill="#C46B8F" />
+        <rect x={32} y={4} width={4} height={4} fill="#B06C9D" />
+        <rect x={36} y={4} width={4} height={4} fill="#BD6C94" />
+        <rect y={8} width={4} height={4} fill="#AB6DA0" />
+        <rect x={4} y={8} width={4} height={4} fill="#9E6EA9" />
+        <rect x={8} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={12} y={8} width={4} height={4} fill="#D56A83" />
+        <rect x={16} y={8} width={4} height={4} fill="#DE697D" />
+        <rect x={20} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={24} y={8} width={4} height={4} fill="#F4686E" />
+        <rect x={28} y={8} width={4} height={4} fill="#5872D8" />
+        <rect x={32} y={8} width={4} height={4} fill="#A56DA4" />
+        <rect x={36} y={8} width={4} height={4} fill="#6372D1" />
+        <rect y={12} width={4} height={4} fill="#7D70BF" />
+        <rect x={4} y={12} width={4} height={4} fill="#3075F3" />
+        <rect x={8} y={12} width={4} height={4} fill="#4F73DE" />
+        <rect x={12} y={12} width={4} height={4} fill="#B46C9A" />
+        <rect x={16} y={12} width={4} height={4} fill="#F6686D" />
+        <rect x={20} y={12} width={4} height={4} fill="#F26870" />
+        <rect x={24} y={12} width={4} height={4} fill="#EB6874" />
+        <rect x={28} y={12} width={4} height={4} fill="#3575F0" />
+        <rect x={32} y={12} width={4} height={4} fill="#5A72D7" />
+        <rect x={36} y={12} width={4} height={4} fill="#B66C98" />
+        <rect y={16} width={4} height={4} fill="#CA6B8B" />
+        <rect x={4} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={8} y={16} width={4} height={4} fill="#5673DA" />
+        <rect x={12} y={16} width={4} height={4} fill="#7970C2" />
+        <rect x={16} y={16} width={4} height={4} fill="#3075F3" />
+        <rect x={20} y={16} width={4} height={4} fill="#7B70C0" />
+        <rect x={24} y={16} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={16} width={4} height={4} fill="#7D70BF" />
+        <rect x={32} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={36} y={16} width={4} height={4} fill="#A76DA3" />
+        <rect y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={4} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={8} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={12} y={20} width={4} height={4} fill="#3B74EC" />
+        <rect x={16} y={20} width={4} height={4} fill="#B26C9B" />
+        <rect x={20} y={20} width={4} height={4} fill="#8F6FB3" />
+        <rect x={24} y={20} width={4} height={4} fill="#6971CC" />
+        <rect x={28} y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={32} y={20} width={4} height={4} fill="#9C6EAA" />
+        <rect x={36} y={20} width={4} height={4} fill="#CF6A88" />
+        <rect y={24} width={4} height={4} fill="#2A76F8" />
+        <rect x={4} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={8} y={24} width={4} height={4} fill="#D76A82" />
+        <rect x={12} y={24} width={4} height={4} fill="#3D74EA" />
+        <rect x={16} y={24} width={4} height={4} fill="#A56DA4" />
+        <rect x={20} y={24} width={4} height={4} fill="#D36A85" />
+        <rect x={24} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={24} width={4} height={4} fill="#FF6767" />
+        <rect x={32} y={24} width={4} height={4} fill="#5173DD" />
+        <rect x={36} y={24} width={4} height={4} fill="#4674E4" />
+        <rect y={28} width={4} height={4} fill="#E96976" />
+        <rect x={4} y={28} width={4} height={4} fill="#D16A86" />
+        <rect x={8} y={28} width={4} height={4} fill="#4873E3" />
+        <rect x={12} y={28} width={4} height={4} fill="#4D73E0" />
+        <rect x={16} y={28} width={4} height={4} fill="#BF6B92" />
+        <rect x={20} y={28} width={4} height={4} fill="#866FB9" />
+        <rect x={24} y={28} width={4} height={4} fill="#D56A83" />
+        <rect x={28} y={28} width={4} height={4} fill="#DA6A80" />
+        <rect x={32} y={28} width={4} height={4} fill="#E0697C" />
+        <rect x={36} y={28} width={4} height={4} fill="#EB6874" />
+        <rect y={32} width={4} height={4} fill="#DE697D" />
+        <rect x={4} y={32} width={4} height={4} fill="#4674E4" />
+        <rect x={8} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={12} y={32} width={4} height={4} fill="#8270BC" />
+        <rect x={16} y={32} width={4} height={4} fill="#6771CE" />
+        <rect x={20} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={24} y={32} width={4} height={4} fill="#5E72D4" />
+        <rect x={28} y={32} width={4} height={4} fill="#F6686D" />
+        <rect x={32} y={32} width={4} height={4} fill="#5872D8" />
+        <rect x={36} y={32} width={4} height={4} fill="#F06871" />
+        <rect y={36} width={4} height={4} fill="#8270BC" />
+        <rect x={4} y={36} width={4} height={4} fill="#5872D8" />
+        <rect x={8} y={36} width={4} height={4} fill="#D36A85" />
+        <rect x={12} y={36} width={4} height={4} fill="#6572CF" />
+        <rect x={16} y={36} width={4} height={4} fill="#4B73E1" />
+        <rect x={20} y={36} width={4} height={4} fill="#846FBA" />
+        <rect x={24} y={36} width={4} height={4} fill="#A36DA6" />
+        <rect x={28} y={36} width={4} height={4} fill="#B46C9A" />
+        <rect x={32} y={36} width={4} height={4} fill="#3B74EC" />
+        <rect x={36} y={36} width={4} height={4} fill="#846FBA" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_9209_25353">
+        <rect width={40} height={40} rx={8} fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PixelatedArt3 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_9209_147312)">
+      <rect width={40} height={40} rx={8} fill="#E5F00F" />
+      <g style={{ mixBlendMode: "darken" }}>
+        <rect width={4} height={4} fill="#7770C3" />
+        <rect x={4} width={4} height={4} fill="#F6686D" />
+        <rect x={8} width={4} height={4} fill="#B96C97" />
+        <rect x={12} width={4} height={4} fill="#936EB0" />
+        <rect x={16} width={4} height={4} fill="#AB6DA0" />
+        <rect x={20} width={4} height={4} fill="#5373DB" />
+        <rect x={24} width={4} height={4} fill="#E76977" />
+        <rect x={28} width={4} height={4} fill="#F26870" />
+        <rect x={32} width={4} height={4} fill="#D76A82" />
+        <rect x={36} width={4} height={4} fill="#B26C9B" />
+        <rect y={4} width={4} height={4} fill="#A36DA6" />
+        <rect x={4} y={4} width={4} height={4} fill="#E96976" />
+        <rect x={8} y={4} width={4} height={4} fill="#8270BC" />
+        <rect x={12} y={4} width={4} height={4} fill="#5173DD" />
+        <rect x={16} y={4} width={4} height={4} fill="#7970C2" />
+        <rect x={20} y={4} width={4} height={4} fill="#7770C3" />
+        <rect x={24} y={4} width={4} height={4} fill="#BF6B92" />
+        <rect x={28} y={4} width={4} height={4} fill="#C46B8F" />
+        <rect x={32} y={4} width={4} height={4} fill="#B06C9D" />
+        <rect x={36} y={4} width={4} height={4} fill="#BD6C94" />
+        <rect y={8} width={4} height={4} fill="#AB6DA0" />
+        <rect x={4} y={8} width={4} height={4} fill="#9E6EA9" />
+        <rect x={8} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={12} y={8} width={4} height={4} fill="#D56A83" />
+        <rect x={16} y={8} width={4} height={4} fill="#DE697D" />
+        <rect x={20} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={24} y={8} width={4} height={4} fill="#F4686E" />
+        <rect x={28} y={8} width={4} height={4} fill="#5872D8" />
+        <rect x={32} y={8} width={4} height={4} fill="#A56DA4" />
+        <rect x={36} y={8} width={4} height={4} fill="#6372D1" />
+        <rect y={12} width={4} height={4} fill="#7D70BF" />
+        <rect x={4} y={12} width={4} height={4} fill="#3075F3" />
+        <rect x={8} y={12} width={4} height={4} fill="#4F73DE" />
+        <rect x={12} y={12} width={4} height={4} fill="#B46C9A" />
+        <rect x={16} y={12} width={4} height={4} fill="#F6686D" />
+        <rect x={20} y={12} width={4} height={4} fill="#F26870" />
+        <rect x={24} y={12} width={4} height={4} fill="#EB6874" />
+        <rect x={28} y={12} width={4} height={4} fill="#3575F0" />
+        <rect x={32} y={12} width={4} height={4} fill="#5A72D7" />
+        <rect x={36} y={12} width={4} height={4} fill="#B66C98" />
+        <rect y={16} width={4} height={4} fill="#CA6B8B" />
+        <rect x={4} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={8} y={16} width={4} height={4} fill="#5673DA" />
+        <rect x={12} y={16} width={4} height={4} fill="#7970C2" />
+        <rect x={16} y={16} width={4} height={4} fill="#3075F3" />
+        <rect x={20} y={16} width={4} height={4} fill="#7B70C0" />
+        <rect x={24} y={16} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={16} width={4} height={4} fill="#7D70BF" />
+        <rect x={32} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={36} y={16} width={4} height={4} fill="#A76DA3" />
+        <rect y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={4} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={8} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={12} y={20} width={4} height={4} fill="#3B74EC" />
+        <rect x={16} y={20} width={4} height={4} fill="#B26C9B" />
+        <rect x={20} y={20} width={4} height={4} fill="#8F6FB3" />
+        <rect x={24} y={20} width={4} height={4} fill="#6971CC" />
+        <rect x={28} y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={32} y={20} width={4} height={4} fill="#9C6EAA" />
+        <rect x={36} y={20} width={4} height={4} fill="#CF6A88" />
+        <rect y={24} width={4} height={4} fill="#2A76F8" />
+        <rect x={4} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={8} y={24} width={4} height={4} fill="#D76A82" />
+        <rect x={12} y={24} width={4} height={4} fill="#3D74EA" />
+        <rect x={16} y={24} width={4} height={4} fill="#A56DA4" />
+        <rect x={20} y={24} width={4} height={4} fill="#D36A85" />
+        <rect x={24} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={24} width={4} height={4} fill="#FF6767" />
+        <rect x={32} y={24} width={4} height={4} fill="#5173DD" />
+        <rect x={36} y={24} width={4} height={4} fill="#4674E4" />
+        <rect y={28} width={4} height={4} fill="#E96976" />
+        <rect x={4} y={28} width={4} height={4} fill="#D16A86" />
+        <rect x={8} y={28} width={4} height={4} fill="#4873E3" />
+        <rect x={12} y={28} width={4} height={4} fill="#4D73E0" />
+        <rect x={16} y={28} width={4} height={4} fill="#BF6B92" />
+        <rect x={20} y={28} width={4} height={4} fill="#866FB9" />
+        <rect x={24} y={28} width={4} height={4} fill="#D56A83" />
+        <rect x={28} y={28} width={4} height={4} fill="#DA6A80" />
+        <rect x={32} y={28} width={4} height={4} fill="#E0697C" />
+        <rect x={36} y={28} width={4} height={4} fill="#EB6874" />
+        <rect y={32} width={4} height={4} fill="#DE697D" />
+        <rect x={4} y={32} width={4} height={4} fill="#4674E4" />
+        <rect x={8} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={12} y={32} width={4} height={4} fill="#8270BC" />
+        <rect x={16} y={32} width={4} height={4} fill="#6771CE" />
+        <rect x={20} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={24} y={32} width={4} height={4} fill="#5E72D4" />
+        <rect x={28} y={32} width={4} height={4} fill="#F6686D" />
+        <rect x={32} y={32} width={4} height={4} fill="#5872D8" />
+        <rect x={36} y={32} width={4} height={4} fill="#F06871" />
+        <rect y={36} width={4} height={4} fill="#8270BC" />
+        <rect x={4} y={36} width={4} height={4} fill="#5872D8" />
+        <rect x={8} y={36} width={4} height={4} fill="#D36A85" />
+        <rect x={12} y={36} width={4} height={4} fill="#6572CF" />
+        <rect x={16} y={36} width={4} height={4} fill="#4B73E1" />
+        <rect x={20} y={36} width={4} height={4} fill="#846FBA" />
+        <rect x={24} y={36} width={4} height={4} fill="#A36DA6" />
+        <rect x={28} y={36} width={4} height={4} fill="#B46C9A" />
+        <rect x={32} y={36} width={4} height={4} fill="#3B74EC" />
+        <rect x={36} y={36} width={4} height={4} fill="#846FBA" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_9209_147312">
+        <rect width={40} height={40} rx={8} fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PixelatedArt4 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_9209_85163)">
+      <rect width={40} height={40} rx={8} fill="#870FF0" />
+      <g style={{ mixBlendMode: "darken" }}>
+        <rect width={4} height={4} fill="#7770C3" />
+        <rect x={4} width={4} height={4} fill="#F6686D" />
+        <rect x={8} width={4} height={4} fill="#B96C97" />
+        <rect x={12} width={4} height={4} fill="#936EB0" />
+        <rect x={16} width={4} height={4} fill="#AB6DA0" />
+        <rect x={20} width={4} height={4} fill="#5373DB" />
+        <rect x={24} width={4} height={4} fill="#E76977" />
+        <rect x={28} width={4} height={4} fill="#F26870" />
+        <rect x={32} width={4} height={4} fill="#D76A82" />
+        <rect x={36} width={4} height={4} fill="#B26C9B" />
+        <rect y={4} width={4} height={4} fill="#A36DA6" />
+        <rect x={4} y={4} width={4} height={4} fill="#E96976" />
+        <rect x={8} y={4} width={4} height={4} fill="#8270BC" />
+        <rect x={12} y={4} width={4} height={4} fill="#5173DD" />
+        <rect x={16} y={4} width={4} height={4} fill="#7970C2" />
+        <rect x={20} y={4} width={4} height={4} fill="#7770C3" />
+        <rect x={24} y={4} width={4} height={4} fill="#BF6B92" />
+        <rect x={28} y={4} width={4} height={4} fill="#C46B8F" />
+        <rect x={32} y={4} width={4} height={4} fill="#B06C9D" />
+        <rect x={36} y={4} width={4} height={4} fill="#BD6C94" />
+        <rect y={8} width={4} height={4} fill="#AB6DA0" />
+        <rect x={4} y={8} width={4} height={4} fill="#9E6EA9" />
+        <rect x={8} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={12} y={8} width={4} height={4} fill="#D56A83" />
+        <rect x={16} y={8} width={4} height={4} fill="#DE697D" />
+        <rect x={20} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={24} y={8} width={4} height={4} fill="#F4686E" />
+        <rect x={28} y={8} width={4} height={4} fill="#5872D8" />
+        <rect x={32} y={8} width={4} height={4} fill="#A56DA4" />
+        <rect x={36} y={8} width={4} height={4} fill="#6372D1" />
+        <rect y={12} width={4} height={4} fill="#7D70BF" />
+        <rect x={4} y={12} width={4} height={4} fill="#3075F3" />
+        <rect x={8} y={12} width={4} height={4} fill="#4F73DE" />
+        <rect x={12} y={12} width={4} height={4} fill="#B46C9A" />
+        <rect x={16} y={12} width={4} height={4} fill="#F6686D" />
+        <rect x={20} y={12} width={4} height={4} fill="#F26870" />
+        <rect x={24} y={12} width={4} height={4} fill="#EB6874" />
+        <rect x={28} y={12} width={4} height={4} fill="#3575F0" />
+        <rect x={32} y={12} width={4} height={4} fill="#5A72D7" />
+        <rect x={36} y={12} width={4} height={4} fill="#B66C98" />
+        <rect y={16} width={4} height={4} fill="#CA6B8B" />
+        <rect x={4} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={8} y={16} width={4} height={4} fill="#5673DA" />
+        <rect x={12} y={16} width={4} height={4} fill="#7970C2" />
+        <rect x={16} y={16} width={4} height={4} fill="#3075F3" />
+        <rect x={20} y={16} width={4} height={4} fill="#7B70C0" />
+        <rect x={24} y={16} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={16} width={4} height={4} fill="#7D70BF" />
+        <rect x={32} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={36} y={16} width={4} height={4} fill="#A76DA3" />
+        <rect y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={4} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={8} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={12} y={20} width={4} height={4} fill="#3B74EC" />
+        <rect x={16} y={20} width={4} height={4} fill="#B26C9B" />
+        <rect x={20} y={20} width={4} height={4} fill="#8F6FB3" />
+        <rect x={24} y={20} width={4} height={4} fill="#6971CC" />
+        <rect x={28} y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={32} y={20} width={4} height={4} fill="#9C6EAA" />
+        <rect x={36} y={20} width={4} height={4} fill="#CF6A88" />
+        <rect y={24} width={4} height={4} fill="#2A76F8" />
+        <rect x={4} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={8} y={24} width={4} height={4} fill="#D76A82" />
+        <rect x={12} y={24} width={4} height={4} fill="#3D74EA" />
+        <rect x={16} y={24} width={4} height={4} fill="#A56DA4" />
+        <rect x={20} y={24} width={4} height={4} fill="#D36A85" />
+        <rect x={24} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={24} width={4} height={4} fill="#FF6767" />
+        <rect x={32} y={24} width={4} height={4} fill="#5173DD" />
+        <rect x={36} y={24} width={4} height={4} fill="#4674E4" />
+        <rect y={28} width={4} height={4} fill="#E96976" />
+        <rect x={4} y={28} width={4} height={4} fill="#D16A86" />
+        <rect x={8} y={28} width={4} height={4} fill="#4873E3" />
+        <rect x={12} y={28} width={4} height={4} fill="#4D73E0" />
+        <rect x={16} y={28} width={4} height={4} fill="#BF6B92" />
+        <rect x={20} y={28} width={4} height={4} fill="#866FB9" />
+        <rect x={24} y={28} width={4} height={4} fill="#D56A83" />
+        <rect x={28} y={28} width={4} height={4} fill="#DA6A80" />
+        <rect x={32} y={28} width={4} height={4} fill="#E0697C" />
+        <rect x={36} y={28} width={4} height={4} fill="#EB6874" />
+        <rect y={32} width={4} height={4} fill="#DE697D" />
+        <rect x={4} y={32} width={4} height={4} fill="#4674E4" />
+        <rect x={8} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={12} y={32} width={4} height={4} fill="#8270BC" />
+        <rect x={16} y={32} width={4} height={4} fill="#6771CE" />
+        <rect x={20} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={24} y={32} width={4} height={4} fill="#5E72D4" />
+        <rect x={28} y={32} width={4} height={4} fill="#F6686D" />
+        <rect x={32} y={32} width={4} height={4} fill="#5872D8" />
+        <rect x={36} y={32} width={4} height={4} fill="#F06871" />
+        <rect y={36} width={4} height={4} fill="#8270BC" />
+        <rect x={4} y={36} width={4} height={4} fill="#5872D8" />
+        <rect x={8} y={36} width={4} height={4} fill="#D36A85" />
+        <rect x={12} y={36} width={4} height={4} fill="#6572CF" />
+        <rect x={16} y={36} width={4} height={4} fill="#4B73E1" />
+        <rect x={20} y={36} width={4} height={4} fill="#846FBA" />
+        <rect x={24} y={36} width={4} height={4} fill="#A36DA6" />
+        <rect x={28} y={36} width={4} height={4} fill="#B46C9A" />
+        <rect x={32} y={36} width={4} height={4} fill="#3B74EC" />
+        <rect x={36} y={36} width={4} height={4} fill="#846FBA" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_9209_85163">
+        <rect width={40} height={40} rx={8} fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PixelatedArt5 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_9209_119821)">
+      <rect width={40} height={40} rx={8} fill="#BE78B9" />
+      <g style={{ mixBlendMode: "darken" }}>
+        <rect width={4} height={4} fill="#7770C3" />
+        <rect x={4} width={4} height={4} fill="#F6686D" />
+        <rect x={8} width={4} height={4} fill="#B96C97" />
+        <rect x={12} width={4} height={4} fill="#936EB0" />
+        <rect x={16} width={4} height={4} fill="#AB6DA0" />
+        <rect x={20} width={4} height={4} fill="#5373DB" />
+        <rect x={24} width={4} height={4} fill="#E76977" />
+        <rect x={28} width={4} height={4} fill="#F26870" />
+        <rect x={32} width={4} height={4} fill="#D76A82" />
+        <rect x={36} width={4} height={4} fill="#B26C9B" />
+        <rect y={4} width={4} height={4} fill="#A36DA6" />
+        <rect x={4} y={4} width={4} height={4} fill="#E96976" />
+        <rect x={8} y={4} width={4} height={4} fill="#8270BC" />
+        <rect x={12} y={4} width={4} height={4} fill="#5173DD" />
+        <rect x={16} y={4} width={4} height={4} fill="#7970C2" />
+        <rect x={20} y={4} width={4} height={4} fill="#7770C3" />
+        <rect x={24} y={4} width={4} height={4} fill="#BF6B92" />
+        <rect x={28} y={4} width={4} height={4} fill="#C46B8F" />
+        <rect x={32} y={4} width={4} height={4} fill="#B06C9D" />
+        <rect x={36} y={4} width={4} height={4} fill="#BD6C94" />
+        <rect y={8} width={4} height={4} fill="#AB6DA0" />
+        <rect x={4} y={8} width={4} height={4} fill="#9E6EA9" />
+        <rect x={8} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={12} y={8} width={4} height={4} fill="#D56A83" />
+        <rect x={16} y={8} width={4} height={4} fill="#DE697D" />
+        <rect x={20} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={24} y={8} width={4} height={4} fill="#F4686E" />
+        <rect x={28} y={8} width={4} height={4} fill="#5872D8" />
+        <rect x={32} y={8} width={4} height={4} fill="#A56DA4" />
+        <rect x={36} y={8} width={4} height={4} fill="#6372D1" />
+        <rect y={12} width={4} height={4} fill="#7D70BF" />
+        <rect x={4} y={12} width={4} height={4} fill="#3075F3" />
+        <rect x={8} y={12} width={4} height={4} fill="#4F73DE" />
+        <rect x={12} y={12} width={4} height={4} fill="#B46C9A" />
+        <rect x={16} y={12} width={4} height={4} fill="#F6686D" />
+        <rect x={20} y={12} width={4} height={4} fill="#F26870" />
+        <rect x={24} y={12} width={4} height={4} fill="#EB6874" />
+        <rect x={28} y={12} width={4} height={4} fill="#3575F0" />
+        <rect x={32} y={12} width={4} height={4} fill="#5A72D7" />
+        <rect x={36} y={12} width={4} height={4} fill="#B66C98" />
+        <rect y={16} width={4} height={4} fill="#CA6B8B" />
+        <rect x={4} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={8} y={16} width={4} height={4} fill="#5673DA" />
+        <rect x={12} y={16} width={4} height={4} fill="#7970C2" />
+        <rect x={16} y={16} width={4} height={4} fill="#3075F3" />
+        <rect x={20} y={16} width={4} height={4} fill="#7B70C0" />
+        <rect x={24} y={16} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={16} width={4} height={4} fill="#7D70BF" />
+        <rect x={32} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={36} y={16} width={4} height={4} fill="#A76DA3" />
+        <rect y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={4} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={8} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={12} y={20} width={4} height={4} fill="#3B74EC" />
+        <rect x={16} y={20} width={4} height={4} fill="#B26C9B" />
+        <rect x={20} y={20} width={4} height={4} fill="#8F6FB3" />
+        <rect x={24} y={20} width={4} height={4} fill="#6971CC" />
+        <rect x={28} y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={32} y={20} width={4} height={4} fill="#9C6EAA" />
+        <rect x={36} y={20} width={4} height={4} fill="#CF6A88" />
+        <rect y={24} width={4} height={4} fill="#2A76F8" />
+        <rect x={4} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={8} y={24} width={4} height={4} fill="#D76A82" />
+        <rect x={12} y={24} width={4} height={4} fill="#3D74EA" />
+        <rect x={16} y={24} width={4} height={4} fill="#A56DA4" />
+        <rect x={20} y={24} width={4} height={4} fill="#D36A85" />
+        <rect x={24} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={24} width={4} height={4} fill="#FF6767" />
+        <rect x={32} y={24} width={4} height={4} fill="#5173DD" />
+        <rect x={36} y={24} width={4} height={4} fill="#4674E4" />
+        <rect y={28} width={4} height={4} fill="#E96976" />
+        <rect x={4} y={28} width={4} height={4} fill="#D16A86" />
+        <rect x={8} y={28} width={4} height={4} fill="#4873E3" />
+        <rect x={12} y={28} width={4} height={4} fill="#4D73E0" />
+        <rect x={16} y={28} width={4} height={4} fill="#BF6B92" />
+        <rect x={20} y={28} width={4} height={4} fill="#866FB9" />
+        <rect x={24} y={28} width={4} height={4} fill="#D56A83" />
+        <rect x={28} y={28} width={4} height={4} fill="#DA6A80" />
+        <rect x={32} y={28} width={4} height={4} fill="#E0697C" />
+        <rect x={36} y={28} width={4} height={4} fill="#EB6874" />
+        <rect y={32} width={4} height={4} fill="#DE697D" />
+        <rect x={4} y={32} width={4} height={4} fill="#4674E4" />
+        <rect x={8} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={12} y={32} width={4} height={4} fill="#8270BC" />
+        <rect x={16} y={32} width={4} height={4} fill="#6771CE" />
+        <rect x={20} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={24} y={32} width={4} height={4} fill="#5E72D4" />
+        <rect x={28} y={32} width={4} height={4} fill="#F6686D" />
+        <rect x={32} y={32} width={4} height={4} fill="#5872D8" />
+        <rect x={36} y={32} width={4} height={4} fill="#F06871" />
+        <rect y={36} width={4} height={4} fill="#8270BC" />
+        <rect x={4} y={36} width={4} height={4} fill="#5872D8" />
+        <rect x={8} y={36} width={4} height={4} fill="#D36A85" />
+        <rect x={12} y={36} width={4} height={4} fill="#6572CF" />
+        <rect x={16} y={36} width={4} height={4} fill="#4B73E1" />
+        <rect x={20} y={36} width={4} height={4} fill="#846FBA" />
+        <rect x={24} y={36} width={4} height={4} fill="#A36DA6" />
+        <rect x={28} y={36} width={4} height={4} fill="#B46C9A" />
+        <rect x={32} y={36} width={4} height={4} fill="#3B74EC" />
+        <rect x={36} y={36} width={4} height={4} fill="#846FBA" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_9209_119821">
+        <rect width={40} height={40} rx={8} fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PixelatedArt6 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_9209_174050)">
+      <rect width={40} height={40} rx={8} fill="#F00FB0" />
+      <g style={{ mixBlendMode: "darken" }}>
+        <rect width={4} height={4} fill="#7770C3" />
+        <rect x={4} width={4} height={4} fill="#F6686D" />
+        <rect x={8} width={4} height={4} fill="#B96C97" />
+        <rect x={12} width={4} height={4} fill="#936EB0" />
+        <rect x={16} width={4} height={4} fill="#AB6DA0" />
+        <rect x={20} width={4} height={4} fill="#5373DB" />
+        <rect x={24} width={4} height={4} fill="#E76977" />
+        <rect x={28} width={4} height={4} fill="#F26870" />
+        <rect x={32} width={4} height={4} fill="#D76A82" />
+        <rect x={36} width={4} height={4} fill="#B26C9B" />
+        <rect y={4} width={4} height={4} fill="#A36DA6" />
+        <rect x={4} y={4} width={4} height={4} fill="#E96976" />
+        <rect x={8} y={4} width={4} height={4} fill="#8270BC" />
+        <rect x={12} y={4} width={4} height={4} fill="#5173DD" />
+        <rect x={16} y={4} width={4} height={4} fill="#7970C2" />
+        <rect x={20} y={4} width={4} height={4} fill="#7770C3" />
+        <rect x={24} y={4} width={4} height={4} fill="#BF6B92" />
+        <rect x={28} y={4} width={4} height={4} fill="#C46B8F" />
+        <rect x={32} y={4} width={4} height={4} fill="#B06C9D" />
+        <rect x={36} y={4} width={4} height={4} fill="#BD6C94" />
+        <rect y={8} width={4} height={4} fill="#AB6DA0" />
+        <rect x={4} y={8} width={4} height={4} fill="#9E6EA9" />
+        <rect x={8} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={12} y={8} width={4} height={4} fill="#D56A83" />
+        <rect x={16} y={8} width={4} height={4} fill="#DE697D" />
+        <rect x={20} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={24} y={8} width={4} height={4} fill="#F4686E" />
+        <rect x={28} y={8} width={4} height={4} fill="#5872D8" />
+        <rect x={32} y={8} width={4} height={4} fill="#A56DA4" />
+        <rect x={36} y={8} width={4} height={4} fill="#6372D1" />
+        <rect y={12} width={4} height={4} fill="#7D70BF" />
+        <rect x={4} y={12} width={4} height={4} fill="#3075F3" />
+        <rect x={8} y={12} width={4} height={4} fill="#4F73DE" />
+        <rect x={12} y={12} width={4} height={4} fill="#B46C9A" />
+        <rect x={16} y={12} width={4} height={4} fill="#F6686D" />
+        <rect x={20} y={12} width={4} height={4} fill="#F26870" />
+        <rect x={24} y={12} width={4} height={4} fill="#EB6874" />
+        <rect x={28} y={12} width={4} height={4} fill="#3575F0" />
+        <rect x={32} y={12} width={4} height={4} fill="#5A72D7" />
+        <rect x={36} y={12} width={4} height={4} fill="#B66C98" />
+        <rect y={16} width={4} height={4} fill="#CA6B8B" />
+        <rect x={4} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={8} y={16} width={4} height={4} fill="#5673DA" />
+        <rect x={12} y={16} width={4} height={4} fill="#7970C2" />
+        <rect x={16} y={16} width={4} height={4} fill="#3075F3" />
+        <rect x={20} y={16} width={4} height={4} fill="#7B70C0" />
+        <rect x={24} y={16} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={16} width={4} height={4} fill="#7D70BF" />
+        <rect x={32} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={36} y={16} width={4} height={4} fill="#A76DA3" />
+        <rect y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={4} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={8} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={12} y={20} width={4} height={4} fill="#3B74EC" />
+        <rect x={16} y={20} width={4} height={4} fill="#B26C9B" />
+        <rect x={20} y={20} width={4} height={4} fill="#8F6FB3" />
+        <rect x={24} y={20} width={4} height={4} fill="#6971CC" />
+        <rect x={28} y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={32} y={20} width={4} height={4} fill="#9C6EAA" />
+        <rect x={36} y={20} width={4} height={4} fill="#CF6A88" />
+        <rect y={24} width={4} height={4} fill="#2A76F8" />
+        <rect x={4} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={8} y={24} width={4} height={4} fill="#D76A82" />
+        <rect x={12} y={24} width={4} height={4} fill="#3D74EA" />
+        <rect x={16} y={24} width={4} height={4} fill="#A56DA4" />
+        <rect x={20} y={24} width={4} height={4} fill="#D36A85" />
+        <rect x={24} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={24} width={4} height={4} fill="#FF6767" />
+        <rect x={32} y={24} width={4} height={4} fill="#5173DD" />
+        <rect x={36} y={24} width={4} height={4} fill="#4674E4" />
+        <rect y={28} width={4} height={4} fill="#E96976" />
+        <rect x={4} y={28} width={4} height={4} fill="#D16A86" />
+        <rect x={8} y={28} width={4} height={4} fill="#4873E3" />
+        <rect x={12} y={28} width={4} height={4} fill="#4D73E0" />
+        <rect x={16} y={28} width={4} height={4} fill="#BF6B92" />
+        <rect x={20} y={28} width={4} height={4} fill="#866FB9" />
+        <rect x={24} y={28} width={4} height={4} fill="#D56A83" />
+        <rect x={28} y={28} width={4} height={4} fill="#DA6A80" />
+        <rect x={32} y={28} width={4} height={4} fill="#E0697C" />
+        <rect x={36} y={28} width={4} height={4} fill="#EB6874" />
+        <rect y={32} width={4} height={4} fill="#DE697D" />
+        <rect x={4} y={32} width={4} height={4} fill="#4674E4" />
+        <rect x={8} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={12} y={32} width={4} height={4} fill="#8270BC" />
+        <rect x={16} y={32} width={4} height={4} fill="#6771CE" />
+        <rect x={20} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={24} y={32} width={4} height={4} fill="#5E72D4" />
+        <rect x={28} y={32} width={4} height={4} fill="#F6686D" />
+        <rect x={32} y={32} width={4} height={4} fill="#5872D8" />
+        <rect x={36} y={32} width={4} height={4} fill="#F06871" />
+        <rect y={36} width={4} height={4} fill="#8270BC" />
+        <rect x={4} y={36} width={4} height={4} fill="#5872D8" />
+        <rect x={8} y={36} width={4} height={4} fill="#D36A85" />
+        <rect x={12} y={36} width={4} height={4} fill="#6572CF" />
+        <rect x={16} y={36} width={4} height={4} fill="#4B73E1" />
+        <rect x={20} y={36} width={4} height={4} fill="#846FBA" />
+        <rect x={24} y={36} width={4} height={4} fill="#A36DA6" />
+        <rect x={28} y={36} width={4} height={4} fill="#B46C9A" />
+        <rect x={32} y={36} width={4} height={4} fill="#3B74EC" />
+        <rect x={36} y={36} width={4} height={4} fill="#846FBA" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_9209_174050">
+        <rect width={40} height={40} rx={8} fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PixelatedArt7 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_9209_170710)">
+      <rect width={40} height={40} rx={8} fill="#76C276" />
+      <g style={{ mixBlendMode: "darken" }}>
+        <rect width={4} height={4} fill="#7770C3" />
+        <rect x={4} width={4} height={4} fill="#F6686D" />
+        <rect x={8} width={4} height={4} fill="#B96C97" />
+        <rect x={12} width={4} height={4} fill="#936EB0" />
+        <rect x={16} width={4} height={4} fill="#AB6DA0" />
+        <rect x={20} width={4} height={4} fill="#5373DB" />
+        <rect x={24} width={4} height={4} fill="#E76977" />
+        <rect x={28} width={4} height={4} fill="#F26870" />
+        <rect x={32} width={4} height={4} fill="#D76A82" />
+        <rect x={36} width={4} height={4} fill="#B26C9B" />
+        <rect y={4} width={4} height={4} fill="#A36DA6" />
+        <rect x={4} y={4} width={4} height={4} fill="#E96976" />
+        <rect x={8} y={4} width={4} height={4} fill="#8270BC" />
+        <rect x={12} y={4} width={4} height={4} fill="#5173DD" />
+        <rect x={16} y={4} width={4} height={4} fill="#7970C2" />
+        <rect x={20} y={4} width={4} height={4} fill="#7770C3" />
+        <rect x={24} y={4} width={4} height={4} fill="#BF6B92" />
+        <rect x={28} y={4} width={4} height={4} fill="#C46B8F" />
+        <rect x={32} y={4} width={4} height={4} fill="#B06C9D" />
+        <rect x={36} y={4} width={4} height={4} fill="#BD6C94" />
+        <rect y={8} width={4} height={4} fill="#AB6DA0" />
+        <rect x={4} y={8} width={4} height={4} fill="#9E6EA9" />
+        <rect x={8} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={12} y={8} width={4} height={4} fill="#D56A83" />
+        <rect x={16} y={8} width={4} height={4} fill="#DE697D" />
+        <rect x={20} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={24} y={8} width={4} height={4} fill="#F4686E" />
+        <rect x={28} y={8} width={4} height={4} fill="#5872D8" />
+        <rect x={32} y={8} width={4} height={4} fill="#A56DA4" />
+        <rect x={36} y={8} width={4} height={4} fill="#6372D1" />
+        <rect y={12} width={4} height={4} fill="#7D70BF" />
+        <rect x={4} y={12} width={4} height={4} fill="#3075F3" />
+        <rect x={8} y={12} width={4} height={4} fill="#4F73DE" />
+        <rect x={12} y={12} width={4} height={4} fill="#B46C9A" />
+        <rect x={16} y={12} width={4} height={4} fill="#F6686D" />
+        <rect x={20} y={12} width={4} height={4} fill="#F26870" />
+        <rect x={24} y={12} width={4} height={4} fill="#EB6874" />
+        <rect x={28} y={12} width={4} height={4} fill="#3575F0" />
+        <rect x={32} y={12} width={4} height={4} fill="#5A72D7" />
+        <rect x={36} y={12} width={4} height={4} fill="#B66C98" />
+        <rect y={16} width={4} height={4} fill="#CA6B8B" />
+        <rect x={4} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={8} y={16} width={4} height={4} fill="#5673DA" />
+        <rect x={12} y={16} width={4} height={4} fill="#7970C2" />
+        <rect x={16} y={16} width={4} height={4} fill="#3075F3" />
+        <rect x={20} y={16} width={4} height={4} fill="#7B70C0" />
+        <rect x={24} y={16} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={16} width={4} height={4} fill="#7D70BF" />
+        <rect x={32} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={36} y={16} width={4} height={4} fill="#A76DA3" />
+        <rect y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={4} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={8} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={12} y={20} width={4} height={4} fill="#3B74EC" />
+        <rect x={16} y={20} width={4} height={4} fill="#B26C9B" />
+        <rect x={20} y={20} width={4} height={4} fill="#8F6FB3" />
+        <rect x={24} y={20} width={4} height={4} fill="#6971CC" />
+        <rect x={28} y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={32} y={20} width={4} height={4} fill="#9C6EAA" />
+        <rect x={36} y={20} width={4} height={4} fill="#CF6A88" />
+        <rect y={24} width={4} height={4} fill="#2A76F8" />
+        <rect x={4} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={8} y={24} width={4} height={4} fill="#D76A82" />
+        <rect x={12} y={24} width={4} height={4} fill="#3D74EA" />
+        <rect x={16} y={24} width={4} height={4} fill="#A56DA4" />
+        <rect x={20} y={24} width={4} height={4} fill="#D36A85" />
+        <rect x={24} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={24} width={4} height={4} fill="#FF6767" />
+        <rect x={32} y={24} width={4} height={4} fill="#5173DD" />
+        <rect x={36} y={24} width={4} height={4} fill="#4674E4" />
+        <rect y={28} width={4} height={4} fill="#E96976" />
+        <rect x={4} y={28} width={4} height={4} fill="#D16A86" />
+        <rect x={8} y={28} width={4} height={4} fill="#4873E3" />
+        <rect x={12} y={28} width={4} height={4} fill="#4D73E0" />
+        <rect x={16} y={28} width={4} height={4} fill="#BF6B92" />
+        <rect x={20} y={28} width={4} height={4} fill="#866FB9" />
+        <rect x={24} y={28} width={4} height={4} fill="#D56A83" />
+        <rect x={28} y={28} width={4} height={4} fill="#DA6A80" />
+        <rect x={32} y={28} width={4} height={4} fill="#E0697C" />
+        <rect x={36} y={28} width={4} height={4} fill="#EB6874" />
+        <rect y={32} width={4} height={4} fill="#DE697D" />
+        <rect x={4} y={32} width={4} height={4} fill="#4674E4" />
+        <rect x={8} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={12} y={32} width={4} height={4} fill="#8270BC" />
+        <rect x={16} y={32} width={4} height={4} fill="#6771CE" />
+        <rect x={20} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={24} y={32} width={4} height={4} fill="#5E72D4" />
+        <rect x={28} y={32} width={4} height={4} fill="#F6686D" />
+        <rect x={32} y={32} width={4} height={4} fill="#5872D8" />
+        <rect x={36} y={32} width={4} height={4} fill="#F06871" />
+        <rect y={36} width={4} height={4} fill="#8270BC" />
+        <rect x={4} y={36} width={4} height={4} fill="#5872D8" />
+        <rect x={8} y={36} width={4} height={4} fill="#D36A85" />
+        <rect x={12} y={36} width={4} height={4} fill="#6572CF" />
+        <rect x={16} y={36} width={4} height={4} fill="#4B73E1" />
+        <rect x={20} y={36} width={4} height={4} fill="#846FBA" />
+        <rect x={24} y={36} width={4} height={4} fill="#A36DA6" />
+        <rect x={28} y={36} width={4} height={4} fill="#B46C9A" />
+        <rect x={32} y={36} width={4} height={4} fill="#3B74EC" />
+        <rect x={36} y={36} width={4} height={4} fill="#846FBA" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_9209_170710">
+        <rect width={40} height={40} rx={8} fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const PixelatedArt8 = () => (
+  <svg
+    width={40}
+    height={40}
+    viewBox="0 0 40 40"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_9209_180148)">
+      <rect width={40} height={40} rx={8} fill="#976D1F" />
+      <g style={{ mixBlendMode: "darken" }}>
+        <rect width={4} height={4} fill="#7770C3" />
+        <rect x={4} width={4} height={4} fill="#F6686D" />
+        <rect x={8} width={4} height={4} fill="#B96C97" />
+        <rect x={12} width={4} height={4} fill="#936EB0" />
+        <rect x={16} width={4} height={4} fill="#AB6DA0" />
+        <rect x={20} width={4} height={4} fill="#5373DB" />
+        <rect x={24} width={4} height={4} fill="#E76977" />
+        <rect x={28} width={4} height={4} fill="#F26870" />
+        <rect x={32} width={4} height={4} fill="#D76A82" />
+        <rect x={36} width={4} height={4} fill="#B26C9B" />
+        <rect y={4} width={4} height={4} fill="#A36DA6" />
+        <rect x={4} y={4} width={4} height={4} fill="#E96976" />
+        <rect x={8} y={4} width={4} height={4} fill="#8270BC" />
+        <rect x={12} y={4} width={4} height={4} fill="#5173DD" />
+        <rect x={16} y={4} width={4} height={4} fill="#7970C2" />
+        <rect x={20} y={4} width={4} height={4} fill="#7770C3" />
+        <rect x={24} y={4} width={4} height={4} fill="#BF6B92" />
+        <rect x={28} y={4} width={4} height={4} fill="#C46B8F" />
+        <rect x={32} y={4} width={4} height={4} fill="#B06C9D" />
+        <rect x={36} y={4} width={4} height={4} fill="#BD6C94" />
+        <rect y={8} width={4} height={4} fill="#AB6DA0" />
+        <rect x={4} y={8} width={4} height={4} fill="#9E6EA9" />
+        <rect x={8} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={12} y={8} width={4} height={4} fill="#D56A83" />
+        <rect x={16} y={8} width={4} height={4} fill="#DE697D" />
+        <rect x={20} y={8} width={4} height={4} fill="#3D74EA" />
+        <rect x={24} y={8} width={4} height={4} fill="#F4686E" />
+        <rect x={28} y={8} width={4} height={4} fill="#5872D8" />
+        <rect x={32} y={8} width={4} height={4} fill="#A56DA4" />
+        <rect x={36} y={8} width={4} height={4} fill="#6372D1" />
+        <rect y={12} width={4} height={4} fill="#7D70BF" />
+        <rect x={4} y={12} width={4} height={4} fill="#3075F3" />
+        <rect x={8} y={12} width={4} height={4} fill="#4F73DE" />
+        <rect x={12} y={12} width={4} height={4} fill="#B46C9A" />
+        <rect x={16} y={12} width={4} height={4} fill="#F6686D" />
+        <rect x={20} y={12} width={4} height={4} fill="#F26870" />
+        <rect x={24} y={12} width={4} height={4} fill="#EB6874" />
+        <rect x={28} y={12} width={4} height={4} fill="#3575F0" />
+        <rect x={32} y={12} width={4} height={4} fill="#5A72D7" />
+        <rect x={36} y={12} width={4} height={4} fill="#B66C98" />
+        <rect y={16} width={4} height={4} fill="#CA6B8B" />
+        <rect x={4} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={8} y={16} width={4} height={4} fill="#5673DA" />
+        <rect x={12} y={16} width={4} height={4} fill="#7970C2" />
+        <rect x={16} y={16} width={4} height={4} fill="#3075F3" />
+        <rect x={20} y={16} width={4} height={4} fill="#7B70C0" />
+        <rect x={24} y={16} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={16} width={4} height={4} fill="#7D70BF" />
+        <rect x={32} y={16} width={4} height={4} fill="#E76977" />
+        <rect x={36} y={16} width={4} height={4} fill="#A76DA3" />
+        <rect y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={4} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={8} y={20} width={4} height={4} fill="#AE6D9E" />
+        <rect x={12} y={20} width={4} height={4} fill="#3B74EC" />
+        <rect x={16} y={20} width={4} height={4} fill="#B26C9B" />
+        <rect x={20} y={20} width={4} height={4} fill="#8F6FB3" />
+        <rect x={24} y={20} width={4} height={4} fill="#6971CC" />
+        <rect x={28} y={20} width={4} height={4} fill="#A56DA4" />
+        <rect x={32} y={20} width={4} height={4} fill="#9C6EAA" />
+        <rect x={36} y={20} width={4} height={4} fill="#CF6A88" />
+        <rect y={24} width={4} height={4} fill="#2A76F8" />
+        <rect x={4} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={8} y={24} width={4} height={4} fill="#D76A82" />
+        <rect x={12} y={24} width={4} height={4} fill="#3D74EA" />
+        <rect x={16} y={24} width={4} height={4} fill="#A56DA4" />
+        <rect x={20} y={24} width={4} height={4} fill="#D36A85" />
+        <rect x={24} y={24} width={4} height={4} fill="#3275F2" />
+        <rect x={28} y={24} width={4} height={4} fill="#FF6767" />
+        <rect x={32} y={24} width={4} height={4} fill="#5173DD" />
+        <rect x={36} y={24} width={4} height={4} fill="#4674E4" />
+        <rect y={28} width={4} height={4} fill="#E96976" />
+        <rect x={4} y={28} width={4} height={4} fill="#D16A86" />
+        <rect x={8} y={28} width={4} height={4} fill="#4873E3" />
+        <rect x={12} y={28} width={4} height={4} fill="#4D73E0" />
+        <rect x={16} y={28} width={4} height={4} fill="#BF6B92" />
+        <rect x={20} y={28} width={4} height={4} fill="#866FB9" />
+        <rect x={24} y={28} width={4} height={4} fill="#D56A83" />
+        <rect x={28} y={28} width={4} height={4} fill="#DA6A80" />
+        <rect x={32} y={28} width={4} height={4} fill="#E0697C" />
+        <rect x={36} y={28} width={4} height={4} fill="#EB6874" />
+        <rect y={32} width={4} height={4} fill="#DE697D" />
+        <rect x={4} y={32} width={4} height={4} fill="#4674E4" />
+        <rect x={8} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={12} y={32} width={4} height={4} fill="#8270BC" />
+        <rect x={16} y={32} width={4} height={4} fill="#6771CE" />
+        <rect x={20} y={32} width={4} height={4} fill="#2776F9" />
+        <rect x={24} y={32} width={4} height={4} fill="#5E72D4" />
+        <rect x={28} y={32} width={4} height={4} fill="#F6686D" />
+        <rect x={32} y={32} width={4} height={4} fill="#5872D8" />
+        <rect x={36} y={32} width={4} height={4} fill="#F06871" />
+        <rect y={36} width={4} height={4} fill="#8270BC" />
+        <rect x={4} y={36} width={4} height={4} fill="#5872D8" />
+        <rect x={8} y={36} width={4} height={4} fill="#D36A85" />
+        <rect x={12} y={36} width={4} height={4} fill="#6572CF" />
+        <rect x={16} y={36} width={4} height={4} fill="#4B73E1" />
+        <rect x={20} y={36} width={4} height={4} fill="#846FBA" />
+        <rect x={24} y={36} width={4} height={4} fill="#A36DA6" />
+        <rect x={28} y={36} width={4} height={4} fill="#B46C9A" />
+        <rect x={32} y={36} width={4} height={4} fill="#3B74EC" />
+        <rect x={36} y={36} width={4} height={4} fill="#846FBA" />
+      </g>
+    </g>
+    <defs>
+      <clipPath id="clip0_9209_180148">
+        <rect width={40} height={40} rx={8} fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const RemoveAddressIcon = () => (
+  <svg
+    width={100}
+    height={100}
+    viewBox="0 0 100 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50Z"
+      fill="#C64242"
+    />
+    <path
+      d="M50 4C75.4051 4 96 24.5949 96 50C96 75.4051 75.4051 96 50 96C24.5949 96 4 75.4051 4 50C4 24.5949 24.5949 4 50 4Z"
+      stroke="white"
+      strokeOpacity="0.72"
+      strokeWidth={8}
+    />
+    <path
+      d="M50 70C61 70 70 61 70 50C70 39 61 30 50 30C39 30 30 39 30 50C30 61 39 70 50 70Z"
+      stroke="white"
+      strokeWidth={4}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M50 42V52"
+      stroke="white"
+      strokeWidth={4}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M49.9883 58H50.0062"
+      stroke="white"
+      strokeWidth={4}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const BillingEmailIcon = () => (
+  <svg
+    width={48}
+    height={48}
+    viewBox="0 0 48 48"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z"
+      fill="#E8E5FA"
+    />
+    <path
+      d="M29 32.5H19C16 32.5 14 31 14 27.5V20.5C14 17 16 15.5 19 15.5H29C32 15.5 34 17 34 20.5V27.5C34 31 32 32.5 29 32.5Z"
+      stroke="#5A42DE"
+      strokeWidth="1.5"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M29 21L25.87 23.5C24.84 24.32 23.15 24.32 22.12 23.5L19 21"
+      stroke="#5A42DE"
+      strokeWidth="1.5"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ShareIcon = () => (
+  <svg
+    width={16}
+    height={17}
+    viewBox="0 0 16 17"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M10.96 6.38281C13.36 6.58948 14.34 7.82281 14.34 10.5228V10.6095C14.34 13.5895 13.1467 14.7828 10.1667 14.7828H5.82665C2.84665 14.7828 1.65332 13.5895 1.65332 10.6095V10.5228C1.65332 7.84281 2.61999 6.60948 4.97999 6.38948"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8 10.4499V2.86328"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.2333 4.35052L7.99994 2.11719L5.7666 4.35052"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const SetupIcon = () => (
+  <svg
+    width={16}
+    height={17}
+    viewBox="0 0 16 17"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M14.6665 4.73047H10.6665"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.00016 4.73047H1.3335"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6.66683 7.0651C7.95549 7.0651 9.00016 6.02044 9.00016 4.73177C9.00016 3.44311 7.95549 2.39844 6.66683 2.39844C5.37816 2.39844 4.3335 3.44311 4.3335 4.73177C4.3335 6.02044 5.37816 7.0651 6.66683 7.0651Z"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14.6667 12.0664H12"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.3335 12.0664H1.3335"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.33333 14.3971C10.622 14.3971 11.6667 13.3525 11.6667 12.0638C11.6667 10.7751 10.622 9.73047 9.33333 9.73047C8.04467 9.73047 7 10.7751 7 12.0638C7 13.3525 8.04467 14.3971 9.33333 14.3971Z"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const CopyIcon = () => (
+  <svg
+    width={16}
+    height={16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M11.9993 5.16797H5.99935C5.26297 5.16797 4.66602 5.76492 4.66602 6.5013V12.5013C4.66602 13.2377 5.26297 13.8346 5.99935 13.8346H11.9993C12.7357 13.8346 13.3327 13.2377 13.3327 12.5013V6.5013C13.3327 5.76492 12.7357 5.16797 11.9993 5.16797Z"
+      stroke="#5A42DE"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4 11.1667H3.33333C2.97971 11.1667 2.64057 11.0262 2.39052 10.7761C2.14048 10.5261 2 10.187 2 9.83333V3.83333C2 3.47971 2.14048 3.14057 2.39052 2.89052C2.64057 2.64048 2.97971 2.5 3.33333 2.5H9.33333C9.68696 2.5 10.0261 2.64048 10.2761 2.89052C10.5262 3.14057 10.6667 3.47971 10.6667 3.83333V4.5"
+      stroke="#5A42DE"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ArrowRightIcon = () => (
+  <svg
+    width={16}
+    height={17}
+    viewBox="0 0 16 17"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.63477 3.55328L9.98143 7.89995C10.4948 8.41328 10.4948 9.25328 9.98143 9.76661L5.63477 14.1133"
+      stroke="#7F8C9F"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const LightModeIcon = () => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 128 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <g clipPath="url(#clip0)">
+      <path
+        d="M0 8C0 3.58172 3.58172 0 8 0H120C124.418 0 128 3.58172 128 8V72C128 76.4183 124.418 80 120 80H8C3.58172 80 0 76.4183 0 72V8Z"
+        fill="#F5F6F7"
+      />
+      <rect width="128" height="17.7778" fill="white" />
+      <rect
+        width="56.8889"
+        height="58.6667"
+        transform="translate(35.5547 21.332)"
+        fill="white"
+      />
+      <rect
+        x="37.332"
+        y="23.1094"
+        width="53.3333"
+        height="7.11111"
+        rx="1.77778"
+        fill="#F5F6F7"
+      />
+      <rect
+        x="37.332"
+        y="33.7773"
+        width="53.3333"
+        height="7.11111"
+        rx="1.77778"
+        fill="#F5F6F7"
+      />
+      <rect
+        x="37.332"
+        y="44.4414"
+        width="53.3333"
+        height="21.3333"
+        rx="3.55556"
+        fill="#F5F6F7"
+      />
+    </g>
+
+    <defs>
+      <clipPath id="clip0">
+        <path
+          d="M0 8C0 3.58172 3.58172 0 8 0H120C124.418 0 128 3.58172 128 8V72C128 76.4183 124.418 80 120 80H8C3.58172 80 0 76.4183 0 72V8Z"
+          fill="white"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const DarkModeIcon = () => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 128 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <g clip-path="url(#clip0)">
+      <path
+        d="M0 8C0 3.58172 3.58172 0 8 0H120C124.418 0 128 3.58172 128 8V72C128 76.4183 124.418 80 120 80H8C3.58172 80 0 76.4183 0 72V8Z"
+        fill="#0E0E11"
+      />
+      <rect width="128" height="17.7778" fill="#17171C" />
+      <rect
+        width="56.8889"
+        height="58.6667"
+        transform="translate(35.5547 21.332)"
+        fill="#17171C"
+      />
+      <rect
+        x="37.332"
+        y="23.1094"
+        width="53.3333"
+        height="7.11111"
+        rx="1.77778"
+        fill="#0E0E11"
+      />
+      <rect
+        x="37.332"
+        y="33.7773"
+        width="53.3333"
+        height="7.11111"
+        rx="1.77778"
+        fill="#0E0E11"
+      />
+      <rect
+        x="37.332"
+        y="44.4414"
+        width="53.3333"
+        height="21.3333"
+        rx="3.55556"
+        fill="#0E0E11"
+      />
+    </g>
+
+    <defs>
+      <clipPath id="clip0">
+        <path
+          d="M0 8C0 3.58172 3.58172 0 8 0H120C124.418 0 128 3.58172 128 8V72C128 76.4183 124.418 80 120 80H8C3.58172 80 0 76.4183 0 72V8Z"
+          fill="white"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const SystemModeIcon = () => (
+  <svg
+    width="100%"
+    height="100%"
+    viewBox="0 0 128 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="xMidYMid meet"
+  >
+    <g clip-path="url(#clip0)">
+      <g clip-path="url(#clip1)">
+        <rect
+          width="124.444"
+          height="80"
+          transform="translate(-0.394531)"
+          fill="#F5F6F7"
+        />
+        <rect x="-0.394531" width="124.444" height="17.7778" fill="white" />
+        <rect
+          width="56.8889"
+          height="58.6667"
+          transform="translate(33.3828 21.332)"
+          fill="white"
+        />
+        <rect
+          x="35.1602"
+          y="23.1094"
+          width="53.3333"
+          height="7.11111"
+          rx="1.77778"
+          fill="#F5F6F7"
+        />
+        <rect
+          x="35.1602"
+          y="33.7773"
+          width="53.3333"
+          height="7.11111"
+          rx="1.77778"
+          fill="#F5F6F7"
+        />
+        <rect
+          x="35.1602"
+          y="44.4414"
+          width="53.3333"
+          height="21.3333"
+          rx="3.55556"
+          fill="#F5F6F7"
+        />
+      </g>
+      <g clip-path="url(#clip2)">
+        <rect
+          width="62.2222"
+          height="80"
+          transform="translate(65.3828)"
+          fill="#0E0E11"
+        />
+        <rect x="3.16211" width="124.444" height="17.7778" fill="#17171C" />
+        <rect
+          width="56.8889"
+          height="58.6667"
+          transform="translate(36.9395 21.332)"
+          fill="#17171C"
+        />
+        <rect
+          x="38.7168"
+          y="23.1094"
+          width="53.3333"
+          height="7.11111"
+          rx="1.77778"
+          fill="#0E0E11"
+        />
+        <rect
+          x="38.7168"
+          y="33.7773"
+          width="53.3333"
+          height="7.11111"
+          rx="1.77778"
+          fill="#0E0E11"
+        />
+        <rect
+          x="38.7168"
+          y="44.4414"
+          width="53.3333"
+          height="21.3333"
+          rx="3.55556"
+          fill="#0E0E11"
+        />
+      </g>
+    </g>
+
+    <defs>
+      <clipPath id="clip0">
+        <path
+          d="M0 8C0 3.58172 3.58172 0 8 0H120C124.418 0 128 3.58172 128 8V72C128 76.4183 124.418 80 120 80H8C3.58172 80 0 76.4183 0 72V8Z"
+          fill="white"
+        />
+      </clipPath>
+      <clipPath id="clip1">
+        <rect
+          width="124.444"
+          height="80"
+          fill="white"
+          transform="translate(-0.394531)"
+        />
+      </clipPath>
+      <clipPath id="clip2">
+        <rect
+          width="62.2222"
+          height="80"
+          fill="white"
+          transform="translate(65.3828)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);
+
+export const DeviceIcon = () => (
+  <svg
+    width={20}
+    height={20}
+    viewBox="0 0 20 20"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.4917 8.09297C17.2083 7.9763 16.8333 7.91797 16.3667 7.91797H11.9667C10.5167 7.91797 10 8.43464 10 9.9013V16.3513C10 16.8346 10.0583 17.2096 10.1833 17.5013C10.4417 18.1013 10.9917 18.3346 11.9667 18.3346H16.3667C17.8167 18.3346 18.3333 17.8096 18.3333 16.3513V9.9013C18.3333 8.90964 18.1 8.3513 17.4917 8.09297ZM15 16.4596H13.3333C13.3167 16.4596 13.2917 16.4596 13.275 16.4513C13.15 16.443 13.0417 16.4013 12.95 16.318C12.8 16.2096 12.7083 16.0346 12.7083 15.8346C12.7083 15.493 12.9917 15.2096 13.3333 15.2096H15C15.3417 15.2096 15.625 15.493 15.625 15.8346C15.625 16.1763 15.3417 16.4596 15 16.4596Z"
+      fill="#5A42DE"
+    />
+    <path
+      d="M17.4924 5.15964V5.83464C17.4924 6.29297 17.1174 6.66797 16.6591 6.66797H11.9674C9.83411 6.66797 8.75078 7.75964 8.75078 9.9013V17.5013C8.75078 17.9596 8.37578 18.3346 7.91745 18.3346H6.29245C5.95911 18.3346 5.69245 18.068 5.69245 17.743C5.69245 17.4096 5.95911 17.1513 6.29245 17.1513H7.91745V13.9596H5.00078C3.15078 13.868 1.67578 12.343 1.67578 10.468V5.15964C1.67578 3.23464 3.24245 1.66797 5.17578 1.66797H14.0008C15.9258 1.66797 17.4924 3.23464 17.4924 5.15964Z"
+      fill="#5A42DE"
+    />
+  </svg>
+);
+
+export const BriefCaseIcon = ({ size }: { size?: number }) => (
+  <svg
+    width={size ? size : 16}
+    height={size ? size : 16}
+    viewBox="0 0 16 16"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M5.33387 14.6667H10.6672C13.3472 14.6667 13.8272 13.5933 13.9672 12.2867L14.4672 6.95333C14.6472 5.32667 14.1805 4 11.3339 4H4.6672C1.82054 4 1.35387 5.32667 1.53387 6.95333L2.03387 12.2867C2.17387 13.5933 2.65387 14.6667 5.33387 14.6667Z"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M5.33203 3.99967V3.46634C5.33203 2.28634 5.33203 1.33301 7.46536 1.33301H8.53203C10.6654 1.33301 10.6654 2.28634 10.6654 3.46634V3.99967"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M9.33464 8.66667V9.33333C9.33464 9.34 9.33464 9.34 9.33464 9.34667C9.33464 10.0733 9.32797 10.6667 8.0013 10.6667C6.6813 10.6667 6.66797 10.08 6.66797 9.35333V8.66667C6.66797 8 6.66797 8 7.33464 8H8.66797C9.33464 8 9.33464 8 9.33464 8.66667Z"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M14.432 7.33301C12.892 8.45301 11.132 9.11967 9.33203 9.34634"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M1.74609 7.5127C3.24609 8.53936 4.93943 9.15936 6.66609 9.35269"
+      stroke="currentColor"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const DeleteTemplateIcon = () => (
+  <svg
+    width={100}
+    height={100}
+    viewBox="0 0 100 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 50C0 22.3858 22.3858 0 50 0C77.6142 0 100 22.3858 100 50C100 77.6142 77.6142 100 50 100C22.3858 100 0 77.6142 0 50Z"
+      fill="#C64242"
+    />
+    <path
+      d="M50 4C75.4051 4 96 24.5949 96 50C96 75.4051 75.4051 96 50 96C24.5949 96 4 75.4051 4 50C4 24.5949 24.5949 4 50 4Z"
+      stroke="white"
+      strokeOpacity="0.72"
+      strokeWidth={8}
+    />
+    <path
+      d="M49.9993 63.3346C57.3327 63.3346 63.3327 57.3346 63.3327 50.0013C63.3327 42.668 57.3327 36.668 49.9993 36.668C42.666 36.668 36.666 42.668 36.666 50.0013C36.666 57.3346 42.666 63.3346 49.9993 63.3346Z"
+      stroke="white"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M50 44.668V51.3346"
+      stroke="white"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M49.9922 55.332H50.0042"
+      stroke="white"
+      strokeWidth="2.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const ProfilePreferencesIcon = () => (
+  <svg
+    width={18}
+    height={18}
+    viewBox="0 0 18 18"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16.5 4.875H12"
+      stroke="#5A42DE"
+      strokeWidth="1.125"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M4.5 4.875H1.5"
+      stroke="#5A42DE"
+      strokeWidth="1.125"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.5 7.5C8.94975 7.5 10.125 6.32475 10.125 4.875C10.125 3.42525 8.94975 2.25 7.5 2.25C6.05025 2.25 4.875 3.42525 4.875 4.875C4.875 6.32475 6.05025 7.5 7.5 7.5Z"
+      stroke="#5A42DE"
+      strokeWidth="1.125"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16.5 13.125H13.5"
+      stroke="#5A42DE"
+      strokeWidth="1.125"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M6 13.125H1.5"
+      stroke="#5A42DE"
+      strokeWidth="1.125"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M10.5 15.75C11.9497 15.75 13.125 14.5747 13.125 13.125C13.125 11.6753 11.9497 10.5 10.5 10.5C9.05025 10.5 7.875 11.6753 7.875 13.125C7.875 14.5747 9.05025 15.75 10.5 15.75Z"
+      stroke="#5A42DE"
+      strokeWidth="1.125"
+      strokeMiterlimit={10}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
