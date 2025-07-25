@@ -1,8 +1,10 @@
 import { SettingsIcon } from "lucide-react";
 import {
   BusinessIcon,
+  Calendar,
   ContractIcon,
   DashboardIcon,
+  EditNoteIcon,
   InvoicesIcon,
   PayrollIcon,
 } from "../../assets/svg/svg";
@@ -15,9 +17,9 @@ export const sidebarRoutes = [
     path: RoutePaths.DASHBOARD,
   },
   {
-    name: "Team Contracts",
-    icon: <ContractIcon />,
-    path: RoutePaths.TEAM_CONTRACTS,
+    name: "Contracts",
+    icon: <EditNoteIcon />,
+    path: RoutePaths.CONTRACTS,
   },
   {
     name: "Team Management",

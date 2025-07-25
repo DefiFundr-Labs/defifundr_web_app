@@ -16,11 +16,17 @@ export const Accordion: FC<AccordionProps> = ({
   handleOpen,
 }) => {
   return (
-    <div className="w-full overflow-hidden transition-all duration-300 ease-in-out bg-white rounded-lg  dark:bg-gray-600">
+    <div
+      className={`w-full overflow-hidden transition-all duration-300 ease-in-out  rounded-lg  `}
+    >
       <div
         onClick={handleOpen}
         role="button"
-        className="flex items-center justify-between gap-2 px-4 py-6 font-semibold text-gray-600 cursor-pointer sm:p-6 dark:text-gray-200"
+        className={`flex items-center justify-between gap-2 px-4 ${
+          isOpen
+            ? "pt-6 pb-0 sm:p-6 sm:pb-0 transition-all delay-300 ease-in-out"
+            : " pt-6 pb-6 sm:p-6 delay-500"
+        } font-semibold text-gray-600 cursor-pointer  dark:text-gray-200`}
       >
         <p>{title}</p>
         <motion.span

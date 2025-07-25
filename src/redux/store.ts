@@ -2,11 +2,12 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import themeReducer from "./slice/themeSlice";
 import modalReducer from "./slice/modalSlice";
-
+import contractFormReducer from "./slice/createContactFormSlice";
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
     modal: modalReducer,
+    contractForm: contractFormReducer,
   },
 });
 

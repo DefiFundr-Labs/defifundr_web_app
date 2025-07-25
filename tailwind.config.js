@@ -66,8 +66,7 @@ export default {
           400: "#414F62",
           500: "#17171C",
           600: "#0E0E11",
-          700: "#23272B"
-
+          700: "#23272B",
         },
         primary: {
           50: "#1B1737",
@@ -108,6 +107,7 @@ export default {
       },
       fontFamily: {
         hk: ["Hanken Grotesk", "serif"], // Ensure fallback font
+        fh: ["Fasthand", "cursive"],
       },
 
       zIndex: {

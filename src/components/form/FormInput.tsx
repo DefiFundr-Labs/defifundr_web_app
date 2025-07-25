@@ -13,12 +13,19 @@ const FormInput = <T extends FieldValues>({
   required = false,
   type = "text",
   touched,
+  validationRules,
+  labelClass,
+  readOnly,
 }: FormInputProps<T>) => {
   const { message, hasError } = useFormError(error, touched);
 
   return (
     <div className="form-control">
-      <label htmlFor={id}>{label}</label>
+      {label !== "" && (
+        <label htmlFor={id} className={labelClass}>
+          {label}
+        </label>
+      )}
       <input
         id={id}
         type={type}
@@ -26,7 +33,8 @@ const FormInput = <T extends FieldValues>({
         aria-invalid={error ? "true" : "false"}
         className={(hasError ? "!border-error-500 " : "") + className}
         required={required}
-        {...register(id)}
+        {...register(id, validationRules)}
+        readOnly={readOnly}
       />
 
       <ErrorMessage isVisible={hasError} errorMessage={message} />

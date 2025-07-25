@@ -17,15 +17,23 @@ export const RoutePaths = {
 
   // Dashboard and main navigation routes
   DASHBOARD: "/dashboard",
-  TEAM_CONTRACTS: "/dashboard/team-contracts",
+
+  // contracts
+  CONTRACTS: "/dashboard/team-contracts",
+  CONTRACT_DETAIL: "/team-contracts/:contractId",
+  CREATE_CONTRACT: "/dashboard/team-contracts/create-contract",
+
+  // "team management"
   TEAM_MANAGEMENT: "/dashboard/team-management",
   TEAM_MANAGEMENT_EMPLOYEE: "/dashboard/team-management/employee",
   TEAM_MANAGEMENT_TIME_TRACKING: "/dashboard/team-management/time-tracking",
   TEAM_MANAGEMENT_MILESTONE: "/dashboard/team-management/milestone",
   TEAM_MANAGEMENT_TIME_OFF: "/dashboard/team-management/time-off",
   TEAM_MANAGEMENT_EXPENSE: "/dashboard/team-management/expense",
-  CONTRACT_DETAIL: "/team-contracts/:contractId",
+  // payroll
   PAYROLL: "/dashboard/payroll",
+
+  // invoices
   INVOICES: "/dashboard/invoices",
   BUSINESS: "/dashboard/business",
   SETTINGS: "/dashboard/settings",

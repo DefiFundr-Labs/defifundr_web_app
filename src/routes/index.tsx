@@ -17,7 +17,7 @@ import SelectAccountType from "../pages/auth/selectAccountType";
 
 // Dashboard page components
 import Dashboard from "../pages/dashboard/home";
-import Contract from "../pages/dashboard/contract";
+import Contract from "../pages/dashboard/contract/contract";
 // import CreateCompliance from "../pages/dashboard/contract/createCompliance";
 import TeamContracts from "../pages/dashboard/teamContracts";
 import EmployeeDetails from "../pages/dashboard/employeeDetails";
@@ -30,6 +30,7 @@ import TimeOffDetails from "../pages/dashboard/team-management/timeOffDetails";
 import MileStoneDetails from "../pages/dashboard/team-management/mileStonesDetails";
 import MileStone from "../pages/dashboard/team-management/mileStonesDetails";
 import NotFound from "../pages/notFound/notFound";
+import { CreateContract } from "../pages/dashboard/contract/createContract";
 import InvoiceDetails from "../pages/dashboard/invoiceDetails";
 // import { ReviewSign } from "../pages/dashboard/contract/reviewAndSign";
 
@@ -97,6 +98,10 @@ export const router = createBrowserRouter([
       {
         path: "team-contract",
         element: <Contract />,
+      },
+      {
+        path: RoutePaths.CREATE_CONTRACT,
+        element: <CreateContract />,
       },
       {
         path: "employee-details",

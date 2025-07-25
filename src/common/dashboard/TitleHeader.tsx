@@ -1,7 +1,8 @@
 import { ArrowLeft, Plus } from "lucide-react";
 import { DashBoardTitleHeaderProps } from "../../types/types";
 import Tabs from "./Tabs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { RoutePaths } from "../../routes/routesPath";
 function TitleHeader({
   title,
   isBackButton,
@@ -39,7 +40,8 @@ function TitleHeader({
               {title}
             </h1>
             {isAddButton && (
-              <button
+              <Link
+                to={RoutePaths.CREATE_CONTRACT}
                 className={
                   "hidden lg:flex items-center text-white rounded-full cursor-pointer bg-primary-200 h-10 gap-1 px-4 transform-all ease-linear  " +
                   (selectedTab === tabs[0]
@@ -49,7 +51,7 @@ function TitleHeader({
               >
                 <Plus size={16} />
                 New contract
-              </button>
+              </Link>
             )}
           </div>
         </div>
