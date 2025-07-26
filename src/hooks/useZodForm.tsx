@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
 export function useZodForm<T extends FieldValues>(
-  schema: z.ZodType<T>,
+  schema: z.ZodType<T, any, any>, // More permissive typing
   options: Omit<UseFormProps<T>, "resolver"> = {}
 ) {
   const form = useForm<T>({
