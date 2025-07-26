@@ -27,7 +27,7 @@ function SelectCard({
         className="hidden peer"
         checked={isChecked}
       />
-      <div className="relative p-6 space-y-2 transition-colors bg-gray-100 border border-transparent rounded-lg peer-checked:border-primary-200 dark:peer-checked:bg-primary-50 dark:peer-checked:border-primary-400  peer-checked:bg-primary-500 dark:bg-gray-600">
+      <div className="relative p-6 space-y-2 transition-colors bg-gray-100 border border-transparent rounded-lg peer-checked:border-primary-200 dark:peer-checked:bg-primary-50 dark:peer-checked:border-primary-400 peer-checked:bg-primary-500 dark:bg-gray-600">
         <p className="text-xl font-semibold text-gray-500 dark:text-gray-150">
           {name}
         </p>

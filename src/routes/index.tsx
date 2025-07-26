@@ -153,13 +153,16 @@ export const router = createBrowserRouter([
         element: <Invoices />,
       },
       {
+        path: `${RoutePaths.INVOICES}/:id`,
+        element: <InvoiceDetails />,
+      },
+      {
         path: RoutePaths.PAYROLL,
         element: <Payroll />,
       },
       {
         path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
         element: <EmployeePayoutDetails />,
-
       },
       {
         path: RoutePaths.SETTINGS,
@@ -227,13 +230,11 @@ export const router = createBrowserRouter([
             element: <VerifyTwoFAEmail />,
           },
         ],
-
-
       },
       {
         path: `${RoutePaths.PAYROLL_EMPLOYEE_DETAILS}/:id`,
         element: <EmployeePayoutDetails />,
-      }
+      },
       // {
       //   path: "create-compliance",
       //   element: <CreateCompliance />,

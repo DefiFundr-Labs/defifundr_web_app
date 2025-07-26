@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "../../../form/DatePicker";
 import FormInput from "../../../form/FormInput";
 import CurrencyDropdown from "../../../form/CurrencyDropdown";
@@ -249,8 +249,9 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
             validationRules={{
               required: "Start date is required",
               validate: (val) => {
-                if (val && val !== "--") {
-                  const date = new Date(val);
+                const dateStr = String(val);
+                if (dateStr && dateStr !== "--") {
+                  const date = new Date(dateStr);
                   const today = new Date();
                   today.setHours(0, 0, 0, 0);
 
@@ -278,9 +279,10 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
             placeholder="--"
             validationRules={{
               validate: (val) => {
-                if (val && val !== "--" && startDateValue) {
-                  const startDate = new Date(startDateValue);
-                  const endDate = new Date(val);
+                const dateStr = String(val);
+                if (dateStr && dateStr !== "--" && startDateValue) {
+                  const startDate = new Date(String(startDateValue));
+                  const endDate = new Date(dateStr);
 
                   if (isNaN(startDate.getTime())) {
                     return "Pick a starting date first";
@@ -328,7 +330,7 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
           <hr className="w-full border-b border-gray-150 dark:border-gray-250" />
         </div>
 
-        <div className="flex items-center gap-6 flex-col sm:flex-row">
+        <div className="flex flex-col items-center gap-6 sm:flex-row">
           <div className="w-full">
             <CurrencyDropdown
               currencies={networkOptions}
@@ -365,11 +367,9 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
                 labelClass="text-right"
                 className="appearance-none"
                 placeholder="$ 2000.00"
-                readOnly={isMilestoneContract} // Read-only for milestone contracts
+                readOnly={isMilestoneContract}
                 validationRules={{
-                  required: isMilestoneContract
-                    ? false // Not required for milestones (auto-calculated)
-                    : "Amount is required",
+                  required: isMilestoneContract ? false : "Amount is required",
                   min: {
                     value: 0.01,
                     message: "Amount must be greater than 0",
@@ -403,7 +403,7 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
                     id={unit.toLowerCase()}
                     className="appearance-none cursor-pointer peer"
                   />
-                  <div className="px-4 py-2 text-sm font-semibold text-gray-300 transition-colors bg-gray-100 rounded-full peer-checked:bg-primary-500 peer-checked:text-primary-200 dark:peer-checked:bg-primary-50 dark:bg-gray-600  dark:text-gray-300 dark:peer-checked:text-primary-400 peer-checked:font-semibold">
+                  <div className="px-4 py-2 text-sm font-semibold text-gray-300 transition-colors bg-gray-100 rounded-full peer-checked:bg-primary-500 peer-checked:text-primary-200 dark:peer-checked:bg-primary-50 dark:bg-gray-600 dark:text-gray-300 dark:peer-checked:text-primary-400 peer-checked:font-semibold">
                     {unit}
                   </div>
                 </label>
@@ -419,7 +419,7 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
           <MilestoneForm />
 
           {/* Require Deposit Toggle */}
-          <div className="flex items-center gap-2  ">
+          <div className="flex items-center gap-2 ">
             <p className="text-xs font-medium text-gray-400 dark:text-gray-200 ">
               Require a Deposit
             </p>
@@ -447,7 +447,7 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
               <hr className="w-full border-b border-gray-150 dark:border-gray-250" />
             </div>
             <div className="space-y-6">
-              <div className="flex items-center gap-6 flex-col sm:flex-row">
+              <div className="flex flex-col items-center gap-6 sm:flex-row">
                 <div className="w-full">
                   <FormSelectInput
                     id="invoiceFrequency"
@@ -554,7 +554,7 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
               </div>
 
               {firstPaymentType === "custom" && (
-                <div className="w-full flex flex-col sm:flex-row gap-6">
+                <div className="flex flex-col w-full gap-6 sm:flex-row">
                   <div className="w-full">
                     <DatePicker
                       id="firstPaymentDate"
@@ -569,8 +569,9 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
                             : false,
                         validate: (value) => {
                           if (firstPaymentType === "custom" && value) {
-                            const selectedDate = new Date(value);
-                            const startDate = new Date(startDateValue);
+                            const dateStr = String(value);
+                            const selectedDate = new Date(dateStr);
+                            const startDate = new Date(String(startDateValue));
 
                             if (isNaN(selectedDate.getTime())) {
                               return "Invalid date";
@@ -608,7 +609,8 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
                             const totalAmount = parseFloat(
                               watch("totalAmount") || "0"
                             );
-                            const firstAmount = parseFloat(value);
+
+                            const firstAmount = parseFloat(String(value));
 
                             if (firstAmount > totalAmount) {
                               return "First payment cannot exceed total amount";
@@ -635,7 +637,7 @@ export const ContractDetails = ({ setStepper }: ContractDetailsProps) => {
               <hr className="w-full border-b border-gray-150 dark:border-gray-250" />
             </div>
             <div className="space-y-6">
-              <div className="flex items-center gap-6 flex-col sm:flex-row">
+              <div className="flex flex-col items-center gap-6 sm:flex-row">
                 <div className="w-full">
                   <FormSelectInput
                     id="taxType"

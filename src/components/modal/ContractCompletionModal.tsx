@@ -1,6 +1,6 @@
-import { Calendar1, Check, CopyIcon } from "lucide-react";
+import { Check, CopyIcon } from "lucide-react";
 import { useState } from "react";
-import { Calendar, CalendarCheckIcon } from "../../assets/svg/svg";
+import { CalendarCheckIcon } from "../../assets/svg/svg";
 
 function ContractCompletionModal() {
   const [isCopied, setIsCopied] = useState(false);

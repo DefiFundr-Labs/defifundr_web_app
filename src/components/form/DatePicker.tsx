@@ -11,9 +11,9 @@ import {
   parse,
   startOfToday,
 } from "date-fns";
-import { Calendar, CalendarIcon } from "../../assets/svg/svg";
+import { CalendarIcon } from "../../assets/svg/svg";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues } from "react-hook-form";
 import { FormInputProps } from "../../types/types";
 import { useFormError } from "../../hooks/useFormError";
 import ErrorMessage from "./ErrorMessage";

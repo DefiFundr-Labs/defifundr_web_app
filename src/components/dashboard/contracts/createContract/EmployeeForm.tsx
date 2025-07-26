@@ -1,9 +1,9 @@
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import FormInput from "../../../form/FormInput";
 import FormSelectInput from "../../../form/FormSelectInput";
 import FormNavigation from "./FormNavigation";
-import { CherovnRight } from "../../../../assets/svg/svg";
+import { ChevronRight } from "../../../../assets/svg/svg";
 import useModal from "../../../../hooks/useModal";
 import { PhoneCodeSelector } from "../../../form/PhoneCodeSelector";
 import { useDispatch } from "react-redux";
@@ -121,7 +121,7 @@ export const EmployeeForm: FC<EmployeeFormProps> = ({ setStepper }) => {
         className="py-3.5 px-4.5 bg-primary-500 w-full flex items-center justify-between rounded-lg font-semibold text-sm text-primary-200 cursor-pointer"
       >
         <span>Select saved employee</span>
-        <CherovnRight />
+        <ChevronRight />
       </button>
 
       <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2">
@@ -228,7 +228,7 @@ export const EmployeeForm: FC<EmployeeFormProps> = ({ setStepper }) => {
           type="number"
           register={register}
           label="Postal / zip code"
-          className="dark:bg-gray-600 appearance-none"
+          className="appearance-none dark:bg-gray-600"
           error={errors.postal}
           validationRules={{
             required: "Postal is required",

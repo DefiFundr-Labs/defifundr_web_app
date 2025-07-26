@@ -1,7 +1,6 @@
 import { SettingsIcon } from "lucide-react";
 import {
   BusinessIcon,
-  Calendar,
   ContractIcon,
   DashboardIcon,
   EditNoteIcon,

@@ -1,13 +1,258 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary Meta Tags -->
+    <title>DefiFundr - Decentralized Payroll & Invoice Management</title>
+    <meta
+      name="title"
+      content="DefiFundr - Decentralized Payroll & Invoice Management"
+    />
+    <meta
+      name="description"
+      content="Streamline your business payroll and invoice management with DefiFundr's secure, blockchain-powered platform. Automated salary disbursements, crypto & fiat payments, and transparent invoicing for modern businesses."
+    />
+    <meta
+      name="keywords"
+      content="Decentralized Payroll, Blockchain Payroll, Invoice Management, Crypto Payments, USDC Salary, Smart Contracts, Business Payroll, Employee Management, DeFi Payroll, Automated Payments"
+    />
+    <meta name="author" content="DefiFundr" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://app.defifundr.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://app.defifundr.com/" />
+    <meta
+      property="og:title"
+      content="DefiFundr - Decentralized Payroll & Invoice Management"
+    />
+    <meta
+      property="og:description"
+      content="Streamline your business payroll and invoice management with DefiFundr's secure, blockchain-powered platform. Automated salary disbursements, crypto & fiat payments, and transparent invoicing for modern businesses."
+    />
+    <meta
+      property="og:image"
+      content="https://app.defifundr.com/thumbnail.webp"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="DefiFundr - Decentralized Payroll & Invoice Management Platform"
+    />
+    <meta property="og:site_name" content="DefiFundr" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://app.defifundr.com/" />
+    <meta
+      property="twitter:title"
+      content="DefiFundr - Decentralized Payroll & Invoice Management"
+    />
+    <meta
+      property="twitter:description"
+      content="Streamline your business payroll and invoice management with DefiFundr's secure, blockchain-powered platform. Automated salary disbursements, crypto & fiat payments, and transparent invoicing for modern businesses."
+    />
+    <meta
+      property="twitter:image"
+      content="https://app.defifundr.com/thumbnail.webp"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="DefiFundr - Decentralized Payroll & Invoice Management Platform"
+    />
+
+    <!-- Additional Meta Tags -->
+    <meta name="theme-color" content="#4F46E5" />
+    <meta name="msapplication-TileColor" content="#4F46E5" />
+    <meta name="application-name" content="DefiFundr" />
+
+    <!-- Favicons -->
+    <link rel="icon" href="/favicon/favicon-32x32.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/favicon/android-chrome-512x512.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+
+    <!-- Preconnect to external domains for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://api.defifundr.com" />
+
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "DefiFundr",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "description": "Decentralized payroll and invoice management platform for businesses. Automate salary disbursements, manage employee payments, and process invoices using blockchain technology.",
+        "url": "https://app.defifundr.com/",
+        "image": "https://app.defifundr.com/thumbnail.webp",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "DefiFundr",
+          "url": "https://app.defifundr.com/"
+        },
+        "featureList": [
+          "Automated Payroll Processing",
+          "Blockchain-Based Payments",
+          "Invoice Management",
+          "Multi-Currency Support (Crypto & Fiat)",
+          "Employee Management Dashboard",
+          "Smart Contract Integration",
+          "Real-time Payment Tracking",
+          "KYC/KYB Verification",
+          "Multi-Signature Wallet Support",
+          "Dispute Resolution System"
+        ],
+        "screenshot": "https://app.defifundr.com/screenshot.png",
+        "softwareVersion": "1.0",
+        "requirements": "Web browser with JavaScript enabled, Crypto wallet (optional)",
+        "permissions": "Camera access for KYC verification"
+      }
+    </script>
+
+    <!-- Business Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DefiFundr",
+        "description": "Decentralized payroll and invoice management platform",
+        "url": "https://app.defifundr.com/",
+        "logo": "https://app.defifundr.com/logo.png",
+        "sameAs": [
+          "https://twitter.com/defifundr",
+          "https://linkedin.com/company/defifundr",
+          "https://github.com/defifundr"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "email": "support@defifundr.com"
+        },
+        "foundingDate": "2024",
+        "industry": "Financial Technology",
+        "knowsAbout": [
+          "Blockchain Technology",
+          "Decentralized Finance",
+          "Payroll Management",
+          "Smart Contracts",
+          "Cryptocurrency Payments",
+          "Invoice Processing",
+          "Business Automation"
+        ]
+      }
+    </script>
+
+    <!-- Product Features Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "DefiFundr Payroll Platform",
+        "description": "Complete payroll and invoice management solution with blockchain integration",
+        "brand": {
+          "@type": "Brand",
+          "name": "DefiFundr"
+        },
+        "category": "Business Software",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/InStock",
+          "price": "0",
+          "priceCurrency": "USD",
+          "priceValidUntil": "2025-12-31"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "150"
+        }
+      }
+    </script>
+
+    <!-- Security Headers -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://api.defifundr.com wss://api.defifundr.com;"
+    />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta
+      http-equiv="Referrer-Policy"
+      content="strict-origin-when-cross-origin"
+    />
+    <meta
+      http-equiv="Permissions-Policy"
+      content="camera=(), microphone=(), geolocation=(), payment=()"
+    />
+
+    <!-- Web App Manifest for PWA -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="DefiFundr" />
+
+    <!-- Preload critical resources -->
+    <link
+      rel="preload"
+      href="/fonts/inter-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link rel="preload" href="/api/config" as="fetch" crossorigin />
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Analytics placeholder - replace with your analytics -->
+    <script>
+      // Google Analytics or other analytics code
+      // window.gtag = window.gtag || function () { (gtag.q = gtag.q || []).push(arguments) };
+    </script>
   </body>
 </html>

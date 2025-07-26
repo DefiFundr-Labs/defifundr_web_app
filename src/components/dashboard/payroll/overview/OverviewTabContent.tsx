@@ -12,7 +12,9 @@ import { RoutePaths } from "../../../../routes/routesPath";
 import { timeSheetRecords } from "../../../../data/timeSheetRecords";
 import { TimeSheetRecord } from "../../../../types/types";
 
-const getContractBadge = (contractType: TimeSheetRecord["contract"]["contractType"]) => {
+const getContractBadge = (
+  contractType: TimeSheetRecord["contract"]["contractType"]
+) => {
   switch (contractType) {
     case "Fixed rate":
       return `border-primary-200 bg-primary-500 text-primary-200 dark:bg-primary-50`;
@@ -25,27 +27,29 @@ const getContractBadge = (contractType: TimeSheetRecord["contract"]["contractTyp
   }
 };
 
-
-
 const renderPayrollCell = (item: TimeSheetRecord, column: TableColumn) => {
   switch (column.key) {
     case "amount":
       return (
-        <span className="text-gray-150 text-sm font-semibold dark:text-white">
-           {`$${parseFloat(item.totalAmount ?? "0").toFixed(2)}`}
+        <span className="text-sm font-semibold text-gray-500 dark:text-gray-150">
+          {`$${parseFloat(item.totalAmount ?? "0").toFixed(2)}`}
         </span>
       );
     case "employee":
       return (
-        <div className="flex gap-2 items-center">
+        <div className="flex items-center gap-2">
           <div className="rounded-full">
-            <img src={ProfilePic} alt="Profile" className="w-10 h-10 rounded-full" />
+            <img
+              src={ProfilePic}
+              alt="Profile"
+              className="w-10 h-10 rounded-full"
+            />
           </div>
           <div className="leading-tight">
-            <p className="font-semibold text-sm text-gray-500 dark:text-gray-150">
+            <p className="text-sm font-semibold text-gray-500 dark:text-gray-150">
               {item.employeeName}
             </p>
-            <span className="font-medium text-xs text-gray-400 dark:text-gray-200">
+            <span className="text-xs font-medium text-gray-400 dark:text-gray-200">
               {item.contractor.position}
             </span>
           </div>
@@ -60,9 +64,11 @@ const renderPayrollCell = (item: TimeSheetRecord, column: TableColumn) => {
       );
     case "contractType":
       return (
-        <span className={`px-2 py-1 rounded-full text-sm font-semibold border ${getContractBadge(
-          item.contract.contractType
-        )}`}>
+        <span
+          className={`px-2 py-1 rounded-full text-sm font-semibold border ${getContractBadge(
+            item.contract.contractType
+          )}`}
+        >
           {item.contract.contractType}
         </span>
       );
@@ -74,7 +80,7 @@ const renderPayrollCell = (item: TimeSheetRecord, column: TableColumn) => {
       );
     case "nextPayoutDate":
       return (
-        <span className="text-gray-600 font-semibold text-sm dark:text-gray-150">
+        <span className="text-sm font-semibold text-gray-600 dark:text-gray-150">
           {item.startDate}
         </span>
       );
@@ -84,22 +90,24 @@ const renderPayrollCell = (item: TimeSheetRecord, column: TableColumn) => {
 };
 
 const renderMobileCell = (item: TimeSheetRecord) => (
-  <div className="flex gap-4 justify-between">
-    <div className="space-y-2 flex-1 min-w-0">
-      <p className="truncate font-semibold text-gray-500">{item.employeeName}</p>
+  <div className="flex justify-between gap-4">
+    <div className="flex-1 min-w-0 space-y-2">
+      <p className="font-semibold text-gray-500 truncate">
+        {item.employeeName}
+      </p>
       <span className="flex items-center gap-2 ">
         <p className="text-xs font-medium text-gray-300">{item.totalAmount}</p>
-        <div className="w-px self-stretch bg-gray-150" />
-        <div className="flex items-center font-medium gap-1 ">
+        <div className="self-stretch w-px bg-gray-150" />
+        <div className="flex items-center gap-1 font-medium ">
           <UsdtIcon />
-          <span className="text-gray-600 text-sm font-medium dark:text-gray-300">
+          <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
             {item.paidIn}
           </span>
         </div>
       </span>
     </div>
 
-    <div className="space-y-2 shrink-0  flex flex-col items-end justify-between">
+    <div className="flex flex-col items-end justify-between space-y-2 shrink-0">
       <span
         className={`px-2 py-1 rounded-full text-xs font-semibold border ${getContractBadge(
           item.contract.contractType
@@ -160,29 +168,30 @@ function OverviewTabContent() {
     <div className="min-h-screen space-y-2 bg-gray-100 dark:bg-gray-600">
       {timeSheetRecords.length > 0 && (
         <div className="p-4">
-          <div className="block sm:flex gap-4">
+          <div className="block gap-4 sm:flex">
             <PayoutOverviewChart />
-            <div className="mt-4 sm:mt-0 w-full max-w-79 h-74 flex flex-col justify-between">
+            <div className="flex flex-col justify-between w-full mt-4 sm:mt-0 max-w-79 h-74">
               <InfoCard label="Total Monthly Payout" value="$17,000.00" />
               <InfoCard label="Total Employees" value="20" />
               <InfoCard label="Next Payout Date" value="May 30, 2025" />
             </div>
           </div>
-          <div className="w-full h-20 sm:h-22 mt-4 sm:mt-6 rounded-xl border border-warning-500 flex items-center justify-between p-2 sm:p-4 bg-white dark:bg-gray-500">
+          <div className="flex items-center justify-between w-full h-20 p-2 mt-4 bg-white border sm:h-22 sm:mt-6 rounded-xl border-warning-500 sm:p-4 dark:bg-gray-500">
             <div className="flex items-center gap-2">
-              <div className="w-8 sm:w-14 h-8 sm:h-14 flex items-center justify-center rounded-full bg-warning-300 dark:bg-warning-400">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full sm:w-14 sm:h-14 bg-warning-300 dark:bg-warning-400">
                 <Warning />
               </div>
-              <div className=" tracking-tight sm:tracking-normal">
-                <h2 className="text-gray-500 dark:text-gray-150 font-semibold text-sm sm:text-base">
+              <div className="tracking-tight  sm:tracking-normal">
+                <h2 className="text-sm font-semibold text-gray-500 dark:text-gray-150 sm:text-base">
                   Urgent: Pending Payroll Action Required
                 </h2>
-                <p className="text-xs text-gray-400 dark:text-gray-200 font-medium">
-                  Review and Approve Payroll by 8 PM WAT, Feb 25th to ensure timely employee payments.
+                <p className="text-xs font-medium text-gray-400 dark:text-gray-200">
+                  Review and Approve Payroll by 8 PM WAT, Feb 25th to ensure
+                  timely employee payments.
                 </p>
               </div>
             </div>
-            <button className="hidden sm:block text-xs sm:text-sm text-gray-500 dark:text-gray-100 border border-gray-500 dark:border-gray-100 px-4 py-2 rounded-full">
+            <button className="hidden px-4 py-2 text-xs text-gray-500 border border-gray-500 rounded-full sm:block sm:text-sm dark:text-gray-100 dark:border-gray-100">
               View payroll
             </button>
           </div>

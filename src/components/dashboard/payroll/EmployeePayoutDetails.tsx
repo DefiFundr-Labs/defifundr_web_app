@@ -6,7 +6,6 @@ import { TimeSheetRecord } from "../../../types/types";
 import EmployeeCard from "./EmployeeCard";
 import PaymentDetailsCard from "./PaymentDetailsCard";
 import FixedRate from "./payoutHistory/FixedRate";
-import FixedRate from "./payoutHistory/fixedRate";
 
 function EmployeePayoutDetails() {
   const { id } = useParams();
@@ -28,14 +27,11 @@ function EmployeePayoutDetails() {
   return (
     <div className="bg-gray-100">
       <CtaHeader title={timeSheetDetail?.employeeName || "Timesheet details"} />
-      <div className="p-4 space-y-4 dark:bg-gray-600 flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 p-4 space-y-4 dark:bg-gray-600">
         <EmployeeCard />
         <PaymentDetailsCard />
       </div>
       <FixedRate />
-        <PaymentDetailsCard/>
-      </div>
-        <FixedRate/>
     </div>
   );
 }

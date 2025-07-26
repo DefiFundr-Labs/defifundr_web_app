@@ -5,7 +5,7 @@ import React, {
   useCallback,
   useMemo,
 } from "react";
-import { ChevronDown, X } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { CustomSelectProps, Option } from "../../types/types";
 
 const CustomSelect: React.FC<CustomSelectProps> = ({
@@ -24,9 +24,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
   const [isOpen, setIsOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [focusedIndex, setFocusedIndex] = useState(-1);
-  const [dropdownPosition, setDropdownPosition] = useState<"bottom" | "top">(
-    "bottom"
-  );
+  const [, setDropdownPosition] = useState<"bottom" | "top">("bottom");
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -200,7 +198,7 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
 
           {/* Single select value display when not searching */}
           {value && searchTerm === "" && (
-            <div className="absolute inset-0 flex items-center gap-2 pointer-events-none text-gray-400 dark:text-gray-200 text-ellipsis">
+            <div className="absolute inset-0 flex items-center gap-2 text-gray-400 pointer-events-none dark:text-gray-200 text-ellipsis">
               {value.icon && value.icon}
               {value.label}
             </div>
@@ -229,9 +227,9 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
           style={{ maxHeight: maxMenuHeight }}
         >
           {/* Options List */}
-          <div className="max-h-48 overflow-y-auto">
+          <div className="overflow-y-auto max-h-48">
             {filteredOptions.length === 0 ? (
-              <div className="px-3 py-2 text-gray-500 text-sm">
+              <div className="px-3 py-2 text-sm text-gray-500">
                 {noOptionsMessage}
               </div>
             ) : (

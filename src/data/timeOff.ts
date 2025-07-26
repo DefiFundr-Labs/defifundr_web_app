@@ -8,17 +8,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile1.jpg",
     status: "Pending" as const,
     submitted: "2025-10-25",
+    startDate: "2025-11-01",
+    endDate: "2025-11-07",
     description:
       "Medical leave due to minor surgery recovery. Will need time to recover and follow up with medical appointments.",
     attachment: "MedicalNote.pdf",
     submittedOn: "25th Oct 2025",
     dateRange: "1st Nov 2025 - 7th Nov 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Sick Leave",
     paid: true,
     contract: {
       client: "Quikdash",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/quikdash",
     },
     contractor: {
@@ -34,17 +38,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile2.jpg",
     status: "Approved" as const,
     submitted: "2025-10-20",
+    startDate: "2025-11-10",
+    endDate: "2025-11-20",
     description:
       "Annual vacation with family. Planning to travel abroad for relaxation and family time.",
     attachment: "TravelPlan.pdf",
     submittedOn: "20th Oct 2025",
     dateRange: "10th Nov 2025 - 20th Nov 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Annual Leave",
     paid: true,
     contract: {
       client: "Quikdash",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/quikdash",
     },
     contractor: {
@@ -60,6 +68,8 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile3.jpg",
     status: "Rejected" as const,
     submitted: "2025-10-18",
+    startDate: "2025-11-05",
+    endDate: "2025-11-08",
     description:
       "Attending a developer conference to learn about new technologies and network with industry professionals.",
     attachment: "ConferencePass.pdf",
@@ -67,11 +77,13 @@ export const timeOffRequests: TimeSheetRecord[] = [
     dateRange: "5th Nov 2025 - 8th Nov 2025",
     rejectionReason:
       "Request submitted too close to project deadline. Please reschedule for after current sprint completion.",
+    totalAmount: "0.00",
     leaveType: "Professional Development",
     paid: false,
     contract: {
       client: "TechNova",
       paymentType: "Fixed",
+      contractType: "Fixed",
       contractLink: "/contracts/technova",
     },
     contractor: {
@@ -87,17 +99,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile4.jpg",
     status: "Approved" as const,
     submitted: "2025-10-22",
+    startDate: "2025-11-15",
+    endDate: "2025-11-25",
     description:
       "Personal leave for relocation to new city. Need time to handle moving logistics and settle in new location.",
     attachment: "RelocationDocs.pdf",
     submittedOn: "22nd Oct 2025",
     dateRange: "15th Nov 2025 - 25th Nov 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Personal Leave",
     paid: false,
     contract: {
       client: "Quikdash",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/quikdash",
     },
     contractor: {
@@ -113,17 +129,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile5.jpg",
     status: "Pending" as const,
     submitted: "2025-10-19",
+    startDate: "2025-12-01",
+    endDate: "2025-12-15",
     description:
       "Short sabbatical for personal development and skill enhancement. Planning to take online courses and work on personal projects.",
     attachment: "SabbaticalPlan.pdf",
     submittedOn: "19th Oct 2025",
     dateRange: "1st Dec 2025 - 15th Dec 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Sabbatical",
     paid: false,
     contract: {
       client: "UXLaunch",
       paymentType: "Milestone",
+      contractType: "Milestone",
       contractLink: "/contracts/uxlaunch",
     },
     contractor: {
@@ -139,17 +159,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile6.jpg",
     status: "Approved" as const,
     submitted: "2025-10-23",
+    startDate: "2025-10-28",
+    endDate: "2025-11-02",
     description:
       "Family emergency requiring immediate attention. Need to travel home to handle urgent family matters.",
     attachment: "EmergencyLeave.pdf",
     submittedOn: "23rd Oct 2025",
     dateRange: "28th Oct 2025 - 2nd Nov 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Emergency Leave",
     paid: true,
     contract: {
       client: "DevSuite",
       paymentType: "Fixed",
+      contractType: "Fixed",
       contractLink: "/contracts/devsuite",
     },
     contractor: {
@@ -165,17 +189,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile7.jpg",
     status: "Pending" as const,
     submitted: "2025-10-24",
+    startDate: "2025-11-18",
+    endDate: "2025-11-30",
     description:
       "Time off for wedding ceremony and honeymoon. This is a once-in-a-lifetime event requiring extended time away.",
     attachment: "WeddingLeave.pdf",
     submittedOn: "24th Oct 2025",
     dateRange: "18th Nov 2025 - 30th Nov 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Special Occasion",
     paid: false,
     contract: {
       client: "Contentify",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/contentify",
     },
     contractor: {
@@ -191,17 +219,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile8.jpg",
     status: "Approved" as const,
     submitted: "2025-10-25",
+    startDate: "2025-11-12",
+    endDate: "2025-11-26",
     description:
       "Parental leave for newborn care. First-time parent needing time to bond with baby and support partner during recovery.",
     attachment: "ParentalLeave.pdf",
     submittedOn: "25th Oct 2025",
     dateRange: "12th Nov 2025 - 26th Nov 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Parental Leave",
     paid: true,
     contract: {
       client: "DataNexus",
       paymentType: "Milestone",
+      contractType: "Milestone",
       contractLink: "/contracts/datanexus",
     },
     contractor: {
@@ -217,6 +249,8 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile9.jpg",
     status: "Rejected" as const,
     submitted: "2025-10-17",
+    startDate: "2025-11-03",
+    endDate: "2025-11-05",
     description:
       "Attending a marketing seminar to learn about latest digital marketing trends and strategies.",
     attachment: "MarketingSeminar.pdf",
@@ -224,11 +258,13 @@ export const timeOffRequests: TimeSheetRecord[] = [
     dateRange: "3rd Nov 2025 - 5th Nov 2025",
     rejectionReason:
       "Conflicts with major campaign launch timeline. Please consider attending the next available seminar after campaign completion.",
+    totalAmount: "0.00",
     leaveType: "Professional Development",
     paid: false,
     contract: {
       client: "GrowthHive",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/growthhive",
     },
     contractor: {
@@ -244,17 +280,21 @@ export const timeOffRequests: TimeSheetRecord[] = [
     profileImage: "/images/profile10.jpg",
     status: "Approved" as const,
     submitted: "2025-10-26",
+    startDate: "2025-12-08",
+    endDate: "2025-12-15",
     description:
       "Personal travel for mental health and wellness. Planning a retreat to recharge and maintain work-life balance.",
     attachment: "TravelLeave.pdf",
     submittedOn: "26th Oct 2025",
     dateRange: "8th Dec 2025 - 15th Dec 2025",
     rejectionReason: "",
+    totalAmount: "0.00",
     leaveType: "Personal Leave",
     paid: false,
     contract: {
       client: "CloudCore",
       paymentType: "Fixed",
+      contractType: "Fixed",
       contractLink: "/contracts/cloudcore",
     },
     contractor: {

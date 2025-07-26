@@ -1,16 +1,12 @@
 import { useCallback, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  loadFromStorage,
-  CreateContractFormProps,
-} from "../redux/slice/createContactFormSlice";
+import { useSelector } from "react-redux";
+import { CreateContractFormProps } from "../redux/slice/createContactFormSlice";
 import { RootState } from "../redux/store";
 
 export const FORM_DATA_KEY = "contract_form_data";
 export const FORM_STEP_KEY = "contract_form_step";
 
 export const useFormLocalStorage = () => {
-  const dispatch = useDispatch();
   const currentFormState = useSelector(
     (state: RootState) => state.contractForm
   );
@@ -29,20 +25,23 @@ export const useFormLocalStorage = () => {
   }, [currentFormState]);
 
   const loadSavedData = useCallback((): CreateContractFormProps | null => {
-  try {
-    const saved = localStorage.getItem(FORM_DATA_KEY);
-    if (saved) {
-      const parsedData: CreateContractFormProps = JSON.parse(saved);
-      if (parsedData && typeof parsedData === "object" && parsedData.contractType) {
-        return parsedData;
+    try {
+      const saved = localStorage.getItem(FORM_DATA_KEY);
+      if (saved) {
+        const parsedData: CreateContractFormProps = JSON.parse(saved);
+        if (
+          parsedData &&
+          typeof parsedData === "object" &&
+          parsedData.contractType
+        ) {
+          return parsedData;
+        }
       }
+    } catch (error) {
+      console.error("Failed to load from localStorage:", error);
     }
-  } catch (error) {
-    console.error("Failed to load from localStorage:", error);
-  }
-  return null;
-}, []);
-
+    return null;
+  }, []);
 
   const clearStorage = useCallback(() => {
     try {

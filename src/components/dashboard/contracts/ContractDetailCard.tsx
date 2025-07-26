@@ -25,30 +25,30 @@ function ContractDetailCard({
 }: ContractDetailCardProps) {
   return (
     <div className="max-w-[53.8rem] space-y-4  px-4 py-6 sm:p-6">
-      <div className="flex  gap-4">
-        <div className="items-center justify-between hidden p-4 h-fit rounded-lg sm:flex bg-primary-500 dark:bg-primary-600 w-fit text-primary-200 dark:text-primary-400 ">
+      <div className="flex gap-4">
+        <div className="items-center justify-between hidden p-4 rounded-lg h-fit sm:flex bg-primary-500 dark:bg-primary-600 w-fit text-primary-200 dark:text-primary-400 ">
           <NotebookIcon />
         </div>
         <div className="flex flex-col space-y-1">
-          <p className="text-base font-semibold text-gray-600 sm:text-xl dark:text-gray-150 capitalize">
+          <p className="text-base font-semibold text-gray-600 capitalize sm:text-xl dark:text-gray-150">
             {projectTitle}
           </p>
           <div className="flex gap-x-6 gap-y-2 [&>div]:flex [&>div]:items-center [&>div]:gap-1 [&>div]:text-sm [&>div]:font-medium [&>div]:text-gray-500 flex-wrap dark:[&>div]:text-gray-150">
-            <div className="border border-white bg-gray-100 dark:border-gray-700 px-3 py-1 rounded-full dark:bg-gray-600">
+            <div className="px-3 py-1 bg-gray-100 border border-white rounded-full dark:border-gray-700 dark:bg-gray-600">
               <SmallNotePadIcon />
               <p>{projectType}</p>
             </div>
-            <div className="border border-white bg-gray-100 dark:border-gray-700 px-3 py-1 rounded-full dark:bg-gray-600">
+            <div className="px-3 py-1 bg-gray-100 border border-white rounded-full dark:border-gray-700 dark:bg-gray-600">
               <BriefcaseIcon />
               <p>{jobRole}</p>
             </div>
-            <div className="border border-white bg-gray-100 dark:border-gray-700 px-3 py-1 rounded-full dark:bg-gray-600">
+            <div className="px-3 py-1 bg-gray-100 border border-white rounded-full dark:border-gray-700 dark:bg-gray-600">
               <CalendarIcon />
               <p>
                 {startDate} {endDate ? "-" + endDate : null}
               </p>
             </div>
-            <div className="border border-white bg-gray-100 dark:border-gray-700 px-3 py-1 rounded-full dark:bg-gray-600">
+            <div className="px-3 py-1 bg-gray-100 border border-white rounded-full dark:border-gray-700 dark:bg-gray-600">
               <ClockIcon />
               {terminationDate ? <p>{terminationDate} days notice</p> : null}
             </div>

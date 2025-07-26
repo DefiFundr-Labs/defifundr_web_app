@@ -48,9 +48,38 @@ export const ForwardArrow = () => {
         strokeLinejoin="round"
       />
     </svg>
-
-  )
-}
+  );
+};
+export const Signout = () => {
+  return (
+    <svg
+      width={18}
+      height={18}
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M6.67505 5.67005C6.90755 2.97005 8.29505 1.86755 11.3325 1.86755H11.43C14.7825 1.86755 16.125 3.21005 16.125 6.56255V11.4526C16.125 14.8051 14.7825 16.1476 11.43 16.1476H11.3325C8.31755 16.1476 6.93005 15.0601 6.68255 12.4051"
+        stroke="#C64242"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.2501 9H2.71509"
+        stroke="#C64242"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.3875 6.48755L1.875 9.00005L4.3875 11.5125"
+        stroke="#C64242"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
 export const Check = () => {
   return (
     <svg
@@ -72,9 +101,8 @@ export const Check = () => {
         strokeLinejoin="round"
       />
     </svg>
-
-  )
-}
+  );
+};
 export const Warning = () => {
   return (
     <svg
@@ -105,9 +133,8 @@ export const Warning = () => {
         strokeLinejoin="round"
       />
     </svg>
-
-  )
-}
+  );
+};
 export const FilterIcon = () => {
   return (
     <svg
@@ -4533,7 +4560,7 @@ export const ExpenseIcon = () => (
     />
   </svg>
 );
-export const CherovnRight = () => (
+export const ChevronRight = () => (
   <svg
     width={16}
     height={17}
@@ -5071,29 +5098,6 @@ export const AdministratorsIcon = () => (
       strokeLinecap="round"
       strokeLinejoin="round"
     />
-  </svg>
-);
-
-export const EditIcon = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    fill="none"
-    viewBox="0 0 16 16"
-  >
-    <path
-      fill="currentColor"
-      fillRule="evenodd"
-      d="m10.811 2.546 2.64 2.64a.833.833 0 0 1 0 1.179L6.825 12.99a.83.83 0 0 1-.382.217l-3.55.912a.833.833 0 0 1-1.015-1.015l.911-3.55a.83.83 0 0 1 .218-.383l6.626-6.626a.833.833 0 0 1 1.178 0m-.59.825L3.747 9.847l-.83 3.234 3.234-.83 6.476-6.476z"
-      clipRule="evenodd"
-    ></path>
-    <path
-      fill="currentColor"
-      fillRule="evenodd"
-      d="M10.458 5.539c.13.13.13.341 0 .471l-4 4a.333.333 0 1 1-.47-.471l3.999-4c.13-.13.341-.13.471 0M4.654 10.875c.13-.13.34-.13.471 0l1.333 1.333a.333.333 0 0 1-.471.472l-1.333-1.334a.333.333 0 0 1 0-.471M11.647.978a.5.5 0 0 1 .707 0l2.667 2.667a.5.5 0 1 1-.708.707l-2.666-2.666a.5.5 0 0 1 0-.708"
-      clipRule="evenodd"
-    ></path>
   </svg>
 );
 

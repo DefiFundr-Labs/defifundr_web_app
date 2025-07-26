@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { Accordion } from "../../../common/dashboard/Accordion";
 import ContractDetailCard from "./ContractDetailCard";
-import { ContractDetailHeader } from "./ContractDetailHeader";
+
 import FormNavigation from "./createContract/FormNavigation";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
@@ -10,7 +10,7 @@ import ComplianceCard from "./ComplianceCard";
 import PaymentCard from "./PaymentCard";
 import useModal from "../../../hooks/useModal";
 import ContractReviewModal from "../../modal/ContractReviewModal";
-import { useScreenWidth } from "../../../utils/useScreenWidth";
+
 type AccordionSection =
   | "Project details"
   | "Employee details"
@@ -20,10 +20,8 @@ interface ReviewAndSignProps {
   handleStepper?: (step: number) => void;
 }
 export const ReviewAndSign: FC<ReviewAndSignProps> = ({ handleStepper }) => {
-  const isMobile = useScreenWidth();
-
   const contractForm = useSelector((state: RootState) => state.contractForm);
-  const { showCustomModal, showEnhancedModal, hideModal } = useModal();
+  const { showEnhancedModal, hideModal } = useModal();
   const [activeAccordion, setActiveAccordion] = useState({
     "Project details": true,
     "Employee details": false,

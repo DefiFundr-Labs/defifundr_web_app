@@ -3,7 +3,7 @@ import useModal from "../../../hooks/useModal";
 import { useNavigate } from "react-router-dom";
 import CtaButton from "./CtaButton";
 import RejectTimeSheetModal from "../../modal/RejectTimeSheetModal";
-import { SetStateAction, useEffect, useState } from "react";
+
 import { useScreenWidth } from "../../../utils/useScreenWidth";
 interface CtaHeaderProps {
   title: string;

@@ -1,5 +1,4 @@
 import {
-  ContractDetails,
   FirstInvoice,
   InvoiceDetails,
   MilestoneDetails,

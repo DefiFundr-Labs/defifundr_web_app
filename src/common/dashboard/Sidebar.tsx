@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import type { FC } from "react";
 import { sidebarRoutes } from "./SidebarItems";
 import { SidebarLinkProps, SidebarProps } from "../../types/common";
-import { Logo } from "../../assets/svg/svg";
+import { Logo, Signout } from "../../assets/svg/svg";
 import { RoutePaths } from "../../routes/routesPath";
 
 const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
@@ -123,10 +123,10 @@ const Sidebar: FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
             <div className="w-full px-4">
               <button
                 onClick={handleLogout}
-                className="hover:cursor-pointer text-dark font-medium text-xs h-[38px] py-2.5 hover:text-primary transition ease-in duration-200 px-3 flex items-center gap-3 mb-11"
+                className="hover:cursor-pointer text-gray-400 dark:text-white  font-medium text-sm  py-2.5 hover:text-red-700 transition ease-in duration-200 px-3 flex items-center gap-3 mb-11"
               >
-                {/* <LogOutIcon /> */}
-                Logout
+                <Signout />
+                <span>Sign out</span>
               </button>
             </div>
           </div>

@@ -12,8 +12,7 @@ import {
 } from "../../../../redux/slice/createContactFormSlice";
 import { useFormLocalStorage } from "../../../../utils/useFormLocalStorage";
 import { ComplianceForm } from "../ComplianceForm";
-import { ReviewSign } from "../../../../pages/dashboard/contract/reviewAndSign";
-import { PdfDocumentIcon } from "../../../../assets/svg/svg";
+
 import { ReviewAndSign } from "../ReviewAndSign";
 
 export const MultiStepForm = () => {
@@ -76,8 +75,8 @@ export const MultiStepForm = () => {
     return (
       <div className="w-full max-w-4xl p-4 space-y-8 bg-white rounded-lg sm:p-6">
         <div className="animate-pulse">
-          <div className="h-8 bg-gray-200 rounded mb-4"></div>
-          <div className="h-4 bg-gray-200 rounded mb-8"></div>
+          <div className="h-8 mb-4 bg-gray-200 rounded"></div>
+          <div className="h-4 mb-8 bg-gray-200 rounded"></div>
           <div className="h-32 bg-gray-200 rounded"></div>
         </div>
       </div>

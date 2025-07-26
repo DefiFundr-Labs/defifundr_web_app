@@ -1,4 +1,4 @@
-import { BellIcon, FoxIcon } from "../../assets/svg/svg";
+import { BellIcon } from "../../assets/svg/svg";
 import { useForm } from "react-hook-form";
 import { SearchIcon } from "../../assets/svg/svg";
 import FormInputWithIcon from "../../components/form/FormInputWithIcon";

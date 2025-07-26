@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import { JSX } from "react";
 
 interface ContractsMetricsProps {
@@ -16,17 +15,17 @@ const ContractsMetrics = ({
 }: ContractsMetricsProps) => {
   return (
     <div>
-      <div className="p-4 rounded-lg bg-white dark:bg-gray-600 min-w-60 lg:w-full h-full">
+      <div className="h-full p-4 bg-white rounded-lg dark:bg-gray-600 min-w-60 lg:w-full">
         <span className="flex justify-between text-xs font-medium">
-          <p className=" text-gray-400 dark:text-gray-200">{title}</p>
+          <p className="text-gray-400  dark:text-gray-200">{title}</p>
           <p className="text-gray-300">This year</p>
         </span>
 
-        <hr className="text-gray-150 dark:text-gray-250 my-4" />
+        <hr className="my-4 text-gray-150 dark:text-gray-250" />
 
-        <div className="flex justify-between items-center">
+        <div className="flex items-center justify-between">
           <span>
-            <p className="font-bold text-gray-600 dark:text-gray-150 mb-1 text-2xl lg:text-4xl">
+            <p className="mb-1 text-2xl font-bold text-gray-600 dark:text-gray-150 lg:text-4xl">
               {value}
             </p>
             <p className="text-sm font-medium text-gray-300">{subValue}</p>

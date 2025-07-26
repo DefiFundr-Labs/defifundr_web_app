@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CancelIcon, SearchIcon } from "../../assets/svg/svg";
 import Flag from "react-world-flags";
 import useModal from "../../hooks/useModal";
@@ -37,18 +37,18 @@ const SelectLanguageModal = ({
   return (
     <div className="w-full space-y-8">
       <div className="relative">
-        <button className="cursor-pointer absolute" onClick={hideModal}>
+        <button className="absolute cursor-pointer" onClick={hideModal}>
           <CancelIcon size={32} />
         </button>
-        <h3 className="text-xl font-bold text-gray-500 text-center">
+        <h3 className="text-xl font-bold text-center text-gray-500">
           Edit image
         </h3>
       </div>
 
-      <div className="rounded-lg bg-gray-100 h-12 flex px-4 items-center">
+      <div className="flex items-center h-12 px-4 bg-gray-100 rounded-lg">
         <input
           type="text"
-          className="flex-1 outline-none placeholder:text-gray-300 font-medium text-xs"
+          className="flex-1 text-xs font-medium outline-none placeholder:text-gray-300"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search..."
@@ -56,20 +56,20 @@ const SelectLanguageModal = ({
         <SearchIcon />
       </div>
 
-      <div className="max-h-96 overflow-y-auto ">
+      <div className="overflow-y-auto max-h-96 ">
         {filteredLanguages.length > 0 ? (
           filteredLanguages.map((lang) => (
             <div
               key={lang.locale}
               onClick={() => setSelected(lang.name)}
-              className="flex items-center justify-between py-4 border-b border-gray-150 cursor-pointer"
+              className="flex items-center justify-between py-4 border-b cursor-pointer border-gray-150"
             >
               <div className="flex items-center gap-2">
                 <Flag
                   code={lang.flag}
                   className="object-cover w-6 h-6 rounded-full"
                 />
-                <span className="text-sm text-gray-500 font-semibold">
+                <span className="text-sm font-semibold text-gray-500">
                   {lang.name}
                 </span>
               </div>
@@ -86,7 +86,7 @@ const SelectLanguageModal = ({
             </div>
           ))
         ) : (
-          <p className="text-sm font-medium text-gray-400 text-center">
+          <p className="text-sm font-medium text-center text-gray-400">
             No language found
           </p>
         )}

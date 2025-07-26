@@ -38,7 +38,7 @@ export const AddMilestoneModal = ({
     trigger,
     watch,
     reset,
-    formState: { errors, touchedFields, isValid },
+    formState: { errors, touchedFields },
   } = useForm<MilestoneFormData>({
     mode: "onBlur",
     defaultValues: {
@@ -118,7 +118,7 @@ export const AddMilestoneModal = ({
   return (
     <div className="w-full max-w-lg">
       <div className="mb-6">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+        <h3 className="mb-2 text-xl font-semibold text-gray-900 dark:text-white">
           {isEditing ? "Edit Milestone" : "Add Milestone"}
         </h3>
         <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -206,7 +206,7 @@ export const AddMilestoneModal = ({
         <div className="form-control">
           <label
             htmlFor="description"
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+            className="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300"
           >
             Description
           </label>
@@ -219,7 +219,7 @@ export const AddMilestoneModal = ({
               },
             })}
             placeholder="Any additional details or requirements..."
-            className="w-full min-h-16 max-h-24 p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-200 focus:border-transparent resize-none text-sm"
+            className="w-full p-3 text-sm border border-gray-300 rounded-lg resize-none min-h-16 max-h-24 focus:ring-2 focus:ring-primary-200 focus:border-transparent"
             rows={2}
           />
           {errors.description && (
@@ -235,14 +235,14 @@ export const AddMilestoneModal = ({
           <button
             type="button"
             onClick={onClose}
-            className="flex-1 px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+            className="flex-1 px-4 py-3 text-sm font-medium text-gray-700 transition-colors border border-gray-300 rounded-full dark:text-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             Cancel
           </button>
           <button
             type="submit"
             disabled={!isFormValid || isSubmitting}
-            className="flex-1 px-4 py-3 text-sm font-medium text-white bg-primary-200 rounded-full hover:bg-primary-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            className="flex-1 px-4 py-3 text-sm font-medium text-white transition-colors rounded-full bg-primary-200 hover:bg-primary-100 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting
               ? `${isEditing ? "Updating" : "Adding"}...`

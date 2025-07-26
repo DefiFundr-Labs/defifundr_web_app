@@ -1,4 +1,4 @@
-import { JSX, useState } from "react";
+import { useState } from "react";
 import {
   ArrowRightIcon,
   DarkModeIcon,
@@ -79,16 +79,16 @@ const Preferences = () => {
 
   return (
     <>
-      <section className="bg-white dark:bg-gray-500 rounded-lg p-4 lg:p-6 flex justify-between lg:flex-row gap-6 items-center">
+      <section className="flex items-center justify-between gap-6 p-4 bg-white rounded-lg dark:bg-gray-500 lg:p-6 lg:flex-row">
         <span>
-          <p className="font-semibold text-gray-500 mb-1">App language</p>
-          <p className="font-medium text-xs text-gray-400">
+          <p className="mb-1 font-semibold text-gray-500">App language</p>
+          <p className="text-xs font-medium text-gray-400">
             Select default app language
           </p>
         </span>
 
         <button
-          className="cursor-pointer font-semibold flex items-center gap-1 text-nowrap text-sm md:text-base "
+          className="flex items-center gap-1 text-sm font-semibold cursor-pointer text-nowrap md:text-base "
           onClick={() => handleShowModal()}
         >
           {language}
@@ -97,8 +97,8 @@ const Preferences = () => {
         </button>
       </section>
 
-      <section className="bg-white dark:bg-gray-500 rounded-lg p-4 lg:p-6 space-y-4">
-        <p className="font-semibold text-gray-500 mb-1">Appearance</p>
+      <section className="p-4 space-y-4 bg-white rounded-lg dark:bg-gray-500 lg:p-6">
+        <p className="mb-1 font-semibold text-gray-500">Appearance</p>
 
         <div className="flex gap-11 lg:gap-20">
           {appearances.map((appearance) => (
@@ -121,7 +121,7 @@ const Preferences = () => {
               >
                 {appearance.icon}
               </div>
-              <p className="text-sm capitalize font-medium text-gray-500 mt-2 text-center">
+              <p className="mt-2 text-sm font-medium text-center text-gray-500 capitalize">
                 {appearance.title}
               </p>
             </button>
@@ -129,10 +129,10 @@ const Preferences = () => {
         </div>
       </section>
 
-      <section className="bg-white dark:bg-gray-500 rounded-lg p-4 lg:p-6 space-y-4">
+      <section className="p-4 space-y-4 bg-white rounded-lg dark:bg-gray-500 lg:p-6">
         <div>
-          <p className="font-semibold text-gray-500 mb-1">Device Management</p>
-          <p className="text-xs text-gray-400 font-medium ">
+          <p className="mb-1 font-semibold text-gray-500">Device Management</p>
+          <p className="text-xs font-medium text-gray-400 ">
             See all devices that have logged into your account. Remove any for
             added security.
           </p>
@@ -140,32 +140,32 @@ const Preferences = () => {
 
         <div className="space-y-4">
           {deviceList.map((device) => (
-            <div className="flex items-center  gap-4" key={device.title}>
-              <div className="size-12 flex items-center justify-center bg-primary-500 rounded-lg">
+            <div className="flex items-center gap-4" key={device.title}>
+              <div className="flex items-center justify-center rounded-lg size-12 bg-primary-500">
                 <DeviceIcon />
               </div>
 
               <div className="flex-1">
-                <div className="flex gap-4 justify-between">
-                  <p className="font-semibold text-sm text-gray-500 mb-1">
+                <div className="flex justify-between gap-4">
+                  <p className="mb-1 text-sm font-semibold text-gray-500">
                     {device.title}
                   </p>
 
                   {device.isCurrentDevice ? (
-                    <p className="text-sm text-primary-200 font-semibold">
+                    <p className="text-sm font-semibold text-primary-200">
                       Current device
                     </p>
                   ) : (
                     <button
                       onClick={() => handleRemoveDevice(device.title)}
-                      className="cursor-pointer flex items-center gap-1 text-xs font-medium text-error-500"
+                      className="flex items-center gap-1 text-xs font-medium cursor-pointer text-error-500"
                     >
                       <TrashIcon /> Remove
                     </button>
                   )}
                 </div>
 
-                <div className="text-xs font-medium text-gray-400 flex md:justify-between md:items-center flex-col md:flex-row md:gap-4">
+                <div className="flex flex-col text-xs font-medium text-gray-400 md:justify-between md:items-center md:flex-row md:gap-4">
                   <p>Location: {device.location}</p>
                   <p>Last login: {device.lastLogin}</p>
                 </div>

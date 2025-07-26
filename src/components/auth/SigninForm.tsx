@@ -1,13 +1,14 @@
 import { ConnectWallet } from "./ConnectWallet";
 
 import { RoutePaths } from "../../routes/routesPath";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useZodForm } from "../../hooks/useZodForm";
 import { SignInSchemaType, signInSchema } from "../../utils/schema";
 import FormInput from "../form/FormInput";
 import FormPasswordInput from "../form/FormPasswordInput";
 
 export const SigninForm = () => {
+  const navigate = useNavigate();
   const {
     register,
     formState: { errors, touchedFields },
@@ -20,7 +21,8 @@ export const SigninForm = () => {
   });
 
   const onSubmit = (data: SignInSchemaType) => {
-    console.log("data", data);
+    navigate(RoutePaths.DASHBOARD);
+    console.log(data);
   };
 
   return (

@@ -1,9 +1,5 @@
 import { useEffect, useState } from "react";
-import {
-  RecordDetails,
-  TimeSheetRecord,
-  TimeTrackingTabContentProps,
-} from "../../../../types/types";
+import { TimeTrackingTabContentProps } from "../../../../types/types";
 import EmptyState from "../../EmptyState";
 import TabHeader from "../TabHeader";
 import { Link } from "react-router-dom";

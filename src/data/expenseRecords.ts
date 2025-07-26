@@ -8,6 +8,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/adobe-icon.jpg",
     status: "Pending" as const,
     submitted: "2025-10-25",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Monthly subscription for Adobe Creative Suite including Photoshop, Illustrator, and After Effects for design work.",
     attachment: "Adobe_Subscription_Invoice.pdf",
@@ -18,6 +20,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "Quikdash",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/quikdash",
     },
     contractor: {
@@ -33,6 +36,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/figma-icon.jpg",
     status: "Approved" as const,
     submitted: "2025-10-20",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Annual Figma Pro subscription for collaborative design work and prototyping.",
     attachment: "Figma_Pro_Receipt.pdf",
@@ -43,6 +48,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "Quikdash",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/quikdash",
     },
     contractor: {
@@ -58,6 +64,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/aws-icon.jpg",
     status: "Rejected" as const,
     submitted: "2025-10-18",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Monthly AWS charges for EC2 instances, S3 storage, and RDS database hosting for development environment.",
     attachment: "AWS_Monthly_Bill.pdf",
@@ -69,6 +77,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "TechNova",
       paymentType: "Fixed",
+      contractType: "Fixed",
       contractLink: "/contracts/technova",
     },
     contractor: {
@@ -84,6 +93,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/slack-icon.jpg",
     status: "Approved" as const,
     submitted: "2025-10-22",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Monthly Slack Business+ subscription for team communication and workflow automation.",
     attachment: "Slack_Business_Invoice.pdf",
@@ -94,6 +105,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "Quikdash",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/quikdash",
     },
     contractor: {
@@ -109,6 +121,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/coursera-icon.jpg",
     status: "Pending" as const,
     submitted: "2025-10-19",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Annual Coursera Plus subscription for professional development and skill enhancement courses.",
     attachment: "Coursera_Plus_Receipt.pdf",
@@ -119,6 +133,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "UXLaunch",
       paymentType: "Milestone",
+      contractType: "Milestone",
       contractLink: "/contracts/uxlaunch",
     },
     contractor: {
@@ -135,6 +150,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/browserstack-icon.jpg",
     status: "Approved" as const,
     submitted: "2025-10-23",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Monthly BrowserStack subscription for cross-browser testing and mobile device testing.",
     attachment: "BrowserStack_Invoice.pdf",
@@ -145,6 +162,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "DevSuite",
       paymentType: "Fixed",
+      contractType: "Fixed",
       contractLink: "/contracts/devsuite",
     },
     contractor: {
@@ -160,6 +178,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/shutterstock-icon.jpg",
     status: "Pending" as const,
     submitted: "2025-10-24",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Monthly Shutterstock subscription for high-quality stock photos and vector graphics.",
     attachment: "Shutterstock_Receipt.pdf",
@@ -170,6 +190,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "Contentify",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/contentify",
     },
     contractor: {
@@ -185,6 +206,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/tableau-icon.jpg",
     status: "Approved" as const,
     submitted: "2025-10-25",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Annual Tableau Desktop license for advanced data visualization and business intelligence reporting.",
     attachment: "Tableau_License_Invoice.pdf",
@@ -195,6 +218,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "DataNexus",
       paymentType: "Milestone",
+      contractType: "Milestone",
       contractLink: "/contracts/datanexus",
     },
     contractor: {
@@ -210,6 +234,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/google-workspace-icon.jpg",
     status: "Rejected" as const,
     submitted: "2025-10-17",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Monthly Google Workspace Business subscription for email, storage, and collaboration tools.",
     attachment: "GoogleWorkspace_Bill.pdf",
@@ -221,6 +247,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "GrowthHive",
       paymentType: "Pay as you go",
+      contractType: "Pay as you go",
       contractLink: "/contracts/growthhive",
     },
     contractor: {
@@ -236,6 +263,8 @@ export const expenseRecords: TimeSheetRecord[] = [
     profileImage: "/images/docker-icon.jpg",
     status: "Approved" as const,
     submitted: "2025-10-26",
+    startDate: "2025-10-01",
+    endDate: "2025-10-31",
     description:
       "Monthly Docker Pro subscription for containerization and deployment automation tools.",
     attachment: "Docker_Pro_Receipt.pdf",
@@ -246,6 +275,7 @@ export const expenseRecords: TimeSheetRecord[] = [
     contract: {
       client: "CloudCore",
       paymentType: "Fixed",
+      contractType: "Fixed",
       contractLink: "/contracts/cloudcore",
     },
     contractor: {

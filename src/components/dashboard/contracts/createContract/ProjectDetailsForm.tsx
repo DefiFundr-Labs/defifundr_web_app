@@ -2,9 +2,9 @@ import { useForm } from "react-hook-form";
 import FormSelectInput from "../../../form/FormSelectInput";
 import FormInput from "../../../form/FormInput";
 import FormNavigation from "./FormNavigation";
-import { Dispatch, FC, SetStateAction, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../../../redux/store";
+import { FC, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
 import { updateContractForm } from "../../../../redux/slice/createContactFormSlice";
 import useModal from "../../../../hooks/useModal";
 import { ScopeTemplateModal } from "../../../modal/ScopeTemplateModal";

@@ -4,7 +4,7 @@ import EmptyState from "../dashboard/EmptyState";
 import useModal from "../../hooks/useModal";
 
 import { JobScopeProps } from "../../types/types";
-import FormInput from "../form/FormInput";
+
 import { CancelIcon, SearchIcon } from "../../assets/svg/svg";
 import { CreateJobTemplateModal } from "./CreateJobTemplateModal";
 
@@ -13,10 +13,7 @@ interface ScopeTemplateModalProps {
   setSelectedJobScope: Dispatch<SetStateAction<JobScopeProps | null>>;
 }
 
-export const ScopeTemplateModal: FC<ScopeTemplateModalProps> = ({
-  setSelectedJobScope,
-  selectedJobScope,
-}) => {
+export const ScopeTemplateModal: FC<ScopeTemplateModalProps> = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const { showContentOnlyModal } = useModal();
@@ -28,16 +25,6 @@ export const ScopeTemplateModal: FC<ScopeTemplateModalProps> = ({
     setSearchTerm(e.target.value);
   };
 
-  const handleOnSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedJobRole = e.target.value;
-    const selected = scopes.find(
-      (scope) => scope.jobRole.toLowerCase() === selectedJobRole.toLowerCase()
-    );
-    if (selected) {
-      setSelectedJobScope(selected);
-    }
-  };
-
   const openCreateTemplateModal = () => {
     showContentOnlyModal(<CreateJobTemplateModal />);
   };
@@ -47,11 +34,11 @@ export const ScopeTemplateModal: FC<ScopeTemplateModalProps> = ({
       <div className="relative">
         <button
           // onClick={handleClose}
-          className="absolute left-0 top-1/2 -translate-y-1/2 w-fit cursor-pointer"
+          className="absolute left-0 -translate-y-1/2 cursor-pointer top-1/2 w-fit"
         >
           <CancelIcon />
         </button>
-        <p className="text-xl font-semibold text-gray-500 dark:text-gray-150 text-center">
+        <p className="text-xl font-semibold text-center text-gray-500 dark:text-gray-150">
           Select template
         </p>
       </div>
@@ -69,12 +56,12 @@ export const ScopeTemplateModal: FC<ScopeTemplateModalProps> = ({
       </div>
 
       <div className="">
-        <div className="overflow-y-scroll pr-1 sm:max-h-79 sm:min-h-79 custom-scrollbar">
+        <div className="pr-1 overflow-y-scroll sm:max-h-79 sm:min-h-79 custom-scrollbar">
           {filteredJobScopes.length > 0 ? (
             filteredJobScopes.map((jobScope, index) => (
               <button
                 key={index}
-                className="flex items-center text-sm font-semibold text-gray-500 border-b cursor-pointer border-gray-150 w-full py-4"
+                className="flex items-center w-full py-4 text-sm font-semibold text-gray-500 border-b cursor-pointer border-gray-150"
               >
                 {jobScope.jobRole}
               </button>
